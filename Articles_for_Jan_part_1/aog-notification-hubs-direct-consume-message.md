@@ -5,7 +5,7 @@
 	resource="notificationhubs"
 	authors=""
 	displayOrder=""
-	selfHelpType="generic"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="Notification Hubs"​
@@ -18,13 +18,13 @@
 />
 # 基于直接接收的方法消费 Azure 事件中心消息
 
-Azure 事件中心支持多种消费消息的方式，而且也提供了不同语言的SDK以方便开发者调用，这里做一个汇总的介绍。
+Azure 事件中心支持多种消费消息的方式，而且也提供了不同语言的 SDK 以方便开发者调用，这里做一个汇总的介绍。
 
 总的来说，有三种方式：
 
 1.	直接接收
 2.	使用事件处理程序主机（EventProcessorHost）
-3.	基于Apache Storm
+3.	基于 Apache Storm
 
 下面主要按两种常用语言 C# 和 Java 来归纳。本文介绍“直接接收”法。
 
@@ -46,9 +46,9 @@ Azure 事件中心支持多种消费消息的方式，而且也提供了不同�
 
 		While(true)
 		{
-		var message = receiver.Receive(TimeSpan.FromSeconds(2));
-		// process message based on your own logic
-		Logger.Info(“Message received: {0}”, Encoding.UTF8.GetString(message.GetBytes()))
+			var message = receiver.Receive(TimeSpan.FromSeconds(2));
+			// process message based on your own logic
+			Logger.Info(“Message received: {0}”, Encoding.UTF8.GetString(message.GetBytes()))
 		}
 
 注意创建事件中心接收者是必须指定分区的。另外它也提供了额外的选项，比如指定偏移量，这样就可以控制该接受者开始读取消息的位置。

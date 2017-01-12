@@ -5,7 +5,7 @@
 	resource="iothub"
 	authors=""
 	displayOrder=""
-	selfHelpType="generic"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="IoT Hub, EventHubClient, D2C, C2D, Connection String"​

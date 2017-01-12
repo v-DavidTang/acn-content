@@ -5,7 +5,7 @@
 	resource="cognitiveservices"
 	authors=""
 	displayOrder=""
-	selfHelpType="resource"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="Cognitive Services, C# SDK, Key"​

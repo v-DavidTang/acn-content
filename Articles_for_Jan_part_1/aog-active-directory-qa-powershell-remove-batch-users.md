@@ -5,7 +5,7 @@
 	resource="activedirectory"
 	authors=""
 	displayOrder=""
-	selfHelpType="resource"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="Azure AD, PowerShell"​

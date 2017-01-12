@@ -5,7 +5,7 @@
 	resource="virtualmachines"
 	authors=""
 	displayOrder=""
-	selfHelpType="resource"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="Azure Virtual Machines, C#"​
@@ -66,53 +66,53 @@
 	var base64cer = subscriptionElements.Where(e => e.Attribute("Id").Value.ToString() == subscriptionId).FirstOrDefault().Attribute("ManagementCertificate").Value.ToString();
 	
 	X509Certificate2 certificateStore = new X509Certificate2(Convert.FromBase64String(base64cer));
-	                Microsoft.WindowsAzure.SubscriptionCloudCredentials credential = new Microsoft.WindowsAzure.CertificateCloudCredentials(subscriptionId, certificateStore);
-	                Uri baseUri = new Uri("https://management.core.chinacloudapi.cn/");
-	
-	                MetricsClient metricsClient = new MetricsClient(credential, baseUri);
-	
-	                string cloudServiceResourceId = ResourceIdBuilder.BuildVirtualMachineResourceId(cloudServiceName, deploymentName, vmName);
-	                // Metric names
-	                List<string> metricNames = new List<string>() { "Network Out", "Disk Read Bytes/sec", "Disk Write Bytes/sec", "Percentage CPU", "Network In" };
-	                TimeSpan timeGrain = TimeSpan.FromHours(1);
-	                DateTime timeBegin = DateTime.Now.AddDays(-30);
-	                DateTime time2Start = DateTime.Parse(timeBegin.ToString("yyyy-MM-dd") + " 00:00:00");
-	                DateTime time2Stop = DateTime.Parse(timeBegin.ToString("yyyy-MM-dd") + " 23:59:59");
-	                int rate = (DateTime.Now - time2Start).Days / 13 + 1;
-	                int addition = (DateTime.Now - time2Start).Days % 13;
-	                int num1, num2;
-	                string json = null;
-	                for (int i = 0; i < rate; i++)
-	                {
-	                    num1 = i * 13;
-	
-	                    if (i == rate - 1)
-	                    {
-	                        num2 = i * 13 + addition;
-	                    }
-	                    else
-	                    {
-	                        num2 = (i + 1) * 13;
-	                    }
-	                    DateTime startTime = time2Start.AddDays(num1);
-	                    DateTime endTime = time2Stop.AddDays(num2);
-	
-	                    MetricValueListResponse response = metricsClient.MetricValues.List(cloudServiceResourceId, metricNames, String.Empty, timeGrain, startTime, endTime);
-	
-	                    foreach (MetricValueSet value in response.MetricValueSetCollection.Value)
-	                    {
-	                        String valueName = value.Name;
-	                        Console.WriteLine("------------------------Metric: {0}------------------------", valueName);
-	                        foreach (MetricValue metricValue in value.MetricValues)
-	                        {
-	                            json += value.Name + "," + metricValue.Timestamp.AddHours(8) + "," + metricValue.Average + "," + metricValue.Count + "," + metricValue.Maximum + "," + metricValue.Minimum + "," + metricValue.Total + "\r\n";
-	                        }
-	                    }
-	                }
-	                FileStream aFile = new FileStream(AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.AppSettings["VmTracePath"] + cloudServiceName + "_" + deploymentName + "_" + vmName + "_" + timeBegin.ToString("yyyy-MM-dd") + "~" + DateTime.Now.ToString("yyyy-MM-dd") + ".CSV", FileMode.OpenOrCreate);
-	                StreamWriter sw = new StreamWriter(aFile, Encoding.GetEncoding("GB2312"));
-	                sw.Write(json);
-	                sw.Close();
+    Microsoft.WindowsAzure.SubscriptionCloudCredentials credential = new Microsoft.WindowsAzure.CertificateCloudCredentials(subscriptionId, certificateStore);
+    Uri baseUri = new Uri("https://management.core.chinacloudapi.cn/");
+
+    MetricsClient metricsClient = new MetricsClient(credential, baseUri);
+
+    string cloudServiceResourceId = ResourceIdBuilder.BuildVirtualMachineResourceId(cloudServiceName, deploymentName, vmName);
+    // Metric names
+    List<string> metricNames = new List<string>() { "Network Out", "Disk Read Bytes/sec", "Disk Write Bytes/sec", "Percentage CPU", "Network In" };
+    TimeSpan timeGrain = TimeSpan.FromHours(1);
+    DateTime timeBegin = DateTime.Now.AddDays(-30);
+    DateTime time2Start = DateTime.Parse(timeBegin.ToString("yyyy-MM-dd") + " 00:00:00");
+    DateTime time2Stop = DateTime.Parse(timeBegin.ToString("yyyy-MM-dd") + " 23:59:59");
+    int rate = (DateTime.Now - time2Start).Days / 13 + 1;
+    int addition = (DateTime.Now - time2Start).Days % 13;
+    int num1, num2;
+    string json = null;
+    for (int i = 0; i < rate; i++)
+    {
+        num1 = i * 13;
+
+        if (i == rate - 1)
+        {
+            num2 = i * 13 + addition;
+        }
+        else
+        {
+            num2 = (i + 1) * 13;
+        }
+        DateTime startTime = time2Start.AddDays(num1);
+        DateTime endTime = time2Stop.AddDays(num2);
+
+        MetricValueListResponse response = metricsClient.MetricValues.List(cloudServiceResourceId, metricNames, String.Empty, timeGrain, startTime, endTime);
+
+        foreach (MetricValueSet value in response.MetricValueSetCollection.Value)
+        {
+            String valueName = value.Name;
+            Console.WriteLine("------------------------Metric: {0}------------------------", valueName);
+            foreach (MetricValue metricValue in value.MetricValues)
+            {
+                json += value.Name + "," + metricValue.Timestamp.AddHours(8) + "," + metricValue.Average + "," + metricValue.Count + "," + metricValue.Maximum + "," + metricValue.Minimum + "," + metricValue.Total + "\r\n";
+            }
+        }
+    }
+    FileStream aFile = new FileStream(AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.AppSettings["VmTracePath"] + cloudServiceName + "_" + deploymentName + "_" + vmName + "_" + timeBegin.ToString("yyyy-MM-dd") + "~" + DateTime.Now.ToString("yyyy-MM-dd") + ".CSV", FileMode.OpenOrCreate);
+    StreamWriter sw = new StreamWriter(aFile, Encoding.GetEncoding("GB2312"));
+    sw.Write(json);
+    sw.Close();
 
 ## **测试结果**
 

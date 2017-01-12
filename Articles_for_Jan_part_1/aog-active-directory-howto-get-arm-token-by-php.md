@@ -5,7 +5,7 @@
 	resource="activedirectory"
 	authors=""
 	displayOrder=""
-	selfHelpType="generic"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="Azure AD, PowerShell, PHP, OAuth"​

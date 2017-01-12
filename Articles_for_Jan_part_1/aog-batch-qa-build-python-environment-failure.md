@@ -5,7 +5,7 @@
 	resource="batch"
 	authors=""
 	displayOrder=""
-	selfHelpType="resource"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags=""​

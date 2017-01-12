@@ -5,7 +5,7 @@
 	resource="notificationhubs"
 	authors=""
 	displayOrder=""
-	selfHelpType="generic"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="Notification Hubs, EventProcessorHost"​
@@ -24,7 +24,7 @@ Azure 事件中心支持多种消费消息的方式，而且也提供了不同�
 
 1.	直接接收
 2.	使用事件处理程序主机（EventProcessorHost）
-3.	基于Apache Storm
+3.	基于 Apache Storm
 
 在直接接收的基础上，微软提供了一个更高级别的抽象方式，也就是使用 EventProcessorHost，它为事件处理器实现提供线程安全，多进程安全的运行时环境，该环境还能提供检查点和分区租用管理。使用方式如下：
 

@@ -5,7 +5,7 @@
 	resource=""
 	authors=""
 	displayOrder=""
-	selfHelpType="resource"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="PowerShell, Reource Provider"​

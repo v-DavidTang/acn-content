@@ -5,7 +5,7 @@
 	resource="notificationhubs"
 	authors=""
 	displayOrder=""
-	selfHelpType="generic"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="Notification Hubs, Apache Storm"​
@@ -23,7 +23,7 @@ Azure 事件中心支持多种消费消息的方式，而且也提供了不同�
 
 1.	直接接收
 2.	使用事件处理程序主机（EventProcessorHost）
-3.	基于Apache Storm
+3.	基于 Apache Storm
 
 本文介绍基于 Apache Storm 的方法。下面主要按两种常用语言 C# 和 Java 来归纳。
 

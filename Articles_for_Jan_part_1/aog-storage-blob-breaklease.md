@@ -5,7 +5,7 @@
 	resource="storage"
 	authors=""
 	displayOrder=""
-	selfHelpType="resource"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="Azure Storage Blob"​
@@ -42,7 +42,7 @@
  
 2.	运行工具，执行：
 	
-	breaklease portalvhds70gssrgbwgbn3 dvxTERq99Ws8EkGbmRK4VThrclJ2THAK1gd051gFK9z6k29NR4L51BFrm5Q4NPJt7qUKRwq33nMSlRjpAX1BnA== https://portalvhds70gssrgbwgbn3.blob.core.chinacloudapi.cn/vhds/team-server-team-server-0530-1.vhd
+		breaklease portalvhds70gssrgbwgbn3 dvxTERq99Ws8EkGbmRK4VThrclJ2THAK1gd051gFK9z6k29NR4L51BFrm5Q4NPJt7qUKRwq33nMSlRjpAX1BnA== https://portalvhds70gssrgbwgbn3.blob.core.chinacloudapi.cn/vhds/team-server-team-server-0530-1.vhd
 
 	释放租约成功后，成功删除文件：
  

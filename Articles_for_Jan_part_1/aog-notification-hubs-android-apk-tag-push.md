@@ -5,7 +5,7 @@
 	resource="notificationhubs"
 	authors=""
 	displayOrder=""
-	selfHelpType="generic"
+	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
     resourceTags="Notification Hubs, Android, 百度云"​
@@ -210,14 +210,20 @@
 -	无 tag 发送：
 
 		hub.sendNotification(n);
+
+	![no-tag](./media/aog-notification-hubs-android-apk-tag-push/no-tag.jpg)
  
 -	有 tag 发送 1，注册包含目标 tag：
 
 		hub.sendNotification(n, "hello");
+
+	![tag-1](./media/aog-notification-hubs-android-apk-tag-push/tag-1.jpg)
  
 -	有 tag 发送 2，注册不包含目标 tag：无法接收到消息。
 
 		hub.sendNotification(n, "world");
+
+	![tag-2](./media/aog-notification-hubs-android-apk-tag-push/tag-2.jpg)
 
 >[AZURE.NOTE]Android studio 问题比较多，有时候注释也会报错，需要根据情况更新版本。
  
