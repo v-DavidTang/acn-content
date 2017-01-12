@@ -118,6 +118,6 @@
 
 执行程序，在 Debug 文件夹下会看到获取监控信息所写入的文件，名称如下：
  
-![excel-name](./media/aog-sample-code-fa-c#-fetch-vm-monitor-data/excel-name.png)
-![excel-data](./media/aog-sample-code-fa-c#-fetch-vm-monitor-data/excel-data.png)
+![excel-name](./media/aog-sample-code-fa-csharp-fetch-vm-monitor-data/excel-name.png)
+![excel-data](./media/aog-sample-code-fa-csharp-fetch-vm-monitor-data/excel-data.png)
  
