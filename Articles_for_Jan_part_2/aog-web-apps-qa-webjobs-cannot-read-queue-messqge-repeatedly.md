@@ -23,5 +23,7 @@
 
 ## **解决方法**
 
+通过以下两种方法可以解决该问题：
+
 1.	不通过 Web jobs SDK，而是通过原始的方法来读取 Azure 队列中的消息：[通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/) 
 2.	下载 Github 的 SDK 源码，本地修改后在进行使用 : [Azure/azure-webjobs-sdk/Queues/Listeners/QueueListener ](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Host/Queues/Listeners/QueueListener.cs#L247)

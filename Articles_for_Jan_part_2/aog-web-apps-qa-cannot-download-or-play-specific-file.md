@@ -35,6 +35,6 @@ IIS 服务默认不提供对于某些特殊文件格式的支持，例如：`.ap
 ## **参考文档**
 
 其它类型的特殊文件类型的 MIME 声明请参考下面的链接：<br>
-[MIME Types in IIS](https://msdn.microsoft.com/en-us/library/bb742440.aspx)<br>
-[Adding Mime Types to your Windows Azure Web Site](https://blogs.iis.net/richma/adding-mime-types-to-your-windows-azure-web-site)
+- [MIME Types in IIS](https://msdn.microsoft.com/en-us/library/bb742440.aspx)<br>
+- [Adding Mime Types to your Windows Azure Web Site](https://blogs.iis.net/richma/adding-mime-types-to-your-windows-azure-web-site)
 
