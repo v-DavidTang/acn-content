@@ -8,12 +8,12 @@
 	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
-    resourceTags="VPN, BGP, VNET Peering"​
+    resourceTags="VPN, BGP, Local Network, VNET Peering"​
     cloudEnvironments="MoonCake" />
 <tags
-	ms.service="virtual-machines-linux-aog"
+	ms.service="vpn-gateway-aog"
 	ms.date=""
-	wacn.date="1/19/2017" />
+	wacn.date="1/20/2017" />
 # 如何在 Azure VPN 网关上实现网络透传
 
 ## 背景介绍
@@ -32,11 +32,11 @@
 
 	BGP 作为动态路由协议，可以用来在多个节点之间传递路由。当我们在所有的虚拟网络网关和本地 VPN 设备上都启用 BGP 功能并打通 VPN 连接后，可以轻松的实现各个虚拟网络和本地网络之间的互通而不需要进行额外配置。并且由于 BGP 动态路由的特性，当网络架构需要调整时我们需要进行的配置修改也相对较少。比如在上图所示的应用场景中，当我们又创建了虚拟网络 `VNET3` 需要透过 `VNET1` 的 VPN 网关来访问本地，我们甚至不需要对本地设备进行任何的操作就能实现本地与 `VNET3` 的互通。
 
-2.	自定义本地网络（Local Network）地址空间
+2.	<a href="#local-network">自定义本地网络（Local Network）地址空间</a>
 
 	对于 Azure 虚拟网络的 VPN 连接，我们都需要配置一个本地网络来告知 VPN 网关对方所使用的地址空间，我们可以利用这个特性用一些“小技巧”来实现网络透传。(这里的**本地网络**是指在 Azure 上面配置的本地网络 `Local Network`，而不是指客户 `On Premises Local Site` 的网络)。 比如在上图所示的应用场景中，正常情况下 `VNET1` 和 `VNET2` 如果使用 VPN 的方式进行连接，我们只需要配置 `VNET2` 连接的本地网络地址空间为 `VNET1` 的地址空间，`VNET1` 连接的本地网络地址空间为 `VNET2` 的地址空间。如果要实现透传，需要将 `VNET2` 连接的本地网络地址空间改为 `VNET1` 的地址空间与 `On Premises Local Site` 地址空间的合集。同样的，在 `On Premises Local Site` 的 VPN 设备上，也要添加路由将走向 `VNET2` 的流量导向跟 `VNET1` 建立的 VPN 隧道上。由于 `VNET1` 的 VPN 网关已经有路由来传递这些目标地址不是自己虚拟网络内的流量并且 Azure VPN 网关本身是支持透传的，所以我们不需要在 `VNET1` 上再做额外的配置。由于这个方案需要根据当前的网络架构来修改本地网络的配置，如果用户不能真正了解 Azure 本地网络的作用往往容易出错，所以配置的时候要多加小心。
 
-3.	使用虚拟网络对等互联（VNET Peering）
+3.	<a href="#vnet-peering">使用虚拟网络对等互联（VNET Peering）</a>
 
 	虚拟网络对等互联是 Azure 在 2016 年年底发布的最新功能，可以利用此功能在不创建 VPN 网关的前提下实现两个虚拟网络的互联。默认情况下虚拟网络对等互联就是支持网络透传的，但是目前虚拟网络对等互联只支持同一个数据中心的虚拟网络进行互联，所以按照上图所示的架构如果 `VNET2` 创建在中国北部，`VNET1` 创建在中国东部时，目前是没法使用虚拟网络对等互联来实现网络透传的。
 
@@ -63,7 +63,7 @@
 [如何使用 Azure Resource Manager 和 PowerShell 在 Azure VPN 网关上配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)<br>
 [如何使用 Windows Server 2016 与 Azure 搭建支持 BGP 协议的 VPN 通道](/documentation/articles/aog-virtual-machines-howto-windows-server-2016-bgp-vpn/)
 
-## 自定义本地网络（Local Network）地址空间
+## <a id="local-network">自定义本地网络（Local Network）地址空间</a>
 
 ![local-network](./media/aog-vpn-gateway-howto-implement-network-transmission/local-network.png)
 
@@ -112,7 +112,7 @@
 
 10.	以上配置成功后，就可以在 `VNET2` 和 `On Premises Local Site` 之间进行访问了。
 
-## 使用虚拟网络对等互联（VNET Peering）
+## <a id="vnet-peering">使用虚拟网络对等互联（VNET Peering）</a>
 
 使用虚拟网络对等互联从架构上来讲是最简单的，操作也相对比较容易，但是必须得注意的是目前 `VNET1` 和 `VNET2` 必须创建在同一个数据中心。
 
