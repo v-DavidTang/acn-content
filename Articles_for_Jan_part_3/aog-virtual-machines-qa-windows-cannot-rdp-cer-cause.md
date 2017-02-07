@@ -73,7 +73,7 @@ RDP 证书异常,每次使用 RDP 连接后,系统日志中就会自动生产如
 
 双击打开证书，选择 Details 下 Thumbprint 复制其中数值 :
 
-![console-4](media\aog-virtual-machines-qa-windows-cannot-rdp-cer-cause\console-4.png)
+![console-4](./media/aog-virtual-machines-qa-windows-cannot-rdp-cer-cause/console-4.png)
 
 以管理员身份运行 PowerShell :
 
