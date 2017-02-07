@@ -74,7 +74,7 @@
 	[Impact of ext4’s discard option on my SSD](https://patrick-nagel.net/blog/archives/337 ) <br>
 	[Performance of TRIM command on ext4 filesystem](http://people.redhat.com/lczerner/discard/ext4_discard.html )
 
-6.IO调度算法
+6.	IO调度算法
 
 	`CFQ` : CentOS 6 中的默认 IO 算法。特点是对所有有 IO 请求的进程，提供公平的磁盘 IO 带宽。<br>
 	`NOOP` : 即 `none operation`。对所有的 IO 请求，不做任何操作，直接发给磁盘控制器。<br>
