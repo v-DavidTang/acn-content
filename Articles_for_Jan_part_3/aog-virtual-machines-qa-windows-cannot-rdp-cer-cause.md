@@ -1,3 +1,19 @@
+<properties
+	pageTitle="Windows RDP 证书问题导致无法远程了连接解决方案"
+	description="Windows RDP 证书问题导致无法远程了连接解决方案"
+	service=""
+	resource="virtualmachines"
+	authors=""
+	displayOrder=""
+	selfHelpType=""
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Virtual Machines, Windows, RDP"​
+	cloudEnvironments="MoonCake" />
+<tags 
+	ms.service="virtual-machines-windows-aog"
+	ms.date=""
+	wacn.date="02/07/2017" />
 # Windows RDP 证书问题导致无法远程了连接解决方案
 
 ## **问题描述**

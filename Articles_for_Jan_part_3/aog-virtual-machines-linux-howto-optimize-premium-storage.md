@@ -1,3 +1,19 @@
+<properties
+	pageTitle="在 Linux 中使用 Azure Premium 存储的基本优化指南"
+	description="在 Linux 中使用 Azure Premium 存储的基本优化指南"
+	service=""
+	resource="virtualmachines"
+	authors=""
+	displayOrder=""
+	selfHelpType=""
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Virtual Machines, CentOS, Premium Storage ,LIS"​
+	cloudEnvironments="MoonCake" />
+<tags 
+	ms.service="virtual-machines-linux-aog"
+	ms.date=""
+	wacn.date="02/07/2017" />
 # 在 Linux 中使用 Azure Premium 存储的基本优化指南
 
 >[AZURE.NOTE] 以下测试和结果都是基于 CentOS 6.5。对于其他版本，请参考本文档，并自行进行相关测试。

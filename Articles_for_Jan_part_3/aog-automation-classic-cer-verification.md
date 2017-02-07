@@ -1,3 +1,19 @@
+<properties
+	pageTitle="在 Azure 自动化经典模式中使用证书验证"
+	description="在 Azure 自动化经典模式中使用证书验证"
+	service=""
+	resource="automation"
+	authors=""
+	displayOrder=""
+	selfHelpType=""
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Automation, PowerShell, RUNBOOK, Certification"​
+	cloudEnvironments="MoonCake" />
+<tags 
+	ms.service="automation-aog"
+	ms.date=""
+	wacn.date="02/07/2017" />
 # 在 Azure 自动化经典模式中使用证书验证
 
 借助 Azure 自动化，用户可以自动完成通常要在云环境和企业环境中执行的手动、长时间进行、易出错且重复性高的任务。它可以节省时间，可以提高常规管理任务的可靠性，甚至可以将这些任务安排成按特定的时间间隔自动执行。

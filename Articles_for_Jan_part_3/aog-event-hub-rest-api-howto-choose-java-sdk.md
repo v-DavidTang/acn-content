@@ -1,3 +1,19 @@
+<properties
+	pageTitle="Azure 事件中心 Java 编程的那些事"
+	description="Azure 事件中心 Java 编程的那些事"
+	service=""
+	resource="eventhub"
+	authors=""
+	displayOrder=""
+	selfHelpType=""
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Event Hub, Java, REST API, SDK"​
+	cloudEnvironments="MoonCake" />
+<tags 
+	ms.service="event-hub-aog"
+	ms.date=""
+	wacn.date="02/07/2017" />
 # Azure 事件中心 Java 编程的那些事
 
 Azure 事件中心是支持多种语言访问的，这个多语言支持除了因为提供了 REST API 之外，还因为 AMQP 协议的支持，更直观的是对应语言 SDK 的提供。基于 Java 在国内的广泛使用，这片文章将重点总结下 Azure 事件中心 Java 编程的那些事。

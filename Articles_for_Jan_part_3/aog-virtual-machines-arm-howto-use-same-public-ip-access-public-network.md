@@ -1,3 +1,19 @@
+<properties
+	pageTitle="ARM 虚拟机使用同一个公共 IP 访问公网的解决方案"
+	description="ARM 虚拟机使用同一个公共 IP 访问公网的解决方案"
+	service=""
+	resource="virtualmachines"
+	authors=""
+	displayOrder=""
+	selfHelpType=""
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Virtual Machines, PowerShell ,ARM, Public IP"​
+	cloudEnvironments="MoonCake" />
+<tags 
+	ms.service="virtual-machines-aog"
+	ms.date=""
+	wacn.date="02/07/2017" />
 # ARM 虚拟机使用同一个公共 IP 访问公网的解决方案
 
 Azure 目前有两种部署模型：资源管理器 ARM 和经典 ASM。ASM 的虚拟机默认共用云服务的 VIP 来访问 Internet，ARM 的虚拟机默认使用自己的公共 IP 访问 Internet。因为有的服务器有访问白名单的设置，因此有的客户可能想实现的一个需求就是 ARM 的多个虚拟机也共用一个公共 IP 来访问公网的某个服务器，这样就不需要在对方的白名单上添加多个虚拟机的公共 IP 地址。下面介绍如何实现这个方案。

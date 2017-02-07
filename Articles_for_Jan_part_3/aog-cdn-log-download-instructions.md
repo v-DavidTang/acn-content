@@ -1,3 +1,19 @@
+<properties
+	pageTitle="关于 CDN 日志下载的几点说明"
+	description="关于 CDN 日志下载的几点说明"
+	service=""
+	resource="cdn"
+	authors=""
+	displayOrder=""
+	selfHelpType=""
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Azure CDN"​
+	cloudEnvironments="MoonCake" />
+<tags 
+	ms.service="cdn-aog"
+	ms.date=""
+	wacn.date="02/07/2017" />
 # 关于 CDN 日志下载的几点说明
 
 Azure CDN 提供了日志下载的功能。但很多客户不是很清楚日志生成的规则等具体信息，现就关于该部分内容做出如下解释：
