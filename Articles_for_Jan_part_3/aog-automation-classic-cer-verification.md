@@ -14,7 +14,7 @@
 -	有效的 Azure 订阅。
 -	已经安装了最新 [Azure PowerShell](http://aka.ms/webpi-azps) 模块的本地 Windows 电脑。
 
-查看并更新 Azure 自动化账户的 PowerShell 模块版本。
+## 查看并更新 Azure 自动化账户的 PowerShell 模块版本。
 
 由于 Azure 自动化账户默认使用的 PowerShell 版本过旧，需要更新相应的模块版本。请参阅[如何更新 Azure 自动化服务的 PowerShell 模块](/documentation/articles/aog-automation-powershell-module-update/)，更新 Azure 自动化账户资产里的 Azure.Storage 模块至 2.2.0 或以上，Azure 模块至 3.0.0 或以上。
 
