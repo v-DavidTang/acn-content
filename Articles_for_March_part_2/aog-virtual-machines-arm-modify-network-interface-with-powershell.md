@@ -6,7 +6,7 @@
 
 [AZURE.NOTE]本文只限于 ARM 模式下的虚拟机，经典模式的虚拟机不适用。
 
-# 操作步骤
+## 操作步骤
 
 1. 首先，我们需要使用下面的命令在虚拟网络的子网下新添加一个新的网络接口：
 
@@ -14,7 +14,7 @@
         $vnet = Get-AzureRmVirtualNetwork -Name <虚拟网络名称> -ResourceGroupName <资源组名称>
         #获取子网对象
         $subnet01 = Get-AzureRmVirtualNetworkSubnetConfig -Name <子网名称> -VirtualNetwork $vnet
-        #添加一个公网IP
+        #添加一个公网 IP
         $publicIP = New-AzureRmPublicIpAddress -Name <PublicIP名称> -ResourceGroupName <资源组名称> -Location "China East" -AllocationMethod Dynamic -IpAddressVersion IPv4 –Force
         #创建新的网络接口
         $NIC = New-AzureRmNetworkInterface -Name <NIC的名称> -ResourceGroupName <资源组名称> -Location "China East" -SubnetId $subnet01.Id -PublicIpAddressId $publicIP.Id -PrivateIpAddress 10.0.0.4
@@ -23,7 +23,7 @@
 
         #获取虚拟机对象
         $vm = Get-AzureRmVM -ResourceGroupName <资源组名称> -Name <虚拟机名称>
-        #查看虚拟机的默认网卡的ID
+        #查看虚拟机的默认网卡的 ID
         $vm.NetworkInterfaceIDs
 
     ![NetworkInterfaceIDs](./media/aog-virtual-machines-arm-modify-network-interface-with-powershell/NetworkInterfaceIDs.png)
