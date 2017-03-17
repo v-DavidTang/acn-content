@@ -10,7 +10,7 @@ VS2017 直接使用账户登录 Azure
 
 1. 首先，需要安装 Azure .NET SDK for VS 2017。
 
-2. 安装成功后，关闭 Visual Studio 2017，然后到 `C:\Users\<user name>\AppData\Local\.IdentityService\AadConfigurations` 目录下，如果没有 AadConfigurations 目录，则新建该目录，之后将[此Json配置文件](./media/aog-portal-management-qa-vs2017-login/AadProvider.Configuration.json)下载到该文件夹下。
+2. 安装成功后，关闭 Visual Studio 2017，然后到 `C:\Users\<user name>\AppData\Local\.IdentityService\AadConfigurations` 目录下，如果没有 AadConfigurations 目录，则新建该目录，之后将<a href="./media/aog-portal-management-qa-vs2017-login/AadProvider.Configuration.json" target="_blank">此Json配置文件</a>下载到该文件夹下。
 
 3. 之后开启Visual Studio 2017，参考以下截图，管理账户和订阅。
 
