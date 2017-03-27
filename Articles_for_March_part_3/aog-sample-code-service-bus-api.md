@@ -10,7 +10,7 @@
     productPesIds=""
     resourceTags="Service Bus, API, SAS Token"
     cloudEnvironments="MoonCake" />
-<tags
+<<tags
     ms.service="sample-code-aog"
     ms.date=""
     wacn.date="03/27/2017" />
@@ -36,7 +36,7 @@ SAS Token 的具体构成是这样的：`SharedAccessSignature sr={资源地址}
 
 - 策略名称：相应策略的名称。
 
-
+<br>
 
     static string createToken(string resourceUri, string keyName, string key)
     {
