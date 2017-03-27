@@ -1,3 +1,4 @@
+
 <properties
     pageTitle="Azure 服务总线 API 调用示例"
     description="Azure 服务总线 API 调用示例"
@@ -36,6 +37,7 @@ SAS Token 的具体构成是这样的：`SharedAccessSignature sr={资源地址}
 
 - 策略名称：相应策略的名称。
 <br>
+
     static string createToken(string resourceUri, string keyName, string key)
     {
         TimeSpan sinceEpoch = DateTime.UtcNow - new DateTime(1970, 1, 1);
