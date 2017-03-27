@@ -10,7 +10,7 @@
     productPesIds=""
     resourceTags="Service Bus, API, SAS Token"
     cloudEnvironments="MoonCake" />
-<<tags
+<tags
     ms.service="sample-code-aog"
     ms.date=""
     wacn.date="03/27/2017" />
