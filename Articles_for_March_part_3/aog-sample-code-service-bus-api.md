@@ -35,9 +35,7 @@ SAS Token 的具体构成是这样的：`SharedAccessSignature sr={资源地址}
 - 过期时间：自纪元算起，以秒为单位。
 
 - 策略名称：相应策略的名称。
-
 <br>
-
     static string createToken(string resourceUri, string keyName, string key)
     {
         TimeSpan sinceEpoch = DateTime.UtcNow - new DateTime(1970, 1, 1);
