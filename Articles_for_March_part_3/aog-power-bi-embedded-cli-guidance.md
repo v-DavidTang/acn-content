@@ -21,7 +21,7 @@ PowerBI-Cli 命令行工具可以很方便地完成创建 workspace，上传 rep
 
 ## 安装 PowerBI-Cli 工具
 
-npm 全称是 Node Packaged Modules，是 nodejs 官方开发的一个 node.js 包管理器，可通过 npm 快速下载安装 nodejs 的模块包。在执行 npm install powerbi-cli -g 命令安装 PowerBI-Cli 工具之前，需要先完成 npm 环境的安装。
+npm 全称是 Node Packaged Modules，是 nodejs 官方开发的一个 node.js 包管理器，可通过 npm 快速下载安装 nodejs 的模块包。在执行 `npm install powerbi-cli -g` 命令安装 PowerBI-Cli 工具之前，需要先完成 npm 环境的安装。
 
 在安装 npm 环境之前，需确保 nodejs 和 git 均已安装。
 
@@ -138,7 +138,7 @@ PowerBI-Cli 命令的格式为 `powerbi [command] [options]`
     powerbi update-connection -c <collection> -k <accessKey> -w <workspace> -d <dataset ID> -u [username] -p [password] -s [connectionString]
 
 `update-connection` 命令用于对数据源连接进行更新。当上传的数据集需要凭据时(例如用 DirectQuery 方式连接的数据源)，可使用此命令传输用户名和密码。
-值得一提的是 -s 后所跟的连接字符串必须采用以下形式：
+值得一提的是 `-s` 后所跟的连接字符串必须采用以下形式：
 
     Data Source=tcp:MyServer.database.chinacloudapi.cn,1433;Initial Catalog=MyDatabase
 
@@ -164,7 +164,7 @@ PowerBI-Cli 命令的格式为 `powerbi [command] [options]`
 
     powerbi delete-dataset -c <collection> -w <workspace> -d <dataset> -k <accessKey>
 
-`delete-dataset` 命令用于删除当前工作区中的数据集。由于 Power BI 报表是基于数据集的，所以当执行 delete-dataset 命令时，基于该数据集的所有报表，包括通过 clone-report 和 rebind-report 所生成的报表，都将被删除。
+`delete-dataset` 命令用于删除当前工作区中的数据集。由于 Power BI 报表是基于数据集的，所以当执行 `delete-dataset` 命令时，基于该数据集的所有报表，包括通过 `clone-report` 和 `rebind-report` 所生成的报表，都将被删除。
 
 ### create-embed-token 命令
 
@@ -204,11 +204,11 @@ scope介绍参见:[Power BI permissions](https://powerbi.microsoft.com/en-us/doc
 
 rebind-report 命令用于将某个 Power BI 报表绑定在另一个数据集上，但要求两个数据集具有相同的 schema。
 
-在以下例子中，AzureSQL_top20.pbix 和 AzureSQL_bottom20.pbix 的内容分别是同一张表格的最前 20 行的数据和最后 20 行的数据，通过 rebind-report 命令，AzureSQL_top20.pbix 的 report ID 被绑在 AzureSQL_bottom20.pbix 的 dataset ID 上，相当于用 clone-report 命令将后者的 report ID 进行拷贝。
+在以下例子中，AzureSQL_top20.pbix 和 AzureSQL_bottom20.pbix 的内容分别是同一张表格的最前 20 行的数据和最后 20 行的数据，通过 `rebind-report` 命令，AzureSQL_top20.pbix 的 `report ID` 被绑在 AzureSQL_bottom20.pbix 的 `dataset ID` 上，相当于用 `clone-report` 命令将后者的 `report ID` 进行拷贝。
 
 ![cli-21](./media/aog-power-bi-embedded-cli-guidance/cli-21.png)
 
-之后再将 AzureSQL_top20.pbix 的 dataset ID 删除，report ID 并没有受到影响。
+之后再将 AzureSQL_top20.pbix 的 `dataset ID` 删除，`report ID` 并没有受到影响。
 
 ![cli-22](./media/aog-power-bi-embedded-cli-guidance/cli-22.png)
 

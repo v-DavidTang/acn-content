@@ -17,7 +17,7 @@
 
 # 无法使用 Azure AD 连接到 Service Fabric 安全群集
 
-安全的群集是防止未经授权访问管理操作的群集，这些操作包括部署、升级和删除应用程序、服务及其包含的数据。
+安全的群集是防止未经授权的访问和执行管理操作的群集，这些操作包括部署、升级和删除应用程序、服务及其包含的数据。
 
 我们可以使用 Azure Resource Manager 在 Azure 中设置安全的 Azure Service Fabric 群集，在众多安全集群实现机制中，AAD (Azure Active Directory) 通过让组织(称为租户)管理和控制用户对应用程序的访问从而实现安全的身份验证。
 
@@ -25,7 +25,7 @@
 
 ## **问题描述**
 
-当我们根据参考文档 成功创建完使用 AAD 的安全集群后， 通过PowerShell或者 service fabric explore 去连接集群时会遇到以下问题：
+当我们根据参考[文档](/documentation/articles/service-fabric-cluster-creation-via-arm/)成功创建完使用 AAD 的安全集群后， 通过 PowerShell 或者 service fabric explore 去连接集群时会遇到以下问题：
 
 1. PowerShell连接失败，提示指定的凭证无效。
 
@@ -37,13 +37,13 @@
             + CategoryInfo          : InvalidOperation: (:) [Connect-ServiceFabricCluster], FabricException
             + FullyQualifiedErrorId :
 
-2. 通过管理门户使用 Service Fabric Explore 访问时提示 AADSTS90002 错误，并且注意到跳转的 url 指向了 login.microsoftonline.com。
+2. 通过管理门户使用 Service Fabric Explore 访问时提示 `AADSTS90002` 错误，并且注意到跳转的 url 指向了 login.microsoftonline.com。
 
     ![sign-in](./media/aog-active-directory-qa-cannot-connect-service-fabric-cluster/sign-in.jpg)
 
 ## **问题分析**
 
-正如前面提到的，由于 AAD 认证将中国的用户重定向到 global 的服务，而不是中国的服务（https://login.partner.microsoftonline.cn/），所以出现以上问题。
+正如前面提到的，由于 AAD 认证将中国的用户重定向到 global 的服务，而不是中国的服务（https://login.partner.microsoftonline.cn/）， 所以出现以上问题。
 
 ## **解决方法**
 

@@ -83,7 +83,7 @@ Power BI Embedded 工作流的主要步骤如下:
             }
     }
 
-此命令在现有的工作区集合中创建新的工作区并返回所创建的工作区信息，等效于 PowerBI-Cli 工具中的 powerbi create-workspace 命令，其返回的 json 内容中的 workspace ID 将用于后续的 API 调用。
+此命令在现有的工作区集合中创建新的工作区并返回所创建的工作区信息，等效于 PowerBI-Cli 工具中的 `powerbi create-workspace` 命令，其返回的 json 内容中的 `workspace ID` 将用于后续的 API 调用。
 
 将 .pbix 文件导入工作区(POST Import)
 
@@ -101,7 +101,7 @@ Power BI Embedded 工作流的主要步骤如下:
         "id": "{importID}"
     }
 
-此命令将 .pbix 文件导入工作区并返回一个导入 ID，等效于 PowerBI-Cli 工具中的 powerbi import 命令。执行此命令后的 HTTP 返回状态为 ”202 Accepted”，表示请求得到接受但未说明是否被执行，可根据返回的导入 ID 用 Get Import 命令获知导入状态。而当用 PowerBI-Cli 工具进行文件导入时，导入状态将直接在 powerbi import 命令执行时返回。
+此命令将 .pbix 文件导入工作区并返回一个导入 ID，等效于 PowerBI-Cli 工具中的 `powerbi import` 命令。执行此命令后的 HTTP 返回状态为 `202 Accepted`，表示请求得到接受但未说明是否被执行，可根据返回的导入 ID 用 `Get Import` 命令获知导入状态。而当用 PowerBI-Cli 工具进行文件导入时，导入状态将直接在 `powerbi import` 命令执行时返回。
 
 ## 获取导入状态(GET Import)
 
@@ -133,9 +133,9 @@ Power BI Embedded 工作流的主要步骤如下:
         "name":{datasetDisplayName}
     }
 
-此命令用于根据 importID 查询导入情况，导入成功的话将返回以上的 json 内容，否则 importState 将为不同的状态(如”Publishing”或”Failed”)。
+此命令用于根据 importID 查询导入情况，导入成功的话将返回以上的 json 内容，否则 `importState` 将为不同的状态(如 `Publishing` 或 `Failed`)。
 
-导入的 .pbix 文件中不包含数据源的凭据。当导入的 .pbix 文件是由 DirectQuery 方式创建时(即文件中没有数据集，只有针对数据源的查询部分)，其数据源是通过数据源 ID 和网关 ID 来进行唯一标识的，因此需要先用 GET BoundGatewayDatasources 命令获取 .pbix 文件中的数据源 ID 及网关 ID，然后再用 PATCH GatewayDatasource 命令对数据源凭据进行更新。连续执行这两个命令等效于 PowerBI-Cli 工具中的 powerbi update-connection 命令。
+导入的 .pbix 文件中不包含数据源的凭据。当导入的 .pbix 文件是由 DirectQuery 方式创建时(即文件中没有数据集，只有针对数据源的查询部分)，其数据源是通过数据源 ID 和网关 ID 来进行唯一标识的，因此需要先用 `GET BoundGatewayDatasources` 命令获取 .pbix 文件中的数据源 ID 及网关 ID，然后再用 `PATCH GatewayDatasource` 命令对数据源凭据进行更新。连续执行这两个命令等效于 PowerBI-Cli 工具中的 `powerbi update-connection` 命令。
 
 ## 获取网关及数据源信息(Get BoundGatewayDatasources)
 
@@ -158,7 +158,7 @@ Power BI Embedded 工作流的主要步骤如下:
         ]
     }
 
-此命令用于根据 datasetID 进行查询，获取其数据源的信息，其中包含数据源 ID 和网关 ID。当得到了这二者的值之后，可通过 PATCH GatewayDatasource 对数据源凭据进行更新。
+此命令用于根据 `datasetID` 进行查询，获取其数据源的信息，其中包含数据源 ID 和网关 ID。当得到了这二者的值之后，可通过 `PATCH GatewayDatasource` 对数据源凭据进行更新。
 
 ## 更新数据源凭据(PATCH GatewayDatasource)
 
@@ -179,9 +179,9 @@ Power BI Embedded 工作流的主要步骤如下:
     }
     返回内容:  200 OK
 
-此命令用于更新数据源的凭据信息，当返回状态为 200 OK 时，表示凭据更新成功，上传的用 DirectQuery 方式创建的 .pbix 文件可在 demo 页面上显示。
+此命令用于更新数据源的凭据信息，当返回状态为 `200 OK` 时，表示凭据更新成功，上传的用 DirectQuery 方式创建的 .pbix 文件可在 demo 页面上显示。
 
-[AZURE.NOTE]如果用的是 Import 模式而非 DirectQuery 模式创建的 .pbix 文件，执行 GET BoundGatewayDatasource 命令也会返回 gatewayID 和 datasourceID，但执行 PATCH GatewayDatasource 命令会返回 400 Bad Request 的状态，如下所示:
+[AZURE.NOTE]如果用的是 Import 模式而非 DirectQuery 模式创建的 .pbix 文件，执行 `GET BoundGatewayDatasource` 命令也会返回 `gatewayID` 和 `datasourceID`，但执行 `PATCH GatewayDatasource` 命令会返回 `400 Bad Request` 的状态，如下所示:
 
 ![400-bad-request](./media/aog-power-bi-embedded-rest-api-introduction/400-bad-request.png)
 
@@ -205,11 +205,11 @@ Power BI Embedded 工作流的主要步骤如下:
         ]
     }
 
-此命令用于获取导入的 reportID 和 embedURI，等效于 PowerBI-Cli 工具中的 powerbi get-reports 命令。
+此命令用于获取导入的 `reportID` 和 `embedURI`，等效于 PowerBI-Cli 工具中的 `powerbi get-reports` 命令。
 
 ## 创建令牌
 
-创建令牌等效于 PowerBI-Cli 工具中的 powerbi create-embed-token 命令，由于其机制相对复杂，且不在 [REST Operations](https://msdn.microsoft.com/library/azure/mt711507.aspx) 中，故本文不予详述，具体内容可参考以下几个链接:
+创建令牌等效于 PowerBI-Cli 工具中的 `powerbi create-embed-token` 命令，由于其机制相对复杂，且不在 [REST Operations](https://msdn.microsoft.com/library/azure/mt711507.aspx) 中，故本文不予详述，具体内容可参考以下几个链接:
 
 - 令牌的创建: [如何将 Power BI Embedded 与 REST 配合使用](/documentation/articles/power-bi-embedded-iframe/)
 
