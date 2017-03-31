@@ -1,3 +1,20 @@
+<properties
+    pageTitle="密钥保管库 Java 代码示例"
+    description="密钥保管库 Java 代码示例"
+    service=""
+    resource=""
+    authors="Allan Li"
+    displayOrder=""
+    selfHelpType=""
+    supportTopicIds=""
+    productPesIds=""
+    resourceTags="Keyvault, PowerShell, Java, Rest API"
+    cloudEnvironments="MoonCake" />
+<tags
+    ms.service="sample-code-aog"
+    ms.date=""
+    wacn.date="03/31/2017" />
+
 # 密钥保管库 Java 代码示例
 
 Azure 密钥保管库使得用户能够保护和控制云应用程序和服务使用的加密密钥和其他机密，开发者也可以很方便安全的利用 .NET 和 Node.js SDK 来从密钥保管库里获取到机密信息。那么对于 Java，在 SDK 还没有发布的情况下，该如何使用密钥保管库呢？这片文章就提供一个简单示例。包括以下内容：
@@ -51,7 +68,7 @@ Azure 密钥保管库使得用户能够保护和控制云应用程序和服务�
 
 ## 获取密钥保管库令牌
 
-利用 ADAL4J Java，基于上一步获取到的 `ClientId` 和 `ClientKey`，获取拥有 get 权限的访问令牌
+利用 ADAL4J Java，基于上一步获取到的 `ClientId` 和 `ClientKey`，获取拥有 get 权限的访问令牌。
 
     <!-- https://mvnrepository.com/artifact/com.microsoft.azure/adal4j -->
     <dependency>
