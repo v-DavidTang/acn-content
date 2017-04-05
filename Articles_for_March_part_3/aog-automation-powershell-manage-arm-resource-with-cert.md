@@ -31,13 +31,15 @@
 - 有效的 Azure 订阅
 - 已经安装了 [Azure PowerShell 3.1.0](https://github.com/Azure/azure-powershell/releases/tag/v3.1.0-November2016) 模块的 Windows 电脑
 
-## 查看并更新 Azure 自动化账户的 PowerShell 模块版本
+## 操作步骤
+
+### 查看并更新 Azure 自动化账户的 PowerShell 模块版本
 
 由于 Azure 自动化账户默认使用的 PowerShell 版本过旧，需要更新相应的模块版本。请参阅[如何更新 Azure 自动化服务的 PowerShell 模块](/documentation/articles/aog-automation-powershell-module-update/)，更新 Azure 自动化账户资产里的 `AzureRm.Profile`、`AzureRM.Storage`、`AzureRM.Compute` 模块至 2.2.0 或以上，Azure 模块至 3.1.0 或以上，否则 PowerShell 脚本会报错。
 
 本地电脑上的 AzureRM 子模块默认存放在 `C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ResourceManager\AzureResourceManager`， Azure 模块默认存放在 `C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ServiceManagement`。如果压缩 zip 文件大小超过了 40MB，导致上传至自动化账户时报错，请使用 7zip 压缩工具，在压缩时选择极限压缩，保证压缩文件不要超过 40MB。
 
-## 准备验证使用的证书
+### 准备验证使用的证书
 
 用户可以使用以下 PowerShell 命令在本地电脑中生成自签名证书，请自行更改证书 CN 名 `$CertCNName` 变量和 `$CentPlainPassword` 密码变量，此段命令会在本地电脑中生成一张 CN 名为 AzureRmAutologin 的自签名证书，并将 .pfx 格式的证书文件以 `$CentPlainPassword` 密码变量打包，输出至当前用户的桌面上。
 
@@ -52,7 +54,7 @@
     Export-PfxCertificate -Cert ("Cert:\localmachine\my\" + $Cert.Thumbprint) -FilePath $CertPath -Password $CertPassword -Force | Write-Verbose
     $KeyValue = [System.Convert]::ToBase64String($Cert.GetRawCertData())
 
-## 通过 PowerShell 登录 Azure 经典模式和 Resource Manager 模式
+### 通过 PowerShell 登录 Azure 经典模式和 Resource Manager 模式
 
 使用以下 PowerShell 命令登录 Azure，从 `Get-AzureRmSubscription` 命令的输出中确认需要配置的订阅号，并使用订阅号替换标黄的部分。关于经典模式和 Resource Manager 模式的介绍，请参考[了解部署模型和资源状态](/documentation/articles/resource-manager-deployment-model/)。
 
@@ -84,7 +86,7 @@
     #为应用的服务主体配置订阅的管理员权限
     New-AzureRmRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $Application.ApplicationId
 
-配置 Azure 自动化所使用的连接资产和证书资产：
+### 配置 Azure 自动化所使用的连接资产和证书资产：
 
     #请输入自动化账号名
     $AutomationAccountName = "Automation Account Name"
