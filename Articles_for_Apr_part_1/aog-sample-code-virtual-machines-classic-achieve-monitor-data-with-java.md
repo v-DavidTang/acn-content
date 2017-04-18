@@ -76,12 +76,8 @@ https://management.core.chinacloudapi.cn/{subscription}/services/monitoring/metr
 
 | 参数名称 | 参数值 |
 |:------------:|:----------:|
-| resourceId | 资源 ID，示例：
-/hostedservices/{hostedservice}/deployments/{deployment}/roles/{role}
- |
-| names | 监视规则，可以多个规则，以逗号分隔，示例：
-Network In,Network Out,Disk Read Bytes/sec,Disk Write Bytes/sec
- |
+| resourceId | 资源 ID，示例：/hostedservices/{hostedservice}/deployments/{deployment}/roles/{role} |
+| names | 监视规则，可以多个规则，以逗号分隔，示例：Network In,Network Out,Disk Read Bytes/sec,Disk Write Bytes/sec |
 | timeGrain | 值为 PT1H, PT5M |
 | startTime | 起始时间，示例：2017-04-02T00:00:00.0000000Z |
 | endTime | 结束时间，示例：2017-04-03T00:00:00.0000000Z |
