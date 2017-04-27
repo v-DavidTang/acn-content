@@ -54,7 +54,6 @@ https://management.core.chinacloudapi.cn/{subscription}/services/monitoring/metr
     params.put("x-ms-version", "2013-10-01");
     params.put("Content-Type", "application/xml");
     String result = AzureRestClient.processGetRequest(url, params);
-
 ### 示例代码
 
 [https://github.com/wacn/AOG-CodeSample/blob/master/AzureServiceManager/Java/azure-service-manager/src/test/java/com/vianet/azure/sdk/manage/monitor/TestVMMetric.java#L73](https://github.com/wacn/AOG-CodeSample/blob/master/AzureServiceManager/Java/azure-service-manager/src/test/java/com/vianet/azure/sdk/manage/monitor/TestVMMetric.java#L73)
@@ -75,7 +74,7 @@ https://management.core.chinacloudapi.cn/{subscription}/services/monitoring/metr
 ### 请求参数
 
 | 参数名称 | 参数值 |
-|:------------:|:----------:|
+|:------------:|----------|
 | resourceId | 资源 ID，示例：/hostedservices/{hostedservice}/deployments/{deployment}/roles/{role} |
 | names | 监视规则，可以多个规则，以逗号分隔，示例：Network In,Network Out,Disk Read Bytes/sec,Disk Write Bytes/sec |
 | timeGrain | 值为 PT1H, PT5M |
