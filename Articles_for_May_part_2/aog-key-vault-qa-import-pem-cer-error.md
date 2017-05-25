@@ -55,30 +55,30 @@
     - 导入的证书最少是一个，最多整个字符串长度不可超过 25K。
     - 关于密钥管理库可以接受的 PEM 格式文件的说明，可以参考[链接](http://how2ssl.com/articles/working_with_pem_files/)。<br>
 
-        Pem with unencrypted pkcs#8 Key
+            Pem with unencrypted pkcs#8 Key
 
-        -----BEGIN PRIVATE KEY-----
-        …………………
-        -----END PRIVATE KEY-----
+            -----BEGIN PRIVATE KEY-----
+            …………………
+            -----END PRIVATE KEY-----
 
-        -----BEGIN CERTIFICATE-----
-        ……….
-        -----END CERTIFICATE-----
+            -----BEGIN CERTIFICATE-----
+            ……….
+            -----END CERTIFICATE-----
 
-        -----BEGIN CERTIFICATE-----
-        ……….
-        -----END CERTIFICATE-----
+            -----BEGIN CERTIFICATE-----
+            ……….
+            -----END CERTIFICATE-----
 
 
-        Pem with encrypted pkcs#8 Key
+            Pem with encrypted pkcs#8 Key
 
-        -----BEGIN ENCRYPTED PRIVATE KEY-----
-        …………………
-        -----END ENCRYPTED PRIVATE KEY-----
+            -----BEGIN ENCRYPTED PRIVATE KEY-----
+            …………………
+            -----END ENCRYPTED PRIVATE KEY-----
 
-        -----BEGIN CERTIFICATE-----
-        ……….
-        -----END CERTIFICATE-----
+            -----BEGIN CERTIFICATE-----
+            ……….
+            -----END CERTIFICATE-----
 
     .net 中的参数定义如下：
 
