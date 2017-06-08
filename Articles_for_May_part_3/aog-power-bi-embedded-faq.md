@@ -1,3 +1,20 @@
+<properties
+    pageTitle="有关 Power BI Embedded 会话计费的常见问题及回答"
+    description="有关 Power BI Embedded 会话计费的常见问题及回答"
+    service=""
+    resource="powerbiembedded"
+    authors="Allan Li"
+    displayOrder=""
+    selfHelpType=""
+    supportTopicIds=""
+    productPesIds=""
+    resourceTags="PowerBI Embedded, Token, PowerBI-Cli"
+    cloudEnvironments="MoonCake" />
+<tags
+    ms.service="power-bi-embedded-aog"
+    ms.date=""
+    wacn.date="05/31/2017" />
+
 # 有关 Power BI Embedded 会话计费的常见问题及回答
 
 根据官网中的 [Power BI Embedded](/pricing/details/power-bi-embedded/) 相关文档介绍，Power BI Embedded 的计费依据是每个月产生的会话数目。每个月前 100 个会话免费，而超出的部分则按照每 100 个会话 32.86 元/月的标准进行计费。而对会话的定义，官网给出的解释如下所示：
@@ -20,11 +37,11 @@
 答：多个用户同时用一个 token 访问题内嵌报表，与一个用户用 token 访问题内嵌报表所产生的会话数相同，一个小时内都只用一个会话。
 
 
-问题 4 ：根据文档[如何将 Power BI Embedded 与 REST 配合使用](/documentation/articles/power-bi-embedded-iframe/) 用客户端程序生成了 token 时，有以下两个参数可以随意设置 token 有效时长：
+问题 4 ：根据文档[如何将 Power BI Embedded 与 REST 配合使用](/documentation/articles/power-bi-embedded-iframe/)用客户端程序生成了 token 时，有以下两个参数可以随意设置 token 有效时长：
 
     "\"nbf\":" . date("U") . "," .
     "\"exp\":" . date("U" , strtotime("+1 hour"))
 
-问题 5 ：以上修改 token 有效时长和用 powerbi-cli 创建 token 时有效时间固定为 1 小时说法是否有冲突？
+问题 5 ：以上修改 token 有效时长和用 PowerBI-Cli 创建 token 时有效时间固定为 1 小时的说法是否有冲突？
 
 答：会话寿命与 token 寿命并不相关。当某个会话产生的一个小时内不生成新的会话，那么旧会话将在生成的一个小时后过期；但 token 寿命可根据需要自己来确定。换句话说，如果一个 token 的寿命超过一个小时，那么若在首次使用该 token 后超过一个小时候后再次被使用时，因为旧的会话已经过期，它将启动一个新的会话。
