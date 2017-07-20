@@ -43,3 +43,5 @@ Java 是可以自己指定证书库的所在位置的，无论是在本地或者
 5.	如果担心证书库不全，也可以直接从 Azure 上直接下载证书库，然后将此文件导入 :
 
     ![kudu-3](./media/aog-web-apps-howto-load-cer-with-java/kudu-3.png)
+
+关于 .net 下如何加载证书方式请参考[文档](https://azure.microsoft.com/en-us/blog/using-certificates-in-azure-websites-applications/)。
