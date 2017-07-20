@@ -31,32 +31,32 @@ wacn.date: 07/19/2017
     <th>混合连接</th>
 </tr>
     <td>建立本地和云的安全连接</td>
-    <td align="center"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
-    <td align="center"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
+    <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
+    <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
 <tr>
     <td>无需修改防火墙添加入站端口</td>
-    <td align="center"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
-    <td align="center"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
+    <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
+    <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
 </tr>
 <tr>
     <td>无需对网络配置做重大修改</td>
-    <td align="center"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
-    <td align="center"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
+    <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
+    <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
 </tr>
 <tr>
     <td>基于开放标准协议</td>
-    <td align="left"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/unsupport.png" />（只支持WCF）</td>
-    <td align="center"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
+    <td align="left"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/unsupport.png" />（只支持WCF）</td>
+    <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
 </tr>
 <tr>
     <td>跨平台支持</td>
-    <td align="left"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/unsupport.png" />（只支持Windows）</td>
-    <td align="center"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
+    <td align="left"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/unsupport.png" />（只支持Windows）</td>
+    <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
 </tr>
 <tr>
     <td>多语言支持</td>
-    <td align="left"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/unsupport.png" />（只支持.NET）</td>
-    <td align="center"><img src="./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
+    <td align="left"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/unsupport.png" />（只支持.NET）</td>
+    <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
 </tr>
 </table>
 
@@ -132,7 +132,7 @@ await relayConnection.CloseAsync(CancellationToken.None);
 
 前面提到需要用到不同权限的连接字符串，总共有三种权限 : 管理，发送和监听，可以根据需要创建不同权限搭配的安全访问策略，然后在它的具体界面里会自动生成相应的连接字符串，直接复制使用即可，如下图。
 
-![listen](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/listen.png)
+![listen](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/listen.png)
 
 如果本地服务不能或者不希望被修改成调用 SDK，比如云端 Web 应用调用本地的 Web Api 或者 SQL 数据库，那该如何使用混合连接呢？ Azure Web 应用已经整合了混合连接，可以很方便的配置，而不需要对本地服务做任何修改。
 
@@ -146,21 +146,21 @@ await relayConnection.CloseAsync(CancellationToken.None);
 
 登陆 Azure 门户网站，找到你的 Web 应用，在设置下面点击网络，在展开的页面中点击 “**配置你的混合连接端节点**”，打开页面如下：
 
-![download](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/download.png)
+![download](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/download.png)
 
 点击“**下载连接管理工具**”下载，后面会用到。
 
 点击“**添加混合连接**”，在打开的页面里面点击添加，如下图。填入相应信息，其中名称可以自定义，而端节点主机必须是运行你本地服务的机器名称，端节点端口也是本地服务所在端口。命名空间选择前面已经创建好的，也可以这里创建新的。
 
-![create](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/create.png)
+![create](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/create.png)
 
 创建完成后，把前面下载的连接管理工具安装在运行本地服务的机器上。然后打开混合连接管理工具，点击 “**Configure another Hybrid Connection**”，这个时候会弹出登陆框，输入你的 Azure 订阅账户登陆后，会显示当前订阅中已有的混合连接，如下图。
 
-![configure](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/configure.png)
+![configure](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/configure.png)
 
 选择配置了正确端节点的混合连接，然后点击 “**Save**” 保存。这个混合连接就会将本地与云端 Web 应用建立起连接，状态显示为 “**Connected**”。
 
-![connection-manager](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/connection-manager.png)
+![connection-manager](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/connection-manager.png)
 
 这样，在 Web 应用里面就可以通过“**端节点名称：端口**”的方式来访问本地的服务了。比如我这里演示的，我在本地运行了一个 Web API 服务（api/values）在 16782 端口，返回字符串 “**value from on-premises <本地机器名称>**”，然后通过混合连接，云端 Web 应用就可以很简单的访问本地服务了，代码如下：
 
@@ -180,7 +180,7 @@ using (var httpClient = new HttpClient())
 
 结果如下：
 
-![result](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/result.png)
+![result](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/result.png)
 
 对于其他本地服务，比如 SQL 服务，也可以用同样的方式连接。
 
@@ -190,11 +190,11 @@ using (var httpClient = new HttpClient())
 
 可以通过混合连接来实现端口转发，从而建立连接通道。微软官方示例 [PortBridge](https://github.com/Azure/azure-relay/tree/master/samples/Hybrid%20Connections/DotNet/portbridge) 正是演示了这种功能。接下来，我们用它来演示在云端虚拟机中的 Web 应用调用本地 Web API。
 
-![smaple](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/smaple.png)
+![smaple](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/smaple.png)
 
 创建以本地服务所运行的机器为名称的混合连接（演示名称 mc-allenl-01），如何创建请参照文章最开始的 PowerShell 命令。并分别创建发送和监听权限的共享访问策略。
 
-![sample-2](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/sample-2.png)
+![sample-2](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/sample-2.png)
 
 将 PortBridge 下载并编译，修改 PortBridgeServerAgent.exe.config 文件中 portBridge 相关配置，其中 targetHost 配置成本地服务所运行的机器名称，端口则为本地服务所在端口，本示例配置如下。然后将整个文件夹复制到本地服务所运行的机器上，并双击 PortBridgeServerAgent.exe 运行。
 
@@ -222,4 +222,4 @@ using (var httpClient = new HttpClient())
 
 在 Azure 虚拟机中访问 http://localhost:81/api/values，没有运行 PortBridge 之前是会失败的，但开启 PortBridge ，也就是通过混合连接建立通道之后，就会访问成功，如下所示：
 
-![sample-3](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/sample-3.png)
+![sample-3](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/sample-3.png)

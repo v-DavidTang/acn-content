@@ -32,7 +32,7 @@ Azure 中继服务支持传统的单向消息传送、请求/响应消息传送�
 
 WCF 中继允许你向公有云公开位于企业网络内的 WCF 服务，而无需打开防火墙连接，也无需对企业网络基础结构进行彻底的更改。而且它还允许你安全的控制谁可以访问这些服务。另外对你原来的 WCF 项目所需要做的改动也是很小的。
 
-![wcf-relay](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-wcf-relay/wcf-relay.png)
+![wcf-relay](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-wcf-relay/wcf-relay.png)
 
 ## 基于 TCP 的 SOAP 访问
 
@@ -281,15 +281,15 @@ using (var httpClient = new HttpClient())
 
 1. 确保 Application Initialization 功能已经安装。（角色 => Web Server (IIS) => Web Server => Application Development）
 
-    ![application-initialization](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-wcf-relay/application-initialization.png)
+    ![application-initialization](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-wcf-relay/application-initialization.png)
 
 2. 设置 Web 应用对应的 ApplicationPool 启动模式为 AlwaysRunning :
 
-    ![start-mode](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-wcf-relay/start-mode.png)
+    ![start-mode](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-wcf-relay/start-mode.png)
 
 3. 设置 Web 应用 Preload Enabled 为 True :
 
-    ![preload-enabled](./meida/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-wcf-relay/preload-enabled.png)
+    ![preload-enabled](./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-wcf-relay/preload-enabled.png)
 
 4. 添加如下初始页配置到 Web 应用的 web.config 中，一般初始页设置为访问 WCF SVC 页面即可。
 
