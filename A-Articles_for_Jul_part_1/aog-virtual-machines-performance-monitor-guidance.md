@@ -77,7 +77,7 @@ wacn.date: 07/20/2017
             <td rowspan="2">这两个计数器都是关于 Committed Bytes。在 Windows 系统的内存管理中，内存使用遵循 Reserve 和 Commit 的方式。Committed Byes 可以认为是系统确认使用的内存。而系统可以使用的内存是有限的，其上限为内存 + Paging File。当 % Committed Bytes in Use 接近 90%，我们可以认为当前虚拟内存的使用已经接近极限，需要特别留意。</td>
         </tr>
         <tr>
-            <td>Disk Read Operations/Sec</td>
+            <td>\Memory\% Committed Bytes</td>
         </tr>
         <tr>
             <td>\Memory\Available Bytes</td>
@@ -106,7 +106,10 @@ wacn.date: 07/20/2017
         </tr>
         <tr>
             <td>\Process(_Total)\Working Set</td>
-            <td rowspan="3">这几个计数器是被用作是否存在内存不足情况的最主要计数器。其中 Paging Faults/Sec 指的是系统中产生的内存页交换请求。注意这个请求包含 Hard Fault 和 Soft Fault。Soft Fault 指的是该请求可以不通过从磁盘上读写文件就可以满足，而 hard fault 指的是必须经过物理磁盘读写才可以解决。很显然，hard fault 更影响系统的性能。因此，我们用 Page/Sec 来标注所有的 Hard Fault。当 Hard Fault 引起的磁盘 IO 超过系统 IO 总量的 70% 时，并参照可用内存的数量，我们可以判断是否存在内存不足的问题。</td>
+            <td rowspan="2">Working Set是Windows平台一个常用术语，指的是某个进程在物理内存中使用的内存总量。单个进程的Working Set包含可共享部分（例如DLL文件的代码段）和私有部分（数据段）。其中可以跟踪私有部分的Working Set数值来判断是否内存使用量过高或是否存在内存泄露的问题。</td>
+        </tr>
+        <tr>
+            <td>\Process(_Total)\Working Set Private</td>
         </tr>
     </table>
 
@@ -303,7 +306,7 @@ wacn.date: 07/20/2017
         </tr>
         <tr>
             <td>CPU DPC time</td>
-            <td>在 Linux 中很少提到 DPC Time, DPC 是在 Windows 平台中常用的一个术语，是中断处理程序将一些可以不在中断处理进程中的任务，以 DPC 的方式执行。在 Linux 中，按我的理解，这个数据应该是 SoftIRQ 的时间。应该是在 Interrupt 的一部分。</td>
+            <td>在 Linux 中很少提到 DPC Time, DPC 是在 Windows 平台中常用的一个术语，是中断处理程序将一些可以不在中断处理进程中的任务，以 DPC 的方式执行。在 Linux 中，这个数据应该是 SoftIRQ 的时间。应该是在 Interrupt 的一部分。</td>
         </tr>
         <tr>
             <td>CPU IO wait Time</td>

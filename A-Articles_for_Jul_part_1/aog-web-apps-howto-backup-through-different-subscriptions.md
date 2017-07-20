@@ -55,23 +55,25 @@ Error occurred while downloading meta data from the storage account.”
 
     我们到网站所关联的存储中查看我们的备份文件，发现每一次备份都会产生 3 个文件：log 文件、xml 文件、zip 文件。
 
+    ![portal-3](./media/aog-web-apps-howto-backup-through-different-subscriptions/portal-3.png)
+    
     将这 3 个文件下载到本地。
 
 3. 打开中国区 Azure，将下载好的 3 个文件以 blob 的形式上传到已创建好的存储中。
 
-    ![portal-3](./media/aog-web-apps-howto-backup-through-different-subscriptions/portal-3.png)
+    ![portal-4](./media/aog-web-apps-howto-backup-through-different-subscriptions/portal-4.png)
 
 4. 在中国区 Azure 中打开已创建好的标准模式的网站，点击【备份】进行还原操作。
 
     选择刚才上传到存储中的 zip 文件。
 
-    ![portal-4](./media/aog-web-apps-howto-backup-through-different-subscriptions/portal-4.png)
+    ![portal-5](./media/aog-web-apps-howto-backup-through-different-subscriptions/portal-5.png)
 
 5. 还原成功以后即可进行访问。
 
     > [!NOTE]
     > 如果只有一个 zip 文件，在还原时就会遇到还原失败的错误，如下图：
 
-    ![portal-5](./media/aog-web-apps-howto-backup-through-different-subscriptions/portal-5.png)
+    ![error](./media/aog-web-apps-howto-backup-through-different-subscriptions/error.png)
 
 此场景同样适用于不同订阅或者不同账号之间网站的备份还原操作。
