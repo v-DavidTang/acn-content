@@ -36,7 +36,7 @@ Azure Web 应用日志信息在本地测试显示正常，但部署到 Azure 后
 
     ![portal](./media/aog-web-apps-qa-log-messy-code/portal.png)
 
-- Console相关：在代码中都是可以配置编码规则的：
+- Console 相关：在代码中都是可以配置编码规则的：
 
     ![console](./media/aog-web-apps-qa-log-messy-code/console.png)
 

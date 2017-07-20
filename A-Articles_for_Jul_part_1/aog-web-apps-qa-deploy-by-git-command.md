@@ -49,8 +49,8 @@ git submodule add https://testftpname:MyPassword@ testwebapp2.scm.chinacloudsite
 `git submodule add` 命令代表增加一个子模块 ，`https` 代表的是子模块的仓库地址，`libs` 代表将子模块放置在当前工程下的路径，`libs` 名称可以自定义。
 
 ```
-git submodule update –remote //更新带有submodule的项目
-git add -A  //-A代表提交所有变化的文件
+git submodule update –remote //更新带有 submodule 的项目
+git add -A  //-A 代表提交所有变化的文件
 git commit -m "add submodule and change some files" 
 ```
 

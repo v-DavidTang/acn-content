@@ -42,7 +42,7 @@ Error occurred while downloading meta data from the storage account.”
 1. 通过备份操作将部署在美国东部的网站备份到一个同订阅下的存储中。
 
     > [!TIP]
-    > 此操作与中国区 Azure的操作步骤一致。
+    > 此操作与中国区 Azure 的操作步骤一致。
 
     ![portal](./media/aog-web-apps-howto-backup-through-different-subscriptions/portal.png)
 
@@ -53,7 +53,7 @@ Error occurred while downloading meta data from the storage account.”
 
     ![portal-2](./media/aog-web-apps-howto-backup-through-different-subscriptions/portal-2.png)
 
-    我们到网站所关联的存储中查看我们的备份文件，发现每一次备份都会产生 3个文件：log 文件、xml 文件、zip 文件。
+    我们到网站所关联的存储中查看我们的备份文件，发现每一次备份都会产生 3 个文件：log 文件、xml 文件、zip 文件。
 
     将这 3 个文件下载到本地。
 

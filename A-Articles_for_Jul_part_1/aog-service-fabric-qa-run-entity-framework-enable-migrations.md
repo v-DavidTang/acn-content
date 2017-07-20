@@ -1,6 +1,6 @@
 ---
-title: 如何在 Servcie Fabric 项目中运行 Entity Framework 的Enable-Migrations 命令
-description: 如何在 Servcie Fabric 项目中运行 Entity Framework 的Enable-Migrations 命令
+title: 如何在 Servcie Fabric 项目中运行 Entity Framework 的 Enable-Migrations 命令
+description: 如何在 Servcie Fabric 项目中运行 Entity Framework 的 Enable-Migrations 命令
 services: Service Fabric
 documentationCenter: ''
 author: mileychen
@@ -16,7 +16,7 @@ ms.date: 07/18/2017
 wacn.date: 07/18/2017
 ---
 
-# 如何在 Servcie Fabric 项目中运行 Entity Framework 的Enable-Migrations 命令
+# 如何在 Servcie Fabric 项目中运行 Entity Framework 的 Enable-Migrations 命令
 
 当我们在创建 Service Fabric 项目后，想要利用 Entity Framework 的 CodeFrist 将数据插入数据库时可能会遇到以下问题。
 

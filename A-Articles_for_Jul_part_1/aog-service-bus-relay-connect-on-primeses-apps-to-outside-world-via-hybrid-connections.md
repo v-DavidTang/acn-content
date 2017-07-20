@@ -45,12 +45,12 @@ wacn.date: 07/19/2017
 </tr>
 <tr>
     <td>基于开放标准协议</td>
-    <td align="left"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/unsupport.png" />（只支持WCF）</td>
+    <td align="left"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/unsupport.png" />（只支持 WCF）</td>
     <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
 </tr>
 <tr>
     <td>跨平台支持</td>
-    <td align="left"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/unsupport.png" />（只支持Windows）</td>
+    <td align="left"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/unsupport.png" />（只支持 Windows）</td>
     <td align="center"><img src="./media/aog-service-bus-relay-connect-on-primeses-apps-to-outside-world-via-hybrid-connections/support.png" /></td>
 </tr>
 <tr>
@@ -68,7 +68,7 @@ wacn.date: 07/19/2017
 
 ## 创建混合连接
 
-可以登陆 [Azure中国门户网站](https://portal.azure.cn/)，按照界面提示一步步创建。也可以通过 PowerShell 命令，如下。
+可以登陆 [Azure 中国门户网站](https://portal.azure.cn/)，按照界面提示一步步创建。也可以通过 PowerShell 命令，如下。
 
 ```PowerShell
 # login to Azure China with your account
@@ -92,7 +92,7 @@ New-AzureRmRelayHybridConnection -Namespace $namespaceName -ResourceGroupName $r
 
 ### 本地服务（监听者）
 
-首先本地服务端作为监听者，需要要使用具有监听权限的连接字符串，创建一个出站的 WebSocket 连接，也就是注册到 Azure 中继服务上。如果本地有多个监听者，那么进入的访问请求会随机地发送。一个混合连接最多支持25个监听者。
+首先本地服务端作为监听者，需要要使用具有监听权限的连接字符串，创建一个出站的 WebSocket 连接，也就是注册到 Azure 中继服务上。如果本地有多个监听者，那么进入的访问请求会随机地发送。一个混合连接最多支持 25 个监听者。
 
 ```
 private const string ConnectionString = "connection string with listen permission";

@@ -84,7 +84,7 @@ Invoke-AddCertToKeyVault -SubscriptionId $SubID -ResourceGroupName $ResouceGroup
 > [!NOTE]
 > 如果创建时，虚拟机规模集创建完成，但 Service Fabric 群集还是处于等待节点状态。很有可能是因为 Service Fabric 客户端无法与虚拟机规模集中的群集系统服务进行通信。造成这样情况的原因大部分是因为证书的使用者名称和设置 managementEndpoint 地址不匹配。
 
-## 示例代码
+## 相关链接
 
 - [示例模板代码](https://github.com/wacn/AOG-CodeSample/tree/master/ServiceFabric/Template)
-- [使用 Azure Resource Manager 创建 Service Fabric 群集](https://docs.azure.cn/zh-cn/service-fabric/service-fabric-cluster-creation-via-arm)
+- [使用 Azure Resource Manager 创建 Service Fabric 群集](service-fabric-cluster-creation-via-arm)

@@ -1,6 +1,6 @@
 ---
 title: 如何使用 Azure Media Service Explorer 添加水印
-description: 如何使用Azure Media Service Explorer添加水印(循环或淡入淡出效果)
+description: 如何使用 Azure Media Service Explorer 添加水印(循环或淡入淡出效果)
 services: Media Services
 documentationCenter: ''
 author: maysmiling

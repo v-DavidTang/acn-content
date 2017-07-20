@@ -49,13 +49,13 @@ SLB 各个组件的介绍以及创建 SLB 的步骤可以参考：
 
 以下为脚本中使用到的 SLB 相关 PowerShell 命令。
 
-- 获取SLB对象
+- 获取 SLB 对象
 
     `$slb = Get-AzureRmLoadBalancer -Name $slbName -ResourceGroupName $resGroupName; `
 
 - 查看 Frontend 配置
 
-    获取 SLB 第 i+1 个的 Frontend 配置，这里无法直接从 SLB 获取 Front IP 的地址，只能查看到 Front IP 的名字（$fe.PublicIpAddress.Id 的publicIPAddresses 项） 
+    获取 SLB 第 i+1 个的 Frontend 配置，这里无法直接从 SLB 获取 Front IP 的地址，只能查看到 Front IP 的名字（$fe.PublicIpAddress.Id 的 publicIPAddresses 项） 
 
     `$fe = $slb.FrontendIpConfigurations[i]; `
 
@@ -84,7 +84,7 @@ SLB 各个组件的介绍以及创建 SLB 的步骤可以参考：
     这里无法直接查看到具体的 Available Set 和 VM 名字，但能根据挂载在这个 SLB 后的 NIC 信息（`$be.BackendIpConfigurations.id` 的 networkInterfaces 内容 `$nicArray`），与各台在 Availability Set 中的 VM NIC 比较，找到相应的 VM 获取更多信息。
 
     ```
-    # 从nic查对应哪台vm
+    # 从 nic 查对应哪台 vm
     Get-AzureRmVM  -ResourceGroupName $resGroupName | foreach {
         $vmName = $_.Name;
         $avSetStr = $_.AvailabilitySetReference.Id;

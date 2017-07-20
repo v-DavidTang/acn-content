@@ -57,6 +57,6 @@ Apache KeepAlive Timeout 默认值也是 5 秒，这个值表示 Apache 连接�
 
 所以，将这两个时间间隔配置为不同值，即可解决此问题。
 
-为了保证负载平衡器的探测更灵敏，建议保留其 5 秒间隔的默认值（最小配置为 5 秒）。这里以修改 Apache 中的 KeepAliveTimeout 设置为例。将KeepAliveTimeout 7（7 秒发送一个 KeepAlive 数据包）加入/etc/httpd/conf/httpd.conf 末尾，然后重启 Apache 服务使之生效（httpd.conf 路径需要根据实际情况调整），如下图：
+为了保证负载平衡器的探测更灵敏，建议保留其 5 秒间隔的默认值（最小配置为 5 秒）。这里以修改 Apache 中的 KeepAliveTimeout 设置为例。将 KeepAliveTimeout 7（7 秒发送一个 KeepAlive 数据包）加入/etc/httpd/conf/httpd.conf 末尾，然后重启 Apache 服务使之生效（httpd.conf 路径需要根据实际情况调整），如下图：
 
 ![solution](./media/aog-load-balancer-qa-apache-keepalive-cause-http-detection-error/solution.png)
