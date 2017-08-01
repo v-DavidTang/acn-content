@@ -22,13 +22,13 @@ wacn.date: 06/27/2017
 
 根据不同的情况，常见的连接问题有以下五种：
 
-- 连接字符串问题
-- Login/User 权限问题
-- 防火墙设置问题
-- 暂时性错误
-- 启用了数据库表审核
+- [连接字符串问题](#section1)
+- [Login/User 权限问题](#section2)
+- [防火墙设置问题](#section3)
+- [暂时性错误](#section4)
+- [启用了数据库表审核](#section5)
 
-## 连接字符串问题
+## <a id="section1"></a>连接字符串问题
 
 1. 错误的 login 或密码
 
@@ -44,7 +44,7 @@ wacn.date: 06/27/2017
 
     ![error-2](./media/aog-sql-database-connection-faq/error-2.png)
 
-## Login/User 权限问题
+## <a id="section2"></a>Login/User 权限问题
 
 如果使用的 Login 并没有访问目标数据库的权限，那么在尝试直接连接到这个数据库或者连接到 master 数据库后展开这个数据库的时候就会遇到下面这个错误：
 
@@ -63,7 +63,7 @@ CREATE USER testuser FROM LOGIN testlogin;
 EXEC sp_addrolemember 'db_datareader', 'testuser';
 ```
 
-## 防火墙设置问题
+## <a id="section3"></a>防火墙设置问题
 
 1. IP 地址不在白名单中
 
@@ -73,7 +73,7 @@ EXEC sp_addrolemember 'db_datareader', 'testuser';
 
 2. 在客户端和 Internet 之间的所有防火墙上面，确保 1433 端口的出站链接(outbound connection)是开放的。
 
-## 暂时性错误
+## <a id="section4"></a>暂时性错误
 
 当应用尝试连接到 Azure SQL Database 的时候，如果收到了下面的错误信息：
 
@@ -87,7 +87,7 @@ Error code 40613: "Database <x> on server <y> is not currently available. Please
 
 2. 当数据库的资源使用接近上限时，也可能造成暂时的连接问题。对于这种情况，可以通过管理门户的监控图表来及时发现资源不足的情况，根据实际需求调整服务级别。
 
-## 启用了数据库表审核
+## <a id="section5"></a>启用了数据库表审核
 
 在开启了Azure SQL Database Table Auditing 之后，对于下层客户端来说，需要修改连接字符串，否则会出现无法连接的情况。
 
@@ -107,4 +107,4 @@ Error code 40613: "Database <x> on server <y> is not currently available. Please
 - JDBC（JDBC 虽然支持 TDS 7.4，但不完全支持 TDS 重定向功能）
 - Tedious（适用于 Node.JS）
 
-关于更多相关信息，可以参考：(SQL 数据库 - 针对审核的下层客户端支持和 IP 终结点更改)[https://docs.azure.cn/zh-cn/sql-database/sql-database-auditing-and-dynamic-data-masking-downlevel-clients]
+关于更多相关信息，可以参考：[SQL 数据库 - 针对审核的下层客户端支持和 IP 终结点更改](https://docs.azure.cn/zh-cn/sql-database/sql-database-auditing-and-dynamic-data-masking-downlevel-clients)。

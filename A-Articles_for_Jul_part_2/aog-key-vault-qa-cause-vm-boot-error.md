@@ -20,7 +20,7 @@ wacn.date: 06/28/2017
 
 ## 现象描述
 
-客户将虚拟机从 ASM 模式迁移到 ARM 模式后，有时会出现虚拟机启动时报错，提示信息如下：
+用户将虚拟机从 ASM 模式迁移到 ARM 模式后，有时会出现虚拟机启动时报错，提示信息如下：
 
 ```
 Provisioning failed. Key Vault https://XXXX has not been enabled for deployment or the vault id provided. /subscriptions/XXXX/resourceGroups/demo-Migrated/providers/Microsoft.KeyVault/vaults/demo, does not match the Key Vault's true resource id. KeyVaultAccessForbidden
@@ -62,4 +62,4 @@ Provisioning failed. Key Vault https://XXXX has not been enabled for deployment 
     Set-AzureRmKeyVaultAccessPolicy -VaultName <Key Vault 名称> -ResourceGroupName <资源组名称> -EnabledForDeployment
     ```
 
-3. 重新启动之前受影响的虚拟机，虚拟机可以正常启动
+3. 重新启动受影响的虚拟机，虚拟机可以正常启动。

@@ -153,7 +153,7 @@ C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<version>\*
 
 ![log](./media/aog-virtual-machines-qa-diagnostics-settings/log.png)
 
-## 检查订阅是否注册了 Microsoft.insights
+## <a id="section4"></a>检查订阅是否注册了 Microsoft.insights
 
 通过以上步骤的排查，但数据依旧没有显示，则最大的可能性就是负责处理性能数据显示的资源提供程序 Microsoft.insights 没有注册，导致门户无法获取和处理数据。检查方法如下：
 
@@ -161,7 +161,7 @@ C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<version>\*
 
 ![portal-2](./media/aog-virtual-machines-qa-diagnostics-settings/portal-2.png)
 
-## 在线提交工单
+## 联系技术支持
 
 如果上述所有操作都尝试过，但还是有问题，请收集下面信息提供给[技术支持团队](https://www.azure.cn/support/support-ticket-form/?l=zh-cn)进行个案分析。
 
