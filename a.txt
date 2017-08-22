@@ -1,1 +1,4 @@
-Hello David!
+@echo off
+cls
+for %%c in (*.txt) do call b.bat %%c
+@echo on
