@@ -49,6 +49,7 @@ wacn.date: 08/23/2017
 建立 IPsec 隧道场景介绍
 1. 不同 VNet 的 NVA 之间建立 IPsec 隧道
 ![1.1](./media/aog-vnet-the-network-connection-solution-between-China-Azure-and-PaloAlto/1.1.png)
+
 	部署步骤
     * pavm1 ：通过 Palo Alto 的 VHD 镜像创建出来的 Azure VM1，并属于 VNet1
     * pavm2 ：通过 Palo Alto 的 VHD 镜像创建出来的 Azure VM2，并属于 VNet2
@@ -57,6 +58,7 @@ wacn.date: 08/23/2017
     * 在 IPsec 隧道的基础上实现路由传递
 2. Azure NVA 与本地 Palo Alto 设备建立 IPsec 隧道
 ![1.2](./media/aog-vnet-the-network-connection-solution-between-China-Azure-and-PaloAlto/1.2.png)
+
 	部署步骤
     * pavm1 ：通过 Palo Alto 的 VHD 镜像创建出来的 Azure VM1，并属于 VNet1
     * Local-PA ：拥有独立公网地址的 Palo Alto 硬件设备，目前没有发现版本兼容性问题
@@ -65,6 +67,7 @@ wacn.date: 08/23/2017
     * 在 IPsec 隧道的基础上实现路由传递：BGP或者静态
 3. 通过 VPN Gateway 来实现本地 Palo Alto 设备与 Azure NVA 之间建立 IPsec 隧道
  ![1.3](./media/aog-vnet-the-network-connection-solution-between-China-Azure-and-PaloAlto/1.3.png)
+ 
     部署步骤
     * pavm1：通过 Palo Alto 的 VHD 镜像创建出来的 Azure VM1，并属于 VNet1
     * Local-PA：拥有独立公网地址的 Palo Alto 硬件设备，目前没有发现版本兼容性问题
