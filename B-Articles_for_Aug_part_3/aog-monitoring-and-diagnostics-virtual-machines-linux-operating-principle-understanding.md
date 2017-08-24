@@ -1,3 +1,23 @@
+---
+title: 理解 Azure Linux 虚拟机的诊断工作原理
+description: 理解 Azure Linux 虚拟机的诊断工作原理
+service: ''
+resource: Monitoring and Diagnostics
+author: lickkylee
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Monitoring and Diagnostics, Virtual Machines, Linux'
+cloudEnvironments: MoonCake
+
+ms.service: monitoring-and-diagnostics
+wacn.topic: aog
+ms.topic: article
+ms.author: lqi
+ms.date: 08/24/2017
+wacn.date: 08/24/2017
+---
 # 理解 Azure Linux 虚拟机的诊断工作原理
 
 ## 简介

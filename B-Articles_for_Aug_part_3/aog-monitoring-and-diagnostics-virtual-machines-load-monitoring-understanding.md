@@ -1,3 +1,23 @@
+---
+title: 理解 Azure 虚拟机的负载监控
+description: 理解 Azure 虚拟机的负载监控
+service: ''
+resource: Monitoring and Diagnostics
+author: kangxhwork
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Monitoring and Diagnostics, Virtual Machines'
+cloudEnvironments: MoonCake
+
+ms.service: monitoring-and-diagnostics
+wacn.topic: aog
+ms.topic: article
+ms.author: allenk
+ms.date: 08/24/2017
+wacn.date: 08/24/2017
+---
 # 理解 Azure 虚拟机的负载监控
 
 ## 简介

@@ -1,3 +1,23 @@
+---
+title: Azure 托管镜像和非托管镜像对比
+description: Azure 托管镜像和非托管镜像对比
+service: ''
+resource: Virtual Machines
+author: lickkylee
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Virtual Machines, Managed Disks'
+cloudEnvironments: MoonCake
+
+ms.service: virtual-machines
+wacn.topic: aog
+ms.topic: article
+ms.author: lqi
+ms.date: 08/24/2017
+wacn.date: 08/24/2017
+---
 # Azure 托管镜像和非托管镜像对比
 
 目前中国区 Azure 也已经可以使用命令制作托管镜像了。但对于托管镜像和非托管镜像，就像托管磁盘和非托管磁盘一样，很多人可能一开始无法理解。这里就此进行了一个简单对比：

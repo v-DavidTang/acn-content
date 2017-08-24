@@ -1,3 +1,23 @@
+---
+title: 理解 Azure 平台中虚拟机的计算能力
+description: 理解 Azure 平台中虚拟机的计算能力
+service: ''
+resource: Monitoring and Diagnostics
+author: kangxhwork
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Monitoring and Diagnostics, Virtual Machines, Compute Performance'
+cloudEnvironments: MoonCake
+
+ms.service: monitoring-and-diagnostics
+wacn.topic: aog
+ms.topic: article
+ms.author: allenk
+ms.date: 08/24/2017
+wacn.date: 08/24/2017
+---
 # 理解 Azure 平台中虚拟机的计算能力
 
 虚拟化平台至今已经发展了十多年的时间。其中 Hyper-V 技术现在也已经是第三代版本。用户对于虚拟化计算也越来越接受，这也有了公有云发展的基础。然而在很多时候，用户在使用基于 Hyper-V 的 Azure 平台时，仍然有关于虚拟机计算能力的疑问，例如 :

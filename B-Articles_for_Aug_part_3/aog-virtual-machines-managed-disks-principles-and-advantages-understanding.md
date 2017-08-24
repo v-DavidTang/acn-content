@@ -1,3 +1,23 @@
+---
+title: 理解托管磁盘的原理与优势
+description: 理解托管磁盘的原理与优势
+service: ''
+resource: Virtual Machines
+author: sscchh2001
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Virtual Machines, Managed Disks'
+cloudEnvironments: MoonCake
+
+ms.service: virtual-machines
+wacn.topic: aog
+ms.topic: article
+ms.author: chesh
+ms.date: 08/24/2017
+wacn.date: 08/24/2017
+---
 # 理解托管磁盘的原理与优势
 
 ## 简介
