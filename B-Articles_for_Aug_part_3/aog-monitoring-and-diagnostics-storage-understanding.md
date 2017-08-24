@@ -23,11 +23,11 @@ wacn.date: 08/24/2017
 
 前文：[理解 Azure 虚拟机的负载监控](aog-monitoring-and-diagnostics-virtual-machines-load-monitoring-understanding)，我们介绍了运行在 Azure 平台上的 Windows 虚拟机和 Linux 虚拟机可以收集的性能指标，以及 Azure 如何存储这些数据用于用户界面的显示和资源的缩放，本文我们脱离虚拟机，来了解一下 Azure 平台上其他服务的监控。
 
-![architecture-1](media/aog-monitoring-and-diagnostics-storage-understanding/architecture-1)
+![architecture-1](media/aog-monitoring-and-diagnostics-storage-understanding/architecture-1.png)
 
 在了解监控功能之前，我们重新回顾一下 Azure 上的服务列表。很多用户在使用了 Azure 一段时间之后，仍然对 Azure 的各个服务之间的关系不是很清楚。在此，我们先讲述下 Azure 的架构：
 
-![architecture-2](media/aog-monitoring-and-diagnostics-storage-understanding/architecture-2)
+![architecture-2](media/aog-monitoring-and-diagnostics-storage-understanding/architecture-2.png)
 
 上图囊括了大部分 Azure 平台的服务。此处我们不是想详细解释每个服务的具体功能。从宏观的角度看，我们可以把 Azure 这个公有云的平台看成一个巨大的操作系统。
 
@@ -58,7 +58,7 @@ wacn.date: 08/24/2017
 
 在 Diagnostic 配置的页面中，很明显，诊断数据可以分为两类。
 
-![portal](media/aog-monitoring-and-diagnostics-storage-understanding/portal)
+![portal](media/aog-monitoring-and-diagnostics-storage-understanding/portal.png)
 
 其一是存储服务的性能数据，这也就相当于 Windows 系统中的进程级别的性能日志，这也就满足了用户对于平台所提供的服务本身的监控需求。对于如何使用这些性能数据，请参照:[关联日志数据](https://docs.azure.cn/zh-cn/storage/storage-monitoring-diagnosing-troubleshooting#correlating-log-data)。
 
@@ -69,6 +69,6 @@ wacn.date: 08/24/2017
 如果是在 Windows 操作系统中，这个问题就类似于两个程序访问同一个可写文件夹但是只有一个可以正常写入。这种问题，我们很容易通过 Process Monitor 工具来追踪文件的访问。在 Azure 平台，存储服务的日志提供了类似于 Process Monitor 的功能来记录对于存储账号中数据的访问细节。
 通过对于 AzCopy 上传文件的跟踪，我们很容易理解存储服务的内部访问细节。虽然是一个上传文件动作，AzCopy 需要去查询存储账号下 Container 的信息，由于读访问被拒绝，导致上传文件失败。
 
-![container](media/aog-monitoring-and-diagnostics-storage-understanding/container)
+![container](media/aog-monitoring-and-diagnostics-storage-understanding/container.png)
 
 在此，我们仅仅是以存储服务为例做一个说明。对于 Azure 上大多数的服务来讲，都提供了类似于存储服务的性能数据和服务日志。但是根据服务本身的不同，提供的数据也存在很大的区别，而没有一个统一的方法来进行分析。用户可以根据自己的实际需求来实现不同的监控方案。

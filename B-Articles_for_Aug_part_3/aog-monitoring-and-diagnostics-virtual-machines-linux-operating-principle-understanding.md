@@ -36,13 +36,15 @@ Linux 并非微软原生的系统，但在拥抱开源的路上，微软展现�
 2. 然后进行解压，创建文件夹 **/var/lib/waagent/Microsoft.OSTCExtensions.LinuxDiagnostic-2.3.9021/**（版本不同，文件夹名可能有所区别）。
 3. 结合用户的输入（存储账号，配置的性能指标），生成配置文件 xmlCfg.xml。
 4. 触发文件夹中的 Python 安装文件 diagnostic.py 进行扩展安装，安装主要包括：
+
     1. 安装依赖软件包
         调用 scx-1.6.2-337.universal.x64.sh 安装 omi 和 scx 软件包。这两个软件包用于收集系统性能数据，参见：[Microsoft OMI](https://github.com/Microsoft/omi) 。并设置性能数据收集的命名空间 **root/scx** 和 **root/omi**。
     2. 根据 xmlCfg.xml 配置诊断服务
-    3. 启动 OMI 服务 omiserver
+    3. 启动 OMI 服务 omiserver :
+
         Omiserver 会同时启动 omiagent 服务。这两个服务在该场景中用于收集性能数据，响应来自 Diagnostic 的数据查询请求。
     
-        !omiserver-and-omiagent.png[](media/aog-monitoring-and-diagnostics-virtual-machines-linux-operating-principle-understanding/omiserver-and-omiagent.png)
+        ![omiserver-and-omiagent.png](media/aog-monitoring-and-diagnostics-virtual-machines-linux-operating-principle-understanding/omiserver-and-omiagent.png)
 
 5.	启动 mdsd 服务
 
