@@ -1,4 +1,4 @@
----
+﻿---
 title: Azure P2S VPN 如何配置自动重连
 description: Azure P2S VPN 如何配置自动重连
 service: ''
@@ -28,11 +28,10 @@ P2S VPN 为用户单机环境连接 Azure 服务提供了便利。根据用户�
 [详细的证书配置介绍](https://docs.azure.cn/zh-cn/vpn-gateway/vpn-gateway-certificates-point-to-site )
 
 本文根据用户 P2S VPN 使用反馈，含括了以下三个部分，希望能帮助提升用户使用 P2S VPN 的体验。
-[Azure P2S VPN 如何配置自动重连](#section-1)
 
-[Azure P2S VPN 如何实现开机自动连接](#section-2)
-
-[常见 Azure P2S VPN 报错信息及解决方案](#section-3)
+- [Azure P2S VPN 如何配置自动重连](#section-1)
+- [Azure P2S VPN 如何实现开机自动连接](#section-2)
+- [常见 Azure P2S VPN 报错信息及解决方案](#section-3)
 
 为了介绍如何配置自动重连，我们需要先了解什么是 P2S VPN？
 
