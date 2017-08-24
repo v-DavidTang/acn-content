@@ -98,3 +98,4 @@ Azure 的管理界面就是通过读取这些数据表格来显示虚拟机的�
 
 - [理解 Azure 虚拟机的性能监视](https://docs.azure.cn/zh-cn/articles/compute/aog-virtual-machines-performance-monitor-guidance)
 - [理解 Azure Linux 虚拟机的诊断工作原理](aog-monitoring-and-diagnostics-virtual-machines-linux-diagnostics-guidance.md)
+- [理解 Azure 存储的监控](aog-monitoring-and-diagnostics-storage-understanding.md)

@@ -102,3 +102,8 @@ OMI 主要负责从系统中收集性能数据。通过手动获取性能数据�
     重启 waagent。Waagent 启动过程中会检测其维护的扩展的状态，并进行自动修复。
 
     `# systemctl restart waagent.service`
+
+## 相关链接
+
+- [理解 Azure 存储的监控](aog-monitoring-and-diagnostics-storage-understanding.md)
+- [理解 Azure 虚拟机的负载监控](aog-monitoring-and-diagnostics-virtual-machines-load-monitoring-understanding.md)

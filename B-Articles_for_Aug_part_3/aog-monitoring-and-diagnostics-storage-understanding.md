@@ -72,3 +72,8 @@ wacn.date: 08/24/2017
 ![container](media/aog-monitoring-and-diagnostics-storage-understanding/container.png)
 
 在此，我们仅仅是以存储服务为例做一个说明。对于 Azure 上大多数的服务来讲，都提供了类似于存储服务的性能数据和服务日志。但是根据服务本身的不同，提供的数据也存在很大的区别，而没有一个统一的方法来进行分析。用户可以根据自己的实际需求来实现不同的监控方案。
+
+## 相关链接 
+
+- [理解 Azure Linux 虚拟机的诊断工作原理](aog-monitoring-and-diagnostics-virtual-machines-linux-diagnostics-guidance.md)
+- [理解 Azure 虚拟机的负载监控](aog-monitoring-and-diagnostics-virtual-machines-load-monitoring-understanding.md)
