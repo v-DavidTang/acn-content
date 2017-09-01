@@ -73,13 +73,9 @@ openssl pkcs8 -topk8 -inform PEM -in pkcs1.key -outform pem -nocrypt -out pkcs8.
 ```
 **使用代码方式进行转换** :
 
-我们可以使用代码解析 PKCS#1 格式的私钥，并将其按照 PCKS#8 的编码规范输出。示例代码，请参考以下代码片段文档 : []https://github.com/wacn/AOG-CodeSample/tree/master/KeyVault/DotNET/RSAKeyUtils
+我们可以使用代码解析 PKCS#1 格式的私钥，并将其按照 PCKS#8 的编码规范输出。示例代码，请参考以下代码片段文档 : [RSAKeyUtils](https://github.com/wacn/AOG-CodeSample/tree/master/KeyVault/DotNET/RSAKeyUtils)
 
 转换之后，我们就可以正常将证书进行上传！
-
-## 示例代码
-
-- [RSAKeyUtils](https://github.com/wacn/AOG-CodeSample/tree/master/KeyVault/DotNET/RSAKeyUtils)
 
 ## 参考文档
 

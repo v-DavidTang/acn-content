@@ -26,11 +26,11 @@ wacn.date: 08/31/2017
 2. 配置 Web API 公开最基本的用户代理权限（user_impersonation）。
 3. 赋予 Web Client 访问 Web API 的用户代理权限。
 
-其中让用户感觉比较痛苦的是第二步，因为其他两步可以通过 UI 界面操作或者简单 PowerShell 命令就可以完成，但第二步需要去下载 Manifest，然后添加 oauth2Permissions 这个元素，再上传。所以我们首先需要了解这什么是 oauth2Permissions？ 还得担心有没有写错，毕竟手写 Json 文件是很容易出错的。当然，考虑到 user_impersonation 是个最普遍常用的权限，最好是服务端能默认自动创建。好消息是微软已经这么做了，但坏消息是中国区暂时还没有部署到，那么在这之前，我们有什么好的办法来自动添加这个默认的用户代理权限呢？
+其中让用户感觉比较痛苦的是第二步，因为其他两步可以通过 UI 界面操作或者简单 PowerShell 命令就可以完成，但第二步需要去下载 Manifest，然后添加 oauth2Permissions 这个元素，再上传。所以我们首先需要了解什么是 [oauth2Permissions](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#oauth2permission-type)？ 还得担心有没有写错，毕竟手写 Json 文件是很容易出错的。当然，考虑到 user_impersonation 是个最普遍常用的权限，最好是服务端能默认自动创建。好消息是微软已经这么做了，但坏消息是中国区暂时还没有部署到，那么在这之前，我们有什么好的办法来自动添加这个默认的用户代理权限呢？
 
 是的，我们可以用 PowerShell 来自动化这个过程。
 
-此处提供两种方案，一种是使用 Azure AD PowerShell 模块，但需要额外下载，因为它是独立的，没有内置在 Azure PowerShell 里面；另一种是用 PowerShell 来调用 AAD Graph API。请参考以下脚本：
+此处提供两种方案，一种是使用 [Azure AD PowerShell 模块](https://docs.microsoft.com/en-us/powershell/module/azuread/?view=azureadps-2.0)，但需要额外下载，因为它是独立的，没有内置在 Azure PowerShell 里面；另一种是用 PowerShell 来调用 [AAD Graph API](https://docs.azure.cn/zh-cn/active-directory/develop/active-directory-graph-api)。请参考以下脚本：
 
 ## 方法一：使用 Azure AD PowerShell 模块
 

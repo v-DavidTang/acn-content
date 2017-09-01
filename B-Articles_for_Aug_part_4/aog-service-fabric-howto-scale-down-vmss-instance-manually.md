@@ -1,6 +1,6 @@
 ---
-title: 手动收缩 Service Fabric 的 VMSS
-description: 手动收缩 Service Fabric 的 VMSS
+title: 手动收缩 Service Fabric 的虚拟机规模集
+description: 手动收缩 Service Fabric 的虚拟机规模集
 service: ''
 resource: Service Fabric
 author: lickkylee
@@ -18,7 +18,7 @@ ms.author: lqi
 ms.date: 08/31/2017
 wacn.date: 08/31/2017
 ---
-# 手动收缩 Service Fabric 的 VMSS
+# 手动收缩 Service Fabric 的虚拟机规模集
 
 Azure Service Fabric 集群的底层操作系统是基于 Azure VMSS。集群中根据配置和定义不同，可以包含多个 VMSS，每个 VMSS 又包括多个虚拟机实例。VMSS 的一个最大的特点就是能实现快速的实例数增加或减少，在保证 Service Fabric 集群服务负载的同时也避免资源浪费。
 

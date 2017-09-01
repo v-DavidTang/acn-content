@@ -129,7 +129,7 @@ wacn.date: 08/31/2017
 
 ### 客户端挂载 Gluster 卷
 
-1. 执行命令挂载 Gluster 卷：
+执行命令挂载 Gluster 卷：
 
 `# mount.glusterfs 172.16.5.88:/dsr_vol /dsr_data`
 

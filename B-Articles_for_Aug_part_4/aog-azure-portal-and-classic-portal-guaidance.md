@@ -269,4 +269,5 @@ Azure 在某些条件下支持用户将资源从经典模式迁移到资源管�
 更多关于迁移的信息，请参考：
 
 迁移步骤：[使用 Azure PowerShell 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager](https://www.azure.cn/documentation/articles/virtual-machines-windows-ps-migration-classic-resource-manager/)
+
 迁移的前提条件：[平台支持的从经典部署模型到 Azure Resource Manager 的 IaaS 资源迁移](https://www.azure.cn/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)
