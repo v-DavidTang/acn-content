@@ -34,13 +34,13 @@ wacn.date: 08/31/2017
     
     1. 这是一个 GET 方法的请求，在发起这个请求时，必须提供以下 3 个参数：
 
-        ![get-method](meida/aog-storage-rest-api-guidance/get-method.png)
+        ![get-method](media/aog-storage-rest-api-guidance/get-method.png)
 
     2. 关于后两个参数的设置比较简单，一个是设置请求的时间，另一个是设置请求服务的版本，那么关于第一个参数值的设置就比较复杂了，可以参考：[Azure 存储服务的身份验证](https://docs.microsoft.com/en-us/rest/api/storageservices/authentication-for-the-azure-storage-services)。也许您看完这篇文档后，还是很难理解 Authorization 的构建。简单来说，可以分两步操作：
 
         1. 基于调用请求的方法类型、参数内容来构建 “**签名字符串**”:
 
-            ![string-sig](meida/aog-storage-rest-api-guidance/string-sig.png)
+            ![string-sig](media/aog-storage-rest-api-guidance/string-sig.png)
 
         2. 对签名字符串执行以下算法：
 
@@ -70,11 +70,11 @@ wacn.date: 08/31/2017
 
     - Authorization（C#）:
         
-        ![list-share-authorization](meida/aog-storage-rest-api-guidance/list-share-authorization.png)
+        ![list-share-authorization](media/aog-storage-rest-api-guidance/list-share-authorization.png)
 
     - Postman Test:
 
-        ![list-share-postman-test](meida/aog-storage-rest-api-guidance/list-share-postman-test.png)
+        ![list-share-postman-test](media/aog-storage-rest-api-guidance/list-share-postman-test.png)
         
         > [!NOTE]
         > 请求的 x-ms-date 和 x-ms-version 也要与代码中设定的值同步
@@ -100,13 +100,13 @@ wacn.date: 08/31/2017
     
         与 ListShare 签名字符串是有差异的，Method 要根据 REST 请求类型进行更改，另外要结 REST 所需的 Header 适当修改 "headers" 的配置，同时在本示例中，"resources" 部分是调整比较大的参考以下签名内容：
 
-        ![create-share-authorization](meida/aog-storage-rest-api-guidance/create-share-authorization.png)
+        ![create-share-authorization](media/aog-storage-rest-api-guidance/create-share-authorization.png)
     
     - Postman Test：
 
-        ![create-share-postman-test](meida/aog-storage-rest-api-guidance/create-share-postman-test.png)
+        ![create-share-postman-test](media/aog-storage-rest-api-guidance/create-share-postman-test.png)
 
-        ![create-share-postman-test-2](meida/aog-storage-rest-api-guidance/create-share-postman-test-2.png)
+        ![create-share-postman-test-2](media/aog-storage-rest-api-guidance/create-share-postman-test-2.png)
 
 3. 调用 [Create Directory](https://docs.microsoft.com/en-us/rest/api/storageservices/create-directory) 接口
 
@@ -129,13 +129,13 @@ wacn.date: 08/31/2017
         
         与 Create Share 不同的是 resources，这里的 resource 要包括目录这一层，同时 restype 为 directory：
 
-        ![create-directory-authorization](meida/aog-storage-rest-api-guidance/create-directory-authorization.png)
+        ![create-directory-authorization](media/aog-storage-rest-api-guidance/create-directory-authorization.png)
 
     - Postman Test：
 
-        ![create-directory-postman-test](meida/aog-storage-rest-api-guidance/create-directory-postman-test.png)
+        ![create-directory-postman-test](media/aog-storage-rest-api-guidance/create-directory-postman-test.png)
 
-        ![create-directory-postman-test-2](meida/aog-storage-rest-api-guidance/create-directory-postman-test-2.png)
+        ![create-directory-postman-test-2](media/aog-storage-rest-api-guidance/create-directory-postman-test-2.png)
 
 4.	调用 [Create File](https://docs.microsoft.com/en-us/rest/api/storageservices/create-file) 接口
 
@@ -162,13 +162,13 @@ wacn.date: 08/31/2017
 
         contentType 是一个可选项，如果不设置，就用 \n 代替。“headers”的设置增加了 x-ms-content-length 和 x-ms-type，而且要有顺序保证（与服务器端签名对齐），“resources”的设置因为参数中已经不包含 restype，所以不需要设置：
 
-        ![create-file-authorization](meida/aog-storage-rest-api-guidance/create-file-authorization.png)
+        ![create-file-authorization](media/aog-storage-rest-api-guidance/create-file-authorization.png)
 
     - Postman Test：
 
-        ![create-file-postman-test](meida/aog-storage-rest-api-guidance/create-file-postman-test.png)
+        ![create-file-postman-test](media/aog-storage-rest-api-guidance/create-file-postman-test.png)
 
-        ![create-file-postman-test-2](meida/aog-storage-rest-api-guidance/create-file-postman-test-2.png)
+        ![create-file-postman-test-2](media/aog-storage-rest-api-guidance/create-file-postman-test-2.png)
 
 以上介绍了调用 File REST 的示例，整体来说使用 REST 难度要略大一些，最麻烦的是要考虑“签名字符串的规则”，因为每个请求都不一样，要逐个分析。以下是一些技巧：
 
@@ -181,6 +181,6 @@ wacn.date: 08/31/2017
     - postman 可以测试验证请求能否提交成功，如果报错就会提示服务器端验证的签名字符串内容。
     - 然后利用 notepad++ compare 比 server 的签名字符串和我们上述代码中 stringToSign 的值，看看差在什么地方。
 
-        ![notepad](meida/aog-storage-rest-api-guidance/notepad.png)
+        ![notepad](media/aog-storage-rest-api-guidance/notepad.png)
 
 如果您希望对某类 REST 接口提供更多的介绍，请关注我的 [GitHub](https://github.com/hello-azure) 或联系技术支持团队热线：400-089-0365。

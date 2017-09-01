@@ -28,11 +28,11 @@ wacn.date: 08/31/2017
 
 - 方式 1：使用传统逻辑将文件从浏览器端（Client）上传到虚拟机（Server）,然后在调用存储接口，将文件从虚拟机（Server）上传到存储（Azure Storage）。
 
-    ![pattern-1](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/pattern-1.png)
+    ![pattern-1](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/pattern-1.png)
 
 - 方式 2：将文件从浏览器端（Client）直接跨域上传到存储（Azure Storage）,同时在发起 Ajax 请求到虚拟机（Server）,在虚拟机（Server）接收上传的文件信息，进行后续逻辑处理，比如写入数据库等。
 
-    ![pattern-2](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/pattern-2.png)
+    ![pattern-2](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/pattern-2.png)
 
 第一种方式略显笨拙，缺点比较明显，涉及中转过程，但不涉及跨域，不太适合互联网类型应用。第二种方式基于 Ajax 技术，不涉及中转，但需要了解存储 REST 接口、跨域访问等知识，实现难度略大一些，不过是最佳的方案选择。
 
@@ -43,11 +43,11 @@ wacn.date: 08/31/2017
     1. 下载安装：[Azure Storage Explorer](http://storageexplorer.com/)
     2. 连接目标存储账户，在目标“**存储容器**”上点击右键，在弹出的菜单项中选择“**Get Shared Access Signature…**”:
     
-        ![azure-storage-explorer-1](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-1.png)
+        ![azure-storage-explorer-1](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-1.png)
 
     3. 上传文件需要写入权限，如果需要持续上传，可以调整过期时间，示例如下：
 
-        ![azure-storage-explorer-2](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-2.png)
+        ![azure-storage-explorer-2](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-2.png)
 
     4. 点击“**Create**”，在弹出的界面上我们即可获取 SAS 签名 URL。Query String 即是签名字符串，这个签名字符串包含操作权限、有效时间等，如下：
 
@@ -55,7 +55,7 @@ wacn.date: 08/31/2017
         https://devstoragerm.blob.core.chinacloudapi.cn/files?st=2017-08-09T10%3A18%3A00Z&se=2017-12-31T10%3A18%3A00Z&sp=w&sv=2016-05-31&sr=c&sig=kupC7DiU0vaTMqY3DZ3sbl96MV21efmXwd8yDix%2BJ7E%3D
         ```
 
-        ![azure-storage-explorer-3](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-3.png)
+        ![azure-storage-explorer-3](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-3.png)
 
     5. 更多参考资料，如下：
 
@@ -71,11 +71,11 @@ wacn.date: 08/31/2017
     1. 下载安装：[Azure Storage Explorer](http://storageexplorer.com/)
     2. 连接目标存储账户，在 “**Blob Containers**” 上点击右键，在弹出的菜单项中选择 “**Configure CORS Settings…**”:
 
-        ![azure-storage-explorer-4](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-4.png)
+        ![azure-storage-explorer-4](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-4.png)
 
     3. 在上一步操作弹出的界面，点击“**Add**”，配置 CORS 规则，示例如下：
 
-        ![azure-storage-explorer-5](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-5.png)
+        ![azure-storage-explorer-5](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-5.png)
 
     4. 更多关于存储的 CORS 设置参考：[跨域资源共享(CORS)支持 Azure 存储服务](https://docs.microsoft.com/en-us/rest/api/storageservices/cross-origin-resource-sharing--cors--support-for-the-azure-storage-services)。
 
@@ -91,25 +91,25 @@ wacn.date: 08/31/2017
     1. 下载[代码示例](https://github.com/wacn/AOG-CodeSample/tree/master/Storage/json)。
     2. 在要上传的容器上，创建一个“**写**”权限签名 URL:
 
-        ![azure-storage-explorer-6](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-6.png)
+        ![azure-storage-explorer-6](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-6.png)
 
         签名 URL 示例：`https://devstoragerm.blob.core.chinacloudapi.cn/files?st=2017-08-09T10%3A45%3A00Z&se=2017-08-10T10%3A45%3A00Z&sp=w&sv=2016-05-31&sr=c&sig=reFh8jikl%2B2hOVhJ5SORPkItoFN6Y8bbq%2FeYgKn6QsI%3D`
 
     3. 配置 CORS，部署到生产环境，请限制为响应允许的 Origins、Methods、Headers，这里我们在本地测试，使用*提供了“宽范围”的 CORS 设置：
 
-        ![azure-storage-explorer-7](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-7.png)
+        ![azure-storage-explorer-7](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/azure-storage-explorer-7.png)
     
     4. 使用支持 H5 的浏览器打开 test.html，将签名 URL 粘贴到“**SAS URI**”,选择目标文件后，点击“**Upload File**”,完成上传。过程显示如下:
 
-        ![file-uploader](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/file-uploader.png)
+        ![file-uploader](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/file-uploader.png)
 
         **上传完成：**
 
-        ![process](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/process.png)
+        ![process](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/process.png)
 
         **查看容器：**
 
-        ![portal](meida/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/portal.png)
+        ![portal](media/aog-storage-implement-cross-domain-upload-files-to-storage-with-javascript/portal.png)
 
 5. 其它相关参考资料：
 

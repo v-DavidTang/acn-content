@@ -24,7 +24,7 @@ wacn.date: 08/31/2017
 
 通过代码为 File Storage 文件设置 SAS 读取访问权限，在 IE 或 Edge 浏览器中访问 File 的 SAS URL，只能在第一次发送请求时返回响应（换言之第一次访问正常），再次发送请求则报告“Condition headers are not supported”的错误。
 
-![error](meida/aog-storage-file-qa-can-only-be-accessed-once-with-sas-through-ie-or-edge-browser/error.png)
+![error](media/aog-storage-file-qa-can-only-be-accessed-once-with-sas-through-ie-or-edge-browser/error.png)
 
 而通过 Chrome 浏览器则可以一直正常访问该文件。
 
@@ -65,17 +65,17 @@ Uri uriFile = new Uri(file.StorageUri.PrimaryUri.ToString() + sasToken);
 
     1. 第一次请求，可以正常访问文件。查看请求头部信息如下：
         
-        ![edge-1](meida/aog-storage-file-qa-can-only-be-accessed-once-with-sas-through-ie-or-edge-browser/edge-2.png)
+        ![edge-1](media/aog-storage-file-qa-can-only-be-accessed-once-with-sas-through-ie-or-edge-browser/edge-2.png)
 
     2. 第二次请求，无法正常访问文件，重现到报错问题。查看请求头部信息如下，请求中添加了 “**If-Modified-Since**”:
 
-        ![edge-2](meida/aog-storage-file-qa-can-only-be-accessed-once-with-sas-through-ie-or-edge-browser/edge-2.png)
+        ![edge-2](media/aog-storage-file-qa-can-only-be-accessed-once-with-sas-through-ie-or-edge-browser/edge-2.png)
 
 - Chrome:
 
     1. 第一次及后续多次请求，我们发现都可以正常访问文件。请求头部信息如下，均未包含 “**If-Modified-Since**”：
 
-        ![chrome](meida/aog-storage-file-qa-can-only-be-accessed-once-with-sas-through-ie-or-edge-browser/chrome.png)
+        ![chrome](media/aog-storage-file-qa-can-only-be-accessed-once-with-sas-through-ie-or-edge-browser/chrome.png)
 
 ### 关于 HTTP 的请求头标签 If-Modified-Since
 

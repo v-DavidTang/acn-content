@@ -84,7 +84,7 @@ Write-Host "ServicePrincipal Id: $spId" -ForegroundColor Green
 
 运行示例如下，验证结果可以通过门户网站上去下载 manifest 查看 oauth2Permission 的配置。
 
-![powershell-result-1](meida/aog-active-directory-howto-automate-add-user-agent-permisson/powershell-result-1.png)
+![powershell-result-1](media/aog-active-directory-howto-automate-add-user-agent-permisson/powershell-result-1.png)
 
 ## 方法二：用 PowerShell 来调用 AAD Graph API
 
@@ -200,6 +200,6 @@ Write-Host "ServicePrincipal Id: $spId" -ForegroundColor Green
 这个脚本也做了同样的事情，创建应用程序对象，设置 user_impersonation 默认权限，创建带有特定标签的服务主体对象，只不过是通过调用 AAD Graph API 来做到的。更多 AAD Graph API 的详细信息，可查看[Azure Active Directory 图形 API](https://docs.azure.cn/zh-cn/active-directory/develop/active-directory-graph-api)。
 使用示例如下，验证结果可以通过门户网站上去下载 manifest 查看 oauth2Permission 的配置。
 
-![powershell-result-2](meida/aog-active-directory-howto-automate-add-user-agent-permisson/powershell-result-2.png)
+![powershell-result-2](media/aog-active-directory-howto-automate-add-user-agent-permisson/powershell-result-2.png)
 
 更多 PowerShell 自动化内容，可参考我的[博客](https://school.azure.cn/blog/477)。

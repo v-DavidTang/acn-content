@@ -28,27 +28,27 @@ wacn.date: 08/31/2017
 
 ASP.NET Core 中内置了很多 Log Providers，如下图， 我们可以选择 Console，DEBUG 或者 Event Source 作为我们的 Log Providers，这样我可以将日志输出或者以 Event Tracing of Windows（window 追踪事件）的形式记录下来。
 
-![built-in](meida/aog-service-fabric-qa-asp-dotnet-core-export-log/built-in.png)
+![built-in](media/aog-service-fabric-qa-asp-dotnet-core-export-log/built-in.png)
 
 在使用这些 Log Provider 之前，我们将相关引用包加入到项目中。
 
-![log-provider](meida/aog-service-fabric-qa-asp-dotnet-core-export-log/log-provider.png)
+![log-provider](media/aog-service-fabric-qa-asp-dotnet-core-export-log/log-provider.png)
 
 之后在初始化 LogFactory 时，选择使用 Log Provider，参考以下代码：
 
-![log-factory](meida/aog-service-fabric-qa-asp-dotnet-core-export-log/log-factory.png)
+![log-factory](media/aog-service-fabric-qa-asp-dotnet-core-export-log/log-factory.png)
 
 如果使用 Console，DEBUG，我们需要在服务的配置文件中（ServiceManifest.xml），将程序的 output 输出到文件中，如下配置：
 
-![service-manifest](meida/aog-service-fabric-qa-asp-dotnet-core-export-log/service-manifest.png)
+![service-manifest](media/aog-service-fabric-qa-asp-dotnet-core-export-log/service-manifest.png)
 
 该日志存储于以下目录（本地开发环境，Azure 上时 D 盘）：
 
-![disk-log](meida/aog-service-fabric-qa-asp-dotnet-core-export-log/disk-log.png)
+![disk-log](media/aog-service-fabric-qa-asp-dotnet-core-export-log/disk-log.png)
 
 使用 Event Source 会将 Logging 以 Event Source 的使用的方式（ETW）将日记记录下来。之后我们可以像使用 Event Source 一样，将其收集到存储账号中。在收集日志时需要配置 Provider Name 为 “Microsoft-Extensions-Logging”。
 
-![message-json](meida/aog-service-fabric-qa-asp-dotnet-core-export-log/message-json.png)
+![message-json](media/aog-service-fabric-qa-asp-dotnet-core-export-log/message-json.png)
 
 ## 参考文档
 
