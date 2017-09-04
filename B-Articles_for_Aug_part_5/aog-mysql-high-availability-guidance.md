@@ -150,7 +150,7 @@ Geo Replication 相比较于 Geo Rstore 功能而言，提供了更短的 RPO �
 
 ![on-prem-primary-and-azure-mysql-paas-slave](media/aog-mysql-high-availability-guidance/on-prem-primary-and-azure-mysql-paas-slave.png)
 
-[如何配置数据同步复制到 MySQL Database on](Azurehttps://docs.azure.cn/zh-cn/mysql/mysql-database-data-replication)
+参考文档：[如何配置数据同步复制到 MySQL Database on Azure](https://docs.azure.cn/zh-cn/mysql/mysql-database-data-replication)
 
 ## 高可用模式相关问题
 
@@ -158,7 +158,7 @@ Azure 的数据备份目前不支持拷贝到本地，如果有读取备份中�
 
 对于 MySQL Slave 的延迟，通常无需担心数据的安全性，至于为何会在数据同步中产生延迟可以参考下面一篇链接，同时在 MySQL 当前版本中，由于 Salve 的 SQL 进程需要单条应用，导致在并发量大时，日志应用会出现一段时间的无法跟上情况，此时可以考虑提升服务等级。
 
-[主从复制问题](https://docs.azure.cn/zh-cn/mysql/mysql-database-readreplicainquiry)
+参考文档：[主从复制问题](https://docs.azure.cn/zh-cn/mysql/mysql-database-readreplicainquiry)
 
 ## 附录
 

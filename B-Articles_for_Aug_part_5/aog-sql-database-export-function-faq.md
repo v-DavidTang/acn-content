@@ -20,7 +20,7 @@ wacn.date: 08/31/2017
 ---
 # 有关 Azure SQL 数据库导出功能的常见问题及回答
 
-在 [Azure portal](https://portal.azure.cn)上，用户可以在 Azure SQL 数据库页面上通过点击 “**导出按钮**”，方便地将数据库导出为 bacpac 文件存放在存储账户的容器中。
+在 [Azure Portal](https://portal.azure.cn) 上，用户可以在 Azure SQL 数据库页面上通过点击 “**导出按钮**”，方便地将数据库导出为 bacpac 文件存放在存储账户的容器中。
 
 ![portal-1](media/aog-sql-database-export-function-faq/portal-1.png)
 
@@ -28,15 +28,15 @@ wacn.date: 08/31/2017
 
 ## 问题一
 
-**问**：数据库导出时间较长，即便是导出空数据库也需花费十几分钟，且在导出完成前进度一直显示为 0%，可否在 [Azure portal](https://portal.azure.cn)上中止导出操作？
+**问**：数据库导出时间较长，即便是导出空数据库也需花费十几分钟，且在导出完成前进度一直显示为 0%，可否在 [Azure Portal](https://portal.azure.cn) 上中止导出操作？
 
-**答**：在 [Azure portal](https://portal.azure.cn)的数据库页面上点击 “**导出**” 按钮后，导出请求被提交到后台 Job 的等待队列中，因此在 [Azure portal](https://portal.azure.cn)上只显示 “**已将请求提交至导出的数据库**”。
+**答**：在 [Azure Portal](https://portal.azure.cn) 的数据库页面上点击 “**导出**” 按钮后，导出请求被提交到后台 Job 的等待队列中，因此在 [Azure Portal](https://portal.azure.cn) 上只显示 “**已将请求提交至导出的数据库**”。
 
 ![portal-2](media/aog-sql-database-export-function-faq/portal-2.png)
 
 之所以是客户反映说空数据库导出花了 13 分钟，并且导出进度百分比直接从 0% 到 100%，是由于导出请求需要在队列等待一段时间才能执行。
 
-而因为数据库的 size 太小（空白数据库的大小仅为 4MB，导出的 bacpac 文件仅为 3KB），使得执行导出操作所需的时间非常少，因此客户在 [Azure portal](https://portal.azure.cn)上所看到的进度是由 0% 直接跳至 100%。
+而因为数据库的 size 太小（空白数据库的大小仅为 4MB，导出的 bacpac 文件仅为 3KB），使得执行导出操作所需的时间非常少，因此客户在 [Azure Portal](https://portal.azure.cn) 上所看到的进度是由 0% 直接跳至 100%。
 
 此外，由于此进程是在 Azure 后台运行，客户是无法终止该导出进程的。
 
@@ -83,20 +83,20 @@ End
 GO
 ```
 
-此外，由于客户往往对生产环境中的数据库进行修改持谨慎态度，因此建议先在 [Azure portal](https://portal.azure.cn)上还原出一个备用数据库，然后在还原出来的数据库上进行修改并执行导出操作。
+此外，由于客户往往对生产环境中的数据库进行修改持谨慎态度，因此建议先在 [Azure Portal](https://portal.azure.cn) 上还原出一个备用数据库，然后在还原出来的数据库上进行修改并执行导出操作。
 
 
 ## 问题三
 
 **问**：数据库导出过程无报错，但 CPU 使用率长期处于 100%，导出进度百分比始终为 0%，导出进程无法结束。
 
-**答**：如问题一的回答所言，客户无法直接终止 [Azure portal](https://portal.azure.cn)上的导出操作，因此如有需要可以联系微软后台工程师终止导出进程。
+**答**：如问题一的回答所言，客户无法直接终止 [Azure Portal](https://portal.azure.cn) 上的导出操作，因此如有需要可以联系微软后台工程师终止导出进程。
 
 出现这种故障的原因之一是客户数据库的 Schema 过于庞大(例如单个数据库中有十多万张表，数百万列)，导致导出 Schema 的过程中系统负载过重，引发导出进程一再重启而无法继续。
 
 针对这类问题，客户可参考以下两种备用方案，任选其一即可：
 
-1. 将 cfwinerp_2017-07-25T02-13Z 升级为 P 级别数据库后，再次尝试在 [Azure portal](https://portal.azure.cn)上执行导出操作；
+1. 将 cfwinerp_2017-07-25T02-13Z 升级为 P 级别数据库后，再次尝试在 [Azure Portal](https://portal.azure.cn) 上执行导出操作；
 2. 在本地下载并安装最新版的 DacFramework.msi，然后选择在命令行界面上运行 SqlPackage.exe 执行数据库导出任务，推荐选择配置较好的机器上进行操作。
 
 其中第二种方法可参考以下示例的步骤：

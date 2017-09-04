@@ -32,13 +32,11 @@ wacn.date: 08/31/2017
 进入 Cloud Config for Embed 文件夹后，可发现名为 “**Power BI operated by 21Vianet in China**” 的文件夹，里面的 “**Cloud.config**” 文件即为针对 Power BI 中国版配置好的 Cloud.config 文件。
 
 ![github-2](media/aog-power-bi-embedded-sample-configuration-steps/github-2.png)
-
 ![github-3](media/aog-power-bi-embedded-sample-configuration-steps/github-3.png)
 
 同理，Cloud Config for Prov 文件夹中也有已配置好的 Cloud.config 文件。
 
 ![github-4](media/aog-power-bi-embedded-sample-configuration-steps/github-4.png)
-
 ![github-5](media/aog-power-bi-embedded-sample-configuration-steps/github-5.png)
 
 因此相对旧版示例而言，新版示例的配置操作有所调整，如下所示：
