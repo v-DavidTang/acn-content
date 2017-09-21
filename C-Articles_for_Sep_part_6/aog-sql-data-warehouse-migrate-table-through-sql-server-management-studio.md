@@ -67,7 +67,7 @@ SQL Server Management Studio(以下简称 SSMS)是微软官方出品的对 SQL S
 
 8. 当迁移过程完成后，便可在 stanleysqldw1 中看见迁移成功的表格了。
 
-![12](media/aog-sql-data-warehouse-migrate-table-through-sql-server-management-studio/12.png)
-![13](media/aog-sql-data-warehouse-migrate-table-through-sql-server-management-studio/13.png)
+    ![12](media/aog-sql-data-warehouse-migrate-table-through-sql-server-management-studio/12.png)
+    ![13](media/aog-sql-data-warehouse-migrate-table-through-sql-server-management-studio/13.png)
 
 9. 最后，如果创建的 SQL DB 不再需要的话可以删除。
