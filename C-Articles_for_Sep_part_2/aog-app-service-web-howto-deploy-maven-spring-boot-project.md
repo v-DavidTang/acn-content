@@ -1,3 +1,23 @@
+---
+title: 如何在 Web 应用上部署 Maven Spring Boot 项目
+description: 如何在 Web 应用上部署 Maven Spring Boot 项目
+service: ''
+resource: App Service Web
+author: maysmiling
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'App Service Web, Maven Spring Boot'
+cloudEnvironments: MoonCake
+
+ms.service: app-service-web
+wacn.topic: aog
+ms.topic: article
+ms.author: v-amazha
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # 如何在 Web 应用上部署 Maven Spring Boot 项目
 
 可以通过以下步骤在 Web 应用上完成 Maven Spring Boot 项目的部署：
@@ -16,7 +36,7 @@
 
     ![03](media/aog-app-service-web-howto-deploy-maven-spring-boot-project/03.png)
 
-5. 配置 web.config 文件，内容如下（标黄的部分，请按照实际情况进行编写）。
+5. 配置 web.config 文件，内容如下, 相关参数请按照实际情况进行编写：
 
     ```
     <?xml version="1.0" encoding="UTF-8"?>

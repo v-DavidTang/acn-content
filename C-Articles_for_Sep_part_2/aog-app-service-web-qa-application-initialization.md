@@ -1,3 +1,23 @@
+---
+title: 如何预热 Azure Web 应用
+description: 如何预热 Azure Web 应用
+service: ''
+resource: App Service Web
+author: Chris-ywt
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'App Service Web, Application Initialization'
+cloudEnvironments: MoonCake
+
+ms.service: app-service-web
+wacn.topic: aog
+ms.topic: article
+ms.author: v-tawe
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # 如何预热 Azure Web 应用
 
 ## 问题描述
@@ -33,4 +53,4 @@ Application Initialization 模块能够预热 Web 应用程序，使得在应用
 
 ##参考链接
 
-[Application Initialization <applicationInitialization>](https://docs.microsoft.com/en-us/iis/configuration/system.webServer/applicationInitialization/)
+[Application Initialization <applicationInitialization>](https://docs.microsoft.com/zh-cn/iis/configuration/system.webServer/applicationInitialization/)

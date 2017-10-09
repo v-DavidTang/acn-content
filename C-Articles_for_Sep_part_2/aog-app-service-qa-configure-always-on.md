@@ -1,3 +1,23 @@
+---
+title: 如何配置网站 Always ON 的默认访问 URL
+description: 如何配置网站 Always ON 的默认访问 URL
+service: ''
+resource: App Service
+author: hahaxj
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'App Service, Always ON'
+cloudEnvironments: MoonCake
+
+ms.service: app-service
+wacn.topic: aog
+ms.topic: article
+ms.author: v-tawe
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # 如何配置网站 Always ON 的默认访问 URL
 
 ## 问题描述

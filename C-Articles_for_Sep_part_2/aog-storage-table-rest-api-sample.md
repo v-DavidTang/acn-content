@@ -1,3 +1,23 @@
+---
+title: Storage Table Rest API 调用示例
+description: Storage Table Rest API 调用示例
+service: ''
+resource: Storage
+author: taroyutao
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Storage, Table, Rest API'
+cloudEnvironments: MoonCake
+
+ms.service: storage
+wacn.topic: aog
+ms.topic: article
+ms.author: v-tawe
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # Storage Table Rest API 调用示例
 
 在使用参考直接基于 Rest API 操作 Azure Storage Table 的过程中，官方提供了两种方式进行认证，分别为：SharedKey 和 ShareKeyLite。在请求 Header 过程中加入 Date（或 x-ms-date）和 Authorization 参数即可完成认证。
@@ -134,5 +154,5 @@ namespace test1
 
 - [通过 REST 访问 Azure Tables](https://blogs.msdn.microsoft.com/rxg/2009/04/02/accessing-azure-tables-via-rest/)
 - [Azure Storage Table 认证](http://blog.einbu.no/2009/08/authenticating-against-azure-table-storage/)
-- [Azure Storage 服务的认证](https://docs.microsoft.com/en-us/rest/api/storageservices/authentication-for-the-azure-storage-services)
-- [Azure Tables 操作](https://docs.microsoft.com/en-us/rest/api/storageservices/operations-on-tables)
+- [Azure Storage 服务的认证](https://docs.microsoft.com/zh-cn/rest/api/storageservices/authentication-for-the-azure-storage-services)
+- [Azure Tables 操作](https://docs.microsoft.com/zh-cn/rest/api/storageservices/operations-on-tables)

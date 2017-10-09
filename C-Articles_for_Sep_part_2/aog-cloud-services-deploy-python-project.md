@@ -1,8 +1,28 @@
+---
+title: 如何在云服务中发布 Python 应用程序
+description: 如何在云服务中发布 Python 应用程序
+service: ''
+resource: Cloud Services
+author: chenrui1988
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Cloud Services, Python'
+cloudEnvironments: MoonCake
+
+ms.service: cloud-services
+wacn.topic: aog
+ms.topic: article
+ms.author: v-tawe
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # 如何在云服务中发布 Python 应用程序
 
 在 Azure 云服务发布 Python Work Role 应用程序，需要在启动应用程序之前，先要下载并安装 Python 环境，并且使用 pip 安装必需的第三方包。但这个过程中，往往会受到网络的影响导致下载失败，并使云服务应用启动失败。而且当，本文将介绍一种使用离线 Python 下载包安装 Python 运行环境，并缓存 pip 离线包的方法，来加速 Python 应用程序的启动。
 
-首先，我们需要按照官方推荐的方法来创建 Python Work Role 项目，具体可参考此文档：[用于 Visual Studio 的 Python 工具中的 Python Web 角色和辅助角色](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-python-ptvs)
+首先，我们需要按照官方推荐的方法来创建 Python Work Role 项目，具体可参考此文档：[用于 Visual Studio 的 Python 工具中的 Python Web 角色和辅助角色](https://docs.azure.cn/zh-cn/cloud-services/cloud-services-python-ptvs)。
 
 之后，我们需要从 Python 官方网站下载离线安装包，并将其放置到项目脚本目录下。
 
@@ -14,7 +34,7 @@
 
 最后，修改 Python 脚本，使其能够使用本地包，来安装 Python 运行环境，参考以下完整脚本 :
 
-```
+```Python
 $is_emulated = $env:EMULATED -eq "true"
 $is_python2 = $env:PYTHON2 -eq "on"
 $nl = [Environment]::NewLine

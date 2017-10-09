@@ -1,3 +1,23 @@
+---
+title: 如何预热 Azure Web 应用
+description: 如何预热 Azure Web 应用
+service: ''
+resource: CDN
+author: hello-azure
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'CDN, REST API'
+cloudEnvironments: MoonCake
+
+ms.service: cdn
+wacn.topic: aog
+ms.topic: article
+ms.author: v-tawe
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # CDN REST 接口调用及说明
 
 最近，有些客户在尝试使用 REST 接口访问 CDN 服务期间，遇到了一些问题，导致调用失败。比如，在请求时不清楚 Authorization 的构建、或者是构建 Authorization 时仍出现各种异常，我们将对这些问题进行解答。
@@ -5,7 +25,7 @@
 需要注意的是，目前 CDN 同样提供了两套 REST 接口，一套是 ASM（经典模式），另外一套是 ARM（资源管理器），API 接口地址参考：
 
 - ASM CDN：https://docs.azure.cn/zh-cn/cdn/cdn-api 
-- ARM CDN：https://docs.microsoft.com/en-us/rest/api/cdn/
+- ARM CDN：https://docs.microsoft.com/zh-cn/rest/api/cdn/
 
 如果对于 ARM CDN 的使用有更多问题，可以联系通过 400-085-0319 联系开发技术支持团队。本节我们重点介绍以下 3 个 ASM CDN REST 接口的使用：
 
@@ -64,7 +84,7 @@ public static String calculateAuthorizationHeader(
 
 ## 示例代码
 
-[Azure CDN Demo](https://github.com/wacn/AOG-CodeSample/tree/master/cdn/Java/azure-cdn-demo-master)
+下载链接：[Azure CDN Demo](https://github.com/wacn/AOG-CodeSample/tree/master/cdn/Java/azure-cdn-demo-master)
 
 ## 测试用例
 
@@ -106,18 +126,18 @@ AzureCDN cc65a046-2a32-4f7d-ab22-9ae49507d719:CB82B4555573CCE40FF2BAB1C5AA256C35
 
 - Endpoint
 
-`GET https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}?apiVersion=1.0`
+    `GET https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}?apiVersion=1.0`
 
 - 请求参数
 
-| 参数名称 | 参数值 |
-| ------- | ------ |
-| x-azurecdn-request-date | 必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间 |
-| Authorization | 必填。授权头请参考 [CDN API 签名机制](https://docs.azure.cn/zh-cn/cdn/cdn-api-signature) |
+    | 参数名称 | 参数值 |
+    | ------- | ------ |
+    | x-azurecdn-request-date | 必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间 |
+    | Authorization | 必填。授权头请参考 [CDN API 签名机制](https://docs.azure.cn/zh-cn/cdn/cdn-api-signature) |
 
 ## 示例代码
 
-[Azure CDN Demo](https://github.com/wacn/AOG-CodeSample/tree/master/cdn/Java/azure-cdn-demo-master)
+下载链接：[Azure CDN Demo](https://github.com/wacn/AOG-CodeSample/tree/master/cdn/Java/azure-cdn-demo-master)
 
 ## 测试用例
 
@@ -151,19 +171,19 @@ AzureCDN cc65a046-2a32-4f7d-ab22-9ae49507d719:AE889EA579556251F5CA57B19361BE57C2
 
 - Endpoint：
 
-`POST https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/purges?apiVersion=1.0`
+    `POST https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/purges?apiVersion=1.0`
 
 - 请求参数
 
-| 参数名称 | 参数值 |
-| ------- | ------ |
-| x-azurecdn-request-date | 必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间 |
-| Authorization | 必填。授权头请参考 [CDN API 签名机制](https://docs.azure.cn/zh-cn/cdn/cdn-api-signature) |
-| content-type | application/json |
+    | 参数名称 | 参数值 |
+    | ------- | ------ |
+    | x-azurecdn-request-date | 必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间 |
+    | Authorization | 必填。授权头请参考 [CDN API 签名机制](https://docs.azure.cn/zh-cn/cdn/cdn-api-signature) |
+    | content-type | application/json |
 
-## 源码地址
+## 示例代码
 
-[Azure CDN Demo](https://github.com/wacn/AOG-CodeSample/tree/master/cdn/Java/azure-cdn-demo-master)
+下载链接：[Azure CDN Demo](https://github.com/wacn/AOG-CodeSample/tree/master/cdn/Java/azure-cdn-demo-master)
 
 ## 测试用例
 

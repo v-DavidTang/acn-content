@@ -1,4 +1,24 @@
-## 通过 Powershell 统计存储每日文件新增数量
+---
+title: 通过 PowerShell 统计存储每日文件新增数量
+description: 通过 PowerShell 统计存储每日文件新增数量
+service: ''
+resource: Storage
+author: hello-azure
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Storage, PowerShell'
+cloudEnvironments: MoonCake
+
+ms.service: storage
+wacn.topic: aog
+ms.topic: article
+ms.author: v-tawe
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
+## 通过 PowerShell 统计存储每日文件新增数量
 
 ## 问题描述
 
@@ -24,7 +44,7 @@ $blobs = Get-AzureStorageBlob -Container $ContainerName1 -Context $StorageCtx1
 
 # 增长数
 $increCount = 0
-# 获取当前日期，Powershell日期函数参考：http://www.oschina.net/code/snippet_222150_18220 
+# 获取当前日期，PowerShell日期函数参考：http://www.oschina.net/code/snippet_222150_18220 
 $currentTime=Get-Date -Format 'yyyy-MM-dd'
 
 foreach ($blob in $blobs)
@@ -33,7 +53,7 @@ foreach ($blob in $blobs)
    $blobTime = $blob.LastModified.LocalDateTime.ToString("yyyy-MM-dd") 
    $ts = New-Timespan $blobTime $currentTime
 
-   # Powershell 中的比较运算符
+   # PowerShell 中的比较运算符
    # -eq ：等于
    # -ne ：不等于
    # -gt ：大于
@@ -54,14 +74,14 @@ Write-Host $currentTime  '新增文件数：'  $increCount
 
 ## 使用测试
 
-1. 将附件脚本，拷贝到 Powershell 命令行或 ISE，先使用订阅账户登录订阅。
+1. 将附件脚本，拷贝到 PowerShell 命令行或 ISE，先使用订阅账户登录订阅。
 2. 修改存储账户、秘钥及容器名称。
 3. 运行即可，当前脚本只用来统计今天新增文件数量，测试如下：
 
     - 门户容器：
     
-    ![portal](media/aog-storage-blob-howto-statistic-daily-files-via-powershell/portal.png)
+        ![portal](media/aog-storage-blob-howto-statistic-daily-files-via-powershell/portal.png)
 
     - 运行测试：
  
-    ![powershell](media/aog-storage-blob-howto-statistic-daily-files-via-powershell/powershell.png)
+        ![powershell](media/aog-storage-blob-howto-statistic-daily-files-via-powershell/powershell.png)

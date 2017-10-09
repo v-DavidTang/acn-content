@@ -1,3 +1,23 @@
+---
+title: Azure Linux 虚拟机磁盘加密问题排查指南
+description: Azure Linux 虚拟机磁盘加密问题排查指南
+service: ''
+resource: Virtual Machines Linux
+author: sscchh2001
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Virtual Machines Linux, Disk Encryption'
+cloudEnvironments: MoonCake
+
+ms.service: virtual-machines-linux
+wacn.topic: aog
+ms.topic: article
+ms.author: chesh
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # Azure Linux 虚拟机磁盘加密问题排查指南
 
 Azure Linux 虚拟机磁盘加密功能通过开源的 DM-Crypt 组件，使用 Azure 密钥保管库保管加密密钥，并利用 Azure Active Directory 中注册的服务实体来访问进行验证，达到对 Linux 虚拟机进行系统磁盘和数据磁盘加密的目的。

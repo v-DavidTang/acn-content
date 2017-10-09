@@ -1,3 +1,23 @@
+---
+title: 如何通过 Azure 门户将 Web 应用添加到 Vnet 中
+description: 如何通过 Azure 门户将 Web 应用添加到 Vnet 中
+service: ''
+resource: App Service Web
+author: maysmiling
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'App Service Web, Vnet, Azure Portal'
+cloudEnvironments: MoonCake
+
+ms.service: app-service-web
+wacn.topic: aog
+ms.topic: article
+ms.author: v-amazha
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # 如何通过 Azure 门户将 Web 应用添加到 Vnet 中
 
 ## 前提/要求：

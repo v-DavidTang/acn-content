@@ -1,3 +1,23 @@
+---
+title: Web 应用如何实现类似 Nginx 反向代理转发功能
+description: Web 应用如何实现类似 Nginx 反向代理转发功能
+service: ''
+resource: App Service Web
+author: zhangyannan-yuki
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'App Service Web, Nginx Reverse Proxy'
+cloudEnvironments: MoonCake
+
+ms.service: app-service-web
+wacn.topic: aog
+ms.topic: article
+ms.author: v-tawe
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # Web 应用如何实现类似 Nginx 反向代理转发功能
 
 ## 问题描述
@@ -10,13 +30,13 @@
 
     2 个 URL 的返回结果如下：
 
-    ![01](media/aog-app-service-web-howto-realize-nginx-reverse-proxy-and-forward/01.png)
+    ![01](media/aog-app-service-web-howto-realize-nginx-reverse-proxy-and-forward/01.jpg)
 
-    ![02](media/aog-app-service-web-howto-realize-nginx-reverse-proxy-and-forward/02.png)
+    ![02](media/aog-app-service-web-howto-realize-nginx-reverse-proxy-and-forward/02.jpg)
 
 2.	在 `http://testreverseproxyphp.chinacloudsites.cn/` 这个网站 `site` 目录下加上 `applicationHost.xdt`。
 
-    ![03](media/aog-app-service-web-howto-realize-nginx-reverse-proxy-and-forward/03.png)
+    ![03](media/aog-app-service-web-howto-realize-nginx-reverse-proxy-and-forward/03.jpg)
 
     内容如下：
 
@@ -33,7 +53,7 @@
 
 4. 同时也在 `http://testreverseproxyphp.chinacloudsites.cn/` 这个网站下 `site -> wwwroot` 目录下，加上 web.config 文件。
 
-    ![04](media/aog-app-service-web-howto-realize-nginx-reverse-proxy-and-forward/04.png)
+    ![04](media/aog-app-service-web-howto-realize-nginx-reverse-proxy-and-forward/04.jpg)
 
     内容如下：
 
@@ -57,4 +77,4 @@
 
 5. 测试结果，当访问 `http://testreverseproxyphp.chinacloudsites.cn/` 这个网站时，返回的是 PHP 页面，访问 `http://testreverseproxyphp.chinacloudsites.cn/proxy` 时返回的是 Java 页面，实现转发功能。
 
-    ![05](media/aog-app-service-web-howto-realize-nginx-reverse-proxy-and-forward/05.png)
+    ![05](media/aog-app-service-web-howto-realize-nginx-reverse-proxy-and-forward/05.jpg)

@@ -1,3 +1,23 @@
+---
+title: 单点登录后获取当前用户所在组的 ID
+description: 单点登录后获取当前用户所在组的 ID
+service: ''
+resource: Active Directory
+author: xuhua4317
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Active Directory, SSO'
+cloudEnvironments: MoonCake
+
+ms.service: active-directory
+wacn.topic: aog
+ms.topic: article
+ms.author: v-tawe
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # 单点登录后获取当前用户所在组的 ID
 
 ## 现象描述

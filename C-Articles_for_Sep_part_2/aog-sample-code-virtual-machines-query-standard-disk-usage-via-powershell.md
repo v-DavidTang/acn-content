@@ -1,3 +1,23 @@
+---
+title: 使用 PowerShell 脚本查询 Azure 虚拟机标准磁盘用量
+description: 使用 PowerShell 脚本查询 Azure 虚拟机标准磁盘用量
+service: ''
+resource: Virtual Mahicnes
+author: sscchh2001
+displayOrder: ''
+selfHelpType: ''
+supportTopicIds: ''
+productPesIds: ''
+resourceTags: 'Virtual Mahicnes, Sample Code, PowerShell'
+cloudEnvironments: MoonCake
+
+ms.service: virtual-machines
+wacn.topic: aog
+ms.topic: article
+ms.author: chesh
+ms.date: 09/22/2017
+wacn.date: 09/22/2017
+---
 # 使用 PowerShell 脚本查询 Azure 虚拟机标准磁盘用量
 
 众所周知，在使用非托管磁盘或非高级存储虚拟机时，Azure 会按实际用量收费。
@@ -31,7 +51,21 @@
 
 示例运行结果如下：
 
-![01](media/aog-sample-code-virtual-machines-query-standard-disk-usage-via-powershell/01.png)
+```PowerShell
+PS C:\> .\Get-ArmVMDiskSize.ps1 xxxxxxx-xxxx-xxxx-xxxxxxxxxx
+
+ARM part starts!
+The VM chesh2012wMD2 is using Managed Disks.
+The VM chesh2012wMD2 contains 2 data disk(s).
+The VM chesh2016c contains 1 data disk(s).
+The VM cheshkv2012 is using Managed Disks.
+The VM cheshkv2012 contains 1 data disk(s).
+The VM cheshkvcent73 is using Managed Disks.
+The VM cheshkvcent73 contains 1 data disk(s).
+The VM cheshsles12 is using Managed Disks.
+The VM cheshsles12 contains no data disk.
+ARM part finished! 
+```
 
 ## 相关限制
 
