@@ -2,13 +2,13 @@
 title: web 应用中如何设置静态文件缓存过期时间
 description: web 应用中如何设置静态文件缓存过期时间
 service: ''
-resource: webapps
+resource: App Service Web
 author: dillion
 displayOrder: ''
 selfHelpType: ''
 supportTopicIds: ''
 productPesIds: ''
-resourceTags: Web Apps, MIME
+resourceTags: 'Web Apps, MIME'
 cloudEnvironments: MoonCake
 
 ms.service: app-service-web
@@ -23,18 +23,19 @@ wacn.date: 10/23/2017
 
 ## **问题描述**
 
-在使用 Azure Web 应用时，如何设置静态文件缓存过期时间
+在使用 Azure Web 应用时，如何设置静态文件缓存过期时间。
 
 ## **问题分析**
 
-目前， Azure Web 应用都是基于 IIS 转发的，我们可以在 wwwroot 中配置 web.config 来设置缓存过期时间
+目前， Azure Web 应用都是基于 IIS 转发的，我们可以在 wwwroot 中配置 web.config 来设置缓存过期时间。
 
 ## **解决办法**
 
-IIS 可以基于不同的文件夹来进行配置规则，例如，设置 Scripts 文件夹中的静态文件的缓存过期时间为60天，其他静态文件过期时间为30天，则需要配置规则如下：<br>
-![script](./media/aog-web-apps-how-to-configure-local-cache-expire-time/script.jpg)
+IIS 可以基于不同的文件夹来进行配置规则，例如，设置 Scripts 文件夹中的静态文件的缓存过期时间为60天，其他静态文件过期时间为30天，则需要配置规则如下：
 
-```
+![script](./media/aog-app-service-web-how-to-configure-local-cache-expire-time/script.jpg)
+
+```XML
 <configuration>
   <system.webServer>
         <staticContent> 
@@ -54,12 +55,14 @@ IIS 可以基于不同的文件夹来进行配置规则，例如，设置 Script
 </configuration>
 ```
 
-这样 Scirpts 文件夹中静态资源的缓存缓存时间为60天
-![cache2](./media/aog-web-apps-how-to-configure-local-cache-expire-time/cache2.jpg)
+这样 Scirpts 文件夹中静态资源的缓存缓存时间为60天。
 
-其余静态资源的缓存时间为30天
-![cache2](./media/aog-web-apps-how-to-configure-local-cache-expire-time/cache1.jpg)
+![cache2](./media/aog-app-service-web-how-to-configure-local-cache-expire-time/cache2.jpg)
+
+其余静态资源的缓存时间为30天。
+
+![cache2](./media/aog-app-service-web-how-to-configure-local-cache-expire-time/cache1.jpg)
 
 ## **参考文档**
 
-关于 IIS 配置缓存规则，请参考 IIS 官网文档：[Client Cache](https://docs.microsoft.com/iis/configuration/system.webserver/staticcontent/clientcache)
+关于 IIS 配置缓存规则，请参考 IIS 官网文档：[Client Cache](https://docs.microsoft.com/iis/configuration/system.webserver/staticcontent/clientcache)。
