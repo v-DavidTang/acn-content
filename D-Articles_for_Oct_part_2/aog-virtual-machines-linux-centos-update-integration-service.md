@@ -37,44 +37,44 @@ LIS（Linux Integration Service）是针对 Hyper-V 和 Azure 上的 Linux 虚�
 
 2. 将安装包上传到 CentOS 虚拟机上然后进行解压安装。
 
-```
-#解压安装包
-[root@tonwan-centos73 ~]# tar zxvf lis-rpms-4.2.3.tar.gz
-#进入解压好的目录中
-[root@tonwan-centos73 ~]# cd LISISO/
-#执行安装
-[root@tonwan-centos73 LISISO]# ./install.sh
-Removing Hyper-V daemons
-Removing the hypervkvpd package
-Removing the hyperv-daemons-license package
-Invoking release specific install file in directory CentOS73
-Installing the Linux Integration Services for Microsoft Hyper-V...
-Preparing...                          ################################# [100%]
-Updating / installing...
-   1:kmod-microsoft-hyper-v-4.2.3-2017################################# [ 50%]
-   2:microsoft-hyper-v-4.2.3-20170925 ################################# [100%]
-Saving old initramfs
-Installing new initramfs
-Starting KVP Daemon....
-Starting VSS Daemon....
-Starting FCOPY Daemon....
- Linux Integration Services for Hyper-V has been installed. Please reboot your system.
-#安装完成后重启虚拟机
-[root@tonwan-centos73 LISISO]# reboot
-#检查版本信息，version 字段为 LIS 的版本信息
-[root@tonwan-centos73 ~]# modinfo hv_vmbus
-filename:       /lib/modules/3.10.0-514.16.1.el7.x86_64/extra/microsoft-hyper-v/hv_vmbus.ko
-version:        4.2.3
-license:        GPL
-rhelversion:    7.3
-srcversion:     91AC57D4FAEACE98809D6EF
-alias:          acpi*:VMBus:*
-alias:          acpi*:VMBUS:*
-depends:
-vermagic:       3.10.0-514.16.1.el7.x86_64 SMP mod_unload modversions
-```
+    ```
+    #解压安装包
+    [root@tonwan-centos73 ~]# tar zxvf lis-rpms-4.2.3.tar.gz
+    #进入解压好的目录中
+    [root@tonwan-centos73 ~]# cd LISISO/
+    #执行安装
+    [root@tonwan-centos73 LISISO]# ./install.sh
+    Removing Hyper-V daemons
+    Removing the hypervkvpd package
+    Removing the hyperv-daemons-license package
+    Invoking release specific install file in directory CentOS73
+    Installing the Linux Integration Services for Microsoft Hyper-V...
+    Preparing...                          ################################# [100%]
+    Updating / installing...
+    1:kmod-microsoft-hyper-v-4.2.3-2017################################# [ 50%]
+    2:microsoft-hyper-v-4.2.3-20170925 ################################# [100%]
+    Saving old initramfs
+    Installing new initramfs
+    Starting KVP Daemon....
+    Starting VSS Daemon....
+    Starting FCOPY Daemon....
+    Linux Integration Services for Hyper-V has been installed. Please reboot your system.
+    #安装完成后重启虚拟机
+    [root@tonwan-centos73 LISISO]# reboot
+    #检查版本信息，version 字段为 LIS 的版本信息
+    [root@tonwan-centos73 ~]# modinfo hv_vmbus
+    filename:       /lib/modules/3.10.0-514.16.1.el7.x86_64/extra/microsoft-hyper-v/hv_vmbus.ko
+    version:        4.2.3
+    license:        GPL
+    rhelversion:    7.3
+    srcversion:     91AC57D4FAEACE98809D6EF
+    alias:          acpi*:VMBus:*
+    alias:          acpi*:VMBUS:*
+    depends:
+    vermagic:       3.10.0-514.16.1.el7.x86_64 SMP mod_unload modversions
+    ```
 
-> [!NOTE]
-> 请确保使用 root 账号或者具有 root 权限的账号执行上述操作
+    > [!NOTE]
+    > 请确保使用 root 账号或者具有 root 权限的账号执行上述操作
 
 3. 如果日后需要对 LIS 进行更新，可以在下载完最新版安装包后，解压运行 `./upgrade.sh` 然后重启虚拟机即可。

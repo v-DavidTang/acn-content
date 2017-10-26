@@ -31,14 +31,14 @@ wacn.date: 10/25/2017
 
     `curl -u <ambari user name>:<ambari password> -H "Content-Type: application/json" -X GET https://<cluster name>.azurehdinsight.cn/ws/v1/cluster/apps/<Application ID>`
 
-![02](media/aog-hdinsight-apache-spark-howto-kill-yarn-job-via-curl/02.png)
+    ![02](media/aog-hdinsight-apache-spark-howto-kill-yarn-job-via-curl/02.png)
 
 2.	确认待停止的作业后，使用以下命令终止正在运行的作业：
 
-`curl -u <ambari user name>:<ambari password> -v -X PUT -H "Content-Type: application/json" -d '{"state": "KILLED"}' "https://<cluster name>.azurehdinsight.cn/ws/v1/cluster/apps/<application ID>/state"`
+    `curl -u <ambari user name>:<ambari password> -v -X PUT -H "Content-Type: application/json" -d '{"state": "KILLED"}' "https://<cluster name>.azurehdinsight.cn/ws/v1/cluster/apps/<application ID>/state"`
 
-![03](media/aog-hdinsight-apache-spark-howto-kill-yarn-job-via-curl/03.png)
+    ![03](media/aog-hdinsight-apache-spark-howto-kill-yarn-job-via-curl/03.png)
 
 3.	运行成功后，运行语句确认作业状态。
 
-![04](media/aog-hdinsight-apache-spark-howto-kill-yarn-job-via-curl/04.png)
+    ![04](media/aog-hdinsight-apache-spark-howto-kill-yarn-job-via-curl/04.png)

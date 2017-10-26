@@ -28,43 +28,43 @@ wacn.date: 10/25/2017
  
 然而，许多人不知道的是，和 Power BI PaaS 类似，Power BI SaaS 也存在和嵌入(Embed)相关的服务，二者都是通过 HTTP 调用 REST API，从而实现所需内容的内嵌和展示。以下归纳了一些二者的区别，方便读者参考：
 
-1. **REST API 和官方示例**
+## REST API 和官方示例
 
-    * Power BI PaaS
+* **Power BI PaaS**
 
-        REST API: https://msdn.microsoft.com/library/azure/mt711507.aspx<br>
-        官方示例: https://github.com/Azure-Samples/power-bi-embedded-integrate-report-into-web-app/
+    REST API: https://msdn.microsoft.com/library/azure/mt711507.aspx<br>
+    官方示例: https://github.com/Azure-Samples/power-bi-embedded-integrate-report-into-web-app
 
-    * Power BI SaaS
+* **Power BI SaaS**
 
-        REST API: https://msdn.microsoft.com/en-us/library/mt147898.aspx<br>
-        官方示例: https://github.com/Microsoft/PowerBI-developer-samples
+    REST API: https://msdn.microsoft.com/en-us/library/mt147898.aspx<br>
+    官方示例: https://github.com/Microsoft/PowerBI-developer-samples
 
-2. **常用 URL**
+## 常用 URL
 
-    * Power BI PaaS
+* **Power BI PaaS**
 
-        Power BI API URL: https://api.powerbi.cn<br>
-        Power BI API Endpoint: https://WABI-MC-BJB-redirect.analysis.chinacloudapi.cn<br>
-        Azure Resource Manager API Endpoint: https://management.chinacloudapi.cn<br>
-        Azure Resource Manager Resource: https://management.core.chinacloudapi.cn<br>
-        Authentication Url: https://login.chinacloudapi.cn<br>
-        Tenants Url: https://management.chinacloudapi.cn/tenants?api-version=2016-06-01<br>
-        Default Embed URL: https://embedded.powerbi.cn/appTokenReportEmbed
+    Power BI API URL: https://api.powerbi.cn<br>
+    Power BI API Endpoint: https://WABI-MC-BJB-redirect.analysis.chinacloudapi.cn<br>
+    Azure Resource Manager API Endpoint: https://management.chinacloudapi.cn<br>
+    Azure Resource Manager Resource: https://management.core.chinacloudapi.cn<br>
+    Authentication Url: https://login.chinacloudapi.cn<br>
+    Tenants Url: https://management.chinacloudapi.cn/tenants?api-version=2016-06-01<br>
+    Default Embed URL: https://embedded.powerbi.cn/appTokenReportEmbed
 
-    * Power BI SaaS
+* **Power BI SaaS**
 
-        Authority URL: https://login.chinacloudapi.cn/common/oauth2/authorize<br>
-        Resource URL: https://analysis.wchinacloudapi.cn/powerbi/api<br>
-        API URL: https://api.powerbi.cn<br>
-        Embed URL Base: https://app.powerbi.cn<br>
+    Authority URL: https://login.chinacloudapi.cn/common/oauth2/authorize<br>
+    Resource URL: https://analysis.wchinacloudapi.cn/powerbi/api<br>
+    API URL: https://api.powerbi.cn<br>
+    Embed URL Base: https://app.powerbi.cn<br>
 
-3. 所调用的内容及是否需要什么账号
+## 所调用的内容及所需账号
 
-    * Power BI PaaS
+* **Power BI PaaS**
 
-        所调用的是上传至 Azure 账号的 Power BI Embedded 工作区集合的 pbix 文件，因此需要 Azure 账号。而 pbix 文件是在 Power BI 桌面版上制作，因此无需 Power BI 账号。
+    所调用的是上传至 Azure 账号的 Power BI Embedded 工作区集合的 pbix 文件，因此需要 Azure 账号。而 pbix 文件是在 Power BI 桌面版上制作，因此无需 Power BI 账号。
 
-    * Power BI SaaS
+* **Power BI SaaS**
 
-        所调用的是 Power BI 网页版(Power BI Service)上的 Dashboard, Report 或者 Tile 等 内容，因此是需要 Power BI 账号的。
+    所调用的是 Power BI 网页版(Power BI Service)上的 Dashboard, Report 或者 Tile 等 内容，因此是需要 Power BI 账号的。

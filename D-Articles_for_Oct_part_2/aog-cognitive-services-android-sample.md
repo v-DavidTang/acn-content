@@ -33,7 +33,7 @@ Android4.1 或更高 (API Level 16 或更高)
 
 2. 在 Android Studio 中导入示例项目。
 
-3. 修改 app->res->values->strings.xml 的值，注意系统默认的是国外的 endpoint，需要修改为国内的 endpoint 并添加对应的 key。修改示例如下：
+3. 修改 **app** -> **res** -> **values** -> **strings.xml** 的值，注意系统默认的是国外的 Endpoint，需要修改为国内的 Endpoint 并添加对应的 key。修改示例如下：
 
     ![01.png](media/aog-cognitive-services-android-sample/01.png)
 

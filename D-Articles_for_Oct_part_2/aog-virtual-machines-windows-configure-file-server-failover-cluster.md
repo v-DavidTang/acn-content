@@ -25,9 +25,7 @@ wacn.date: 10/25/2017
 
 本文介绍如何在 Resource Manager 模型中的 Azure 虚拟机上创建双节点的一般用途文件服务器(File Server)故障转移群集。此解决方案使用 Windows Server 2016 Datacenter 存储空间直通 (S2D) 作为基于软件的虚拟 SAN，在 Windows 群集中的节点 (Azure VM) 之间同步存储（数据磁盘）。S2D 是 Windows Server 2016 中的新增功能。
 
-关于更多存储空间直通的介绍，请参考：
-
-[Windows Server 2016 中的存储空间直通](https://docs.microsoft.com/zh-cn/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+关于更多存储空间直通的介绍，请参考：[Windows Server 2016 中的存储空间直通](https://docs.microsoft.com/zh-cn/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
 
 S2D 支持两种类型的体系结构 - 聚合与超聚合。 本文档中所述的体系结构为超聚合。 超聚合基础结构将存储放置在托管群集应用程序的相同服务器上。 在此体系结构中，存储位于每个 File Server 节点上。
 
@@ -35,7 +33,7 @@ S2D 支持两种类型的体系结构 - 聚合与超聚合。 本文档中所述
 
 ### 环境：
 
-* ADPDC: 域控制器
+* ADPDC：域控制器
 * S2DNODE1 和 S2DNODE2 作为群集的 2 个节点，每个虚拟机挂载 2 块数据磁盘
 * 见证磁盘：云见证
 * 2 台虚拟机在同一个 Availability Set
@@ -47,17 +45,17 @@ S2D 支持两种类型的体系结构 - 聚合与超聚合。 本文档中所述
 
 在本例中，我们在资源组中创建了一个虚拟网络 ADVNET, 并在里面添加一个子网。基本配置如下：
 
-* 名称: ADVNET
-* 虚拟网络地址: 10.0.0.0/16
-* 子网名称: adSubnet
-* 子网地址: 10.0.0.0/24
+* 名称：ADVNET
+* 虚拟网络地址：10.0.0.0/16
+* 子网名称：adSubnet
+* 子网地址：10.0.0.0/24<br>
     ![01](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/01.png)
 
 ### 部署域控制器 
 
-部署 AD 域控制器的步骤我们不在这里赘述，您可以参考该文档:[在 Azure 虚拟网络中安装新的 Active Directory 林](https://docs.azure.cn/zh-cn/active-directory/active-directory-deploying-ws-ad-guidelines)
+部署 AD 域控制器的步骤我们不在这里赘述，您可以参考该文档：[在 Azure 虚拟网络中安装新的 Active Directory 林](https://docs.azure.cn/zh-cn/active-directory/active-directory-deploying-ws-ad-guidelines)
 
-您也可以使用 Github 上的已有模板创建一个有 [2 台域控的森林](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc)。
+您也可以使用 Github 上的已有[模板](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc)创建一个有 2 台域控的森林。
 
 > [!NOTE]
 > 将 GitHub 的模板部署到中国区 Azure 上需要对模板文件做一些配置，具体步骤请参考[附录](#appendix)。
@@ -81,7 +79,8 @@ S2D 支持两种类型的体系结构 - 聚合与超聚合。 本文档中所述
 * 操作系统： Windows Server 2016 Datacenter
 * 可用性集 — 创建新的可用性集。 (单击 **High Availability** > **Create new**, 然后输入名称(本例中使用 **clusterAS**)。使用 **Update domains** 和 **Fault domains** 的默认值)
 * 配置 Virtual Network - **ADVnet**, Subnet – **ADsubnet**.
-* 虚拟机的尺寸和存储大小按实际需求选取。对于 Azure S2D, 对虚拟机和存储有一定的要求，[这里](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/)的文章有详细的介绍。截图供参考:
+* 虚拟机的尺寸和存储大小按实际需求选取。对于 Azure S2D, 对虚拟机和存储有一定的要求，[这里](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/)的文章有详细的介绍。<br>
+    截图供参考：<br>
     ![02](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/02.png)
 
 ### 配置节点网络
@@ -92,7 +91,7 @@ S2D 支持两种类型的体系结构 - 聚合与超聚合。 本文档中所述
 
     ![03](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/03.png)
 
-* 将群集节点 VM 的 NIC 上的 **primary DNS server address** 设置为域控制器(**adDC**) 的私有 IP 地址 (本例中为 10.0.0.4)
+* 将群集节点 VM 的 NIC 上的 **primary DNS server address** 设置为域控制器(**adDC**) 的私有 IP 地址 (本例中为 10.0.0.4)。
 
 * 选择节点 **VM** > **Network Interfaces** > **DNS servers** > **Custom DNS**。输入上面提到的私有 IP 地址，然后单击**保存**。
 
@@ -111,7 +110,7 @@ S2D 支持两种类型的体系结构 - 聚合与超聚合。 本文档中所述
 
 * 登陆每台节点虚拟机
 * 在虚拟机操作系统中右键开始按钮选择 **System**
-* 在计算机名称，域和工作组这组中将 2 个节点加入之前创建的域
+* 在计算机名称，域和工作组这组中将 2 个节点加入之前创建的域<br>
     ![06](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/06.png)
 
 ### 创建云见证
@@ -123,7 +122,7 @@ S2D 支持两种类型的体系结构 - 聚合与超聚合。 本文档中所述
 * 部署模型：Resource Manager
 * 账户类型：常规用途
 * 性能：标准
-* 复制: 本地冗余存储(LRS)
+* 复制：本地冗余存储(LRS)<br>
     ![07](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/07.png)
 
 ## 配置故障转移群集
@@ -213,13 +212,11 @@ New-Cluster -Name TestFSCluster -Node $nodes –NoStorage –StaticAddress 10.0.
 
     ![19](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/19.png)
 
-
 您也可以用 PowerShell 创建 Cluster，指定固定 IP。
 
 ```PowerShell
 Add-ClusterFileServerRole -Name FSCluster -Storage "Cluster virtual disk (vdisk06)" -StaticAddress 10.0.0.40
 ```
-
 
 ![20](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/20.png)
 
@@ -234,13 +231,13 @@ Add-ClusterFileServerRole -Name FSCluster -Storage "Cluster virtual disk (vdisk0
 若要创建负载均衡器，请执行以下操作：
 
 1. 在 [Azure 门户](https://portal.azure.cn)中，转到虚拟机所在的资源组。
-2. 单击“**+ 添加**”。 在应用商店中搜索“负载均衡器”。 单击“负载均衡器”。
+2. 单击“**+ 添加**”。 在应用商店中搜索**负载均衡器**。 单击“**负载均衡器**”。
 3. 为负载均衡器配置以下属性：
     * 类型：Internal
     * 虚拟网络：ADVnet
     * 子网：ADsubnet
     * 专用 IP 地址：分配给 File Server Cluster 网络资源的同一 IP 地址。本例中是 10.0.0.40.
-    * 资源组：使用虚拟机所在的同一资源组。
+    * 资源组：使用虚拟机所在的同一资源组。<br>
         ![22](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/22.png)
 
 ### 配置负载均衡器后端池
@@ -251,7 +248,7 @@ Add-ClusterFileServerRole -Name FSCluster -Storage "Cluster virtual disk (vdisk0
 4. 单击 “**添加虚拟机**”。
 5. 在 “**选择虚拟机**” 边栏选项卡中，单击 “**选择可用性集**”。
 6. 选择虚拟机所在的可用性集。
-7. 在 “**选择虚拟机**” 边栏选项卡中，单击 “**选择虚拟机**”。
+7. 在 “**选择虚拟机**” 边栏选项卡中，单击 “**选择虚拟机**”。<br>
     ![23](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/23.png)
 
 配置负载均衡器运行状况探测
@@ -259,7 +256,7 @@ Add-ClusterFileServerRole -Name FSCluster -Storage "Cluster virtual disk (vdisk0
 1. 在负载均衡器边栏选项卡中，单击 Health Probs。
 2. 添加一个新的 Health Probs：
     * 协议：TCP
-    * 端口：59999
+    * 端口：59999<br>
         ![24](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/24.png)
 
 ### 设置负载均衡规则
@@ -271,7 +268,7 @@ Add-ClusterFileServerRole -Name FSCluster -Storage "Cluster virtual disk (vdisk0
 * 后端端口：此值使用的端口与启用 “浮动 IP (直接服务器返回)” 时使用的 “端口” 值相同。
 * 后端池：使用前面配置的后端池名称。
 * 运行状况探测：使用前面配置的运行状况探测。
-* 浮动 IP (直接服务器返回)：已启用
+* 浮动 IP (直接服务器返回)：已启用<br>
     ![25](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/25.png)
 
 ### 为探测配置群集
@@ -315,6 +312,7 @@ Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{Address=$
 将 GitHub 的模板部署到中国区 Azure 上需要对模板文件做一些配置，步骤如下：
 
 1. 首先注册并登录您的 GitHub 账号。
+
 2. 点击需要部署的模板链接, 比如第一个链接，在页面右上方点击 Fork, 将其添加到自己的模板列表中。
 
     ![28](media/aog-virtual-machines-windows-configure-file-server-failover-cluster/28.png)

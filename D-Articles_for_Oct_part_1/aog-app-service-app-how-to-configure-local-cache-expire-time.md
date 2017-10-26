@@ -31,7 +31,7 @@ wacn.date: 10/23/2017
 
 ## **解决办法**
 
-IIS 可以基于不同的文件夹来进行配置规则，例如，设置 Scripts 文件夹中的静态文件的缓存过期时间为60天，其他静态文件过期时间为30天，则需要配置规则如下：
+IIS 可以基于不同的文件夹来进行配置规则，例如，设置 Scripts 文件夹中的静态文件的缓存过期时间为 60 天，其他静态文件过期时间为 30 天，则需要配置规则如下：
 
 ![script](./media/aog-app-service-web-how-to-configure-local-cache-expire-time/script.jpg)
 
@@ -55,11 +55,11 @@ IIS 可以基于不同的文件夹来进行配置规则，例如，设置 Script
 </configuration>
 ```
 
-这样 Scirpts 文件夹中静态资源的缓存缓存时间为60天。
+这样 Scirpts 文件夹中静态资源的缓存缓存时间为 60 天。
 
 ![cache2](./media/aog-app-service-web-how-to-configure-local-cache-expire-time/cache2.jpg)
 
-其余静态资源的缓存时间为30天。
+其余静态资源的缓存时间为 30 天。
 
 ![cache2](./media/aog-app-service-web-how-to-configure-local-cache-expire-time/cache1.jpg)
 
