@@ -3,7 +3,7 @@ title: 如何通过 Azure 门户下载直播生成的视频文件
 description: 如何通过 Azure 门户下载直播生成的视频文件
 service: ''
 resource: Media Services
-author: dillion
+author: Dillion132
 displayOrder: ''
 selfHelpType: ''
 supportTopicIds: ''

@@ -3,7 +3,7 @@ title: web 应用中如何设置静态文件缓存过期时间
 description: web 应用中如何设置静态文件缓存过期时间
 service: ''
 resource: App Service Web
-author: dillion
+author: Dillion132
 displayOrder: ''
 selfHelpType: ''
 supportTopicIds: ''
