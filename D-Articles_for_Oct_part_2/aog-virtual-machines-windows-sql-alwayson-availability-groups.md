@@ -72,7 +72,7 @@ Cluster 使用心跳来判断节点的健康状况，他通过以下两个参数
 
 <table>
     <tr>
-        <td rowspan="2" width="180">Windows Server 2012 R2</td>
+        <td rowspan="2" width="200">Windows Server 2012 R2</td>
         <td>CrossSubnet Threshold</td>
         <td>缺省=5</td>
         <td>建议=20</td>
@@ -86,7 +86,7 @@ Cluster 使用心跳来判断节点的健康状况，他通过以下两个参数
 
 <table>
     <tr>
-        <td rowspan="2" width="180">Windows Server 2016</td>
+        <td rowspan="2" width="200">Windows Server 2016</td>
         <td>CrossSubnet Threshold</td>
         <td>缺省=20</td>
         <td>建议=20</td>
