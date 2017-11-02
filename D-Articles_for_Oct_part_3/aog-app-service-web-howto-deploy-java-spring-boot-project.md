@@ -33,14 +33,13 @@ wacn.date: 10/31/2017
     ```
     <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
-    <system.webServer>
-        <handlers>
-        <add name="httpPlatformHandler" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified" />
-        </handlers>
-        <httpPlatform processPath="%JAVA_HOME%\bin\java.exe" stdoutLogEnabled ="true"
-            arguments="-Djava.net.preferIPv4Stack=true -Dserver.port=%HTTP_PLATFORM_PORT% -jar &quot;%HOME%\site\wwwroot\springbootsample-1.0.0.jar&quot;">
-        </httpPlatform>
-    </system.webServer>
+        <system.webServer>
+            <handlers>
+                <add name="httpPlatformHandler" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified" />
+            </handlers>
+            <httpPlatform processPath="%JAVA_HOME%\bin\java.exe" stdoutLogEnabled ="true" arguments="-Djava.net.preferIPv4Stack=true -Dserver.port=%HTTP_PLATFORM_PORT% -jar &quot;%HOME%\site\wwwroot\springbootsample-1.0.0.jar&quot;">
+            </httpPlatform>
+        </system.webServer>
     </configuration>
     ```
 6. 启动应用执行。

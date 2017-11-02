@@ -43,7 +43,7 @@ MQTT.fx 是目前主流的 MQTT 客户端，可以快速验证是否可以与 Io
 
     2. 使用 Device Explorer 准备认证凭据：
 
-        * “**用户名**”字段使用 `{iothubhostname}/{device_id}`，其中 `{iothubhostname}` 是 IoT 中心的完整 CName。例如，如果 IoT 中心的名称为 `contoso.azure-devices.cn`，设备的名称为 `MyDevice01`，则完整“**用户名**”字段应包含 `contoso.azure-devices.cn/MyDevice01`。
+        * “**用户名**”字段使用 `{iothubhostname}/{device_id}`，其中 `{iothubhostname}` 是 IoT 中心的完整 CName。例如，如果 IoT 中心的名称为 `contoso.azure-devices.cn`，设备的名称为 `MyDevice01`，则完整用户名字段应包含 `contoso.azure-devices.cn/MyDevice01`。
         
         * “**密码**”字段使用设备的 SAS 令牌。SAS 令牌的格式如下：`SharedAccessSignature sig={signature-string}&se={expiry}&sr={URL-encoded-resourceURI}`。可以通过快速获取，如下：
 

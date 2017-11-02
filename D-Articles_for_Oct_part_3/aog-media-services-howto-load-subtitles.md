@@ -3,7 +3,7 @@ title: "如何为媒体服务视频加载字幕"
 description: "本文以 Azure Media Player 作为播放器，目前 AMP 所支持的字幕格式为 WebVTT 格式，登陆 Azure 门户，上传字幕文件"
 author: maysmiling
 resourceTags: 'Media Services, Subtitles'
-ms.service: app-service-web
+ms.service: media-services
 wacn.topic: aog
 ms.topic: article
 ms.author: v-amazha

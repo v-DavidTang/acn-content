@@ -51,6 +51,6 @@ Web 应用自动缩放时，如何避免 ASP.NET 站点部分请求处理缓慢�
 
 * `initializationPage` 属性：自动缩放扩展出新实例后，App Service 后台程序会自动持续访问该属性对应的页面。直到后台程序收到该页面的 `HTTP 200` 返回码后认为该实例上的站点预热完成，并通知前端负载均衡开始将新请求转发到本实例上来。
 
-##参考链接
+## 参考链接
 
 [关于 IIS Application Initialization 模块的详细信息](https://docs.microsoft.com/zh-cn/iis/configuration/system.webServer/applicationInitialization/)

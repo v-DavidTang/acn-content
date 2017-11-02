@@ -32,14 +32,14 @@ wacn.date: 10/31/2017
     内容如下：
 
     ```XML
-    <?xml version="1.0"?>  
-    <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">  
-    <system.webServer>  
-    <proxy xdt:Transform="InsertIfMissing" enabled="true" preserveHostHeader="false"  
-    reverseRewriteHostInResponseHeaders="false" />  
-    </system.webServer>  
-    </configuration>  
+    <?xml version="1.0"?>
+    <configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+        <system.webServer>
+            <proxy xdt:Transform="InsertIfMissing" enabled="true" preserveHostHeader="false" reverseRewriteHostInResponseHeaders="false" />
+        </system.webServer>
+    </configuration>
     ```
+
 3. 在管理门户重启网站。
 
 4. 同时也在 `http://testreverseproxyphp.chinacloudsites.cn/` 网站的 **site** -> **wwwroot** 目录下，加上 web.config 文件。
