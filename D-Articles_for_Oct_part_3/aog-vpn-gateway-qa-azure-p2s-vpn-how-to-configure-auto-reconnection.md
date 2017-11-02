@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Azure P2S VPN 如何配置自动重连"
 description: "Azure P2S VPN 如何配置自动重连"
 author: JoiGE
@@ -10,7 +10,6 @@ ms.author: yunjia.ge
 ms.date: 10/31/2017
 wacn.date: 10/31/2017
 ---
-
 # Azure P2S VPN 如何配置自动重连
 
 P2S VPN 为用户单机环境连接 Azure 服务提供了便利。根据用户反馈，配置时最容易在配置证书部分出错（目前 P2S VPN 仅支持证书认证，暂不支持 AD 认证），P2S 证书配置可以参考 [Azure 视频中心](https://www.azure.cn/video-center/)【 Azure 点到站点 VPN 】的系列入门视频 （共 4 个），视频里详细介绍了配置 P2S 的每一步操作及各个证书的作用。
