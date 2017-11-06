@@ -58,11 +58,11 @@ wacn.date: 11/6/2017
 
     ```
     HttpClient client = new HttpClient();
-    // the creds from my .publishsettings file
+    // 从网站发布配置文件中获取用户名和密码。
     var byteArray = Encoding.ASCII.GetBytes("<username>:<password>");
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
     var content = new StringContent("{\"schedule\": \"0 0/50 * * * *\"}", Encoding.UTF8, "application/json");
-    // POST to the run action for my job
+    // 使用 Put 方法调用 API。
     var response = await client.PutAsync("https://<site_name>.scm.chinacloudsites.cn/api/triggeredwebjobs/<job_name>/settings", content);
     ```
 
@@ -77,14 +77,14 @@ wacn.date: 11/6/2017
 
     ![postman](./media/aog-web-apps-how-to-update-the-schedule-of-webjob/postmanwebjob.PNG)
 
-    c. 使用 Windows Powershell 调用 WebJobs API, 代码如下：
+    c. 使用 Windows Powershell 调用 WebJobs API , 代码如下：
 
     ```
     PS C:\Users\dillion> $username = "`<username>"
     PS C:\Users\dillion> $password = "<password>"
     PS C:\Users\dillion> $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username ,$password)))
     PS C:\Users\dillion> $contentType='application/json'
-    PS C:\Users\dillion> $data= @{schedule='*/30 * * * * *'}
+    PS C:\Users\dillion> $data= @{schedule='0 0/30 * * * *'}
     PS C:\Users\dillion> $body = $data | ConvertTo-JSON
     PS C:\Users\dillion> $apiUrl = "https://<site_name>.scm.chinacloudsites.cn/api/triggeredwebjobs/<job_name>/settings"
     PS C:\Users\dillion> Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -Method Put -Body $body -ContentType $contentType
