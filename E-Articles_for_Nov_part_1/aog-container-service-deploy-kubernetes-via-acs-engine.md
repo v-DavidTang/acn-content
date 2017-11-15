@@ -13,11 +13,9 @@ wacn.date: 11/14/2017
 
 # 使用 acs-engine 部署 Kubernetes 集群
 
-## 说明
-
-由于 acs-engine 产品在不断开发改进中，现有配置文件方法在后续不一定能成功。建议用户参考 [Github - Azure Container Service Engine](https://github.com/Azure/acs-engine), 了解最新进展，交流技术问题。
-
-现阶段关于 Kubernetes 的架构请参考链接：[GitHub - Kubernetes](https://github.com/Azure/acs-engine/blob/master/docs/kubernetes/walkthrough.md)。
+> [!IMPORTANT]
+> 由于 acs-engine 产品在不断开发改进中，现有配置文件方法在后续不一定能成功。建议用户参考 [Github - Azure Container Service Engine](https://github.com/Azure/acs-engine), 了解最新进展，交流技术问题。
+> 现阶段关于 Kubernetes 的架构请参考链接：[GitHub - Kubernetes](https://github.com/Azure/acs-engine/blob/master/docs/kubernetes/walkthrough.md)。
 
 ## 操作步骤
 
@@ -25,7 +23,7 @@ wacn.date: 11/14/2017
 
     建议在 **Ubuntu 16.04** 中使用 **acs-engine 0.8.0** 进行部署。该系统版本是经过测试的较稳定的版本，其他 Linux 发行版本如 CentOS 可能在后续 Kubernetes 管理中有一些问题。若使用 acs-engine 的其他版本，使用的 Kubernetes.json 文件格式可能有所不同。
 
-    您也可以用源码进行编译安装，本文对该部分不做介绍，参考:[源码部署安装 ACS Engine](https://github.com/Azure/acs-engine/blob/master/docs/acsengine.md#build-acs-engine-from-source)
+    您也可以用源码进行编译安装，本文对该部分不做介绍，参考：[源码部署安装 ACS Engine](https://github.com/Azure/acs-engine/blob/master/docs/acsengine.md#build-acs-engine-from-source)。
 
     acs-engine 下载地址：[https://github.com/Azure/acs-engine/releases/tag/v0.8.0](https://github.com/Azure/acs-engine/releases/tag/v0.8.0)
 
@@ -37,7 +35,7 @@ wacn.date: 11/14/2017
 
 2. 创建服务主体
 
-    您需要首先安装 Azure CLI 2.0。安装方法请参考：[安装 Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli?view=azure-cli-latest)
+    您需要首先安装 Azure CLI 2.0。安装方法请参考：[安装 Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli?view=azure-cli-latest)。
 
     ```Azure CLI
     $ az cloud set -n AzureChinaCloud
@@ -73,7 +71,7 @@ wacn.date: 11/14/2017
 
     在使用该模板前，您应该已经完成了第二步，并已经准备好了 SSH 公钥和密钥对，这将用于登录您的 Kubernetes master 节点。
 
-    Kubernetes.json 模板如下，将高亮部分改成您的值，将文件保存在 acs-engine 命令的目录中。
+    Kubernetes.json 模板如下，将相关参数改成您的值，将文件保存在 acs-engine 命令的目录中。
 
     ```json
     {
@@ -117,14 +115,14 @@ wacn.date: 11/14/2017
 
     **参数说明：**
 
-    * location 决定了后续 Kubernetes master 节点的 DNS 名对应的 Azure 终结点是否正确，请确保一定要填写正确。在中国，可选值应该为 Chinanorth 或者 Chinaeast。
+    * location 决定了后续 Kubernetes master 节点的 DNS 名对应的 Azure 终结点是否正确，请确保一定要填写正确。在中国，可选值应该为 China North 或者 China East。
     * dnsprefix 决定了输出的文件夹，会在当前目录的 _output 下生成一个同名的文件夹，其中包括部署 Kubernetes 集群的参数文件。
     * 您可以调整模板中 masterProfile 和 agentPoolProfiles，修改其 count 和 VMsize 为您实际的需求。
     * 不同版本的 acs-engine 的 Kubernetes.json 模板中具体的参数名可能有所调整，若不确定，建议在 Github 中查找或提交问题。
 
 4. 生成 Azure 模板
 
-    确认您使用的 acs-engine 版本是正确的。这将决定生成的模板配置。
+    确认您使用的 acs-engine 版本是正确的，这将决定生成的模板配置。
 
     ```Shell
     $ ./acs-engine version
@@ -137,7 +135,7 @@ wacn.date: 11/14/2017
 
 5. 编辑查看模板
 
-    在笔者测试阶段，为了在 Azure 中国区部署成功，部分模板参数需要做调整。在后续的开发中，这部分配置可能会被修正。请参考 GitHub 的最新进展。
+    在笔者测试阶段，为了在 Azure 中国区部署成功，部分模板参数需要做调整。在后续的开发中，这部分配置可能会被修正，请参考 GitHub 的最新进展。
 
     切换到模板目录 _output/yourprefix，编辑 azuredeploy.parameters.json。替换其中部分值如下：
 
@@ -146,15 +144,13 @@ wacn.date: 11/14/2017
     $ vi azuredeploy.parameters.json
     ```
 
-    修改 “**kubernetesHyperkubeSpec**” 的值为：`crproxy.trafficmanager.net:6000/google_containers/hyperkube-amd64:v1.6.11`
-
-    修改“**dockerEngineDownloadRepo**” 的值为：`https://mirror.kaiyuanshe.cn/docker-engine/apt/repo`
-
-    修改“**kubernetesTillerSpec**” 的值为：`crproxy.trafficmanager.net:6000/kubernetes-helm/tiller:v2.6.1`
+    修改 “**kubernetesHyperkubeSpec**” 的值为：`crproxy.trafficmanager.net:6000/google_containers/hyperkube-amd64:v1.6.11`<br>
+    修改“**dockerEngineDownloadRepo**” 的值为：`https://mirror.kaiyuanshe.cn/docker-engine/apt/repo`<br>
+    修改“**kubernetesTillerSpec**” 的值为：`crproxy.trafficmanager.net:6000/kubernetes-helm/tiller:v2.6.1`<br>
 
 6. 部署 Kubernetes 集群
 
-    该过程大约需要 20 分钟左右，其中包括创建 Azure 资源如 VNET，负载均衡，自定义路由，虚拟机，存储账号等；并配置虚拟机中 Kubernetes 各组件和服务。
+    该过程大约需要 20 分钟左右，其中包括创建 Azure 资源如 VNET，负载均衡，自定义路由，虚拟机，存储账号等，并配置虚拟机中 Kubernetes 各组件和服务。
 
     ```
     $ az group deployment create -g lqik8s07 --template-file azuredeploy.json  --parameters azuredeploy.parameters.json

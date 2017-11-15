@@ -15,7 +15,7 @@ wacn.date: 11/14/2017
 
 本文是基于成功将 Web 应用服务(PaaS)集成到已有的虚拟网络(IaaS)后，为使用者提供了一些做网络连通性测试的方法。
 
-有关如何将 Web 应用服务集成到已有的虚拟网络中，请参阅：[将 Azure 应用与虚拟网络进行集成](https://docs.azure.cn/zh-cn/app-service/web-sites-integrate-with-vnet)
+有关如何将 Web 应用服务集成到已有的虚拟网络中，请参阅：[将 Azure 应用与虚拟网络进行集成](https://docs.azure.cn/zh-cn/app-service/web-sites-integrate-with-vnet)。
 
 1. 从 [Azure 门户](https://portal.azure.cn)上确认 Web 应用服务是否已经连接到虚拟网络中：
 
@@ -29,7 +29,7 @@ wacn.date: 11/14/2017
 
     ![03](media/aog-app-service-web-integrate-into-virtual-network-connectivity-test/03.png)
 
-4. 点击对应的 **VNET 名称**，此处以 `<webapp_vnet1>` 为例：
+4. 点击对应的 **VNET 名称**，此处以 `webapp_vnet1` 为例：
 
     ![04](media/aog-app-service-web-integrate-into-virtual-network-connectivity-test/04.png)
 
@@ -39,9 +39,9 @@ wacn.date: 11/14/2017
 
 通过以上步骤就可以从 [Azure 门户](https://portal.azure.cn)中确认所有必要的配置。
 
-下文为使用者介绍测试网络连通性的方法。
+下文为使用者介绍测试网络连通性的方法：
 
-Azure Web 应用服务为使用者提供了**控制台** (console)访问方式以及高级工具 - Kudu 站点：
+Azure Web 应用服务为使用者提供了**控制台** (console)访问方式以及高级工具 - **Kudu 站点**：
 
 - 控制台
 
@@ -52,7 +52,7 @@ Azure Web 应用服务为使用者提供了**控制台** (console)访问方式�
     ![07](media/aog-app-service-web-integrate-into-virtual-network-connectivity-test/07.png)
 
 
-    您也可以通过在 Web 应用服务的 URL 中间添加 scm 的方式链接访问 Kudu 站点, 形式如下：
+    当然您也可以通过在 Web 应用服务的 URL 中间添加 scm 的方式链接访问 Kudu 站点, 形式如下：
 
     ```
     http://<yoursite>.scm.azurewebsites.net
@@ -72,10 +72,10 @@ Azure Web 应用服务为使用者提供了**控制台** (console)访问方式�
 > [!NOTE]
 > Web 应用服务的 PowerShell 或是 CMD 均不提供 ICMP Ping 工具，仅提供如上基于 TCP 层的测试工具。
 
-另外，Kudu 的 CMD 中或是控制台中，可以运行 curl 工具，测试到虚拟网络或者到 internet 的 Http/Https 连通性，但 curl 目前仅支持在 CMD 下运行：
+另外，Kudu 的 CMD 中或是控制台中，可以运行 curl 工具，测试到虚拟网络或者到 internet 的 HTTP/HTTPS 连通性，但 curl 目前仅支持在 CMD 下运行：
 
 ![11](media/aog-app-service-web-integrate-into-virtual-network-connectivity-test/11.png)
 
-有关 CMD 中可以执行的其他命令，可以通过 help 命令获取。
+有关 CMD 中可以执行的其他命令，可以通过 `help` 命令获取。
 
 有关 Kudu 的详细介绍，请参阅：[Kudu 站点](https://github.com/projectkudu/kudu/wiki)。
