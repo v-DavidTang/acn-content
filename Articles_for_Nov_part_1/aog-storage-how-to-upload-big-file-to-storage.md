@@ -47,7 +47,7 @@ Azure 存储提供三种类型的 Blob：块 Blob、页 Blob 和追加 Blob。�
 
 需要在项目中引用两个包：[适用于 .NET 的 Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)和[适用于 .NET 的 Azure Configuration Manager 库](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)，也可以通过 NuGet 搜索 "WindowsAzure.Storage" 和 "WindowsAzure.ConfigurationManager" 安装。
 
-本文使用的是 WindowsAzure.Storage 8.6.0 版本和 WindowsAzure.ConfigurationManager 3.2.3 版本。
+以下示例使用的是 WindowsAzure.Storage 8.6.0 版本和 WindowsAzure.ConfigurationManager 3.2.3 版本，采用分块方式上传本地文件，文件大小为 117MB。
 
 代码如下：
 
@@ -106,7 +106,9 @@ Azure 存储提供三种类型的 Blob：块 Blob、页 Blob 和追加 Blob。�
 
 .NET Framework 4.5 或者以上版本，Netstandard2.0。
 
-可以通过 Nuget 搜索 "Microsoft.Azure.Storage.DataMovement" 安装该类库，本文使用的是 Microsoft.Azure.Storage.DataMovement 0.6.5版本。
+通过 Nuget 搜索 "Microsoft.Azure.Storage.DataMovement" 安装该类库。
+
+以下示例使用的是 Microsoft.Azure.Storage.DataMovement 0.6.5版本，采用分块方式上传本地文件，本地文件大小771MB.
 
 代码如下：
 ```
