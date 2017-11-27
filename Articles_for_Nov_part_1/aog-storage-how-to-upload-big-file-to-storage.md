@@ -29,7 +29,7 @@ Azure 存储提供三种类型的 Blob：块 Blob、页 Blob 和追加 Blob。�
 
 在上传文件到 Azure Blob 存储时，Azure 支持两种方式，整体上传和分块上传。存储客户端默认使用 [SingleBlobUploadThresholdInBytes](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.blobrequestoptions.singleblobuploadthresholdinbytes?view=azure-dotnet) 属性设置单个 Blob 上传最大值为 32 MB（可设置范围在 1MB ~ 256MB），使用 [StreamWriteSizeInBytes](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob.streamwritesizeinbytes?view=azure-dotnet) 设置单个块 blob 的大小(范围在 16KB ~ 100 MB)。
 
-当上传到块 Blob 的文件小于等于 SingleBlobUploadThresholdInBytes 属性的值时(对于2016-05-31 之前 REST 版本, 请求不大于 64 MB)，则可以调用 PutBlob 完整的上传 Blob ，更多详细信息，请参考：[Put Blob](https://docs.microsoft.com/rest/api/storageservices/put-blob)；
+当上传到块 Blob 的文件小于等于 SingleBlobUploadThresholdInBytes 属性的值时(对于2016-05-31 之前 REST 版本, 请求不大于 64 MB)，则可以调用 PutBlob 完整的上传 Blob ，更多详细信息，请参考：[PutBlob](https://docs.microsoft.com/rest/api/storageservices/put-blob)；
 
 当上传的块 Blob 的文件大于 SingleBlobUploadThresholdInBytes 属性的值时，存储客户端会根据 StreamWriteSizeInBytes 的值将文件分解成块, 采用分块上传的方式上传文件，更多详细信息，请参考[PubBlobList](https://docs.microsoft.com/rest/api/storageservices/put-block-list)。
 
