@@ -125,6 +125,8 @@ Azure 存储提供三种类型的 Blob：块 Blob、页 Blob 和追加 Blob。�
     // 获取文件路径
     string sourcePath = @"D:\Documents.zip";
     CloudBlockBlob docBlob = blobcontainer.GetBlockBlobReference("documents");
+    docBlob.DeleteIfExists();
+    
     // 设置并发操作的数量
     TransferManager.Configurations.ParallelOperations = 64;
     // 设置单块 blob 的大小，它必须在 4MB 到 100MB 之间，并且是 4MB 的倍数，默认情况下是 4MB
