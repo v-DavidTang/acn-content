@@ -95,7 +95,7 @@ Azure 存储提供三种类型的 Blob：块 Blob、页 Blob 和追加 Blob。�
 ```
 
 > [!IMPORTANT]
-> 在 WindowsAzure.Storage 8.0.0 版本( Rest 2016-05-31 版本)及以上版本中，单个块 BlockBlob 最大为 100MB，在之前的版本中，单个块 Blob 最大不超过 4MB 。如果设置的值超出范围，代码运行当中会报 ArgumentOutOfRangeException 异常。有关存储 SDK 版本和 Rest 版本对应的详细信息，请参考 [Azure 存储版本更新日志](https://github.com/Azure/azure-storage-net/blob/master/changelog.txt)
+> 在 WindowsAzure.Storage 8.0.0 版本( Rest 2016-05-31 版本)及以上版本中，单个块 BlockBlob 最大为 100MB，在之前的版本中，单个块 Blob 最大不超过 4MB 。如果设块 Blob 的大小超出范围，代码运行当中会报 ArgumentOutOfRangeException 异常。有关存储 SDK 版本和 Rest 版本对应的详细信息，请参考 [Azure 存储版本更新日志](https://github.com/Azure/azure-storage-net/blob/master/changelog.txt)
 
 截图如下：
 
