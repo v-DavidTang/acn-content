@@ -23,6 +23,10 @@ wacn.date: 12/12/2017
 
 ![createhubdb.PNG](./media/aog-sql-database-sql-data-sync/createhubdb.PNG)
 
+>[!NOTE]
+>
+> 本文中在 azure 创建的数据库排序规则都使用的是默认规则（SQL_LATIN1_GENERAL_CP1_CI_AS）。
+
 创建成功后，点击“**同步到其他数据库**”，点击“**新建同步组**”。
 
 ![syncgroup.PNG](./media/aog-sql-database-sql-data-sync/syncgroup.PNG)
