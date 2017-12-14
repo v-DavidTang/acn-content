@@ -27,7 +27,7 @@ wacn.date: 12/12/2017
 
 ![syncgroup.PNG](./media/aog-sql-database-sql-data-sync/syncgroup.PNG)
 
-输入同步组名称，选择同步元数据数据库，可以使用现有数据库或者新建一个数据库。打开自动同步并设置同步频率，同步频率最小为 **5** 分钟。冲突解决可以选择“**中心胜出**”或者“**成员胜出**”
+输入同步组名称，选择同步元数据数据库，可以使用现有数据库或者新建一个数据库。打开自动同步并设置同步频率，同步频率最小为 **5** 分钟。冲突解决可以选择“**中心胜出**”或者“**成员胜出**”。
 
 ![createsyncgroup.PNG](./media/aog-sql-database-sql-data-sync/createsyncgroup.PNG)
 
@@ -44,7 +44,7 @@ wacn.date: 12/12/2017
 在中心数据库区域输入中心数据库所在 SQL 数据库服务器的现有凭据，记录凭据，配置客户端代理时需要用到。在成员数据库区域，选择“**添加本地数据库**”。选择“**选择同步代理网关**”，初次设置选择“**创建新代理**”， 点击“**下载**”按钮下载客户端同步代理, 本文使用的是 **Microsoft SQL Azure Data Sync Agent 2.0(X86)** 客户端代理。输入代理名称，并生成代理密钥，复制密钥，配置客户端代理时需要用到。
 
 > [!Important]
-> 在客户端安装 **Microsoft SQL Azure Data Sync Agent 2.0(X86)** 之前，需要在客户端安装 **Microsoft System CLR Types for Microsoft SQL Server 2012(X86)** 和 **Microsoft SQL Server 2012 Shared Management Objects(X86)**，您可以从[这里](https://www.microsoft.com/download/details.aspx?id=29065)下载相关的包。
+> 在客户端安装 **Microsoft SQL Azure Data Sync Agent 2.0(X86)** 之前，需要在客户端安装 **Microsoft System CLR Types for Microsoft SQL Server 2012(X86)** 和 **Microsoft SQL Server 2012 Shared Management Objects(X86)**，您可以从 [这里](https://www.microsoft.com/download/details.aspx?id=29065) 下载相关的包。
 
 ![addsyncmember.PNG](./media/aog-sql-database-sql-data-sync/addsyncmember.PNG)
 
@@ -56,7 +56,7 @@ wacn.date: 12/12/2017
 
 ![agentui.PNG](./media/aog-sql-database-sql-data-sync/agentui.PNG)
 
-将之前生成的代理密钥复制到” Agent Key “, 输入之前中心数据库凭据用户名和密码。点击”**Test Connection**“按钮，测试是否连接成功
+将之前生成的代理密钥复制到” Agent Key “, 输入之前中心数据库凭据用户名和密码。点击 ”**Test Connection**“ 按钮，测试是否连接成功
 
 ![agentsubmit.PNG](./media/aog-sql-database-sql-data-sync/agentsubmit.PNG)
 
@@ -72,7 +72,7 @@ wacn.date: 12/12/2017
 
 ![registerlocaldb.PNG](./media/aog-sql-database-sql-data-sync/registerlocaldb.PNG)
 
-点击 “**Test Connection**” 测试数据库是否连接成功。连接成功后截图如下，可以点击 “**Ping Sync Servie**”按钮测试同步连接情况。
+点击 “**Test Connection**” 测试数据库是否连接成功。连接成功后截图如下，可以点击 “**Ping Sync Servie**” 按钮测试同步连接情况。
 
 ![registersuccess.PNG](./media/aog-sql-database-sql-data-sync/registersuccess.PNG)
 
@@ -95,7 +95,7 @@ wacn.date: 12/12/2017
 > 
 > ![syncerror2.PNG](./media/aog-sql-database-sql-data-sync/syncerror2.PNG)
 
-通过中心数据库的数据库资源管理器（预览），可以看到数据同步到Azure 中心数据库。
+通过中心数据库的数据库资源管理器（预览），可以看到数据同步到 Azure 中心数据库。
 
 ![checkresult.PNG](./media/aog-sql-database-sql-data-sync/checkresult.PNG)
 
