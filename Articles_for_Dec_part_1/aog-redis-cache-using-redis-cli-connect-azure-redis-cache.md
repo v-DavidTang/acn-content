@@ -35,7 +35,7 @@ Azure Redis 可以通过 SSL 端口和非 SSL 端口创建连接。当使用 red
 也可以通过 PowerShell 执行以下代码启动非 SSL 端口。
 
 ```
-Set-AzureRmRedisCache -resourcegroupname dillion_rg -Name dillionrediscache -EnableNonSSLPort 1
+Set-AzureRmRedisCache -resourcegroupname <资源组名称> -Name <Redis 缓存名称> -EnableNonSSLPort 1
 ```
 ![enablenonssl](./media/aog-redis-cache-using-redis-cli-connect-azure-redis-cache/enablenonssl.PNG)
 
@@ -44,7 +44,7 @@ Set-AzureRmRedisCache -resourcegroupname dillion_rg -Name dillionrediscache -Ena
 使用以下命令连接到 Azure Redis 缓存。
 
 ```
-redis-cli.exe -h dillionrediscache.redis.cache.chinacloudapi.cn -a hzPlWEsUQGbM4yJiYArVyFs0r38fSVMFjCDZKSQtPxI=
+redis-cli.exe -h dillionrediscache.redis.cache.chinacloudapi.cn -a <访问密钥>
 ```
 
 截图如下：
@@ -56,7 +56,7 @@ redis-cli.exe -h dillionrediscache.redis.cache.chinacloudapi.cn -a hzPlWEsUQGbM4
 #### 通过 [Azure 门户](https://portal.azure.cn/)或使用 Powershell 执行以下命令设置 Azure Redis 缓存仅允许通过 SSL 访问（禁用非 SSL 端口）。
 
 ```
-Set-AzureRmRedisCache -resourcegroupname dillion_rg -Name dillionrediscache -EnableNonSSLPort 0
+Set-AzureRmRedisCache -resourcegroupname <资源组名称> -Name <Redis 缓存名称> -EnableNonSSLPort 0
 ```
 
 ![disablenonssl](./media/aog-redis-cache-using-redis-cli-connect-azure-redis-cache/disablenonssl.PNG)
