@@ -91,7 +91,7 @@ connect = dillionrediscache.redis.cache.chinacloudapi.cn:6380
 * 使用以下命令连接到 Azure Redis 缓存.
 
 ```
-redis-cli.exe -p 6380 –a <your access key>
+redis-cli.exe -p 6380 –a <访问密钥>
 ```
 
 ![sslconfig](./media/aog-redis-cache-using-redis-cli-connect-azure-redis-cache/sslconfig.PNG)
