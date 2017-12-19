@@ -21,20 +21,18 @@ wacn.date: 12/18/2017
 
 Azure Redis 缓存可以通过 SSL 端口和非 SSL 端口创建连接。当使用 redis-cli 连接 Azure Redis 缓存时，由于在默认情况下 redis-cli 不支持 SSL ，所以 redis-cli 会通过非 SSL 端口创建连接。如果 Azure Redis 缓存禁用 Non-SSL 端口，就会出现 redis-cli 无法连接这种情况。
 
-如果想要通过 SSL 端口进行访问，可以在客户端机器上为 relis-cli.exe 设置 SSL 代理。
-
 ## 解决方案
 
 本文主要使用以下两种方式连接到 Azure Redis 缓存。
-1. 通过非 SSL 端口连接到 Azure Redis 缓存
-2. 通过 SSL 端口连接到 Azure Redis 缓存
+1. 通过非 SSL 端口( 6379 )连接到 Azure Redis 缓存
+2. 通过 SSL 端口( 6380 )连接到 Azure Redis 缓存
 
 ## 前提条件
 
 在客户端安装 redis-cli ，本文使用的是 Redis-x64-3.2.100。您可以点击 [这里](https://github.com/MicrosoftArchive/redis/releases) 下载 redis-cli。
 
 
-## 通过非 SSL 端口连接到 Azure Redis 缓存。
+## 通过非 SSL 端口( 6379 )连接到 Azure Redis 缓存。
 
 #### 启用非 SSL 端口。
 
@@ -51,6 +49,7 @@ Azure Redis 缓存可以通过 SSL 端口和非 SSL 端口创建连接。当使�
 ```
 Set-AzureRmRedisCache -resourcegroupname <资源组名称> -Name <Redis 缓存名称> -EnableNonSSLPort 1
 ```
+
 ![enablenonssl](./media/aog-redis-cache-using-redis-cli-connect-azure-redis-cache/enablenonssl.PNG)
 
 #### 连接到 Azure Redis 缓存。
@@ -67,7 +66,11 @@ redis-cli.exe -h < Redis 主机名称> -a <访问密钥>
 
 ## 通过 SSL 端口连接到 Azure Redis 缓存。
 
-#### 通过 [Azure 门户](https://portal.azure.cn/)或使用 Powershell 执行以下命令设置 Azure Redis 缓存仅允许通过 SSL 访问（禁用非 SSL 端口）。
+#### 通过 [Azure 门户](https://portal.azure.cn/) 检查 Azure Redis 缓存是否仅允许通过 SSL 访问（禁用非 SSL 端口）。
+
+![disablenonssl](./media/aog-redis-cache-using-redis-cli-connect-azure-redis-cache/disablenonssl2.PNG)
+
+或者使用 Powershell 执行以下命令设置 Azure Redis 缓存仅允许通过 SSL 访问。
 
 ```
 Set-AzureRmRedisCache -resourcegroupname <资源组名称> -Name <Redis 缓存名称> -EnableNonSSLPort 0
@@ -84,6 +87,7 @@ Set-AzureRmRedisCache -resourcegroupname <资源组名称> -Name <Redis 缓存�
 ```
 redis-cli -v
 ```
+
 ![checkinstallresut](./media/aog-redis-cache-using-redis-cli-connect-azure-redis-cache/checkinstallresut.PNG)
 
 * 打开 stunnel GUI Start，点击 "**Configuration**" -> "**Edit Configuration**" 。将以下代码添加到配置文件。
