@@ -40,7 +40,7 @@ wacn.date: 12/20/2017
 
 ## 解决方案
 
-通过修改 SAS 令牌的起止时间或者修改时区，使 SAS 令牌在当前时间可用。例如：
+通过修改 SAS 令牌的起止时间或者修改时区，使当前时间在 SAS 令牌的有效期内。例如：
 
 ![method1](./media/aog-mysql-download-mysql-slow-query-log/method1.PNG)
 
