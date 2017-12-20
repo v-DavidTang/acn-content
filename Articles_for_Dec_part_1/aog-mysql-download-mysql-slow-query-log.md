@@ -1,6 +1,6 @@
 ---
-title: "如何解决 SAS 令牌问题导致 MySQL DataBase on Azure 慢日志无法下载"
-description: "如何解决 SAS 令牌问题导致 MySQL DataBase on Azure 慢日志无法下载"
+title: "如何解决 MySQL DataBase on Azure 慢查询日志无法下载的问题"
+description: "如何解决 MySQL DataBase on Azure 慢查询日志无法下载的问题"
 author: Dillion132
 resourceTags: 'MySQL DataBase on Azure , MIME'
 ms.service: mysql
@@ -11,11 +11,11 @@ ms.date: 12/20/2017
 wacn.date: 12/20/2017
 ---
 
-# 如何解决 SAS 令牌问题导致 MySQL DataBase on Azure 慢日志无法下载
+# 如何解决 MySQL DataBase on Azure 慢查询日志无法下载的问题
 
 ## 问题描述
 
-在将 MySQL 慢日志下载到 Blob 容器时，遇到以下错误：
+在将 MySQL 慢查询日志下载到 Blob 容器时，遇到以下错误：
 
 ![error](./media/aog-mysql-download-mysql-slow-query-log/error.PNG)
 
@@ -33,7 +33,10 @@ wacn.date: 12/20/2017
 ?sv=2017-04-17&ss=bfqt&srt=sco&sp=rwdlacup&se=2017-12-20T21:38:20Z&st=2017-12-20T13:38:20Z&spr=https&sig=4eXrhY8qM3frY09lyxVTjpUR%2F7eupwIN3%2B0%2FBeMCH1A%3D
 ```
 
-通过分析令牌我们可以看出，该令牌的开始时间为：“2017-12-20T13:38:20Z（UTC）”，即北京时间 2017-12-20 21:38:20。所以当前时间（北京时间:2017-12-20 13:38）不在 SAS 令牌指定的起止时间内，从而导致 SAS 令牌在当前时间未生效，无法下载 MySQL 慢日志。
+>[!NOTE]
+>SAS 令牌中的开始和到期时间必须以 UTC (协调世界时) 格式表示。
+
+通过分析令牌我们可以看出，该令牌的开始时间为：“2017-12-20T13:38:20Z（UTC）”，即北京时间 2017-12-20 21:38:20。所以当前时间（北京时间:2017-12-20 13:38）不在 SAS 令牌指定的有效期内，导致 SAS 令牌在当前时间未生效，从而无法下载 MySQL 慢查询日志。
 
 ## 解决方案
 
