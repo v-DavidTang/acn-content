@@ -40,9 +40,7 @@ wacn.date: 12/20/2017
 
 ## 解决方案
 
-通过修改 SAS 令牌的起止时间或者修改时区，使 SAS 令牌在当前时间可用。
-
-#### 方法一，修改时区
+通过修改 SAS 令牌的起止时间或者修改时区，使 SAS 令牌在当前时间可用。例如：
 
 ![method1](./media/aog-mysql-download-mysql-slow-query-log/method1.PNG)
 
@@ -55,17 +53,3 @@ wacn.date: 12/20/2017
 结果如下：
 
 ![success1](./media/aog-mysql-download-mysql-slow-query-log/success1.PNG)
-
-#### 方法二，修改 SAS 令牌的起止时间
-
-![method2](./media/aog-mysql-download-mysql-slow-query-log/method2.PNG)
-
-点击 “**生成 SAS**”, 生成的 SAS 令牌如下：起止时间：2017-12-20T00:00:00Z~2017-12-20T13:38:20Z（UTC）,即北京时间 2017-12-20 08:00 ~ 2017-12-20 21:38。
-
-```
-?sv=2017-04-17&ss=bfqt&srt=sco&sp=rwdlacup&se=2017-12-20T21:38:20Z&st=2017-12-20T00:00:00Z&spr=https&sig=rposLIHuLDD15a75bEbZUPZfkVx%2BLNemlPRwzWkPIhI%3D
-```
-
-结果如下：
-
-![success2](./media/aog-mysql-download-mysql-slow-query-log/success2.PNG)
