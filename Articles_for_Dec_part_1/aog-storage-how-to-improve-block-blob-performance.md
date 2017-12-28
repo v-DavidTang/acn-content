@@ -23,7 +23,7 @@ wacn.date: 12/27/2017
 
 ## 示例分析
 
-例如：将本地文件（117MB）以不同的尺寸（分别设置单个 blob 块为 16KB, 256KB, 默认大小（本文使用的 SDK 版本为 WindowsAzure.Storage 8.6.0, 默认为 4MB ），10MB, 100MB）分解成块，然后上传到 Block Blob。读取 Block Blob 时，通过代码或者检查日志方式检查响应时间。
+例如：将本地文件（342MB）以不同的尺寸（分别设置单个 blob 块为 16KB, 256KB, 默认大小（本文使用的 SDK 版本为 WindowsAzure.Storage 8.6.0, 默认为 4MB ），10MB, 100MB）分解成块，然后上传到 Block Blob。读取 Block Blob 时，通过代码或者检查日志方式检查响应时间。
 
 分块上传代码如下：
 ```
@@ -102,7 +102,7 @@ Console.WriteLine("block size: 16K，block 块数：" + item1.Count() + "，耗�
 
 有关存储日志格式的详细信息，请参阅[这篇文章](https://docs.microsoft.com/rest/api/storageservices/Storage-Analytics-Log-Format?redirectedfrom=MSDN)
 
-通过测试结果以及存储日志，我们可以看出，对于同一文件，如果单个 Blob 块的的尺寸越小，分解后的块数越多，读取时花费的时间也就越长。
+通过测试输出结果以及存储日志，我们可以看出，对于同一文件，如果单个 Blob 块的的尺寸越小，分解后的块数越多，读取时花费的时间也就越长。
 
 ## 方案建议
 
