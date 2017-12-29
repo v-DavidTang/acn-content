@@ -23,64 +23,30 @@ wacn.date: 12/27/2017
 
 ## 示例分析
 
-例如：将本地文件（342MB）以不同的尺寸（分别设置单个 blob 块为 16KB, 256KB, 默认大小（本文使用的 SDK 版本为 WindowsAzure.Storage 8.6.0, 默认为 4MB ），10MB, 100MB）分解成块，然后上传到 Block Blob。读取 Block Blob 时，通过代码或者检查日志方式检查响应时间。
+本文采用以下示例来展示在 block 块大小不同的情况下，读取 Block Blob 时的效率。
 
-分块上传代码如下：
-```
-TimeSpan backOffPeriod = TimeSpan.FromSeconds(2);
-int retryCount = 1;
-//设置请求选项
-BlobRequestOptions requestoptions = new BlobRequestOptions()
-{
-    SingleBlobUploadThresholdInBytes = 1024 * 1024 * 10, //10MB
-    ParallelOperationThreadCount = 12,
-    RetryPolicy = new ExponentialRetry(backOffPeriod, retryCount),
-};
+例如：在本地文件（342MB）上传时，分别设置单个 block 块为 16KB、256KB、默认大小（本文使用的 SDK 版本为 WindowsAzure.Storage 8.6.0, 默认上传时单个 BlocK 块为 4MB ）、10MB、100MB，分解成块，然后上传到 Block Blob。读取 Block Blob 时，通过代码或者检查日志方式检查响应时间。
 
-CloudStorageAccount account = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
-CloudBlobClient blobclient = account.CreateCloudBlobClient();
-//设置客户端默认请求选项
-blobclient.DefaultRequestOptions = requestoptions;
-CloudBlobContainer blobcontainer = blobclient.GetContainerReference("uploadfiles");
-blobcontainer.CreateIfNotExists();
-//文件路径，文件大小117MB
-string sourcePath = @"D:\bigfiles\bigfiles.zip";
-CloudBlockBlob blockblob = blobcontainer.GetBlockBlobReference("Images_16K");
-blockblob.DeleteIfExists();
-var item = blockblob.Properties.LeaseDuration;
+### 文件上传方式：
+通过 Azure 门户上传，在存储账户中选择要上传的容器，点击“ **上传** ”，在上传 Blob 面板中从本地选取文件，点击 “ **高级** ”，设置单个块大小。
 
-//设置单个块 Blob 的大小（分块方式）为 16KB
-blockblob.StreamWriteSizeInBytes = 1024 * 16;
+![upload](./media/aog-storage-how-to-improve-block-blob-performance/upload.PNG)
 
-blockblob.Properties.CacheControl = "no-store";
-try
-{
-    Console.WriteLine("uploading");
-    //使用 Stopwatch 查看上传时间
-    var timer = System.Diagnostics.Stopwatch.StartNew();
-    using (var filestream = System.IO.File.OpenRead(sourcePath))
-    {
-        blockblob.UploadFromStream(filestream);
-    }
-    timer.Stop();
+也可以通过存储 SDK 采用分块方式上传文件，具体实现请参阅[使用 .Net SDK 上传大文件到 Block Blob](https://docs.azure.cn/articles/azure-operations-guide/storage/aog-storage-blob-howto-upload-big-file-to-storage)。
 
-    Console.WriteLine("block size: 16K，耗时：" + timer.ElapsedMilliseconds);
-}
-catch (Exception e)
-{
-    Console.WriteLine(e.Message);
-}
-```
-读取 Block Blob 代码如下:
+.Net 读取 Block Blob 代码如下(本文使用的 SDK 版本为 WindowsAzure.Storage 8.6.0):
+
 ```
 CloudStorageAccount account = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
 
 CloudBlobClient blobclient = account.CreateCloudBlobClient();
+//容器名称：uploadfiles
 CloudBlobContainer blobcontainer = blobclient.GetContainerReference("uploadfiles");
 blobcontainer.CreateIfNotExists();
 
 var timer1 = System.Diagnostics.Stopwatch.StartNew();
+//blob名称：Images_16K
 CloudBlockBlob blob_16k = blobcontainer.GetBlockBlobReference("Images_16K");
 blob_16k.FetchAttributes();
 var item1 = blob_16k.DownloadBlockList();
@@ -102,13 +68,15 @@ Console.WriteLine("block size: 16K，block 块数：" + item1.Count() + "，耗�
 
 有关存储日志格式的详细信息，请参阅[这篇文章](https://docs.microsoft.com/rest/api/storageservices/Storage-Analytics-Log-Format?redirectedfrom=MSDN)
 
-通过测试输出结果以及存储日志，我们可以看出，对于同一文件，如果单个 Blob 块的的尺寸越小，分解后的块数越多，读取时花费的时间也就越长。
+### 示例总结
+
+通过测试输出结果以及存储日志，我们可以看出，对于同一文件，如果单个 block 块的的尺寸越小，分解后的块数越多，读取时花费的时间也就越长。
 
 ## 方案建议
 
-1. 在使用 Block Blob 存储日志文件时，建议每隔一段时间收集一下日志，然后存储到 Block Blob 。
+1. 在使用 Block Blob 存储日志文件时，为了避免为很小的日志文件创建一个单独的 block 块，建议可以将日志记录在本地文件中，然后定期读取文件上传到 blob 中。
 
-2. 在设置每个 Blob 块的的尺寸时，网速的好坏也会影响读取的性能，如果网速好的话，建议可以设置较大的值（最大值不超过100MB），如果网速不好的话，可以减小这个值。
+2. 在设置每个 block 块的的尺寸时，网速的好坏也会影响读取的性能，如果网速好的话，建议可以设置较大的值（最大值不超过 100MB），如果网速不好的话，可以减小这个值。
 
 
     
