@@ -37,7 +37,7 @@ wacn.date: 1/9/2018
 
 #### 设置会话级别 wait_timeout 和 interactive_timeout 时间。
 
-通过[了解更多MySQL参数信息](https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_wait_timeout), 我们可以设置会话级别的 wait_timeout 和 interactive_timeout, 超过 240s, 1800s 的限制。
+通过[了解更多 MySQL 参数信息](https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_wait_timeout), 我们可以设置会话级别的 wait_timeout 和 interactive_timeout, 超过 240s, 1800s 的限制。
 
 例如，通过 [MySQL Workbench 连接到 MySQL DataBase on Azure](https://docs.microsoft.com/azure/mysql/connect-workbench), 使用以下命令修改 wait_timeout 和 interactive_timeout 时间：
 
@@ -58,7 +58,7 @@ show variables like 'wait_timeout';
 
 * Windows 系统
 
-通过运行，输入 “regedit”，打开注册表，在该目录下找到 KeepAliveTime (如果没有则添加，新建时设置数据类型为 REG_DWORD （32 位）),
+通过运行，输入 “regedit”，打开注册表，在该目录下找到 KeepAliveTime （如果没有则添加，新建时设置数据类型为 REG_DWORD （32 位））,
 
 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\`
 
