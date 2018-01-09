@@ -29,7 +29,7 @@ wacn.date: 1/9/2018
 
 ## 解决方案
 
-#### 通过 Azure 门户修改 MySQL DataBase on Azure 服务器参数，优化查询语句，使查询在设置时间内完成。
+#### 通过 [Azure 门户](https://portal.azure.cn) 修改 MySQL DataBase on Azure 服务器参数，优化查询语句，使查询在设置时间内完成。
 
 修改服务器参数，如图所示：
 
@@ -39,7 +39,7 @@ wacn.date: 1/9/2018
 
 通过[了解更多MySQL参数信息](https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_wait_timeout), 我们可以设置会话级别的 wait_timeout 和 interactive_timeout, 超过 240s, 1800s 的限制。
 
-例如，通过 MySQL Workbench 连接到 MySQL DataBase on Azure, 使用以下命令修改 wait_timeout 和 interactive_timeout 时间：
+例如，通过 [MySQL Workbench 连接到 MySQL DataBase on Azure](https://docs.microsoft.com/azure/mysql/connect-workbench), 使用以下命令修改 wait_timeout 和 interactive_timeout 时间：
 
 ```
 set wait_timeout = 3600;
