@@ -19,7 +19,7 @@ wacn.date: 1/9/2018
 
 ## 问题分析
 
-造成这个问题的原因，通常有以下两个原因：
+造成这个问题的原因，通常有以下两点：
 
 1. mysql 语句执行时间超过 MySQL DataBase on Auzre 的 wait_timeout 和 interactive_timeout 时间。
 
