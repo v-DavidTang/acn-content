@@ -19,9 +19,9 @@ wacn.date: 1/9/2018
 
 ## 问题分析
 
-造成这个问题的原因，通常与 MySQL DataBase on Azure 服务器参数 wait_timeout 和 intertactive_timeout 的设置有关。 wait_timeout 用于控制交互式连接，类似于 MySQL 客户端连接；interactive_timeout 用于控制非交互式连接，类似于 JDBC 连接。默认情况下，MySQL DataBase on Auzre 实例的 wait_timeout 时间为 120s （可选范围为 60~240s ）, interacive_timeout 时间为 1800s (可选范围为：10~1800s)。如果 mysql 语句执行时间过长或者 MySQL 客户端闲置时间过长，就可能会遇到连接被终止的问题。具体服务器参数信息，请参考[定制MySQL Database on Azure服务器参数](https://docs.azure.cn/zh-cn/mysql/mysql-database-advanced-settings)。
+造成这个问题的原因，通常与 MySQL DataBase on Azure 服务器参数 wait_timeout 和 intertactive_timeout 的设置有关。 wait_timeout 用于控制交互式连接，类似于 MySQL 客户端连接；interactive_timeout 用于控制非交互式连接，类似于 JDBC 连接。默认情况下，MySQL DataBase on Auzre 实例的 wait_timeout 时间为 120s （可选范围为 60 ~ 240s ）, interacive_timeout 时间为 1800s (可选范围为：10 ~ 1800s)。如果 mysql 语句执行时间过长或者 MySQL 客户端闲置时间过长，就可能会遇到连接被终止的问题。具体服务器参数信息，请参考[定制MySQL Database on Azure服务器参数](https://docs.azure.cn/zh-cn/mysql/mysql-database-advanced-settings)。
 
-另外，如果 MySQL 客户端闲置时间过长，被 Azure 流量管理器终结，也会遇到 MySQL 连接被终止的问题。这个默认时间为 4 分钟（240s）。
+另外，如果 MySQL 客户端闲置时间过长，也有可能被 Azure 流量管理器终结。这个默认时间为 4 分钟（240s）。
 
 ## 解决方案
 
