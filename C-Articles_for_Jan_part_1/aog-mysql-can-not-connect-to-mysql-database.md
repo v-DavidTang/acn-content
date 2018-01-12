@@ -20,8 +20,9 @@ wacn.date: 1/9/2018
 ## 问题分析
 
 造成这个问题的原因，通常与 MySQL DataBase on Azure 服务器参数 `wait_timeout` 和 `intertactive_timeout` 的设置有关。<br>
-`wait_timeout` 用于控制交互式连接（类似于 MySQL 客户端连接）断开连接前等待活动的秒数；<br>
-`interactive_timeout` 用于控制非交互式连接（类似于 JDBC 连接）断开连接前等待活动的秒数。<br>
+`wait_timeout` 用于控制非交互式连接断开连接前等待活动的秒数；<br>
+`interactive_timeout` 用于控制交互式连接断开连接前等待活动的秒数。<br>
+有关参数详细信息，请参阅 [MySQL 参数信息](https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_wait_timeout)。<br>
 默认情况下，MySQL DataBase on Auzre 实例的 `wait_timeout` 时间为 120s （可选范围为 60 ~ 240s ）, `interacive_timeout` 时间为 1800s (可选范围为：10 ~ 1800s)。如果 mysql 语句执行时间过长或者 MySQL 客户端闲置时间过长，就可能会遇到连接被终止的问题。具体服务器参数信息，请参考[定制MySQL Database on Azure服务器参数](https://docs.azure.cn/zh-cn/mysql/mysql-database-advanced-settings)。
 
 另外，如果 MySQL 客户端闲置时间过长，也有可能被 Azure 流量管理器终结。这个默认时间为 4 分钟（240s）。
@@ -37,22 +38,23 @@ wacn.date: 1/9/2018
 ![mysqldefault.PNG](./media/aog-mysql-can-not-connect-to-mysql-database/mysqldefault.PNG)
 
 > [!NOTE]
-> `wait_timeout` 的最大值为 240s, `interactive_timeout` 的最大值为 1800s, 如果设置的值超过限制，保存时就会遇到以下错误：
-> ![mysqlerror.PNG](./media/aog-mysql-can-not-connect-to-mysql-database/mysqlerror.PNG)
+> `wait_timeout` 的最大值为 240s, `interactive_timeout` 的最大值为 1800s, 如果设置的值超过限制，保存时就会遇到未能更新 MySQL 服务器的错误。
 
 2. 优化 mysql 语句，使其在设置时间内完成。
 
 ### 方式二，使用会话级别 `wait_timeout` 和 `interactive_timeout`
 
-通过[了解更多 MySQL 参数信息](https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_wait_timeout), 我们可以设置会话级别的 `wait_timeout` 和 `interactive_timeout`, 超过 240s, 1800s 的限制。在建立交互式或非交互式连接之后，可以使用代码或者命令设置当前会话 MySQL 数据库连接 `wait_timeout` 和 `interactive_timeout` 的值。
+通过 Azure 门户可以设置 `wait_timeout` 和 `interactive_timeout` 的最大值分别为240s，1800s。如果想要设置更大的值，可以设置会话级别的 `wait_timeout` 和 `interactive_timeout`。在建立交互式或非交互式连接之后，可以使用代码或者命令设置当前会话 MySQL 数据库连接 `wait_timeout` 和 `interactive_timeout` 的值。
 
-例如，通过 [MySQL Workbench 连接到 MySQL DataBase on Azure](https://docs.microsoft.com/azure/mysql/connect-workbench)后, 可以使用以下命令修改当前会话 MySQL 数据库连接的 `wait_timeout` 和 `interactive_timeout` 时间为 3600s :
+例如，通过 [MySQL Workbench 连接到 MySQL DataBase on Azure](https://docs.microsoft.com/azure/mysql/connect-workbench)后, 可以使用以下命令修改当前会话 MySQL 数据库连接的 `wait_timeout` 和 `interactive_timeout` ，然后再执行 MySQL 语句:
 
 ```
-set wait_timeout = 3600;
-set interactive_timeout = 3600;
-show variables like 'interactive_timeout';
-show variables like 'wait_timeout';
+#设置当前会话的 `wait_timeout` 和 `interactive_timeout`
+set wait_timeout = 3600; 
+set interactive_timeout = 7200;
+
+#查看当前会话有关 `timeout` 的参数
+show variables like '%timeout%';
 ```
 
 如图所示：
