@@ -25,7 +25,7 @@ wacn.date: 1/9/2018
 
 有关参数详细信息，请参阅 [MySQL 参数信息](https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_wait_timeout)。
 
-默认情况下，MySQL DataBase on Auzre 实例的 `wait_timeout` 时间为 120s （可选范围为 60 ~ 240s ）, `interacive_timeout` 时间为 1800s (可选范围为：10 ~ 1800s)。如果 mysql 语句执行时间过长或者 MySQL 客户端闲置时间过长，就可能会遇到连接被终止的问题。具体服务器参数信息，请参考[定制MySQL Database on Azure服务器参数](https://docs.azure.cn/zh-cn/mysql/mysql-database-advanced-settings)。
+默认情况下，通过 Azure 门户可以设置 MySQL DataBase on Auzre 实例的 `wait_timeout` 时间为 120s （可选范围为 60 ~ 240s ）, `interacive_timeout` 时间为 1800s (可选范围为：10 ~ 1800s)。如果 mysql 语句执行时间过长或者 MySQL 客户端闲置时间过长，就可能会遇到连接被终止的问题。具体服务器参数信息，请参考[定制MySQL Database on Azure服务器参数](https://docs.azure.cn/zh-cn/mysql/mysql-database-advanced-settings)。
 
 另外，如果 MySQL 客户端闲置时间过长，也有可能被 Azure 流量管理器终结。这个默认时间为 4 分钟（240s）。
 
