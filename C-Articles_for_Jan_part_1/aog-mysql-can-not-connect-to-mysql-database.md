@@ -51,11 +51,11 @@ wacn.date: 1/9/2018
 例如，通过 [MySQL Workbench 连接到 MySQL DataBase on Azure](https://docs.microsoft.com/azure/mysql/connect-workbench)后, 可以使用以下命令修改当前会话 MySQL 数据库连接的 `wait_timeout` 和 `interactive_timeout` ，然后再执行 MySQL 语句:
 
 ```
-#设置当前会话的 `wait_timeout` 和 `interactive_timeout`
+#设置当前会话的 wait_timeout 和 interactive_timeout
 set wait_timeout = 3600; 
 set interactive_timeout = 7200;
 
-#查看当前会话有关 `timeout` 的参数
+#查看当前会话有关 timeout 的参数
 show variables like '%timeout%';
 ```
 
