@@ -48,7 +48,7 @@ wacn.date: 1/9/2018
 
 通过 Azure 门户可以设置 `wait_timeout` 和 `interactive_timeout` 的最大值分别为240s，1800s。如果想要设置更大的值，可以设置会话级别的 `wait_timeout` 和 `interactive_timeout`。在建立交互式或非交互式连接之后，可以使用代码或者命令设置当前会话 MySQL 数据库连接 `wait_timeout` 和 `interactive_timeout` 的值。
 
-例如，通过 [MySQL Workbench 连接到 MySQL DataBase on Azure](https://docs.microsoft.com/azure/mysql/connect-workbench)后, 可以使用以下命令修改当前会话 MySQL 数据库连接的 `wait_timeout` 和 `interactive_timeout` ，然后再执行 MySQL 语句:
+例如，通过客户端连接到 MySQL DataBase on Azure 后, 可以使用以下命令修改当前会话 MySQL 数据库连接的 `wait_timeout` 和 `interactive_timeout` ，然后再执行 MySQL 语句:
 
 ```
 #设置当前会话的 wait_timeout 和 interactive_timeout
@@ -58,10 +58,6 @@ set interactive_timeout = 7200;
 #查看当前会话有关 timeout 的参数
 show variables like '%timeout%';
 ```
-
-如图所示：
-
-![mysqlresult.PNG](./media/aog-mysql-can-not-connect-to-mysql-database/mysqlresult.PNG)
 
 针对 MySQL 客户端闲置时间过长被 Azure 流量管理器终结这种情况，可以通过设置 ”心跳” 的方式，防止被 Azure 流量管理器终结。
 
