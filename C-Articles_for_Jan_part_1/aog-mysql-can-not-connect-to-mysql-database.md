@@ -32,7 +32,7 @@ wacn.date: 1/9/2018
 
 ### 方式一，使用实例级 `wait_timeout` 和 `interactive_timeout`, 设置为最大值，优化查询语句，使其在设置时间内完成。 
 
-1. 通过 [Azure 门户](https://portal.azure.cn) 修改 MySQL DataBase on Azure 服务器参数，分别将 wait_timeout 和 interactive_timeout 设置为最大值 240s, 1800s。如图所示：
+1. 通过 [Azure 门户](https://portal.azure.cn) 修改 MySQL DataBase on Azure 服务器参数，分别将 `wait_timeout` 和 `interactive_timeout` 设置为最大值 240s, 1800s。如图所示：
 
 ![mysqldefault.PNG](./media/aog-mysql-can-not-connect-to-mysql-database/mysqldefault.PNG)
 
