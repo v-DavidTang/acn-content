@@ -20,9 +20,11 @@ wacn.date: 1/9/2018
 ## 问题分析
 
 造成这个问题的原因，通常与 MySQL DataBase on Azure 服务器参数 `wait_timeout` 和 `intertactive_timeout` 的设置有关。<br>
-`wait_timeout` 用于控制非交互式连接断开连接前等待活动的秒数；<br>
-`interactive_timeout` 用于控制交互式连接断开连接前等待活动的秒数。<br>
-有关参数详细信息，请参阅 [MySQL 参数信息](https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_wait_timeout)。<br>
+- `wait_timeout` ：用于控制非交互式连接断开连接前等待活动的秒数；<br>
+- `interactive_timeout` ：用于控制交互式连接断开连接前等待活动的秒数。<br>
+
+有关参数详细信息，请参阅 [MySQL 参数信息](https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_wait_timeout)。
+
 默认情况下，MySQL DataBase on Auzre 实例的 `wait_timeout` 时间为 120s （可选范围为 60 ~ 240s ）, `interacive_timeout` 时间为 1800s (可选范围为：10 ~ 1800s)。如果 mysql 语句执行时间过长或者 MySQL 客户端闲置时间过长，就可能会遇到连接被终止的问题。具体服务器参数信息，请参考[定制MySQL Database on Azure服务器参数](https://docs.azure.cn/zh-cn/mysql/mysql-database-advanced-settings)。
 
 另外，如果 MySQL 客户端闲置时间过长，也有可能被 Azure 流量管理器终结。这个默认时间为 4 分钟（240s）。
@@ -31,7 +33,7 @@ wacn.date: 1/9/2018
 
 针对 MySQL 语句执行时间过长，我们可以采取以下方式防止连接被终止：
 
-### 方式一，使用实例级 `wait_timeout` 和 `interactive_timeout`, 设置为最大值，优化查询语句，使其在设置时间内完成。 
+### 使用实例级 `wait_timeout` 和 `interactive_timeout`, 设置为最大值，优化查询语句，使其在设置时间内完成。 
 
 1. 通过 [Azure 门户](https://portal.azure.cn) 修改 MySQL DataBase on Azure 服务器参数，分别将 `wait_timeout` 和 `interactive_timeout` 设置为最大值 240s, 1800s。如图所示：
 
@@ -42,7 +44,7 @@ wacn.date: 1/9/2018
 
 2. 优化 mysql 语句，使其在设置时间内完成。
 
-### 方式二，使用会话级别 `wait_timeout` 和 `interactive_timeout`
+### 使用会话级别 `wait_timeout` 和 `interactive_timeout`
 
 通过 Azure 门户可以设置 `wait_timeout` 和 `interactive_timeout` 的最大值分别为240s，1800s。如果想要设置更大的值，可以设置会话级别的 `wait_timeout` 和 `interactive_timeout`。在建立交互式或非交互式连接之后，可以使用代码或者命令设置当前会话 MySQL 数据库连接 `wait_timeout` 和 `interactive_timeout` 的值。
 
