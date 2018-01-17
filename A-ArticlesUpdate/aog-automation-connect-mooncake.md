@@ -59,6 +59,7 @@ Azure 自动化是通过 Windows PowserShell 工作流（也称为 Runbook）来
 ![](./media/aog-automation-connect-mooncake/newcredential.PNG)
 
 至此 PowerShell 的凭据已经创建完成，下面讨论如何来使用（本文主要是使用自动化服务实现开关虚拟机）。
+
 首先我们进入 Runbook ：
 
 ![](./media/aog-automation-connect-mooncake/entry-runbook.PNG)
