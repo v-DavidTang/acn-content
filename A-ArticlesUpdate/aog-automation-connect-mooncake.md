@@ -15,7 +15,7 @@ ms.date: 02/01/2016
 wacn.date: 02/01/2016
 ---
 
-#通过 Azure Active Directory 认证 Azure 自动化服务
+# 通过 Azure Active Directory 认证 Azure 自动化服务
 
 关于 Azure 自动化的详细概念请阅读[这篇文章](https://www.azure.cn/home/features/automation/)。
 

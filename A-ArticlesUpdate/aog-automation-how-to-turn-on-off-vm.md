@@ -15,9 +15,9 @@ ms.date: 06/08/2016
 wacn.date: 06/08/2016
 ---
 
-#使用 Azure Automation 实现自动开关虚拟机的操作
+# 使用 Azure Automation 实现自动开关虚拟机的操作
 
-###本文包含以下内容
+### 本文包含以下内容
 
 - [如何创建自动化账号和Runbook](#create)
 - [如何创建凭据](#certification)
