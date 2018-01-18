@@ -49,7 +49,7 @@ wacn.date: 06/08/2016
 ![](./media/aog-automation-how-to-turn-on-off-vm/add_credential.PNG)  
 
 > [!Note]
-> 这个步骤中的用户是通过 AAD 创建出来的，我们可以参考[这个链接](/active-directory/active-directory-create-users)来了解如何创建 AAD 用户。本例子是使用管理账号来做的。
+> 这个步骤中的用户是通过 AAD 创建出来的，我们可以参考[这个链接](https://docs.azure.cn/active-directory/active-directory-create-users)来了解如何创建 AAD 用户。本例子是使用管理账号来做的。
 
 完成后保存。
 
