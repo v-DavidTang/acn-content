@@ -68,7 +68,7 @@ Update-AzureDisk -DiskName "pstest-pstest-0-201601270217390866" –ResizedSizeIn
 Get-AzureDisk | Where-Object {($_.DiskName -eq 'pstest-pstest-0-201601270217390866')} | Format-Table -auto "DiskName","DiskSizeInGB","AttachedTo"	
 ```
 
-![](./media/aog-virtual-machines-attach-vhd/resize-disk.PNG)	
+![](./media/aog-virtual-machines-attach-vhd-to-classic-vm/resize-disk.PNG)	
 
 **注意：**
 

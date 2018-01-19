@@ -64,4 +64,4 @@ wacn.date: 08/01/2016
 
 ## <a id="resource"></a>相关参考资料
 
-- [如何设置虚拟机的终结点](/virtual-machines/virtual-machines-windows-classic-setup-endpoints)
+- [如何设置虚拟机的终结点](https://docs.azure.cn/virtual-machines/windows/classic/setup-endpoints)
