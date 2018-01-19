@@ -1,6 +1,6 @@
 ---
-title: 虚拟机添加相应端口并配置 ACL
-description: 本页介绍如何为虚拟机添加相应端口并配置 ACL。
+title: 经典虚拟机添加相应端口并配置 ACL
+description: 本页介绍如何为经典虚拟机添加相应端口并配置 ACL。
 services: virtual network
 documentationCenter: ''
 author: JamborYao
@@ -15,7 +15,7 @@ ms.date: 08/01/2016
 wacn.date: 08/01/2016
 ---
 
-# 虚拟机添加相应端口并配置 ACL
+# 经典虚拟机添加相应端口并配置 ACL
 
 ### 本文包含以下内容
 - [相关概念](#concept)

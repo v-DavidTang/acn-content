@@ -1,6 +1,6 @@
 ---
-title: 通过 PowerShell 的方式增加虚拟机终结点
-description: 如何通过 ps 为虚拟机增加终结点
+title: 通过 PowerShell 的方式增加经典虚拟机终结点
+description: 如何通过 ps 为经典虚拟机增加终结点
 services: virtual machine
 documentationCenter: ''
 author: JamborYao
@@ -15,11 +15,11 @@ ms.date: 02/01/2016
 wacn.date: 02/01/2016
 ---
 
-# 通过 PowerShell 的方式增加虚拟机终结点
+# 通过 PowerShell 的方式增加经典虚拟机终结点
 
-关于虚拟机终结点的概念请阅读：[如何设置虚拟机的终结点](https://docs.azure.cn/virtual-machines/windows/classic/setup-endpoints)
+关于经典虚拟机终结点的概念请阅读：[如何设置虚拟机的终结点](https://docs.azure.cn/virtual-machines/windows/classic/setup-endpoints)
 
-本文包含以下内容（本文在名称为"classicvm"的虚拟机做测试）：
+本文包含以下内容（本文在名称为"classicvm"的经典虚拟机做测试）：
 
 - 通过 PowerShell 的方式增加终结点
 - 通过 PowerShell 脚本批量的增加终结点
