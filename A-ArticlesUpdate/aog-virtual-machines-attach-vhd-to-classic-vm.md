@@ -15,7 +15,7 @@ ms.date: 06/08/2016
 wacn.date: 06/08/2016
 ---
 
-#如何为经典虚拟机附加磁盘
+# 如何为经典虚拟机附加磁盘
 
 关于如何在 Azure 门户上附加磁盘请阅读[这篇文章](https://docs.azure.cn/virtual-machines/windows/classic/attach-disk)
 
@@ -23,7 +23,7 @@ wacn.date: 06/08/2016
 
 相关 PowerShell 指令：[Get-AzureDataDisk](https://msdn.microsoft.com/zh-cn/library/azure/dn495197.aspx)、[Add-AzureDataDisk](https://msdn.microsoft.com/zh-cn/library/azure/dn495298.aspx)、[Remove-AzureDataDisk](https://msdn.microsoft.com/zh-cn/library/azure/dn495243.aspx)、[Update-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495230.aspx?f=255&MSPPError=-2147217396)、[Get-AzureDisk](https://msdn.microsoft.com/zh-cn/library/azure/dn495125.aspx)
 
-##通过 PowerShell 附加磁盘
+## 通过 PowerShell 附加磁盘
 
 本文主要在虚拟机"pstest"上测试。
 
@@ -54,7 +54,7 @@ Add-AzureDataDisk -Import -DiskName "pstest-pstest-0-201601270217390866" -LUN 3 
 - 如果磁盘已经被其他虚拟机附加，请首先分离磁盘，然后重新附加。
 - 附加磁盘的大小限制为：最小：1GB，最大1TB.
 
-##如何修改附加磁盘的大小
+## 如何修改附加磁盘的大小
 
 ```
 #测试前"pstest-pstest-0-201601270217390866"为 1GB	
@@ -77,7 +77,7 @@ Get-AzureDisk | Where-Object {($_.DiskName -eq 'pstest-pstest-0-2016012702173908
 - 修改后添加的大小附加到虚拟机上是未分配状态。
 - **只可以增加**数据磁盘的大小，不可以减小。数据磁盘都是页 Blob，是按实际使用量来收费的，在设计时可考虑最大化，最大 1TB，这样可避免此操作。
 
-#如何移除数据磁盘
+## 如何移除数据磁盘
 
 ```
 Remove-AzureDataDisk -LUN 0 -VM $vm | Update-AzureVM
