@@ -1,9 +1,9 @@
 ---
-title: "如何查找并删除未被使用的托管磁盘和 VHD"
-description: "如何查找并删除未被使用的托管磁盘和 VHD"
+title: "如何查找并删除未被使用的托管磁盘或非托管磁盘源 .vhd 文件"
+description: "如何查找并删除未被使用的托管磁盘或非托管磁盘源 .vhd 文件"
 author: Dillion132
-resourceTags: 'mysql , MIME'
-ms.service: mysql
+resourceTags: 'Virtual Machines , MIME'
+ms.service: Virtual Machines
 wacn.topic: aog
 ms.topic: article
 ms.author: v-zhilv
@@ -11,242 +11,134 @@ ms.date: 1/12/2018
 wacn.date: 1/12/2018
 ---
 
-# 如何查找并删除未被使用的托管磁盘和 VHD
+# 如何查找并删除未被使用的托管磁盘或非托管磁盘源 .vhd 文件
+
+在创建虚拟机时，可以选择该虚拟机是用托管磁盘还是非托管磁盘来存储虚拟机的系统磁盘和数据磁盘，有关托管磁盘和非托管磁盘的详细信息，请参考[磁盘存储](https://docs.azure.cn/virtual-machines/windows/about-disks-and-vhds)。
 
 删除虚拟机时，与该虚拟机相关联的操作系统盘和数据磁盘不会被删除，最终会留在 Azure 存储账户中，从而导致用户继续承担这些磁盘的存储费用。
 
 > [!Warning]
-> 如果从资源组或者存储账户中删除托管磁盘和非托管磁盘   时，防止重要数据丢失。
+> 如果从资源组或存储账户中删除托管磁盘和非托管磁盘源 .vhd 文件，Microsoft 则无法为用户恢复数据。为防止重要数据丢失，请将重要数据在本地备份。
 
-本文主要介绍了如何使用 PowerShell 查找并删除未被使用的托管磁盘和 VHD 。主要包括以下内容：
+本文主要介绍了如何使用 PowerShell 查找并删除未被使用的托管磁盘和非托管磁盘源 .vhd 文件。主要包括以下内容：
 
 * 查找并删除未被使用的托管磁盘
-* 查找并删除未被使用的非托管磁盘 VHD
+* 查找并删除未被使用的非托管磁盘源 .vhd 文件
 
 ## 查找并删除未被使用的托管磁盘
 
-通过检查托管磁盘的所有者来判断该磁盘是否正在使用，具体操作如下：
+通过检查托管磁盘的所有者来判断该磁盘是否正在使用。具体实现请下载[相关的 Power Shell 脚本](./media/GetAndRemoveDisks.ps1)，并执行以下命令：
 
 1. 获取未被使用的托管磁盘
 
-```
-Function Get-UnusedDisks()
-{
-    $disks = Get-AzureRmDisk;
-    foreach ($disk in $disks)
-    {
-        If($disk.OwnerId -eq $Null)
-        {
-            Write-Host "ResourceGroupName: " $disk.ResourceGroupName "UnusedDiskName:" $disk.Name;
-        }
-    }
-}
-```
+    ```
+    # 添加脚本
+    . "D:\GetAndRemoveDisks.ps1"
+    # 查看订阅下所有未被使用的托管磁盘。
+    Get-UnusedDisks
+    ```
 
-执行以上方法，获取当前订阅下所有未被使用的托管磁盘, 如下所示：
+    执行以上方法，获取当前订阅下所有未被使用的托管磁盘, 如下所示：
 
-![getmanageddisks.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/getmanageddisks.PNG)
+    ![getmanageddisks.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/getmanageddisks.PNG)
 
 
-2. 删除指定的一块托管磁盘
+2. 删除指定的托管磁盘
 
-可以使用以下命令将 `<资源组名称>` 替换成磁盘所在的资源组，将 `<磁盘名称>` 替换为所要删除的磁盘名称，删除指定的一块托管磁盘：
+    可以使用以下命令将 `<资源组名称>` 替换成磁盘所在的资源组，将 `<磁盘名称>` 替换为所要删除的磁盘名称，删除指定的托管磁盘：
 
-```
-Remove-AzureRmDisk -ResourceGroupName "<资源组名称>" -DiskName "<磁盘名称>" -Force;
-```
+    ```
+    #数组类型，可以指定多个磁盘
+    $disknames = @("<磁盘名称>","<磁盘名称>")
+    Remove-UnusedDisks -ResourceGroupName "<资源组名称>" -DiskNames $disknames -Force;
+    ```
 
-3. 删除指定资源组中未被使用的磁盘
+    ![removespecifieddisks.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/removespecifieddisks.PNG)
 
-```
-Function Remove-UnusedDisks()
-{
-    #定义一个参数用于指定需要删除磁盘的资源组
-    Param($ResourceGroupName);
-    #用于存储查找出来的磁盘
-    $disks = New-Object System.Collections.ArrayList;
-    If($ResourceGroupName -eq $Null)
-    {
-        #如果未指定资源组，则查找当前订阅中的磁盘
-        $disks = Get-AzureRmDisk;
-    }
-    Else
-    {
-        #查找特定资源组中的磁盘
-        $disks = Get-AzureRmDisk -ResourceGroupName $ResourceGroupName;
-    }
-    Foreach($disk in $disks)
-    {
-        #如果 OwnerId 为空，表明当前磁盘未被使用
-        If($disk.OwnerId -eq $Null)
-        {
-            Remove-AzureRmDisk -ResourceGroupName $disk.ResourceGroupName -DiskName $disk.Name -Force;
-            Write-Host "Already delete disk, disk location: ResourceGroupName: " $disk.ResourceGroupName "UnusedDiskName:" $disk.Name;
-        }
-    }
-}
-```
+    > [!Note]
+    > 在指定磁盘名称时，请确保磁盘名称一致。
 
-通过执行以下命令删除特定资源组中的托管磁盘：
+3. 删除指定资源组中其他未被使用的托管磁盘，保留指定的磁盘
 
-```
-Remove-UnusedDisks -ResourceGroupName "<资源组名称>"
-```
+    > [!Note]
+    > 使用该脚本删除磁盘时，会将被 Lock 的磁盘解锁并删除，所以在删除前再次检查是否需要删除，如果需要保留磁盘，请使用下列的代码指定保留磁盘。
 
-结果如下：
+    ```
+    $undeletedisknames = @("磁盘名称","磁盘名称")
+    Remove-UnusedDisks -ResourceGroupName "<资源组名称>" -UnDeleteDiskNames $undeletedisknames 
+    ```
 
-![RemoveGroupDisks.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/RemoveGroupDisks.PNG)
+    ![reserveddisks.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/reserveddisks.PNG)
 
-如果想要删除当前订阅中所有的未被使用的托管磁盘，可以不指定资源组，使用以下命令：
+4. 删除当前订阅中指定资源组中未被使用的托管磁盘，使用以下命令：
 
-```
-Remove-UnusedDisks
-```
+    ```
+    Remove-UnusedDisks -ResourceGroupName "<资源组名称>"
+    ```
 
-## 查找并删除未被使用的非托管磁盘 VHD
+    ![removergdisks.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/removergdisks.PNG)
 
-非托管磁盘 VHD 以页 Blob 的方式存储在存储账户中，通过比较 VM 中使用的磁盘 Url 与存储账户中页 blob 的 Url, 可以判断出那些 VHD 是未被使用的，然后进行删除。
+    > [!Note]
+    > 如果不指定资源组，则删除当前订阅下所有未被使用的托管磁盘。
+
+## 查找并删除未被使用的非托管磁盘源 .vhd 文件
+
+非托管磁盘源 .vhd 文件以页 Blob 的方式存储在存储账户中，通过查看页 Blob 的名称来判断是否是源 .vhd 文件，通过检查属性 LeaseState 来判断源文件是否被租用，然后进行删除。具体实现脚本，请[点击查看](./media/GetAndRemoveVhds.ps1)。
 
 > [!Note] 
-> 默认情况下，创建新的 VM 时，系统磁盘会存储在存储账户中的 vhds 容器中，为了方便管理 VHD ,建议将所有的 VHD 文件都放在 vhds 容器中方便管理。本文中所有的 VHD 磁盘都放在 vhds 容器中。
+> 默认情况下，创建新的 VM 时，系统磁盘会存储在存储账户中的 vhds 容器中，为了方便管理源 .vhd 文件,建议将所有的源 .vhd 文件都放在 vhds 容器中。本文中所有的源 .vhd 文件都放在 vhds 容器中，并且在本文使用的脚本中，默认设置容器名称为 vhds 。
 
-具体步骤如下:
+使用以下命令查看或删除相关的源 .vhd 文件:
 
-1. 定义一个全局变量用于存储当前 VM 正在使用的 VHD 。
+1. 查看当前订阅下未被使用的源 .vhd 文件
 
-```
-$usedVhds = New-Object System.Collections.ArrayList; 
-```
+    遍历所有的存储账户，在 vhds 容器中根据 Blob 的文件名和属性查找出未被使用的源 .vhd 文件。
 
-2. 查找出当前订阅下虚拟机正在使用的 VHD 的绝对路径
+    ```
+    # 添加脚本
+    . "D:\GetAndRemoveVhds.ps1"
+    # 查看订阅下所有未被使用的托管磁盘。
+    Get-UnusedVHDs
+    ```
+    ![GetUnusedVHDs.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/GetUnusedVHDs.PNG)
 
-将当前订阅下虚拟机正在使用的 VHD 路径存储在全局变量中，方便下一步确认那些 VHD 是正在使用的。
+    也可以使用以下代码指定资源组
 
-```
-Function Fill-VMVhdUrl()
-{
-    $usedvhds.Clear();
-    #获取当前订阅下所有的虚拟机
-    $vms = Get-AzureRmVm;
-    Foreach($vm in $vms)
-    {
-        #获取虚拟机非托管磁盘 VHD 的路径，并将其添加到全局变量
-        #系统磁盘 VHD
-        $osvhduri = $vm.StorageProfile.OsDisk.vhd.Uri;
-        if($osvhduri -ne $Null)
-        {
-            Write-Host "VM OsVhdUri: " $osvhduri;
-            [Void]$usedVhds.Add($osvhduri);
-        }
-        #数据磁盘 VHD
-        $datavhds = $vm.StorageProfile.DataDisks;
-        Foreach($datavhd in $datavhds)
-        {
-            $datavhduri = $datavhd.vhd.uri;
-            
-            if($datavhduri -ne $Null)
-            {
-                Write-Host "VM DataVhdUri: " $datavhduri;
-                [Void]$usedVhds.Add($datavhduri);
-            }
-        }
-    }
-}
-```
+    ```
+    Get-UnusedVHDs -ResourceGroupName "<资源组名称>" -AccountName "<存储账户名称>" -Container "< Blob 容器名称>"
+    ```
 
-执行以上命令，结果如下：
+    ![GetUnusedVHDs2.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/GetUnusedVHDs2.PNG)
 
-![getusedvhds.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/getusedvhds.PNG)
 
-3. 获取未被使用的 VHD
+2. 删除其他的源 .vhd 文件，保留所需的源 .vhd 文件
 
-遍历所有的存储账户，在 vhds 容器中根据 Blob 的文件名和 Url 查找出未被使用的 VHD。
+    > [!Note]
+    > 使用该脚本删除源 .vhd 文件时，会将被 Lock 的源 .vhd 文件解锁并删除，所以在删除前再次检查是否需要删除，如果需要保留源 .vhd 文件，请使用下列的代码指定保留源 .vhd 文件。
 
-```
-Function Get-UnusedVHDs()
-{
-    $storages = Get-AzureRmStorageAccount -WarningAction Ignore;
-    $deletedVhds = New-Object System.Collections.ArrayList;   
-    Foreach ($storage in $storages)
-    {
-        $storageAccountName = $storage.StorageAccountName;
-        $blobs = Get-AzureStorageBlob -Context $storage.Context -Container vhds -ErrorAction Ignore;
-        foreach ($blob in $blobs)
-        {
-            if ($blob.BlobType -eq "PageBlob")
-            {
-                $url = $blob.ICloudBlob.Uri.AbsoluteUri;
-                if ($url.EndsWith(".vhd") -and !$usedVhds.Contains($url) -and !$deletedVhds.Contains($url))
-                {
-                    Write-Host "Storage Account: " $storageAccountName " Container Name: vhds Blob Name: " $blob.Name " URL: " $url;
-                    [void]$deletedVhds.Add($url);
-                }
-            }
-        }
-    }
-}
-```
+    ```
+    $reservedVhds = @("<源 .vhd 文件 Blob 名称>","<源 .vhd 文件 Blob 名称>")
+    Remove-UnusedVHDs -ResourceGroupName "dillion_rg" -ReservedVhds $reservedVhds
+    ```
 
-截图如下：
+    ![reservedVhds.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/reservedVhds.PNG)
 
-![GetUnusedDisks.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/GetUnusedDisks.PNG)
+3. 删除指定的源 .vhd 文件
 
-4. 删除指定的 VHD
+    ```
+    $deletedvhds = @("<源 .vhd 文件 Blob 名称>")
+    Remove-UnusedVHDs -ResourceGroupName "dillion_rg" -VhdNames $deletedvhds
+    ```
 
-```
-$storage = Get-AzureRmStorageAccount -ResourceGroupName "dillion_rg" -AccountName "dillionrgdisks818";
-Remove-AzureStorageBlob -Context $storage.Context -Container vhds -Blob "dillionvm-20180111-173013.vhd"; 
-```
+    ![removespecifiedVhds.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/removespecifiedVhds.PNG)
 
-5. 删除所有未被使用的 VHD
+4. 如果不需要删除指定源文件或者保留源文件，可以使用以下命令删除订阅下或者指定资源组中的源 .vhd 文件
 
-```
-Function Remove-UnusedVHDs()
-{
-    #定义一个参数用于指定需要删除 VHD 的资源组
-    Param($ResourceGroupName);
-    $storages = New-Object System.Collections.ArrayList;
-    If($ResourceGroupName -eq $Null)
-    {
-        $storages = Get-AzureRmStorageAccount -WarningAction Ignore;
-    }
-    else
-    {
-        $storages = Get-AzureRmStorageAccount -ResourceGroupName $ResourceGroupName -WarningAction Ignore;
-    }
-    $deletedVhds = New-Object System.Collections.ArrayList;  # to skip snapshots 
+    ```
+    #删除资源组中的源 .vhd 文件
+    Remove-UnusedVHDs -ResourceGroupName "<资源组名称>"
+    #删除订阅中的源 .vhd 文件
+    Remove-UnusedVHDs 
+    ```
 
-    #遍历所有的存储账户，删除相关的 VHD
-    Foreach ($storage in $storages)
-    {
-        $blobs = Get-AzureStorageBlob -Context $storage.Context -Container vhds -ErrorAction Ignore;
-        foreach ($blob in $blobs)
-        {
-            if ($blob.BlobType -eq "PageBlob")
-            {
-                $url = $blob.ICloudBlob.Uri.AbsoluteUri;
-                if ($url.EndsWith(".vhd") -and !$usedVhds.Contains($url) -and !$deletedVhds.Contains($url))
-                {
-                    Remove-AzureStorageBlob -Context $storage.Context -Container vhds -Blob $blob.Name;
-                    Write-Host "Already delete blob: " $blob.Name " URL: " $url;
-                    [void]$deletedVhds.Add($url);
-                }
-            }
-        }
-    }
-}
-```
-
-通过执行以下命令删除指定资源组中未被使用的 VHD:
-
-```
-Remove-UnusedVHDs -ResourceGroupName "<资源组名称>"
-```
-
-![removeunusedvhds.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/removeunusedvhds.PNG)
-
-如果想要删除该订阅下所有未被使用的 VHD ，可以使用以下命令：
-
-```
-Remove-UnusedVHDs 
-```
+    ![removeallvhds.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/removeallvhds.PNG)
