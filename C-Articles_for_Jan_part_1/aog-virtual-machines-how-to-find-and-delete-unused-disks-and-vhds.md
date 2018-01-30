@@ -27,7 +27,7 @@ wacn.date: 1/12/2018
 
 ## 查找并删除未被使用的托管磁盘
 
-通过检查托管磁盘的所有者来判断该磁盘是否正在使用。具体实现请下载[相关的 Power Shell 脚本](./media/GetAndRemoveDisks.ps1)，并执行以下命令：
+通过检查托管磁盘的所有者来判断该磁盘是否正在使用。具体实现请下载[相关的 Power Shell 脚本](https://github.com/Dillion132/acn-content/blob/master/C-Articles_for_Jan_part_1/media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/GetAndRemoveDisks.ps1)，并执行以下命令：
 
 1. 获取未被使用的托管磁盘
 
@@ -83,7 +83,7 @@ wacn.date: 1/12/2018
 
 ## 查找并删除未被使用的非托管磁盘源 .vhd 文件
 
-非托管磁盘源 .vhd 文件以页 Blob 的方式存储在存储账户中，通过查看页 Blob 的名称来判断是否是源 .vhd 文件，通过检查属性 LeaseState 来判断源文件是否被租用，然后进行删除。具体实现脚本，请[点击查看](./media/GetAndRemoveVhds.ps1)。
+非托管磁盘源 .vhd 文件以页 Blob 的方式存储在存储账户中，通过查看页 Blob 的名称来判断是否是源 .vhd 文件，通过检查属性 LeaseState 来判断源文件是否被租用，然后进行删除。具体实现脚本，请[点击查看](https://github.com/Dillion132/acn-content/blob/master/C-Articles_for_Jan_part_1/media/aog-virtual-machines-how-to-find-and-delete-unused-disks-and-vhds/GetAndRemoveVhds.ps1)。
 
 > [!Note] 
 > 默认情况下，创建新的 VM 时，系统磁盘会存储在存储账户中的 vhds 容器中，为了方便管理源 .vhd 文件,建议将所有的源 .vhd 文件都放在 vhds 容器中。本文中所有的源 .vhd 文件都放在 vhds 容器中，并且在本文使用的脚本中，默认设置容器名称为 vhds 。
