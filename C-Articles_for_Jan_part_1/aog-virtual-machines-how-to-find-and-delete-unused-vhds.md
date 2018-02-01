@@ -50,7 +50,7 @@ Get-UnusedVHDs
 ```
 ![GetUnusedVHDs.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-vhds/GetUnusedVHDs.PNG)
 
-也可以使用以下代码指定资源组、存储账户以及容器名称。
+也可以使用以下代码查看指定资源组、存储账户以及容器名称中未被使用的源 .vhd 文件。
 
 ```
 Get-UnusedVHDs -ResourceGroupName "<资源组名称>" -AccountName "<存储账户名称>" -Container "< Blob 容器名称>"
@@ -63,25 +63,28 @@ Get-UnusedVHDs -ResourceGroupName "<资源组名称>" -AccountName "<存储账�
 
 > [!Note]
 > 使用该脚本删除源 .vhd 文件时，会将被 Lock 的源 .vhd 文件解锁并删除，所以在删除前再次检查是否需要删除，如果需要保留源 .vhd 文件，请使用下列的代码指定保留源 .vhd 文件。
-> 输入的 .vhd 文件名称需要保留 .vhd 后缀。
+> 输入的 .vhd 文件名称需要 **保留 .vhd 后缀**。
 
 ```
 $reservedVhds = @("<源 .vhd 文件 Blob 名称>","<源 .vhd 文件 Blob 名称>")
-Remove-UnusedVHDs -ResourceGroupName "dillion_rg" -ReservedVhds $reservedVhds
+Remove-UnusedVHDs -ResourceGroupName "<资源组名称>" -ReservedVhds $reservedVhds
 ```
 
 ![reservedVhds.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-vhds/reservedVhds.PNG)
 
 ## <a id="removespecifiedVhds"></a> 删除指定的源 .vhd 文件
 
+> [!Note]
+> 输入的 .vhd 文件名称需要**保留 .vhd 后缀**。
+
 ```
 $deletedvhds = @("<源 .vhd 文件 Blob 名称>")
-Remove-UnusedVHDs -ResourceGroupName "dillion_rg" -VhdNames $deletedvhds
+Remove-UnusedVHDs -ResourceGroupName "<资源组名称>" -VhdNames $deletedvhds
 ```
 
 ![removespecifiedVhds.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-vhds/removespecifiedVhds.PNG)
 
-## <a id="removeAllVhds"></a> 如果不需要删除指定源文件或者保留源文件，可以使用以下命令删除指定资源组中的源 .vhd 文件
+## <a id="removeAllVhds"></a> 删除订阅下或者指定资源组中未被使用的源 .vhd 文件
 
 ```
 #删除资源组中未被使用的源 .vhd 文件
@@ -90,7 +93,7 @@ Remove-UnusedVHDs -ResourceGroupName "<资源组名称>"
 
 ![removeallvhds.PNG](./media/aog-virtual-machines-how-to-find-and-delete-unused-vhds/removeallvhds.PNG)
 
-如果使用以下命令，会删除当前订阅下所有 Blob 容器名称为 vhds 中未被使用的源 .vhd 文件。
+如果使用以下命令，则会删除当前订阅下所有 Blob 容器名称为 vhds 中未被使用的源 .vhd 文件。
 
 ```
 #删除当前订阅下 vhds 容器中未被使用的源 .vhd 文件
