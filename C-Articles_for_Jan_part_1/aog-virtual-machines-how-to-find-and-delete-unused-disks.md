@@ -37,7 +37,7 @@ wacn.date: 1/12/2018
 ## <a id="getUnusedDisks"></a>获取未被使用的托管磁盘
 
 > [!Note]
-> 在本示例中，我将相关的 PowerShell Function 脚本放在用户文件夹下的 "GetAndRemoveDisks.ps1" 文件中。在运行相关命令前，先执行脚本文件，定义 Function , 然后调用相关的 Function 执行查询和删除命令。
+> 在本示例中，我将相关的 [PowerShell Function 脚本](#detailsscript)放在用户文件夹下的 "GetAndRemoveDisks.ps1" 文件中。在运行相关命令前，先执行脚本文件，定义 Function , 然后调用相关的 Function 执行查询和删除命令。
 
 ```
 # 执行脚本

@@ -40,7 +40,7 @@ wacn.date: 2/1/2018
 遍历所有的存储账户，在 vhds 容器中根据 Blob 的文件名和属性查找出未被使用的源 .vhd 文件。
 
 > [!Note]
-> 在本示例中，将 PowerShell Function 脚本放在用户文件夹下的 "GetAndRemoveVhds.ps1" 文件中。在运行相关命令前，先执行脚本文件，定义 Function , 然后调用相关的 Function 执行查询和删除命令。
+> 在本示例中，将 [PowerShell Function 脚本](#detailsScript)放在用户文件夹下的 "GetAndRemoveVhds.ps1" 文件中。在运行相关命令前，先执行脚本文件，定义 Function , 然后调用相关的 Function 执行查询和删除命令。
 
 ```
 # 执行脚本文件
