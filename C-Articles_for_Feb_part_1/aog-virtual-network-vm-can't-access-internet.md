@@ -19,7 +19,7 @@ wacn.date: 2/7/2018
 
 ## 症状
 
-虚拟网络中的虚拟机可以通过远程访问，但是在 vm 中无法访问外部网络。
+虚拟网络中的虚拟机可以通过远程连接访问，但是无法访问外部网络。
 
 ## 故障排除指南
 
@@ -34,6 +34,8 @@ wacn.date: 2/7/2018
 ### <a id="checknsg"></a> 步骤 1：检查网络流量是否被网络安全组（ NSG ） 阻止
 
 在 Azure 虚拟机侧边栏中选中 "网络" ，查看网络安全组出站端口规则，是否禁用公共 Internet 出站访问。如果处于禁用状态，修改或删除该规则并保存。
+
+例如：如下图所示，“AllowInternetOutBound” 为 NSG 默认规则，允许虚拟机访问外部网络。“DenyInternetOutBound” 为新添加的 NSG 规则，禁止访问外部网络。由于 “DenyInternetOutBound” 的优先级高于 “AllowInternetOutBound” 的优先级，所以最终会使用 “DenyInternetOutBound” 规则，禁止虚拟机访问外部网络。
 
 ![](./media/aog-virtual-network-vm-can't-access-internet/vm-nsg.PNG)
 
@@ -51,9 +53,10 @@ wacn.date: 2/7/2018
 在 Azure 虚拟机侧边栏中选中 "网络" ，点击该虚拟机使用的网络接口，在网络接口侧边栏中选中 DNS 服务器，查看正在使用的 DNS 服务器信息。
 
 ![](./media/aog-virtual-network-vm-can't-access-internet/vm-net.PNG)
+
 ![](./media/aog-virtual-network-vm-can't-access-internet/nic-dns.PNG)
 
-如果您使用的是自定义的 DNS 服务器，请检查 DNS 服务器 IP 地址是否使用的是本地 IP 地址，并尝试使用以下 IP 地址："168.63.129.16" 或者 "8.8.8.8"。
+如果您使用的是自定义的 DNS 服务器，请检查 DNS 服务器 IP 地址是否适用于当前环境，并尝试修改 IP 地址，例如： "168.63.129.16" 或者 "8.8.8.8"。
 
 > [!Note]
 > 为云服务/网络接口指定 DNS 服务器时，其优先级高于为虚拟网络指定的 DNS 服务器。
@@ -63,4 +66,4 @@ wacn.date: 2/7/2018
 
 ![](./media/aog-virtual-network-vm-can't-access-internet/vnet-dns.PNG)
 
-同样如果使用自定义DNS 服务器，应避免使用本地 IP 地址，可以尝试使用 "168.63.129.16"、 "8.8.8.8" 或者使用默认 DNS 服务器（由 Azure 提供）。
+同样如果使用自定义DNS 服务器，也可以尝试使用 "168.63.129.16"、 "8.8.8.8" 或者使用默认 DNS 服务器（由 Azure 提供）。
