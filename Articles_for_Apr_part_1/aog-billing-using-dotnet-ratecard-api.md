@@ -142,6 +142,6 @@ wacn.date: 04/23/2018
 
 ![result.PNG](./media/aog-billing-using-dotnet-ratecard-api/result.PNG)
 
-更多详细代码，请参考连接[billing-dotnet-ratecard-api](https://github.com/Azure-Samples/billing-dotnet-ratecard-api)。
+更多详细代码，请参考连接 [billing-dotnet-ratecard-api](https://github.com/Azure-Samples/billing-dotnet-ratecard-api) 。
 
-有关 RateCard API 详细信息，请参阅[ Resource RateCard (Preview)](https://msdn.microsoft.com/en-us/library/mt219005.aspx) 以及 [官方 RATE CARE API 定义](https://docs.azure.cn/zh-cn/articles/training/azure-billing-ratecard-api)。
+有关 RateCard API 详细信息，请参阅 [Resource RateCard (Preview)](https://msdn.microsoft.com/en-us/library/mt219005.aspx) 以及 [官方 RATE CARE API 定义](https://docs.azure.cn/zh-cn/articles/training/azure-billing-ratecard-api)。
