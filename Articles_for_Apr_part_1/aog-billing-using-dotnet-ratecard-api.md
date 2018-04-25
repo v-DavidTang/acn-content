@@ -49,7 +49,7 @@ wacn.date: 04/23/2018
 
 1. 在应用程序中通过 Nuget 添加 Microsoft.IdentityModel.Clients.ActiveDirectory 包，本文使用的是 2.22.302111727 版本。
 
-2. 打开 web.config 文件，添加或修改以下节点：
+2. 打开 App.config 文件，添加或修改以下节点：
 
 ```
 <configuration>
@@ -64,7 +64,7 @@ wacn.date: 04/23/2018
 ```
 
 > [!important]
-> 以上代码适用于中国区 Azure , 如果想要访问 Global Azure RateCard API , 需要将中国区 AAD Login 端点以及中国区 Azure 资源管理器（ARM）端点替换为境外 Azure 资源端点，详细请参阅[中国区 Azure 资源端点 URI (供应用程序代码使用)](https://docs.azure.cn/articles/guidance/developerdifferences#%E4%B8%AD%E5%9B%BD%E5%8C%BA-azure-%E8%B5%84%E6%BA%90%E7%AB%AF%E7%82%B9uri-%E4%BE%9B%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8)
+> 以上代码适用于中国区 Azure 。
 
 3. 使用以下代码获取 AAD 令牌并访问 RateCard API ：  
 
@@ -142,6 +142,6 @@ wacn.date: 04/23/2018
 
 ![result.PNG](./media/aog-billing-using-dotnet-ratecard-api/result.PNG)
 
-更多详细代码，请参考连接 [billing-dotnet-ratecard-api](https://github.com/Azure-Samples/billing-dotnet-ratecard-api) 。
+更多详细代码，请参考链接 [billing-dotnet-ratecard-api](https://github.com/Azure-Samples/billing-dotnet-ratecard-api) 。
 
-有关 RateCard API 详细信息，请参阅 [Resource RateCard (Preview)](https://msdn.microsoft.com/en-us/library/mt219005.aspx) 以及 [官方 RATE CARE API 定义](https://docs.azure.cn/zh-cn/articles/training/azure-billing-ratecard-api)。
+有关 RateCard API 详细信息，请参阅 [官方 RATE CARE API 定义](https://docs.azure.cn/zh-cn/articles/training/azure-billing-ratecard-api)。
