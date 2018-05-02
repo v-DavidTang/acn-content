@@ -21,7 +21,7 @@ wacn.date: 04/27/2018
 
 ## 问题分析
 
-Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备和一个解决方案后端之间实现安全可靠的双向通信，因此在创建使用 Azure IoT Hub 之前，必须要注册 “Microsoft.Devices”。默认情况下，订阅中的 “Microsoft.Devices” 处于未注册状态，需要先注册，然后才能创建 Azure IoT Hub。
+在 Azure 中，每个资源提供程序都会提供一组用于 Azure 服务的资源和操作。例如 “Microsoft.Compute”（提供虚拟机资源）、“Microsoft.Storage”（提供存储帐户资源）和 “Microsoft.Web”（提供与 Web 应用相关的资源）。而使用 Azure IoT 中心，则需要 “Microsoft.Devices” 提供所需的资源，因此在创建使用 Azure IoT Hub 之前，必须要注册 “Microsoft.Devices”。默认情况下，订阅中的 “Microsoft.Devices” 处于未注册状态，需要先注册，然后才能创建 Azure IoT Hub。
 
 ## 解决方法
 
