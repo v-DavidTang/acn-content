@@ -39,7 +39,11 @@ Azure Cosmos DB 数据迁移工具目前不支持将 Azure Cosmos DB MongoDB API
 
 2. 在边栏选项卡中点击 “Data Explorer”， 查看数据库名称以及集合名称。
 
+![getmongodbname.PNG](./media/aog-cosmosdb-how-to-export-mongodb-collection/getmongodbname.PNG)
+
 3. 在边栏选项卡中点击 “Connection String”, 查看主机、端口、用户名以及密码信息。
+
+![getconnetinfo.PNG](./media/aog-cosmosdb-how-to-export-mongodb-collection/getconnetinfo.PNG)
 
 ## <a id="mongoexport" ></a>使用 mongoexport 导出数据到本地 
 
