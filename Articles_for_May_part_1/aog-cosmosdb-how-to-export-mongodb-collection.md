@@ -93,6 +93,6 @@ mongoexport.exe --host <your_hostname>:10255 -u <your_username> -p <your_passwor
 
 ![startexport.PNG](./media/aog-cosmosdb-how-to-export-mongodb-collection/startexport.PNG)
 
-查看导出结果，在目标文件夹中查看文件：
+查看导出结果，或目标文件夹中查看文件：
 
 ![checkoutput.PNG](./media/aog-cosmosdb-how-to-export-mongodb-collection/checkoutput.PNG)
