@@ -15,7 +15,7 @@ wacn.date: 05/11/2018
 
 ## 问题描述
 
-用户使用 Azure Cosmos DB MongoDB API 存储数据，想要将数据导出到本地，该怎么做？
+用户使用 Azure Cosmos DB MongoDB API 存储数据，想要知道如何将数据导出到本地？
 
 ## 问题分析
 
