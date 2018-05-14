@@ -29,13 +29,13 @@ Azure Cosmos DB 数据迁移工具目前不支持将 Azure Cosmos DB MongoDB API
 
 ## 先决条件
 
-* 增加吞吐量：数据迁移的持续时间取决于为集合设置的吞吐量。 请确保对于较大的数据迁移增加吞吐量。 完成迁移后，减少吞吐量以节约成本。 有关在 [Azure 门户](https://portal.cn) 中增加吞吐量的详细信息，请参阅 [Azure Cosmos DB 中的性能级别和定价层](https://docs.azure.cn/cosmos-db/performance-levels)。
+* 增加吞吐量：数据迁移的持续时间取决于为集合设置的吞吐量。 请确保对于较大的数据迁移增加吞吐量。 完成迁移后，减少吞吐量以节约成本。 有关在 [Azure 门户](https://portal.azure.cn) 中增加吞吐量的详细信息，请参阅 [Azure Cosmos DB 中的性能级别和定价层](https://docs.azure.cn/cosmos-db/performance-levels)。
 
 * 启用 SSL：Azure Cosmos DB 具有严格的安全要求和标准。 请确保在与帐户进行交互时启用 SSL。 
 
 ## 获取连接字符串信息（主机、端口、用户名、密码、数据库名称、集合名称）
 
-1. 在 [Azure 门户](https://portal.cn) 中打开 Azure Cosmos DB 服务，选中当前 Cosmos DB 账户。
+1. 在 [Azure 门户](https://portal.azure.cn) 中打开 Azure Cosmos DB 服务，选中当前 Cosmos DB 账户。
 
 2. 在边栏选项卡中点击 “Data Explorer”， 查看数据库名称以及集合名称。
 
