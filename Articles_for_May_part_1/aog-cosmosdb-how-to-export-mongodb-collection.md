@@ -71,7 +71,7 @@ mongoexport.exe --host <your_hostname>:10255 -u <your_username> -p <your_passwor
 
 2. 具有 MongoDB 帐户的 [Azure Cosmos DB 连接字符串信息](https://docs.azure.cn/cosmos-db/connect-mongodb-account)
 
-### 参考以下步骤将数据从 MongoDB API 集合导出到本地。
+### 具体步骤如下
 
 1. 在 Studio 3T 中建立 Azure Cosmos DB 连接，具体步骤请参阅 [Azure Cosmos DB：配合使用 Studio 3T 与 MongoDB API 帐户](https://docs.azure.cn/cosmos-db/mongodb-mongochef)
 
