@@ -1,6 +1,6 @@
 ---
-title: "Azure Cosmos DB 如何导出 MongoDB 数据"
-description: "Azure Cosmos DB 如何导出 MongoDB 数据"
+title: "Azure Cosmos DB Mongo API 如何导出 MongoDB 数据"
+description: "Azure Cosmos DB Mongo API 如何导出 MongoDB 数据"
 author: Dillion132
 resourceTags: 'cosmos db'
 ms.service: Cosmos DB
@@ -11,21 +11,21 @@ ms.date: 05/11/2018
 wacn.date: 05/11/2018
 ---
 
-# Azure Cosmos DB 如何导出 MongoDB 数据
+# Azure Cosmos DB Mongo API 如何导出 MongoDB 数据
 
 ## 问题描述
 
-用户使用 Azure Cosmos DB MongoDB API 存储数据，想要知道如何将数据导出到本地？
+用户使用 Azure Cosmos DB MongoDB API 存储数据，需要将数据导出到本地，但是参考 [Azure Cosmos DB：数据迁移工具](https://docs.azure.cn/cosmos-db/import-data)时发现数据迁移工具不支持将 Azure Cosmos DB Mongo API 用作源或者目标，而且在 [Azure Cosmos DB：如何为 MongoDB API 迁移数据](https://docs.azure.cn/cosmos-db/mongodb-migrate) 中也没有有关如何导出 MongoDB 数据的方法，想了解 Azure Cosmos DB 该如何导出 MongoDB 数据？
 
 ## 问题分析
 
-Azure Cosmos DB 数据迁移工具目前不支持将 Azure Cosmos DB MongoDB API 用作源或目标。 若要在 Azure Cosmos DB 中将数据从 MongoDB API 集合迁出到本地，可以[使用数据迁移工具](https://docs.azure.cn/cosmos-db/import-data)将数据从 MongoDB API 集合导出到 Azure Cosmos DB SQL API 集合，然后与 SQL API 配合将导出数据到本地，也可以使用 mongoexport.exe 或 Studio 3T 工具导出数据。
+若要在 Azure Cosmos DB 中将数据从 MongoDB API 集合迁出到本地，可以[使用数据迁移工具](https://docs.azure.cn/cosmos-db/import-data)先将数据从 MongoDB API 集合导出到 Azure Cosmos DB SQL API 集合，然后与 SQL API 配合将导出数据到本地。另外，也可以使用 mongoexport.exe 或 Studio 3T 工具导出 MongoDB 数据。
 
-本文主要使用以下方法导出数据：
+本文主要使用以下方法导出 MongDB 数据：
 
-- [使用 mongoexport 导出数据](#mongoexport)
+- [使用 mongoexport 导出 MongDB 数据](#mongoexport)
 
-- [使用 studio 3T 导出数据](#studio3t_export)
+- [使用 studio 3T 导出 MongDB 数据](#studio3t_export)
 
 ## 先决条件
 
@@ -45,7 +45,7 @@ Azure Cosmos DB 数据迁移工具目前不支持将 Azure Cosmos DB MongoDB API
 
 ![getconnetinfo.PNG](./media/aog-cosmosdb-how-to-export-mongodb-collection/getconnetinfo.PNG)
 
-## <a id="mongoexport" ></a>使用 mongoexport 导出数据到本地 
+## <a id="mongoexport" ></a>使用 mongoexport 导出 MongDB 数据到本地 
 
 ### 前提条件
 
@@ -63,7 +63,7 @@ mongoexport.exe --host <your_hostname>:10255 -u <your_username> -p <your_passwor
 
 ![mongoexport1.PNG](./media/aog-cosmosdb-how-to-export-mongodb-collection/mongoexport1.PNG)
 
-## <a id="studio3t_export"></a>使用 Studio 3T 导出数据到本地 
+## <a id="studio3t_export"></a>使用 Studio 3T 导出 MongDB 数据到本地 
 
 ### 前提条件
 
