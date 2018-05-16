@@ -19,7 +19,7 @@ wacn.date: 05/11/2018
 
 ## 问题分析
 
-若要在 Azure Cosmos DB 中将数据从 MongoDB API 集合迁出到本地，可以[使用数据迁移工具](https://docs.azure.cn/cosmos-db/import-data)先将数据从 MongoDB API 集合导出到 Azure Cosmos DB SQL API 集合，然后与 SQL API 配合将导出数据到本地。另外，也可以使用 mongoexport.exe 或 Studio 3T 工具导出 MongoDB 数据。
+若要在 Azure Cosmos DB 中将数据从 MongoDB API 集合迁出到本地，可以[使用数据迁移工具](https://docs.azure.cn/cosmos-db/import-data)先将数据从 MongoDB API 集合导出到 Azure Cosmos DB SQL API 集合，然后与 SQL API 配合将数据导出到本地。另外，也可以使用 mongoexport.exe 或 Studio 3T 工具导出 MongoDB 数据。
 
 本文主要使用以下方法导出 MongDB 数据：
 
