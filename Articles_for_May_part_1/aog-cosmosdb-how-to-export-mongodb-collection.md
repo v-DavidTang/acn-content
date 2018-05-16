@@ -19,7 +19,7 @@ wacn.date: 05/11/2018
 
 ## 问题分析
 
-Azure Cosmos DB 数据迁移工具目前不支持将 Azure Cosmos DB MongoDB API 用作源或目标。 若要在 Azure Cosmos DB 中将数据从 MongoDB API 集合迁出到本地，可以[使用数据迁移工具将数据从 MongoDB 导出到 Azure Cosmos DB SQL API 集合](https://docs.azure.cn/cosmos-db/import-data)，然后与 SQL API 配合使用导出数据，也可以使用 mongoexport.exe 或 Studio 3T 工具导出数据。
+Azure Cosmos DB 数据迁移工具目前不支持将 Azure Cosmos DB MongoDB API 用作源或目标。 若要在 Azure Cosmos DB 中将数据从 MongoDB API 集合迁出到本地，可以[使用数据迁移工具](https://docs.azure.cn/cosmos-db/import-data)将数据从 MongoDB API 集合导出到 Azure Cosmos DB SQL API 集合，然后与 SQL API 配合将导出数据到本地，也可以使用 mongoexport.exe 或 Studio 3T 工具导出数据。
 
 本文主要使用以下方法导出数据：
 
@@ -51,7 +51,7 @@ Azure Cosmos DB 数据迁移工具目前不支持将 Azure Cosmos DB MongoDB API
 
 1. 从 [MongoDB 下载中心](https://www.mongodb.com/download-center#enterprise)下载 mongoexport.exe (下载 MongoDB Enterprise Server ，解压安装包后可在 bin 目录下找到 mongoexport.exe。本文下载的 MongoDB Enterprise Server 是 windows x64 / 3.6.4 版本)。
 
-2. 具有 MongoDB 帐户的 [Azure Cosmos DB 连接字符串信息](https://docs.azure.cn/cosmos-db/connect-mongodb-account)。
+2. 具有 MongoDB 帐户的 Azure Cosmos DB 连接字符串信息。
 
 打开 “cmd” 命令行程序，导航到 mongoexport.exe 所在目录，使用以下模板将数据从 MongoDB API 集合导出到本地。
 
@@ -67,9 +67,9 @@ mongoexport.exe --host <your_hostname>:10255 -u <your_username> -p <your_passwor
 
 ### 前提条件
 
-1. 下载并安装 [Studio 3T](https://studio3t.com/)（以前称为 MongoChef）
+1. 下载并安装 [Studio 3T](https://studio3t.com/)（以前称为 MongoChef）。
 
-2. 具有 MongoDB 帐户的 [Azure Cosmos DB 连接字符串信息](https://docs.azure.cn/cosmos-db/connect-mongodb-account)
+2. 具有 MongoDB 帐户的 Azure Cosmos DB 连接字符串信息。
 
 ### 具体步骤如下
 
@@ -93,6 +93,6 @@ mongoexport.exe --host <your_hostname>:10255 -u <your_username> -p <your_passwor
 
 ![startexport.PNG](./media/aog-cosmosdb-how-to-export-mongodb-collection/startexport.PNG)
 
-查看导出结果，或目标文件夹中查看文件：
+查看导出结果，或在目标文件夹中查看文件：
 
 ![checkoutput.PNG](./media/aog-cosmosdb-how-to-export-mongodb-collection/checkoutput.PNG)
