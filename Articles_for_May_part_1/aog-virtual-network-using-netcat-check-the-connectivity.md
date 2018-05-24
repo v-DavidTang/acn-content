@@ -19,7 +19,6 @@ Netcat 是一个用于 TCP/UDP 连接和监听的工具，主要用于网络传�
 
 - [Windows OS 环境下，使用 Netcat 命令分别测试 TCP/UDP 端口连通性](#windowsos)
 
-
 ## 前提条件
 
 1. 使用 Azure 门户创建 [Linux 虚拟机](https://docs.azure.cn/virtual-machines/linux/quick-create-portal) 和 [Windows 虚拟机](https://docs.azure.cn/virtual-machines/windows/quick-create-portal)。本文 Linux 虚拟机使用的是 CentOS 镜像，Windows 虚拟机使用的是 Windows server 2012 DataCenter 镜像。
@@ -33,7 +32,6 @@ sudo yum install nc
 ```
 
 Windows 虚拟机可以从 Internet 下载 Netcat 工具包。
-
 
 ## <a id="linuxos"></a>Linux OS 环境下，使用 Netcat 命令分别测试 TCP/UDP 端口连通性
 
@@ -101,7 +99,7 @@ nc -u <服务器端 IP 地址> <端口号>
 
 ![linux-udp-server.PNG](./media/aog-virtual-network-using-netcat-check-the-connectivity/linux-udp-server.PNG)
 
-## <a id="linuxos"></a>Windows OS 环境下，使用 Netcat 命令分别测试 TCP/UDP 端口连通性
+## <a id="windowsos"></a>Windows OS 环境下，使用 Netcat 命令分别测试 TCP/UDP 端口连通性
 
 ### 测试 TCP 端口连通性
 
