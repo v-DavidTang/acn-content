@@ -93,6 +93,14 @@ nc <服务器端 IP 地址> <端口号>
 nc -lu <端口号> -v
 ```
 
+> [Note]
+> 
+> -l：指明 Netcat 处于监听模式；-v：用于显示详细信息。
+> 
+> 如果想要退出监听模式，可以使用 Ctrl + C 。
+> 
+> **必须要先在服务器端监听端口，然后在客户端访问该端口，才能建立连接。**
+
 在安装有 Netcat 的客户端机器上，执行以下命令：
 
 ```
@@ -115,7 +123,7 @@ nc -u <服务器端 IP 地址> <端口号>
 
 本示例创建一台 Azure Windows 虚拟机做为服务器，本地 Windows 计算机做为客户端，客户端和服务器通过 5000 端口相连，具体步骤如下：
 
-1. 通过 Azure 门户选中当前 Windows 虚拟机 ( dillionvm )，在边栏选项卡中选中网络，在网络安全组中添加 TCP 5000 入站端口规则。
+1. 通过 Azure 门户选中 Windows 虚拟机 ( dillionvm )，在边栏选项卡中选中网络，在网络安全组中添加 TCP 5000 入站端口规则。
 
 ![windows-nsg-tcp.PNG](./media/aog-virtual-network-using-netcat-check-the-connectivity/windows-nsg-tcp.PNG)
 
@@ -128,8 +136,16 @@ nc -u <服务器端 IP 地址> <端口号>
 2. 远程连接到 Azure Windows 虚拟机，使用 cmd 命令导航至 nc.exe 所在目录，执行以下命令，实现 TCP 方式监听服务器端 5000 端口。
 
 ```
-nc -l -p <端口号>
+nc -l -p <端口号> -v
 ```
+
+> [Note]
+> 
+> -l：指明 Netcat 处于监听模式；-v：用于显示详细信息。
+> 
+> 如果想要退出监听模式，可以使用 Ctrl + C 。
+> 
+> **必须要先在服务器端监听端口，然后在客户端访问该端口，才能建立连接。**
 
 在安装有 Netcat 的客户端机器上，执行以下命令：
 
@@ -149,7 +165,7 @@ nc <服务器端 IP 地址> <端口号>
 
 ### 测试 UDP 端口连通性
 
-1. 通过 Azure 门户选中当前 Windows 虚拟机 ( dillionvm ) ，在边栏选项卡中选中网络，在网络安全组中添加 UDP 5001 入站端口规则。
+1. 通过 Azure 门户选中 Windows 虚拟机 ( dillionvm ) ，在边栏选项卡中选中网络，在网络安全组中添加 UDP 5001 入站端口规则。
 
 ![windows-nsg-udp.PNG](./media/aog-virtual-network-using-netcat-check-the-connectivity/windows-nsg-udp.PNG)
 
@@ -164,6 +180,14 @@ nc <服务器端 IP 地址> <端口号>
 ```
 nc -lu -p <端口号> -v 
 ```
+
+> [Note]
+> 
+> -l：指明 Netcat 处于监听模式；-v：用于显示详细信息。
+> 
+> 如果想要退出监听模式，可以使用 Ctrl + C 。
+> 
+> **必须要先在服务器端监听端口，然后在客户端访问该端口，才能建立连接。**
 
 在安装有 Netcat 的客户端机器上，执行以下命令：
 
