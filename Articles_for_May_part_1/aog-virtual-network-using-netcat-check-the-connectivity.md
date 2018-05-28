@@ -47,7 +47,7 @@ Windows 虚拟机可以从 Internet 下载 Netcat 工具包。
 > 
 > 注意网络安全组规则的优先级，确保入站规则有效，并处于 “**允许**” 状态。
 > 
-> 默认情况下 Linux 虚拟机中未启用 “iptables”，如果启用 “iptables”，需要在 “iptables” 中打开相应的端口。
+> 默认情况下 Linux 虚拟机中未启用 “iptables”，如果启用 “iptables”，则需要在 “iptables” 中打开相应的端口。在本示例中 Linux 虚拟机未启用 iptables 服务。
 
 2. 远程连接到 Linux 虚拟机，安装 Netcat 工具之后，执行以下命令，实现 TCP 方式监听服务器 5000 端口
 
@@ -89,7 +89,7 @@ nc <服务器端 IP 地址> <端口号>
 > 
 > 注意网络安全组规则的优先级，确保入站规则有效，并处于 “**允许**” 状态。
 > 
-> 默认情况下 Linux 虚拟机中未启用 “iptables”，如果启用 “iptables”，需要在 “iptables” 中打开相应的端口。
+> 默认情况下 Linux 虚拟机中未启用 “iptables”，如果启用 “iptables”，则需要在 “iptables” 中打开相应的端口。在本示例中 Linux 虚拟机未启用 iptables 服务。
 
 2. 远程连接到 Linux 虚拟机，安装 Netcat 工具之后，执行以下命令，实现 UDP 方式监听 5001 端口
 
