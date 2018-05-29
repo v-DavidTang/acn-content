@@ -27,7 +27,7 @@ wacn.date: 05/24/2018
 
 2. Windows 防火墙未打开相应的端口。
 
-3. 虚拟机中端口未处于 "Listening" 状态。
+3. 虚拟机中端口未处于 "LISTENING" 状态。
 
 本文创建一台 Windows server 2012 虚拟机，以 8080 端口为例详细解释该问题，具体步骤如下。
 
@@ -45,7 +45,7 @@ wacn.date: 05/24/2018
 
 ![firewall.PNG](./media/aog-virtual-network-using-psping-cannot-connect-the-port/firewall.PNG)
 
-## 虚拟机中端口未处于 "Listening" 状态
+## 虚拟机中端口未处于 "LISTENING" 状态
 
 在网络安全组出入站规则和虚拟机防火墙出入站规则有效且处于 "允许" 状态下，可以使用以下命令查看虚拟机端口状态：
 
@@ -57,11 +57,11 @@ netstat -a -n -o
 
 ![netstat-result.PNG](./media/aog-virtual-network-using-psping-cannot-connect-the-port/netstat-result.PNG)
 
-通过截图我们没有找到 8080 端口，表明虚拟机 8080 端口未处于 "Listening" 状态。
+通过截图我们没有找到 8080 端口，表明虚拟机 8080 端口未处于 "LISTENING" 状态。
 
-可以使用以下方法使虚拟机 8080 端口处于 "Listening" 状态：
+可以使用以下方法使虚拟机 8080 端口处于 "LISTENING" 状态：
 
-1. 在虚拟机上部署应用，并设置应用端口为 8080 端口。
+1. 在虚拟机上部署应用，并设置应用端口为 8080 端口，然后启用应用。
 
 2. 使用 TCP&UDP 测试工具，在 Windows 虚拟机上创建服务器并监听 8080 端口。
 
@@ -69,7 +69,7 @@ netstat -a -n -o
 
 ![tcptool.PNG](./media/aog-virtual-network-using-psping-cannot-connect-the-port/tcptool.PNG)
 
-使用上面方法设置完监听端口后，使用 `netstat -a -n -o` 命令查看端口状态，可以看出 8080 端口已处于 "Listening" 状态。
+使用上面方法设置完监听端口后，使用 `netstat -a -n -o` 命令查看端口状态，可以看出 8080 端口已处于 "LISTENING" 状态。
 
 ![netstat-linstening-port.PNG](./media/aog-virtual-network-using-psping-cannot-connect-the-port/netstat-linstening-port.PNG)
 
