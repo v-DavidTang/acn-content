@@ -73,6 +73,6 @@ netstat -a -n -o
 
 ![netstat-linstening-port.PNG](./media/aog-virtual-network-using-psping-cannot-connect-the-port/netstat-linstening-port.PNG)
 
-使用 PsPing 在客户端测试 Azure Windows 虚拟机连接性，结果如下：
+使用 PsPing 在客户端测试 Azure Windows 虚拟机连接性，可以看出 8080 端口已经可以 ping 通，结果如下：
 
 ![success-result1.PNG](./media/aog-virtual-network-using-psping-cannot-connect-the-port/success-result1.PNG)
