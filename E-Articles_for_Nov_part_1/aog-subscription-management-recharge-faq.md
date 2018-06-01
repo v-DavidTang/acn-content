@@ -19,20 +19,20 @@ wacn.date: 11/14/2017
 
 2. 点击订阅名称展开订阅：
 
-![01](media/aog-subscription-management-recharge-faq/01.png)
+    ![01](media/aog-subscription-management-recharge-faq/01.png)
 
 3. 点击右侧绿色按钮“**重新缴费**”（1 元试用选择“立即升级”）：
 
-![02](media/aog-subscription-management-recharge-faq/02.png)
+    ![02](media/aog-subscription-management-recharge-faq/02.png)
 
 4. 选择支付方式：
 
-![03](media/aog-subscription-management-recharge-faq/03.png)
+    ![03](media/aog-subscription-management-recharge-faq/03.png)
 
 5. 选择金额后，跳转到相应支付平台进行支付。
 
-![04](media/aog-subscription-management-recharge-faq/04.png)
-![05](media/aog-subscription-management-recharge-faq/05.png)
+    ![04](media/aog-subscription-management-recharge-faq/04.png)
+    ![05](media/aog-subscription-management-recharge-faq/05.png)
 
 ## 支付方式
 
@@ -47,7 +47,6 @@ wacn.date: 11/14/2017
 **新购买**：在线预付费订阅首次充值时，支持支付宝、银联在线付款和电汇三种线上付款方式，且充值订单失效前不能更换支付方式。
 
 **已购买的订阅充值**：在线预付费订阅续费时，支持支付宝、银联在线付款和电汇三种线上付款方式，且可以随时修改支付方式。
-
 
 ## 支付订单有效期
 

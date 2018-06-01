@@ -23,13 +23,13 @@ wacn.date: 11/15/2017
 
 如需配置子网 DNS，请参考 [使用自己的 DNS 服务器的名称解析](https://docs.azure.cn/zh-cn/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#a-namename-resolution-using-your-own-dns-server-idname-resolution-using-your-own-dns-servera-使用你自己的-dns-服务器的名称解析)。
 
-ASM 模式 – 使用已有的 Azure PowerShell 命令
+## 配置方法
+
+### ASM 模式 – 使用已有的 Azure PowerShell 命令
 
 使用传统 Azure 服务管理（ASM）API，可以使用名为 [Add-AzureProvisioningConfig](https://docs.microsoft.com/en-us/powershell/module/Azure/Add-AzureProvisioningConfig?view=azuresmps-4.0.0) 的 PowerShell cmdlet，并使用 `-JoinDomain` 开关将 VM 自动加入 AD 域，如下例所示：
 
 ![01](media/aog-virtual-machines-windows-howto-join-ad-domain-automatic/01.png)
-
-## 配置方法
 
 在最新的 Azure 资源管理器（ARM）API 中可以通过名为 `JsonADDomainExtension` 的新型 ARM 扩展来获得同样的功能：
 
