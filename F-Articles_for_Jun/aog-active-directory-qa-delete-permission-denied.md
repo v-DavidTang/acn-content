@@ -2,7 +2,7 @@
 title: "如何解决 Azure Active Directory Graph API 无法删除用户或组"
 description: "如何解决 Azure Active Directory Graph API 无法删除用户或组"
 author: v-DavidTang
-resourceTags: 'Azure Active Directory, Graph API, Java'
+resourceTags: 'Azure Active Directory, Graph API'
 ms.service: active-directory
 wacn.topic: aog
 ms.topic: article
@@ -25,7 +25,7 @@ Azure Active Directory (AD) Graph API 通过 OData REST API 终结点提供对 A
 
 发现可以创建、读取以及更新用户和组的信息，但是在进行删除用户或组的操作时却出现权限不足(403)的情况：
 
-`Connection returned HTTP code: 403 with message: Forbidden`
+`Insufficient privileges to complete the operation.`
 
 ## 问题分析
 
