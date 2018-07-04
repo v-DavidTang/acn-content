@@ -38,7 +38,7 @@ Azure Active Directory (AD) Graph API 通过 OData REST API 终结点提供对 A
 
 ## 解决方法
 
-### 方法一：将应用程序添加至全局管理员/公司管理员角色
+### 将应用程序添加至全局管理员/公司管理员角色
 
 关于**全局管理员/公司管理员**角色说明参考官方文档 [Azure Active Directory 可用的角色](https://docs.azure.cn/zh-cn/active-directory/active-directory-assign-admin-roles-azure-portal#available-roles):
 
@@ -71,11 +71,9 @@ Azure Active Directory (AD) Graph API 通过 OData REST API 终结点提供对 A
 
 通过以上步骤就可以将您的应用添加到全局管理员/公司管理员角色了，此时您的应用程序就获得了全局管理员的所有权限，再通过 Graph API 就可以完成用户或组的删除操作了：
 
-`Connection returned HTTP code: 204 with message: Forbidden`
+`Connection returned HTTP code: 204 with message: No Content`
 
-### 方法二：为应用程序添加权限：Access directory as the signed-in user（即：Directory.AccessAsUser.All） 权限
-
-对于应用程序类型为本机的应用程序，可以直接在 Azure 门户中为 Microsoft Graph 添加 Access directory as the signed in user 权限，
+### 对于应用程序类型为本机的应用程序，可以为 Microsoft Graph 添加权限：Access directory as the signed-in user（即：Directory.AccessAsUser.All） 权限
 
 1. 使用全局管理员身份的用户登录 [Azure 门户](https://portal.azure.cn)。
 
