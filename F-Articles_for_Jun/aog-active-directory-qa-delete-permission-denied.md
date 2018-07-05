@@ -73,7 +73,10 @@ Azure Active Directory (AD) Graph API 通过 OData REST API 终结点提供对 A
 
 `Connection returned HTTP code: 204 with message: No Content`
 
-### 对于应用程序类型为本机的应用程序，可以在 Azure 门户上直接为 Microsoft Graph 添加：Access directory as the signed-in user（即：Directory.AccessAsUser.All） 权限
+> [!NOTE]
+> 对于应用程序类型为本机的应用程序，可以更加方便的在 [Azure 门户]((https://portal.azure.cn))上为 Microsoft Graph 赋予权限，详细步骤参考以下方法。
+
+### 为 Microsoft Graph 添加：Access directory as the signed-in user（即：Directory.AccessAsUser.All） 权限
 
 1. 使用全局管理员身份的用户登录 [Azure 门户](https://portal.azure.cn)。
 
