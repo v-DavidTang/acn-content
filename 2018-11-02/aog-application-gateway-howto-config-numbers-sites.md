@@ -1,16 +1,16 @@
 ---
-title: "如何使用 Azure Portal 配置 HTTP 流量重定向 HTTPS 的多站点应用程序网关"
-description: "如何使用 Azure Portal 配置 HTTP 流量重定向 HTTPS 的多站点应用程序网关"
+title: "如何使用 Azure 门户配置 HTTP 流量重定向 HTTPS 的多站点应用程序网关"
+description: "如何使用 Azure 门户配置 HTTP 流量重定向 HTTPS 的多站点应用程序网关"
 author: Yao Yuejian
-resourceTags: 'application gateway , https , sites'
-ms.service: application gateway
+resourceTags: 'Application Gateway , Https , Sites'
+ms.service: application-gateway
 wacn.topic: aog
 ms.topic: article
 ms.author: Yao Yuejian
 ms.date: 11/14/2018
 wacn.date: 11/14/2018
 ---
-# 如何使用 Azure Portal 配置 HTTP 流量重定向 HTTPS 的多站点应用程序网关
+# 如何使用 Azure 门户配置 HTTP 流量重定向 HTTPS 的多站点应用程序网关
 
 如下以 site1.21vianet.party 和 site2.21vianet.party 两个站点为例进行部署。
 
@@ -92,7 +92,7 @@ Site2_https_rule 配置如下：
 
 ![12](media/aog-application-gateway-howto-config-numbers-sites/12.png "12")
 
-此时需要删除默认侦听器，在 Portal 上直接删除即可。
+此时需要删除默认侦听器，在门户上直接删除即可。
 
 ## 再次添加HTTP侦听器
 
