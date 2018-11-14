@@ -1,15 +1,16 @@
 ---
 title: "如何对 Azure Storage Blob 属性进行设置"
 description: "如何对 Azure Storage Blob 属性进行设置"
-author: Yu Tao
-resourceTags: 'Storage Service, Blob , Set Properties'
-ms.service: storage-service
+author: taroyutao
+resourceTags: 'Storage, Blob, Properties'
+ms.service: storage
 wacn.topic: aog
 ms.topic: article
-ms.author: Yu Tao
+ms.author: v-tawe
 ms.date: 11/8/2018
 wacn.date: 11/8/2018
 ---
+
 # 如何对 Azure Storage Blob 属性进行设置
 
 ## 概述
@@ -18,9 +19,9 @@ wacn.date: 11/8/2018
 
 下面分别给出 JAVA 和 C# 的 SDK 获取、设置 Blob 对象属性的示例。
 
-### JAVA Code Sample
+### JAVA 示例代码
 
-```JAVA
+```java
 //get content type
 blob2.downloadAttributes();
 System.out.println(blob2.getProperties().getContentType());
@@ -31,9 +32,9 @@ blob2.getProperties().setContentType(contentType);
 blob2.uploadProperties();
 ```
 
-### C# Code Sample
+### C# 示例代码
 
-```C#
+```csharp
 //get property
 CloudBlockBlob blockBlob = container.GetBlockBlobReference(blobName);
 blockBlob.FetchAttributes();
@@ -46,6 +47,5 @@ blockBlob.SetProperties();
 
 ### SDK参考
 
-[azure-storage-java](https://github.com/Azure/azure-storage-java)
-
-[azure-storage-net](https://github.com/Azure/azure-storage-net)
+- [azure-storage-java](https://github.com/Azure/azure-storage-java)
+- [azure-storage-net](https://github.com/Azure/azure-storage-net)

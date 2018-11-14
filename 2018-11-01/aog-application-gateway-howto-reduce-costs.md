@@ -1,12 +1,12 @@
 ---
 title: "如何在不删除应用程序网关的情况下减少其产生的费用"
 description: "如何在不删除应用程序网关的情况下减少其产生的费用"
-author: Bing Yu
-resourceTags: 'application gateway, pay'
+author: Bingyu83
+resourceTags: 'Application Gateway, Billing'
 ms.service: application-gateway
 wacn.topic: aog
 ms.topic: article
-ms.author: Bing Yu
+ms.author: biyu
 ms.date: 11/9/2018
 wacn.date: 11/9/2018
 ---
@@ -17,7 +17,7 @@ wacn.date: 11/9/2018
 
 出于各种需求，我们是否可以在不删除应用程序网关及其上所有配置的同时，但短期内又不使用应用程序网关的情况下，减少费用。
 
-可以通过如下 powershell 命令停止应用程序网关：
+可以通过如下 PowerShell 命令停止应用程序网关：
 
 登录 Azure 账号，选择指定订阅；
 
@@ -28,7 +28,7 @@ Stop-AzureRmApplicationGateway -ApplicationGateway $AppGw
 
 此命令允许成功后，可以通过如下日志再次确认是否已经停止:
 
-![log](media/aog-application-gateway-howto-reduce-pay/log.png "log")
+![log](media/aog-application-gateway-howto-reduce-costs/log.png "log")
 
 之后，如果需要恢复使用此应用程序网关，可以通过如下命令开启此应用程序网关：
 

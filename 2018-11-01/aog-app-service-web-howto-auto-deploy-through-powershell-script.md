@@ -1,20 +1,21 @@
 ---
-title: "web app 如何使用 powershell 脚本进行自动化部署"
-description: "web app 如何使用 powershell 脚本进行自动化部署"
-author: Zhang Yannan
-resourceTags: 'app-service , powershell , script '
-ms.service: app-service
+title: "Web 应用如何使用 PowerShell 脚本进行自动化部署"
+description: "Web 应用如何使用 PowerShell 脚本进行自动化部署"
+author: zhangyannan-yuki
+resourceTags: 'App Service Web, PowerShell, .Net, Java'
+ms.service: app-service-web
 wacn.topic: aog
 ms.topic: article
-ms.author: Zhang Yannan
+ms.author: v-tawe
 ms.date: 11/9/2018
 wacn.date: 11/9/2018
 ---
-# web app 如何使用 powershell 脚本进行自动化部署
+
+# Web 应用如何使用 PowerShell 脚本进行自动化部署
 
 如果想要自动创建网站并进行自动部署，解决方案如下：
 
-## 部署 .net 网站，例子如下：
+## 部署 .net 网站
 
 ```powershell
 $DeploymentName = "test1"//此次部署的名字可以自定义
@@ -32,25 +33,27 @@ Set-AzureStorageBlobContent -Blob $blobName -Container $containerName -File $Web
 
 $webDeployPackageUri = (New-AzureStorageBlobSASToken -Container $containerName -Blob $blobName -Permission r -FullUri -context $StorageAccountContext).ToString();
 $parameters = New-Object -TypeName hashtable;
- $jsonContent = Get-Content $ParameterFile -Raw | ConvertFrom-Json;
+$jsonContent = Get-Content $ParameterFile -Raw | ConvertFrom-Json;
 $jsonContent.parameterValues | Get-Member -Type NoteProperty | ForEach-Object {
 $parameters.Add($_.Name, $jsonContent.parameterValues.($_.Name));
- };
+};
 $parameters.msdeployPackageUri = $WebDeployPackageUri;
 
 New-AzureRmResourceGroupDeployment -ResourceGroupName $ResourceGroupName -Name $DeploymentName -TemplateFile $TemplateFile -TemplateParameterObject $parameters -Force -Verbose; //使用 New-AzureRmResourceGroupDeployment 命令进行部署
 ```
 
-测试后可以在 site/wwwroot 目录下看到上传的文件：
-![root-file](media/aog-app-service-howto-powershell-script-auto-book/root-file.png "root-file")
+测试后可以在 **site/wwwroot** 目录下看到上传的文件：
 
-## 部署 java 网站的 war 包
+![root-file](media/aog-app-service-web-howto-auto-deploy-through-powershell-script/root-file.png "root-file")
+
+## 部署 Java 网站
 
 如果想要用上面的脚本部署 war 包，可以尝试下面的步骤：
 
-1. 创建如下目录的文件： webapps/ROOT ，将 war 包放在 webapps 目录下，再将 webapps 文件夹压缩成 .zip 文件。
+1. 创建如下目录的文件： **webapps/ROOT** ，将 war 包放在 **webapps** 目录下，再将 **webapps** 文件夹压缩成 .zip 文件。
 
-    ![webapps-root](media/aog-app-service-howto-powershell-script-auto-book/webapps-root.png "webapps-root")
+    ![webapps-root](media/aog-app-service-web-howto-auto-deploy-through-powershell-script/webapps-root.png "webapps-root")
 
 2. 再按照之前的脚本进行上传操作，可以看到已经有 war 文件包括解压后的文件。
-    ![war](media/aog-app-service-howto-powershell-script-auto-book/war.png "war")
+
+    ![war](media/aog-app-service-web-howto-auto-deploy-through-powershell-script/war.png "war")
