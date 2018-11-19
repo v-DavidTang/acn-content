@@ -21,7 +21,7 @@ VPN 故障排查过程通常比较复杂，联系 Azure 技术支持再做抓包
 
 支持的网关类型和连接：
 
-![01](media/aog-network-watcher-diagnosis-vpn-and-local-connections/01.png "01")
+![01](media/aog-network-watcher-howto-diagnosis-vpn-and-local-connections/01.png "01")
 
 ## 概述
 
@@ -59,7 +59,7 @@ Start-AzureRmNetworkWatcherResourceTroubleshooting -NetworkWatcher $networkWatch
 
 完成该 cmdlet 后，可以导航到该 cmdlet 中指定的存储位置，获取有关问题和日志的详细信息。 Azure 网络观察程序创建包含以下日志文件的 zip 文件夹：
 
-![02](media/aog-network-watcher-diagnosis-vpn-and-local-connections/02.png "02")
+![02](media/aog-network-watcher-howto-diagnosis-vpn-and-local-connections/02.png "02")
 
 **ConnectionStats.txt** 文件包含连接的综合性统计信息，包括入口和出口字节数、连接状态、建立连接的时间。
 
