@@ -24,25 +24,25 @@ wacn.date: 11/19/2018
 
 向应用添加 IP 限制规则，请使用菜单打开网络>IP 限制，然后单击配置 IP 限制。
 
-![01](media/aog-application-gateway-howto-limit-access-ip/01.png "01")
+![01](media/aog-app-service-howto-limit-access-ip/01.png "01")
 
 从 IP 限制 UI 可以查看为应用定义的 IP 限制规则列表。
 
-![02](media/aog-application-gateway-howto-limit-access-ip/02.png "02")
+![02](media/aog-app-service-howto-limit-access-ip/02.png "02")
 
 如果规则的配置情况如图所示，则应用只接受来自 42.159.89.46/32 的流量，并会拒绝所有来自其他的 IP 地址的流量。其中 42.159.89.46 为前端应用程序网关公网 IP 地址。
 
 配置完成后通过其他公网地址访问 Azure Web 应用返回 HTTP 403 状态代码拒绝访问。
 
-![03](media/aog-application-gateway-howto-limit-access-ip/03.png "03")
+![03](media/aog-app-service-howto-limit-access-ip/03.png "03")
 
 此时因为 Azure web 应用 IP 限制规则配置为允许来自前端应用程序网关的访问请求，应用程序网关探测后端 Azure Web 应用为 Healthy 状态。
 
-![04](media/aog-application-gateway-howto-limit-access-ip/04.png "04")
+![04](media/aog-app-service-howto-limit-access-ip/04.png "04")
 
 同时通过访问前端应用程序网关公网地址或域名可以成功访问 Azure Web 应用。
 
-![05](media/aog-application-gateway-howto-limit-access-ip/05.png "05")
+![05](media/aog-app-service-howto-limit-access-ip/05.png "05")
 
 同时可以使用网络安全规则对访问应用程序网关的源地址进行限制。
 
@@ -58,14 +58,14 @@ wacn.date: 11/19/2018
 
 * 必须允许来自 AzureLoadBalancer 标记的流量。
 
-![06](media/aog-application-gateway-howto-limit-access-ip/06.png "06")
+![06](media/aog-app-service-howto-limit-access-ip/06.png "06")
 
 查询应用程序网关后端池状态是否为 Healthy，如果网关安全规则配置错误，可能会出现后端池为 unknown 状态。
 
 此时通过客户端 167.220.255.57 可以正常访问应用程序网关后端 Azure Web 应用。
 
-![07](media/aog-application-gateway-howto-limit-access-ip/07.png "07")
+![07](media/aog-app-service-howto-limit-access-ip/07.png "07")
 
 通过其他地址访问失败。
 
-![08](media/aog-application-gateway-howto-limit-access-ip/08.png "08")
+![08](media/aog-app-service-howto-limit-access-ip/08.png "08")

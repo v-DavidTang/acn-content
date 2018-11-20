@@ -57,6 +57,6 @@ func main() {
 
 ![05](media/aog-sql-database-howto-connect-mysql-pass-by-go-language/05.jpg "05")
 
-通过 workbench 连接到 mysql paas，验证数据已经插入成功：
+通过 workbench 连接到 MySQL PaaS，验证数据已经插入成功：
 
 ![06](media/aog-sql-database-howto-connect-mysql-pass-by-go-language/06.jpg "06")
