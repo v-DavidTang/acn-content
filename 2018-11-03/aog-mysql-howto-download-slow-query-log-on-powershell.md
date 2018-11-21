@@ -2,8 +2,8 @@
 title: "使用 powershell 命令下载慢查询日志"
 description: "使用 powershell 命令下载慢查询日志"
 author: Xing Bing
-resourceTags: 'Mysql Database, Slow Query Log'
-ms.service: mysql-database
+resourceTags: 'Mysql, Slow Query Log'
+ms.service: Mysql
 wacn.topic: aog
 ms.topic: article
 ms.author: Xing Bing
@@ -21,11 +21,11 @@ Powershell 下载完整慢查询日志的方法，以下是详细步骤：
     Add-AzureRmAccount -EnvironmentName AzureChinaCloud
     ```
 
-    ![01](media/aog-sql-database-howto-download-slow-query-log-on-powershell/01.jpg "01")
+    ![01](media/aog-mysql-howto-download-slow-query-log-on-powershell/01.jpg "01")
 
     输入您的口令，登录成功后，显示如下：
 
-    ![02](media/aog-sql-database-howto-download-slow-query-log-on-powershell/02.jpg "02")
+    ![02](media/aog-mysql-howto-download-slow-query-log-on-powershell/02.jpg "02")
 
 2. 修改并运行如下命令显示实例下所有的的慢查询日志：
 
@@ -34,11 +34,11 @@ Powershell 下载完整慢查询日志的方法，以下是详细步骤：
     ```
     注：其中，Name 为您 MySQL 实例名，ResourceGroupName 为资源组名称，可在 ibizal portal 查看：
 
-    ![03](media/aog-sql-database-howto-download-slow-query-log-on-powershell/03.jpg "03")
+    ![03](media/aog-mysql-howto-download-slow-query-log-on-powershell/03.jpg "03")
 
     脚本运行成功后，显示如下：
 
-    ![04](media/aog-sql-database-howto-download-slow-query-log-on-powershell/04.jpg "04")
+    ![04](media/aog-mysql-howto-download-slow-query-log-on-powershell/04.jpg "04")
 
 3. 修改并执行如下脚本获取容器相关信息：
 
@@ -63,11 +63,11 @@ Powershell 下载完整慢查询日志的方法，以下是详细步骤：
     注：ResourceName 为步骤 2 中执行命令后结果中显示的 ResourceName。
 
     执行命令后弹出提示框，点击 Yes：
-    ![05](media/aog-sql-database-howto-download-slow-query-log-on-powershell/05.jpg "05")
+    ![05](media/aog-mysql-howto-download-slow-query-log-on-powershell/05.jpg "05")
 
     执行成功，powershell 显示如下：
-    ![06](media/aog-sql-database-howto-download-slow-query-log-on-powershell/06.jpg "06")
+    ![06](media/aog-mysql-howto-download-slow-query-log-on-powershell/06.jpg "06")
 
 5. 验证：使用 Azure storage Explorer 登录 storage account 后，发现日志已保存到了容器中，如下所示：
 
-    ![07](media/aog-sql-database-howto-download-slow-query-log-on-powershell/07.jpg "07")
+    ![07](media/aog-mysql-howto-download-slow-query-log-on-powershell/07.jpg "07")

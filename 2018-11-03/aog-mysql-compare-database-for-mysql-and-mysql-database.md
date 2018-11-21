@@ -2,8 +2,8 @@
 title: "Azure Database for MySQL 与 Azure 上的 MySQL 数据库的比较"
 description: "Azure Database for MySQL 与 Azure 上的 MySQL 数据库的比较"
 author: Xing Bing
-resourceTags: 'Mysql Database, Azure Database for MySQL, MySQL Database on Azure'
-ms.service: mysql-database
+resourceTags: 'Mysql, Azure Database for MySQL, MySQL Database on Azure'
+ms.service: Mysql
 wacn.topic: aog
 ms.topic: article
 ms.author: Xing Bing
@@ -17,11 +17,11 @@ Azure Database for MySQL 是基于新架构的，采用 vcore 虚拟核心计算
 
 而 Azure 上的 MySQL 数据库是根据工作负荷所需的计算单元数确定服务层。更多细节您可以参考新版和老版的文档： [Azure 上的 MySQL 数据库服务层](https://docs.azure.cn/zh-cn/mysql-database-on-azure/mysql-database-service-tiers)
 
-![01](media/aog-sql-database-compare-database-for-mysql-and-mysql-database/01.jpg "01")
+![01](media/aog-mysql-compare-database-for-mysql-and-mysql-database/01.jpg "01")
 
 [Azure Database for MySQL定价层](https://docs.azure.cn/zh-cn/mysql/concepts-pricing-tiers)
 
-![02](media/aog-sql-database-compare-database-for-mysql-and-mysql-database/02.jpg "02")
+![02](media/aog-mysql-compare-database-for-mysql-and-mysql-database/02.jpg "02")
 
 新的 Azure Database for MySQL，wait timeout 值没有小于 4 分钟的规定了。
 
