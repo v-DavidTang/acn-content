@@ -32,4 +32,4 @@ insert into testgeo1 values(0,'abc',GeomFromText(@g1),PointFromText(@g));
 select * from testgeo1;
 ```
 
-![01](media/aog-sql-database-howto-mysql-database-support-spatial-data/01.jpg "01")
+![01](media/aog-mysql-howto-mysql-database-support-spatial-data/01.jpg "01")
