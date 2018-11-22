@@ -57,7 +57,7 @@ Powershell 下载完整慢查询日志的方法，以下是详细步骤：
 4. 修改并运行如下命令下载特定的慢查询日志到容器中：
 
     ```powershell
-    Set-AzureRmResource -ResourceType "Microsoft.MySql/servers/slowlogs" -ResourceName mysqlcancy/mysql-slow.log.20170421 -ApiVersion 2015-09-01 -ResourceGroupName rgcnc -PropertyObject @{copyDestinationContainerUri=”¡À$($container.CloudBlobContainer.Uri.AbsoluteUri)";CopyDestinationSasToken="$sasToken"} -UsePatchSemantics
+    Set-AzureRmResource -ResourceType "Microsoft.MySql/servers/slowlogs" -ResourceName mysqlcancy/mysql-slow.log.20170421 -ApiVersion 2015-09-01 -ResourceGroupName rgcnc -PropertyObject @{copyDestinationContainerUri=$container.CloudBlobContainer.Uri.AbsoluteUri;CopyDestinationSasToken="$sasToken"} -UsePatchSemantics
     ```
 
     注：ResourceName 为步骤 2 中执行命令后结果中显示的 ResourceName。
