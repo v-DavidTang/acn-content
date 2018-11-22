@@ -2,7 +2,7 @@
 title: "MySQL PaaS 数据库如何支持空间数据"
 description: "MySQL PaaS 数据库如何支持空间数据"
 author: Xing Bing
-resourceTags: 'Mysql Database, Spatial Data'
+resourceTags: 'Mysql Database, Azure Database For Azure, Spatial Data'
 ms.service: mysql-database
 wacn.topic: aog
 ms.topic: article
@@ -22,13 +22,16 @@ name char(20) not null,
 g GEOMETRY,
 pt POINT
 );
+```
 
-
+```sql
 SET @g = 'POINT(1 1)';
 SET @g1 ='GEOMETRYCOLLECTION(POINT(1 1),LINESTRING(0 0,1 1,2 2,3 3,4 4))';
 
 insert into testgeo1 values(0,'abc',GeomFromText(@g1),PointFromText(@g));
+```
 
+```sql
 select * from testgeo1;
 ```
 
