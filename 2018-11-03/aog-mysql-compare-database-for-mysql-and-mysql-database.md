@@ -1,33 +1,33 @@
 ---
 title: "Azure Database for MySQL 与 Azure 上的 MySQL 数据库的比较"
 description: "Azure Database for MySQL 与 Azure 上的 MySQL 数据库的比较"
-author: Xing Bing
+author: xingbing0909
 resourceTags: 'Mysql, Azure Database for MySQL, MySQL Database on Azure'
 ms.service: Mysql
 wacn.topic: aog
 ms.topic: article
-ms.author: Xing Bing
+ms.author: v-tawe
 ms.date: 11/20/2018
 wacn.date: 11/20/2018
 ---
 
 # Azure Database for MySQL 与 Azure 上的 MySQL 数据库的比较
 
-Azure Database for MySQL 是基于新架构的，采用 vcore 虚拟核心计算性能。
+1. Azure Database for MySQL 是基于新架构的，采用 vcore 虚拟核心计算性能。
 
-而 Azure 上的 MySQL 数据库是根据工作负荷所需的计算单元数确定服务层。更多细节您可以参考新版和老版的文档： [Azure 上的 MySQL 数据库服务层](https://docs.azure.cn/zh-cn/mysql-database-on-azure/mysql-database-service-tiers)
+    而 Azure 上的 MySQL 数据库是根据工作负荷所需的计算单元数确定服务层。更多细节您可以参考新版和老版的文档： [Azure 上的 MySQL 数据库服务层](https://docs.azure.cn/zh-cn/mysql-database-on-azure/mysql-database-service-tiers)
 
-![01](media/aog-mysql-compare-database-for-mysql-and-mysql-database/01.jpg "01")
+    ![01](media/aog-mysql-compare-database-for-mysql-and-mysql-database/01.jpg "01")
 
-[Azure Database for MySQL定价层](https://docs.azure.cn/zh-cn/mysql/concepts-pricing-tiers)
+    [Azure Database for MySQL定价层](https://docs.azure.cn/zh-cn/mysql/concepts-pricing-tiers)
 
-![02](media/aog-mysql-compare-database-for-mysql-and-mysql-database/02.jpg "02")
+    ![02](media/aog-mysql-compare-database-for-mysql-and-mysql-database/02.jpg "02")
 
-新的 Azure Database for MySQL，wait timeout 值没有小于 4 分钟的规定了。
+2. 新的 Azure Database for MySQL，wait timeout 值没有小于 4 分钟的规定了。
 
-新的 Azure Database for MySQ，可供您配置的参数更多了。
+3. 新的 Azure Database for MySQ，可供您配置的参数更多了。
 
-新的 Azure Database for MySQL，您可以使用命令行工具创建数据库，User 等，旧的 Azure 上的 MySQL 数据库服务是不行的。
+4. 新的 Azure Database for MySQL，您可以使用命令行工具创建数据库，User 等，旧的 Azure 上的 MySQL 数据库服务是不行的。
 
 对于基于老模式 MySQL 存储大小上限也是 2T。
 

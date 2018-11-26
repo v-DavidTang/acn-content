@@ -1,12 +1,12 @@
 ---
 title: "使用网络观察程序诊断 Azure VPN 网关和本地连接"
 description: "使用网络观察程序诊断 Azure VPN 网关和本地连接"
-author: En Hu
+author: blackhu269
 resourceTags: 'Network Watcher, Azure VPN'
 ms.service: network-watcher
 wacn.topic: aog
 ms.topic: article
-ms.author: En Hu
+ms.author: Hu.En
 ms.date: 11/19/2018
 wacn.date: 11/19/2018
 ---
