@@ -1,19 +1,19 @@
 ---
 title: "Go 语言连接 MySQL PaaS"
 description: "Go 语言连接 MySQL PaaS"
-author: Xing Bing
+author: xingbing0909
 resourceTags: 'Mysql, Go Language'
 ms.service: Mysql
 wacn.topic: aog
 ms.topic: article
-ms.author: Xing Bing
+ms.author: v-tawe
 ms.date: 11/20/2018
 wacn.date: 11/20/2018
 ---
 
 # Go 语言连接 MySQL PaaS
 
-Go语言工具下载链接点击[这里](https://golang.org/dl/)。
+Go 语言工具下载链接点击[这里](https://golang.org/dl/)。
 
 根据自己的需要选择合适的操作系统下载，例如我下载的是 go1.8.3.windows-amd64.msi。
 

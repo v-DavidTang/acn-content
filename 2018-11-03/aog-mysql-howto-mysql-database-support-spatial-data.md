@@ -1,12 +1,12 @@
 ---
 title: "MySQL PaaS 数据库如何支持空间数据"
 description: "MySQL PaaS 数据库如何支持空间数据"
-author: Xing Bing
+author: xingbing0909
 resourceTags: 'Mysql Database, Azure Database For Azure, Spatial Data'
 ms.service: mysql-database
 wacn.topic: aog
 ms.topic: article
-ms.author: Xing Bing
+ms.author: v-tawe
 ms.date: 11/20/2018
 wacn.date: 11/20/2018
 ---

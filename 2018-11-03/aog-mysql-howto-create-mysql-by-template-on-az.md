@@ -1,12 +1,12 @@
 ---
 title: "使用 az 命令通过模板创建 MySQL PaaS"
 description: "使用 az 命令通过模板创建 MySQL PaaS"
-author: Xing Bing
+author: xingbing0909
 resourceTags: 'Mysql, az, template'
 ms.service: Mysql
 wacn.topic: aog
 ms.topic: article
-ms.author: Xing Bing
+ms.author: v-tawe
 ms.date: 11/20/2018
 wacn.date: 11/20/2018
 ---
@@ -19,15 +19,15 @@ wacn.date: 11/20/2018
 
 ![02](media/aog-mysql-howto-create-mysql-by-template-on-az/02.png "02")
 
-首先使用 az 命令登陆 Azure 门户账号：
+首先使用 `az` 命令登陆 Azure 门户账号：
 
 ![03](media/aog-mysql-howto-create-mysql-by-template-on-az/03.jpg "03")
 
-接下来使用命令az group deployment来部署：
+接下来使用命令 `az group deployment` 来部署：
 
 ![04](media/aog-mysql-howto-create-mysql-by-template-on-az/04.jpg "04")
 
-我的 Servername 叫做 zhtest，其中 parameters.json 文件里，我添加了密码参数：
+此处 `Servername` 以 `zhtest` 为例，其中 parameters.json 文件里，添加密码参数：
 
 ![05](media/aog-mysql-howto-create-mysql-by-template-on-az/05.jpg "05")
 

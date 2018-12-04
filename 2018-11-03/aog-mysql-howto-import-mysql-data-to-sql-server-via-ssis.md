@@ -1,19 +1,19 @@
 ---
 title: "通过 SSIS 导入 MySQL 数据到 SQL Server"
 description: "通过 SSIS 导入 MySQL 数据到 SQL Server"
-author: Xing Bing
+author: xingbing0909
 resourceTags: 'Mysql, SQL Server, SSIS'
 ms.service: Mysql
 wacn.topic: aog
 ms.topic: article
-ms.author: Xing Bing
+ms.author: v-tawe
 ms.date: 11/20/2018
 wacn.date: 11/20/2018
 ---
 
 # 通过 SSIS 导入 MySQL 数据到 SQL Server
 
-1. 安装并配置ODBC驱动：
+1. 安装并配置 ODBC 驱动：
 
     ![01](media/aog-mysql-howto-import-mysql-data-to-sql-server-via-ssis/01.jpg "01")
 
