@@ -19,7 +19,7 @@ wacn.date: 12/4/2018
 
 2. Filter 输入 http.x_forwarded_for
 
-    ![01](media/aog-application-gateway-howto-view-original-client-ip-and-port/01.png)
+    ![01](media/aog-application-gateway-howto-view-original-client-ip-and-port/01.png "01")
 
 3. Follow 此 TCP Stream 得到以下结果：
 
