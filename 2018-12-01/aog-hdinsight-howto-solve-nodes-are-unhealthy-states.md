@@ -34,7 +34,7 @@ wacn.date: 12/6/2018
 1. 首先要先 kill 掉所有的任务，因为当前客户的所有 node 节点已经是 unhealthy 状态了，可以采用如下办法 kill 所有的任务：
 
     ```shell
-    `yarn application -list | awk '$6 == "ACCEPTED" { print $1 }'`; do yarn application -kill "$app";
+    for app in `yarn application -list | awk '$6 == "ACCEPTED" { print $1 }'`; do yarn application -kill "$app";  done
     ```
 
 2. 重启所有节点。
