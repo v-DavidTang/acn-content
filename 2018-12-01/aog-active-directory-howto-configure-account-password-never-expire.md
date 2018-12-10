@@ -1,12 +1,12 @@
 ---
 title: "如何配置 Azure Active Directory 账户密码永不过期（AAD PowerShell 2.0 版本）"
 description: "如何配置 Azure Active Directory 账户密码永不过期（AAD PowerShell 2.0 版本）"
-author: Jessie Pang
+author: jessie-pang
 resourceTags: 'Azure Active Directory, AAD PowerShell 2.0'
 ms.service: active-directory
 wacn.topic: aog
 ms.topic: article
-ms.author: Jessie Pang
+ms.author: v-ciwu
 ms.date: 12/5/2018
 wacn.date: 12/5/2018
 ---
@@ -17,13 +17,11 @@ wacn.date: 12/5/2018
 
 本文将描述如何使用 Azure Active Directory PowerShell 2.0 的命令集完成这一配置。请注意，通常不建议将用户帐户的密码设置为永不过期，但可以将服务帐户（如用于 Active Directory 同步的帐户）的密码设置为永不过期。本文仅适用于云用户帐户，对于将本地活动目录与 Azure AD 集成的账号，请在本地活动目录内对账号进行配置，并使用同步工具将配置同步至 Azure AD。
 
-1. 安装 AAD PowerShell 模块
+1. 安装 [AAD PowerShell 模块](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
 
     ```powershell
     Install-Module AzureAD
     ```
-
-    参考： [AAD PowerShell 模块](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
 
 2. 连接至 Azure AD
 
