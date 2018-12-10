@@ -93,7 +93,7 @@ wacn.date: 12/7/2018
 
       ![10](media/aog-active-directory-howto-create-application-and-give-permission-by-postman/10.png "10")
 
-    到这一步，我们有一个可以使用的应用程序，有该应用程序的 ID,KEY，同时也对该应用程序赋予了权限，另外我们已经有一个可以工作的 Postman，同时也启动了 notepad++ 作为辅助工具。剩下的工作，我们都是要通过新建Postman Request来完成。因此下面的步骤会详细的解释，Postman 的 Request 的参数，包括 header,body 等等。
+    到这一步，我们有一个可以使用的应用程序，有该应用程序的 ID,KEY，同时也对该应用程序赋予了权限，另外我们已经有一个可以工作的 Postman，同时也启动了 notepad++ 作为辅助工具。剩下的工作，我们都是要通过新建 Postman Request 来完成。因此下面的步骤会详细的解释，Postman 的 Request 的参数，包括 header,body 等等。
 
 ### 第二部分
 
@@ -147,7 +147,7 @@ wacn.date: 12/7/2018
 
       请求 endpoint: <https://graph.chinacloudapi.cn/myorganization/applications?api-version=1.6>
 
-      请求header:
+      请求 header:
 
       Authorization: {{ACCESS_TOKEN}}
 
@@ -254,9 +254,9 @@ wacn.date: 12/7/2018
 
     请求方法：POST
 
-    请求URL: <https://graph.chinacloudapi.cn/myorganization/servicePrincipals?api-version=1.6>
+    请求 URL: <https://graph.chinacloudapi.cn/myorganization/servicePrincipals?api-version=1.6>
 
-    请求HEADER：
+    请求 HEADER：
 
     Authorization: {{ACCESS_TOKEN}}
 
@@ -301,7 +301,7 @@ wacn.date: 12/7/2018
 
     请求方法：GET
 
-    请求URL: <https://graph.chinacloudapi.cn/myorganization/servicePrincipals?api-version=1.6&$filter=appId+eq+'00000002-0000-0000-c000-000000000000'>
+    请求 URL: <https://graph.chinacloudapi.cn/myorganization/servicePrincipals?api-version=1.6&$filter=appId+eq+'00000002-0000-0000-c000-000000000000'>
 
     注意这里的参数该为该 Resource App Id。
 
@@ -319,7 +319,7 @@ wacn.date: 12/7/2018
 
     请求方法：POST
 
-    请求URL： <https://graph.chinacloudapi.cn/myorganization/oauth2PermissionGrants?api-version=1.6>
+    请求 URL： <https://graph.chinacloudapi.cn/myorganization/oauth2PermissionGrants?api-version=1.6>
 
     请求头：
 

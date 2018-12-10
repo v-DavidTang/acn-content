@@ -73,7 +73,7 @@ wacn.date: 12/7/2018
 
     接下来需要在 Azure 虚拟网络下部署一台 Windows Server 2012 或更高版本的虚拟机，该虚拟网络是连接到 Express Route 线路的。
 
-    部署完成后，需要在此虚拟机上安装HCM的客户端，该中继代理称为混合连接管理器 (HCM)。需要下载 HCM，请在 Azure 门户上的应用中，选择 “网络” > “配置混合连接终结点” 。
+    部署完成后，需要在此虚拟机上安装 HCM 的客户端，该中继代理称为混合连接管理器 (HCM)。需要下载 HCM，请在 Azure 门户上的应用中，选择 “网络” > “配置混合连接终结点” 。
 
     ![07](media/aog-app-service-web-howto-connect-to-local-database/07.png "07")
 
@@ -87,7 +87,7 @@ wacn.date: 12/7/2018
 
     接下来配置 Host 文件，为了使得加解密后的终结点数据流能够被解析，在 Express Route 线路中传递到本地。
 
-    Host文件默认路径为 C:\Windows\System32\drivers\etc\hosts
+    Host 文件默认路径为 C:\Windows\System32\drivers\etc\hosts
 
     配置解析记录，示例如下：
 
@@ -105,7 +105,7 @@ wacn.date: 12/7/2018
 
 ### 检测混合连接-ExpressRoute 线路连通性
 
-1. 在Azure HCM 虚拟机上，可以使用 Telnet 或 Psping 工具来检测本地 IDC 服务是否能够被 Azure 虚拟机通过 Express Route 访问。可以使用 nslookup 解析终结点主机名，来检测 Azure 虚拟机是否能够正常解析该终结点名称到本地 IDC 服务器的内网地址。
+1. 在 Azure HCM 虚拟机上，可以使用 Telnet 或 Psping 工具来检测本地 IDC 服务是否能够被 Azure 虚拟机通过 Express Route 访问。可以使用 nslookup 解析终结点主机名，来检测 Azure 虚拟机是否能够正常解析该终结点名称到本地 IDC 服务器的内网地址。
 
 2. HCM 客户端的连接状态表示该终结点实现了 Azure HCM 虚拟机到 Azure Web 应用程序之间的连接状态。Azure 门户上混合连接的连接状态表示了中继服务到 Azure Web 应用程序之间的连接状态。
 

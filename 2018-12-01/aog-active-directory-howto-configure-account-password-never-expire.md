@@ -13,7 +13,7 @@ wacn.date: 12/5/2018
 
 # 如何配置 Azure Active Directory 账户密码永不过期（AAD PowerShell 2.0 版本）
 
-之前已有文章讲述了如何使用 MSOnline PowerShell 1.0的命令集配置 Azure Active Directory 账户密码永不过期：[如何配置 Azure Active Directory 账户密码永不过期](https://docs.azure.cn/articles/azure-operations-guide/active-directory/aog-active-directory-account-never-expire)。
+之前已有文章讲述了如何使用 MSOnline PowerShell 1.0 的命令集配置 Azure Active Directory 账户密码永不过期：[如何配置 Azure Active Directory 账户密码永不过期](https://docs.azure.cn/articles/azure-operations-guide/active-directory/aog-active-directory-account-never-expire)。
 
 本文将描述如何使用 Azure Active Directory PowerShell 2.0 的命令集完成这一配置。请注意，通常不建议将用户帐户的密码设置为永不过期，但可以将服务帐户（如用于 Active Directory 同步的帐户）的密码设置为永不过期。本文仅适用于云用户帐户，对于将本地活动目录与 Azure AD 集成的账号，请在本地活动目录内对账号进行配置，并使用同步工具将配置同步至 Azure AD。
 

@@ -19,11 +19,11 @@ wacn.date: 12/6/2018
 
 ## 如何实现
 
-对于如何用Java操作Spark SQL的demo您可以参考这个 [Demo](https://github.com/baolijn/JavaSparkSQLDemo.git)：
+对于如何用 Java 操作 Spark SQL 的 demo 您可以参考这个 [Demo](https://github.com/baolijn/JavaSparkSQLDemo.git)：
 
 1. 克隆代码之后用 maven 打包成 sql-1.0.jar。
 
-2. 用WinSCP工具将打包成的 sql-1.0.jar 上传到您的 Spark 集群的 /home/sshuser/ 目录下。
+2. 用 WinSCP 工具将打包成的 sql-1.0.jar 上传到您的 Spark 集群的 /home/sshuser/ 目录下。
 
 3. 在头结点上直接运行如下语句就可以跑起这个 Demo 了。
 
