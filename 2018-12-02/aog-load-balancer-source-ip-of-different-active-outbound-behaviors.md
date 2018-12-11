@@ -27,11 +27,11 @@ Azure 负载均衡器后端绑定虚拟机为后端池，不配置探测和负�
 
 测试源虚拟机是 Test2VM，前端 Azure 负载均衡器公网 IP 为 40.125.161.55， 目的虚拟机是 lbvm,对应的虚机公网地址为 42.159.94.123， 在源虚拟机上 ssh 登录目的虚拟机：
 
-![01](media/aog-load-balancer-howto-design-source-ip-of-different-active-outbound-behaviors/01.jpg "01")
+![01](media/aog-load-balancer-source-ip-of-different-active-outbound-behaviors/01.jpg "01")
 
 在目的虚拟机上 'tailf /var/log/auth.log'，实时观察 ssh 登录进来的请求的源 IP，可以看到请求的源 IP 是 Azure 负载均衡器的前端公网 IP。
 
-![02](media/aog-load-balancer-howto-design-source-ip-of-different-active-outbound-behaviors/02.png "02")
+![02](media/aog-load-balancer-source-ip-of-different-active-outbound-behaviors/02.png "02")
 
 ## 测试 2
 
@@ -39,11 +39,11 @@ Azure 负载均衡器后端绑定虚拟机为后端池，不配置 Inbound NAT r
 
 测试源虚拟机是 Test2VM，前端 Azure 负载均衡器公网 IP 为 40.125.161.55，目的虚拟机是 lbvm,对应的虚拟机公网地址为 42.159.94.123， 在源虚拟机上 ssh 登录目的虚拟机：
 
-![03](media/aog-load-balancer-howto-design-source-ip-of-different-active-outbound-behaviors/03.jpg "03")
+![03](media/aog-load-balancer-source-ip-of-different-active-outbound-behaviors/03.jpg "03")
 
 在目的虚拟机上 'tailf /var/log/auth.log'，实时观察 ssh 登录进来的请求的源 IP，可以看到访问的 IP 是 Azure 负载均衡器的前端公网 IP。
 
-![04](media/aog-load-balancer-howto-design-source-ip-of-different-active-outbound-behaviors/04.png "04")
+![04](media/aog-load-balancer-source-ip-of-different-active-outbound-behaviors/04.png "04")
 
 如果只是对于出站连接的这种场景，在配置负载均衡规则时，探测不一定非要处于健康状态，对于入向连接时，探测一定要处于健康状态，才能将请求转发到健康的后端池上。
 
