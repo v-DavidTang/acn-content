@@ -1,12 +1,12 @@
 ---
 title: "应用程序网关与 API 管理集成注意事项"
 description: "应用程序网关与 API 管理集成注意事项"
-author: Lina Guo
+author: tiffanyguo721
 resourceTags: 'Application Gateway, API Management'
 ms.service: application-gateway
 wacn.topic: aog
 ms.topic: article
-ms.author: Lina Guo
+ms.author: lina.guo
 ms.date: 12/11/2018
 wacn.date: 12/11/2018
 ---

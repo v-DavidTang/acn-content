@@ -1,12 +1,12 @@
 ---
 title: "Azure 负载均衡器后端虚拟机不同主动出站行为的源 IP 设计"
 description: "Azure 负载均衡器后端虚拟机不同主动出站行为的源 IP 设计"
-author: Lina Guo
+author: tiffanyguo721
 resourceTags: 'Load Balancer, Outbound Connections'
 ms.service: load-balancer
 wacn.topic: aog
 ms.topic: article
-ms.author: Lina Guo
+ms.author: lina.guo
 ms.date: 12/11/2018
 wacn.date: 12/11/2018
 ---
