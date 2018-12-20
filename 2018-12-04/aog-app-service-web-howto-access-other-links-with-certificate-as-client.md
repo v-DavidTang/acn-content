@@ -21,7 +21,7 @@ wacn.date: 12/20/2018
 
 ## 解决方案
 
-您可以使用下图中的方法去读取证书，然后将携带证书的请求发送出去：
+您可以使用下面的代码去读取证书，然后将携带证书的请求发送出去：
 
 ```csharp
 public async Task<HttpResponseMessage> PostAsync()
