@@ -1,12 +1,12 @@
 ---
 title: "Web 应用作为客户端携带证书访问其他链接办法"
 description: "Web 应用作为客户端携带证书访问其他链接办法"
-author: Guan Jun
+author: 123Jun321
 resourceTags: 'App Service Web, Certificate'
 ms.service: app-service-web
 wacn.topic: aog
 ms.topic: article
-ms.author: Guan Jun
+ms.author: v-ciwu
 ms.date: 12/20/2018
 wacn.date: 12/20/2018
 ---
