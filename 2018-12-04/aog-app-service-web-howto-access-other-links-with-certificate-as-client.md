@@ -53,7 +53,7 @@ public async Task<HttpResponseMessage> PostAsync()
 }
 ```
 
-需要注意的是 'X509Certificate2 certificates = new X509Certificate2(@"您的证书路径", "证书密码", X509KeyStorageFlags.MachineKeySet);'。
+需要注意的是 `X509Certificate2 certificates = new X509Certificate2(@"您的证书路径", "证书密码", X509KeyStorageFlags.MachineKeySet);`。
 
 此行代码中的 *X509KeyStorageFlags* 这个参数必须设置为 *X509KeyStorageFlags.MachineKeySet*。
 
