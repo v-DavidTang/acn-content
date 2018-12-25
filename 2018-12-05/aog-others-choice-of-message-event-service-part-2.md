@@ -13,7 +13,7 @@ wacn.date: 12/25/2018
 
 # Azure 消息 & 事件服务的选择 – 中篇
 
-在[上篇](aog-others-choice-of-message-event-service-part-1)中我们分别对了消息服务中三种类型服务做了介绍和对比，它们包括 Storage queue、Service bus queue、service bus topic。这篇文章我们继续对事件服务中的 Event Hub 和 IOT Hub 分别做介绍。
+在[上篇](aog-others-choice-of-message-event-service-part-1)中我们分别对了消息服务中三种类型服务做了介绍和对比，它们包括 Storage queue、Service bus queue、Service bus topic。这篇文章我们继续对事件服务中的 Event Hub 和 IOT Hub 分别做介绍。
 
 1. Event Hub
 
