@@ -130,7 +130,7 @@ wacn.date: 12/17/2018
 
         3. 管理：用户可以为 Event Grid 启用重试策略和死信队列功能，也可以检测匹配和不匹配事件以及每个 subscriber 上出现的错误和延迟。
 
-        下图显示了 Event Grid 如何连接 Source 和 handlers:
+        下图显示了 Event Grid 如何连接 Source 和 Handlers:
 
         ![04](media/aog-others-choice-of-message-event-service-part-3/04.png "04")
 
@@ -138,7 +138,7 @@ wacn.date: 12/17/2018
 
         虽然 Azure Event Grid 也是采用 pub-sub 的模式分发消息并且也有 topic 的概念，但是这两个服务是不同的，有如下区别：
 
-        1. 消息接收模式：Event Grid 是 push 的模式，而 Service bus topic 是 pull 的模式。也就是说当用户使用 Service bus topic 接收消息时需要管理并控制何时或者接收多少的消息，而使用 Event Gird 只要 handlers 保持与 Event Gird 的连接，事件就会被实时推送到对应的 handlers 中。也正是因为这点差异，用户使用 Service bus topic 更具有灵活性和可控性，如果当接收端接收的速度跟不上发送端的速度时，可以先将消息积存在 topic 服务中，而使用 Event Grid 用户需要保证 handler 有足够的能力处理来事件的负载。
+        1. 消息接收模式：Event Grid 是 push 的模式，而 Service bus topic 是 pull 的模式。也就是说当用户使用 Service bus topic 接收消息时需要管理并控制何时或者接收多少的消息，而使用 Event Gird 只要 handlers 保持与 Event Gird 的连接，事件就会被实时推送到对应的 handlers 中。也正是因为这点差异，用户使用 Service bus topic 更具有灵活性和可控性，如果当接收端接收的速度跟不上发送端的速度时，可以先将消息积存在 topic 服务中，而使用 Event Grid 用户需要保证 Handler 有足够的能力处理来事件的负载。
 
         2. 吞吐量：Event Grid 可以保证每秒钟千万级别的的事件量，而这一点是 Service bus topic 远远达不到的。
 
@@ -148,7 +148,7 @@ wacn.date: 12/17/2018
 
         1. Serverless 架构
 
-            作为正真意义上的 ServerLess 服务，Event Grid 可以很好的应用到各种 ServerLess 架构中，通过使用 ServerLess 类型的 handler 服务（如 logic app/function），用户可以充分利用 ServerLess 架构的强大功能对事件处理进行高度的扩展。
+            作为正真意义上的 ServerLess 服务，Event Grid 可以很好的应用到各种 ServerLess 架构中，通过使用 ServerLess 类型的 Handler 服务（如 logic app/function），用户可以充分利用 ServerLess 架构的强大功能对事件处理进行高度的扩展。
 
         2. Enterprise integration
 
