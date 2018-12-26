@@ -93,6 +93,6 @@ wacn.date: 12/25/2018
 
 ## 后续步骤
 
-1. 如果在验证过程中 RDP 访问时提示用户被禁用，可以使用重置密码功能进行重置：
+如果在验证过程中 RDP 访问时提示用户被禁用，可以使用重置密码功能进行重置：
 
-    ![05](media/aog-virtual-machines-howto-create-windows-10-enterprise/05.jpg "05")
+![05](media/aog-virtual-machines-howto-create-windows-10-enterprise/05.jpg "05")
