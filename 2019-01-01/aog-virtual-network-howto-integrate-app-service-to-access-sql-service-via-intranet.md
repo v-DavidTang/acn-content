@@ -87,7 +87,7 @@ wacn.date: 01/03/2019
 
 ## 参考文档
 
-* [应用与 Azure 虚拟网络进行集](https://docs.azure.cn/zh-cn/app-service/web-sites-integrate-with-vnet)
+* [应用与 Azure 虚拟网络进行集成](https://docs.azure.cn/zh-cn/app-service/web-sites-integrate-with-vnet)
 
 * [为 SQL 数据库创建服务器级防火墙规则](https://docs.azure.cn/zh-cn/sql-database/sql-database-get-started-portal-firewall)
 
