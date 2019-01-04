@@ -17,11 +17,11 @@ wacn.date: 01/03/2019
 
 ## 准备工作
 
-* 一个应用服务应用。请参阅 [Web 应用文档](https://docs.azure.cn/zh-cn/app-service/)
+* 一个应用服务应用，请参阅 [Web 应用文档](https://docs.azure.cn/zh-cn/app-service/)。
 
-* 一个 Azure SQL 数据库服务。请参阅[创建 Azure SQL 数据库](https://docs.azure.cn/zh-cn/sql-database/sql-database-get-started-portal)
+* 一个 Azure SQL 数据库服务，请参阅[创建 Azure SQL 数据库](https://docs.azure.cn/zh-cn/sql-database/sql-database-get-started-portal)。
 
-* 一个虚拟网络。请参阅[创建虚拟网络](https://docs.azure.cn/zh-cn/virtual-network/quick-create-portal)
+* 一个虚拟网络，请参阅[创建虚拟网络](https://docs.azure.cn/zh-cn/virtual-network/quick-create-portal)。
 
 在创建以上资源的时候，请选择同一区域。
 
