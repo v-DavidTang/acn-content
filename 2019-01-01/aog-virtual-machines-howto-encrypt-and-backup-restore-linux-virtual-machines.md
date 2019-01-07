@@ -11,7 +11,7 @@ ms.date: 01/03/2019
 wacn.date: 01/03/2019
 ---
 
-# 有关 Linux 虚拟机的加密和备份还原操作的实施参考
+# 有关 Linux 虚拟机的加密和备份还原操作的实施参考-test
 
 在 Azure 中可以对虚拟机和磁盘进行加密，来提高虚拟机的安全性和合规性。Linux 虚拟机磁盘使用的是 [dm-crypt](https://en.wikipedia.org/wiki/Dm-crypt) 静态加密技术，加密密钥将存储在 Azure 密钥保管库中。
 
