@@ -1,26 +1,24 @@
 ---
 title: "虚拟网络 (VNET) 集成应用服务应用通过内网访问 Azure SQL 数据库服务"
 description: "虚拟网络 (VNET) 集成应用服务应用通过内网访问 Azure SQL 数据库服务"
-author: Bu Lu, Lina Guo, Andy An
+author: abulu
 resourceTags: 'Virtual Network, App Service, Azure SQL Database'
 ms.service: virtual-network
 wacn.topic: aog
 ms.topic: article
-ms.author: Bu Lu, Lina Guo, Andy An
-ms.date: 01/03/2019
-wacn.date: 01/03/2019
+ms.author: bulu
+ms.date: 12/31/2018
+wacn.date: 12/31/2018
 ---
 
 # 虚拟网络 (VNET) 集成应用服务应用通过内网访问 Azure SQL 数据库服务
 
-在实际应用中，客户有 Web 应用访问 SQL 数据库的需求，而为了实现数据的安全访问，客户更希望从内网进行访问，而 Web 应用和 SQL 数据库作为 PaaS 资源，正常情况下都是通过公网进行访问的，针对客户希望从内网进行访问的这种需求，我们验证这个需求可以通过虚拟网路来集成应用程序应用，以及 Azure SQL 开通**服务终结点**的方式来实现。
+在实际应用中，客户有 Web 应用访问 SQL 数据库的需求，而为了实现数据的安全访问，客户更希望从内网进行访问，而 Web 应用和 SQL 数据库作为 PaaS 资源，正常情况下都是通过公网进行访问的，针对客户希望从内网进行访问的这种需求，我们验证这个需求可以通过虚拟网路来集成应用程序应用，以及 Azure SQL 开通 **服务终结点** 的方式来实现。
 
 ## 准备工作
 
 * 一个应用服务应用，请参阅 [Web 应用文档](https://docs.azure.cn/zh-cn/app-service/)。
-
 * 一个 Azure SQL 数据库服务，请参阅[创建 Azure SQL 数据库](https://docs.azure.cn/zh-cn/sql-database/sql-database-get-started-portal)。
-
 * 一个虚拟网络，请参阅[创建虚拟网络](https://docs.azure.cn/zh-cn/virtual-network/quick-create-portal)。
 
 在创建以上资源的时候，请选择同一区域。
@@ -33,12 +31,12 @@ wacn.date: 01/03/2019
 
 * 在应用服务计划中，需要添加 SQL 数据库服务的 IP 范围到路由规则 (IP ADDRESSES ROUTED TO VNET) ，目前在中国区的数据库服务 IP 地址为下表，请参考：[Azure SQL Database gateway IP addresses](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-connectivity-architecture#azure-sql-database-gateway-ip-addresses)。
 
-|||
-|----|----|
-|China East 1|139.219.130.35|
-|China East 2|40.73.82.1|
-|China North 1|139.219.15.17|
-|China North 2|40.73.50.0|
+    | 区域 | IP 地址 |
+    | :---- | :---- |
+    | China East 1 | 139.219.130.35 |
+    | China East 2 | 40.73.82.1 |
+    | China North 1 | 139.219.15.17 |
+    | China North 2 | 40.73.50.0 |
 
 ## 操作步骤
 
@@ -88,7 +86,5 @@ wacn.date: 01/03/2019
 ## 参考文档
 
 * [应用与 Azure 虚拟网络进行集成](https://docs.azure.cn/zh-cn/app-service/web-sites-integrate-with-vnet)
-
 * [为 SQL 数据库创建服务器级防火墙规则](https://docs.azure.cn/zh-cn/sql-database/sql-database-get-started-portal-firewall)
-
 * [使用虚拟网络服务终结点](https://docs.microsoft.com/zh-cn/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview#azure-portal-steps)

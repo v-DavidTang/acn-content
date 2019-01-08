@@ -1,14 +1,14 @@
 ---
 title: "如何使用 ethtool 优化 Linux 虚拟机网卡性能"
 description: "如何使用 ethtool 优化 Linux 虚拟机网卡性能"
-author: Wei Sun
+author: Waynenus
 resourceTags: 'Virtual Machines, Linux, Ethtool, NIC'
 ms.service: virtual-machines
 wacn.topic: aog
 ms.topic: article
-ms.author: Wei Sun
-ms.date: 01/03/2019
-wacn.date: 01/03/2019
+ms.author: wei.sun
+ms.date: 12/31/2018
+wacn.date: 12/31/2018
 ---
 
 # 如何使用 ethtool 优化 Linux 虚拟机网卡性能
