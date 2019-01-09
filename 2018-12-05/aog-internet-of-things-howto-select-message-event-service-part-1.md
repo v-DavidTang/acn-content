@@ -1,12 +1,12 @@
 ---
 title: "Azure 消息 & 事件服务的选择 – 上篇"
 description: "Azure 消息 & 事件服务的选择 – 上篇"
-author: Miley Chen
+author: mileychen
 resourceTags: 'Storage Queue, Service Bus, Event Hub'
 ms.service: multiple
 wacn.topic: aog
 ms.topic: article
-ms.author: Miley Chen
+ms.author: wenche
 ms.date: 12/25/2018
 wacn.date: 12/25/2018
 ---
@@ -18,24 +18,17 @@ Microsoft Azure 平台提供了不同类型处理消息或事件的服务。用�
 首先我们来看一下在 Azure 平台上有哪些可用的消息/事件服务，目前 Azure 平台提供 8 种不同类型的消息/事件服务它们分别是：
 
 * Storage queue
-
 * Service bus queue
-
 * Service bus topic
-
 * Event Hub
-
 * IOT Hub
-
 * Service bus Relay
-
 * Notification Hub
-
 * Event Grid
 
 通过以下图表我们先直观清晰的对这些服务有一个大概的了解。
 
-![01](media/aog-others-choice-of-message-event-service-part-1/01.png "01")
+![01](media/aog-internet-of-things-howto-select-message-event-service-part-1/01.png "01")
 
 接下来我们就这些服务分别做相应的介绍：
 
@@ -121,14 +114,19 @@ Microsoft Azure 平台提供了不同类型处理消息或事件的服务。用�
 
         Queue 的消息分发模式可以参照下图：
 
-        ![02](media/aog-others-choice-of-message-event-service-part-1/02.png "02")
+        ![02](media/aog-internet-of-things-howto-select-message-event-service-part-1/02.png "02")
 
         Topic 的消息分发模式可以参考下图：
 
-        ![03](media/aog-others-choice-of-message-event-service-part-1/03.png "03")
+        ![03](media/aog-internet-of-things-howto-select-message-event-service-part-1/03.png "03")
 
     4. 适用场景
 
         从上面的特性描述中我们不难发现，如果用户有需要将同一份消息传递到不同的接收端或系统中做不同的后续分析或处理，并且接收端可能在动态变化，那么 Service bus topic 将会是非常好的解决方案。
 
-本篇中主要对 Azure 平台提供的三种消息服务从几个不同的维度做介绍和对比，Azure 平台还提供了处理大量事件的服务，比如 IOT Hub 和 Event Hub，接下来我们会在中篇会对这两种事件服务继续做介绍和对比，如果您对这个话题感兴趣可以在[中篇](aog-others-choice-of-message-event-service-part-2)中继续了解详细内容。
+本篇中主要对 Azure 平台提供的三种消息服务从几个不同的维度做介绍和对比，Azure 平台还提供了处理大量事件的服务，比如 IOT Hub 和 Event Hub，接下来我们会在中篇会对这两种事件服务继续做介绍和对比，如果您对这个话题感兴趣可以在[中篇](aog-internet-of-things-howto-select-message-event-service-part-2.md)中继续了解详细内容。
+
+## 了解更多
+
+* [Azure 消息 & 事件服务的选择 – 中篇](aog-internet-of-things-howto-select-message-event-service-part-2.md)
+* [Azure 消息 & 事件服务的选择 – 下篇](aog-internet-of-things-howto-select-message-event-service-part-3.md)
