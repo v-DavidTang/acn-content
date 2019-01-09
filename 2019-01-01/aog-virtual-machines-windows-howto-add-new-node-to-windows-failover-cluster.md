@@ -21,13 +21,13 @@ wacn.date: 01/09/2019
 
 1. 在 Azure 门户上创建新的 SQL Server 虚拟机作为新的节点 *sql-server-2*，选择 SQL Server 2012 SP2 Enterprise on Windows Server 2008 R2 级别以上的虚拟机，否则开启不了可用性组。
 
-    ![01](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/01.png "01")
+    ![01](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/01.png "01")
 
 2. 可以在已有的群集的主副本的资源组下面查看可用性集，虚拟网络和子网这些信息：
 
-    ![02](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/02.png "02")
+    ![02](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/02.png "02")
 
-    ![03](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/03.png "03")
+    ![03](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/03.png "03")
 
 ## 将新节点所在的虚机加入到域中
 
@@ -41,11 +41,11 @@ wacn.date: 01/09/2019
 
 5. 选择 “Internet 协议版本 4(TCP/IPv4) (Internet Protocol Version 4 (TCP/IPv4))”，然后点击“属性 (Properties)”。
 
-    ![04](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/04.png "04")
+    ![04](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/04.png "04")
 
 6. 选择“使用以下 DNS 服务器地址 (Use the following DNS server addresses)”，并在“首选 DNS 服务器 (Preferred DNS server)”中指定主域控制器的地址(如果不知道主域控制器的地址，可以在命令行中键入 `nslookup ad-primary-dc`)。
 
-    ![05](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/05.png "05")
+    ![05](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/05.png "05")
 
 7. 依次单击“确定”和“关闭”。
 
@@ -62,7 +62,7 @@ wacn.date: 01/09/2019
 
 12. 在看到“欢迎使用 corp.contoso.com 域 xxx(Welcome to the xxx domain) ”消息时，请单击“确定”。
 
-    ![06](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/06.png "06")
+    ![06](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/06.png "06")
 
 13. 单击“关闭”，然后单击弹出对话框中的“立即重新启动 (Restart Now)”。
 
@@ -72,7 +72,7 @@ wacn.date: 01/09/2019
 
 2. 在“服务器管理器 (Server Manager) ”中，选择“工具 (Tools)”，然后单击“计算机管理 (Computer Management)”。
 
-    ![07](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/07.png "07")
+    ![07](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/07.png "07")
 
 3. 在“计算机管理 (Computer Management) ”窗口，展开“本地用户和组 (Local Users and Groups) ”，然后选择“组 (Groups) ”。
 
@@ -82,7 +82,7 @@ wacn.date: 01/09/2019
 
 6. 输入用户 CORP\Install，然后单击“确定 (OK) ”，当系统提示输入凭据时，使用 DC 的 admin 账号 xupzhou 账户和密码进行登录。
 
-    ![08](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/08.png "08")
+    ![08](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/08.png "08")
 
 7. 单击“确定”，关闭“管理员属性”对话框。
 
@@ -90,19 +90,19 @@ wacn.date: 01/09/2019
 
 1. 在“服务器管理器 (Server Manager) ”的“仪表板 (Dashboard) ”中，单击“添加角色和功能 (Add roles and features)”。
 
-    ![09](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/09.png "09")
+    ![09](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/09.png "09")
 
 2. 在“添加角色和功能向导 (Add Roles and Features Wizard) ”中，单击“下一步 (Next) ”，直到出现“功能 (Features) ”页。
 
 3. 选择“故障转移群集 (Failover Clustering) ”，出现提示时，添加任何其他相关功能。
 
-    ![10](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/10.png "10")
+    ![10](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/10.png "10")
 
 4. 单击“下一步 (Next) ”，然后单击“确认 (Confirmation) ”页上的“安装”。
 
 5. “故障转移群集 (Failover Clustering) ”功能安装完成后，单击“关闭”。
 
-    ![11](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/11.png "11")
+    ![11](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/11.png "11")
 
 ## 在主节点所在的 Azure 虚拟机中的 Failover Cluster Manager 中添加新节点
 
@@ -110,23 +110,23 @@ wacn.date: 01/09/2019
 
 2. 在 Tool 中找到 Failover Cluster Manager 打开。
 
-    ![12](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/12.png "12")
+    ![12](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/12.png "12")
 
 3. 在浏览器树中，右键单击群集，并单击“添加节点”。
 
-    ![13](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/13.png "13")
+    ![13](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/13.png "13")
 
 4. 在“添加节点向导”中，单击“下一步”。 在“选择服务器”页中添加新的节点( SQL Server )。 在“输入服务器名称”中键入 SQL Server 名称，并单击“添加”。 完成后，单击“下一步”。
 
-    ![14](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/14.png "14")
+    ![14](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/14.png "14")
 
 5. 在“验证警告”页上，单击“否”（在生产方案中，应执行验证测试）。 然后单击“下一步”。
 
-    ![15](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/15.png "15")
+    ![15](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/15.png "15")
 
 6. 如果正在使用存储空间，则在“确认”页上不勾选为 “Add all eligible storage to the cluster” 的复选框。
 
-    ![16](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/16.png "16")
+    ![16](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/16.png "16")
 
     如果正在使用存储空间，且选中了 “Add all eligible storage to the cluster”，Windows 会在群集进程中分离虚拟磁盘。这样一来，这些虚拟磁盘将不会出现在磁盘管理器或资源管理器之中，除非从群集中删除存储空间，并使用 PowerShell 将其重新附加。 存储空间将多个磁盘集合到存储池中。 有关详细信息，请参阅存储空间。
 
@@ -138,6 +138,6 @@ wacn.date: 01/09/2019
 
 9. 从远程桌面会话注销。
 
-    ![17](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/17.png "17")
+    ![17](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/17.png "17")
 
-    ![18](media/aog-virtual-machines-windows-add-new-node-to-windows-failover-cluster/18.png "18")
+    ![18](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/18.png "18")
