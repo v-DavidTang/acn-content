@@ -1,14 +1,14 @@
 ---
 title: "有关 Linux 虚拟机的加密和备份还原操作的实施参考"
 description: "有关 Linux 虚拟机的加密和备份还原操作的实施参考"
-author: Wei Sun
+author: Waynenus
 resourceTags: 'Virtual Machines, Linux, Encryption, Backup, Restore'
 ms.service: virtual-machines
 wacn.topic: aog
 ms.topic: article
-ms.author: Wei Sun
-ms.date: 01/03/2019
-wacn.date: 01/03/2019
+ms.author: wei.sun
+ms.date: 12/31/2018
+wacn.date: 12/31/2018
 ---
 
 # 有关 Linux 虚拟机的加密和备份还原操作的实施参考
@@ -19,7 +19,7 @@ wacn.date: 01/03/2019
 
 ## Linux 虚拟机加密操作
 
-准备工作：
+### 准备工作
 
 1. 请确保虚拟机创建来源于镜像市场，且规格的内存大于 7GB，SELinux 功能处于 disabled 状态（如未安装 SELinux 请忽略）详细限制请务必参考此文档：[适用于 Windows 和 Linux IaaS VM 的 Azure 磁盘加密](https://docs.azure.cn/zh-cn/security/azure-security-disk-encryption)。
 
@@ -30,7 +30,7 @@ wacn.date: 01/03/2019
     az login
     ```
 
-步骤：
+### 详细步骤
 
 > [!NOTE]
 >请根据实际情况替换示例斜体参数。
@@ -75,30 +75,30 @@ wacn.date: 01/03/2019
 
 ## 备份和还原操作
 
-准备工作：
+### 准备工作
 
 1. 使用 Azure CLI 对源虚拟机进行加密。
 
 2. 在 Recovery Service 保管库中对源虚拟机启用备份功能。
 
-步骤：
+### 详细步骤
 
 1. 对于加密虚拟机，目前仅支持还原虚拟机操作。在 Azure 门户- Recovery Services 保管库- mykeyvaultname -备份项-备份项目中使用还原虚拟机：
 
-    ![01](media/aog-virtual-machines-howto-encrypt-and-backup-restore-linux-virtual-machines/01.jpg "01")
+    ![01](media/aog-virtual-machines-linux-howto-encrypt-and-backup-restore-linux-virtual-machines/01.jpg "01")
 
 2. 进入还原页面，选择还原点，使用新建方式还原磁盘到存储账户中：
 
-    ![02](media/aog-virtual-machines-howto-encrypt-and-backup-restore-linux-virtual-machines/02.jpg "02")
+    ![02](media/aog-virtual-machines-linux-howto-encrypt-and-backup-restore-linux-virtual-machines/02.jpg "02")
 
 3. 等待还原作业完成，选择部署模板来新建虚拟机：
 
-    ![03](media/aog-virtual-machines-howto-encrypt-and-backup-restore-linux-virtual-machines/03.jpg "03")
+    ![03](media/aog-virtual-machines-linux-howto-encrypt-and-backup-restore-linux-virtual-machines/03.jpg "03")
 
 4. 虚拟机新建完成之后，如果使用基于 cloud-init 的 Linux 分发（如 Ubuntu），出于安全原因，还原后将阻止密码。 需要对还原的虚拟机进行重置密码：
 
-    ![04](media/aog-virtual-machines-howto-encrypt-and-backup-restore-linux-virtual-machines/04.jpg "04")
+    ![04](media/aog-virtual-machines-linux-howto-encrypt-and-backup-restore-linux-virtual-machines/04.jpg "04")
 
 5. 使用更新后的用户名/密码登录新建虚拟机，即可访问新建虚拟机：
 
-    ![05](media/aog-virtual-machines-howto-encrypt-and-backup-restore-linux-virtual-machines/05.jpg "05")
+    ![05](media/aog-virtual-machines-linux-howto-encrypt-and-backup-restore-linux-virtual-machines/05.jpg "05")

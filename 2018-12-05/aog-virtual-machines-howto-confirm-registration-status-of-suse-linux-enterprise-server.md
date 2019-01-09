@@ -1,12 +1,12 @@
 ---
 title: "如何确认 SUSE Linux Enterprise Server 虚拟机注册状态"
 description: "如何确认 SUSE Linux Enterprise Server 虚拟机注册状态"
-author: Wei Sun
+author: Waynenus
 resourceTags: 'Virtual Machines, Linux, Registration Status'
 ms.service: virtual-machines
 wacn.topic: aog
 ms.topic: article
-ms.author: Wei Sun
+ms.author: wei.sun
 ms.date: 12/26/2018
 wacn.date: 12/26/2018
 ---
@@ -47,12 +47,12 @@ sudo SUSEConnect --status
 
 1. 如下为未注册输出结果：
 
-    ```bash
+    ```json
     [{"identifier":"SLES","version":"12.3","arch":"x86_64","status":"Not Registered"}]
     ```
 
 2. 如下为已注册输出结果：
 
-    ```bash
+    ```json
     [{"identifier":"sle-module-hpc","version":"12","arch":"x86_64","status":"Registered"},{"identifier":"sle-sdk","version":"12.3","arch":"x86_64","status":"Registered"},{"identifier":"sle-module-containers","version":"12","arch":"x86_64","status":"Registered"},{er":"sle-module-adv-systems-management","version":"12","arch":"x86_64","status":"Registered"},{"identifier":"sle-module-web-scripting","version":"12","arch":"x86_64","status":"Registered"},{"identifier":"sle-module-legacy","version":"12","arch":"x86_64","stat"status":"Registered"},{"identifier":"sle-module-public-cloud","version":"12","arch":"x86_64","status":"Registered"}]
     ```

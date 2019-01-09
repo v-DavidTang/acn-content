@@ -1,12 +1,12 @@
 ---
 title: "如何在 Azure 中创建 Windows 10 Enterprise 虚拟机"
 description: "如何在 Azure 中创建 Windows 10 Enterprise 虚拟机"
-author: Wei Sun
+author: Waynenus
 resourceTags: 'Virtual Machines, Windows 10 Enterprise'
 ms.service: virtual-machines
 wacn.topic: aog
 ms.topic: article
-ms.author: Wei Sun
+ms.author: wei.sun
 ms.date: 12/25/2018
 wacn.date: 12/25/2018
 ---
@@ -18,7 +18,6 @@ wacn.date: 12/25/2018
 ## 准备工作
 
 1. Hyper-V 管理器：版本: 10.0.17134.1
-
 2. Raw image：Windows_10_Enterprise_EN-US_x64.ISO
 
 ## 步骤

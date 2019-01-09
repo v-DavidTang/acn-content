@@ -1,19 +1,19 @@
 ---
 title: "Azure 消息 & 事件服务的选择 – 下篇"
 description: "Azure 消息 & 事件服务的选择 – 下篇"
-author: Miley Chen
+author: mileychen
 resourceTags: 'IOT Hub, Service Bus, Notification Hub, Event Hub'
 ms.service: multiple
 wacn.topic: aog
 ms.topic: article
-ms.author: Miley Chen
+ms.author: wenche
 ms.date: 12/17/2018
 wacn.date: 12/17/2018
 ---
 
 # Azure 消息 & 事件服务的选择 – 下篇
 
-在[上篇](aog-others-choice-of-message-event-service-part-1)和[中篇](aog-others-choice-of-message-event-service-part-2)我们分别对了消息/事件服务中五种类型服务做了介绍和对比，它们包括 Storage queue、Service bus queue、Service bus topic、Event Hub 和 IOT。这篇文章我们继续对剩下的三种服务做介绍，其中 Service bus Relay 和 Notification Hub 相比较之前的五种消息服务，有比较大的区别，应用场景和功能也有比价突出的特点，而 Event Gird 则又是 Azure 平台最新推出的一种 Serverless 服务，接下来我们就这三种服务分别做介绍。
+在[上篇](aog-internet-of-things-howto-select-message-event-service-part-1.md)和[中篇](aog-internet-of-things-howto-select-message-event-service-part-2.md)我们分别对了消息/事件服务中五种类型服务做了介绍和对比，它们包括 Storage queue、Service bus queue、Service bus topic、Event Hub 和 IOT。这篇文章我们继续对剩下的三种服务做介绍，其中 Service bus Relay 和 Notification Hub 相比较之前的五种消息服务，有比较大的区别，应用场景和功能也有比价突出的特点，而 Event Gird 则又是 Azure 平台最新推出的一种 Serverless 服务，接下来我们就这三种服务分别做介绍。
 
 1. Service bus Relay
 
@@ -37,7 +37,7 @@ wacn.date: 12/17/2018
 
         下图显示了运行在组织外的客户端如何通过 Service bus Relay 与组织内的应用程序进行交互：
 
-        ![01](media/aog-others-choice-of-message-event-service-part-3/01.png "01")
+        ![01](media/aog-internet-of-things-howto-select-message-event-service-part-3/01.png "01")
 
         Azure Relay 提供两种用于连接应用程序和客户端的方式：
 
@@ -68,7 +68,7 @@ wacn.date: 12/17/2018
 
         下图展示了三种服务是如何进行消息传递：
 
-        ![02](media/aog-others-choice-of-message-event-service-part-3/02.png "02")
+        ![02](media/aog-internet-of-things-howto-select-message-event-service-part-3/02.png "02")
 
     4. 适用场景
 
@@ -102,7 +102,7 @@ wacn.date: 12/17/2018
 
         下图显示了通过 Notification Hub 推送通知的过程：
 
-        ![03](media/aog-others-choice-of-message-event-service-part-3/03.png "03")
+        ![03](media/aog-internet-of-things-howto-select-message-event-service-part-3/03.png "03")
 
     3. 适用场景
 
@@ -132,7 +132,7 @@ wacn.date: 12/17/2018
 
         下图显示了 Event Grid 如何连接 Source 和 Handlers:
 
-        ![04](media/aog-others-choice-of-message-event-service-part-3/04.png "04")
+        ![04](media/aog-internet-of-things-howto-select-message-event-service-part-3/04.png "04")
 
     3. 与 Service bus topic 的区别
 
@@ -159,3 +159,8 @@ wacn.date: 12/17/2018
             作为支持 CloudEvents 标准的首批服务之一，CloudEvents 提供了一种允许跨平台处理事件的标准。随着 Azure，AWS，Google，IBM 等各大厂商支持此标准，通过这种方式我们可以使用任何平台或应用程序来处理事件，实现格式统一，从而轻松实现应用集成和相互操作。
 
 虽然这篇文章尽可能详细的介绍这几种不同的消息&事件服务的区别和选择，然而在实际的应用场景中，我们经常会将这几种服务结合在一起使用并且在不同的应用环境下，根据用户的考虑因素，产品的选择也会有不同。如果您通过以上的解释还是无法抉择选择哪种服务，欢迎您联系 Microsoft 技术支持团队，我们会就您的特定的需求和环境帮助您做进一步的分析和抉择。
+
+## 了解更多
+
+* [Azure 消息 & 事件服务的选择 – 上篇](aog-internet-of-things-howto-select-message-event-service-part-1.md)
+* [Azure 消息 & 事件服务的选择 – 中篇](aog-internet-of-things-howto-select-message-event-service-part-2.md)
