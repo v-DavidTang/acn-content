@@ -139,7 +139,7 @@ wacn.date: 01/09/2019
 
     * 在“确认”上核对设置。 单击“下一步”。
 
-    *单击“完成”。
+    * 单击“完成”。
 
 4. 从“开始”菜单启动 SQL Server Management Studio，然后单击“连接”连接到主副本的 SQL Server 实例。
 
