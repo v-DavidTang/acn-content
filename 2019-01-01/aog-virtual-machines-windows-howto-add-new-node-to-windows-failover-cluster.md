@@ -106,7 +106,7 @@ wacn.date: 01/09/2019
 
 ## 在主节点所在的 Azure 虚拟机中的 Failover Cluster Manager 中添加新节点
 
-1. 以域名 \Admin (例如 corp\install )登陆主节点所在的虚机。
+1. 以域名 \Admin (例如 corp\install )登陆主节点所在的虚拟机。
 
 2. 在 Tool 中找到 Failover Cluster Manager 打开。
 
