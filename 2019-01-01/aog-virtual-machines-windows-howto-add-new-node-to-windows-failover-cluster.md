@@ -29,7 +29,7 @@ wacn.date: 01/09/2019
 
     ![03](media/aog-virtual-machines-windows-howto-add-new-node-to-windows-failover-cluster/03.png "03")
 
-## 将新节点所在的虚机加入到域中
+## 将新节点所在的虚拟机加入到域中
 
 1. 登录到新创建的节点之后，打开“服务器管理器 (Server Manager)”，点击左窗格中的“本地服务器 (Local Server)”。
 
