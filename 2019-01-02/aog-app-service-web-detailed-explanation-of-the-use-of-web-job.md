@@ -19,7 +19,7 @@ wacn.date: 01/11/2019
 
 Web Job 是 Web Service 提供的一个特性，其主要的设计目的是为了满足客户运行后台任务的需要，当前 Web Job 和 Web Service 是共用 Web Context 的。从技术上看是由 *w3wp.exe (scm)* 这个进程来引导的。但是根据 Web Job 的类型不同，在触发上还是有区别的。当前有两种类型的 Web Job，一种是连续运行的 Web Job， 一种是触发运行的 Web Job， 这两种 Web Job 最大的区别在于：连续运行的 Web Job 是可以分布在多个 Web Service Instance 上运行，同时由 Web Job 的 host container 来自动做请求分片， 但是触发型的 Web Job 只能在一个 Instance 上运行，并且定时的 Web Job 由背后的 Azure Scheduler Service 来触发。 所以在 Web Job 里首先明白两种 Web Job 有什么区别非常重要。
 
-## Web Job的配置项
+## Web Job 的配置项
 
 ### 应用程序配置项
 
