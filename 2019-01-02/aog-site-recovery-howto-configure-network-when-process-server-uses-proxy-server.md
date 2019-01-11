@@ -31,7 +31,7 @@ wacn.date: 01/11/2019
 
     具体操作方法为：
 
-    在进程服务器上下载 PsExec，并以管理员权限打开命令行窗口运行如下命令：
+    在进程服务器上下载 [PsExec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec)，并以管理员权限打开命令行窗口运行如下命令：
 
     ```cmd
     psexec -i -s "c:\Program Files\Internet Explorer\iexplore.exe"
@@ -41,6 +41,6 @@ wacn.date: 01/11/2019
 
     * 在工具 -> Internet选项 -> 连接 -> 局域网设置 路径中，检查是否填写了正确的代理服务器配置。
 
-    * 在工具 -> 安全 -> 受信任的站点 -> 站点 路径下将步骤 1 中“检查进程服务器上基于 URL 的防火墙是否未阻止访问”相关的 URL 添加到信任站点中。
+    * 在工具 -> 安全 -> 受信任的站点 -> 站点 路径下将步骤 1 中 **“检查进程服务器上基于 URL 的防火墙是否未阻止访问”** 相关的 URL 添加到信任站点中。
 
     ![03](media/aog-site-recovery-howto-configure-network-when-process-server-uses-proxy-server/03.png "03")
