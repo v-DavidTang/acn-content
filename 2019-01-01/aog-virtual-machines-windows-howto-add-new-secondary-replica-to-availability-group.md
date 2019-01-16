@@ -17,7 +17,7 @@ wacn.date: 01/09/2019
 
 ## 将 CORP\Install 作为 sysadmin 角色加入新节点的 SQL Server 实例
 
-1. 使用新节点所在虚拟机的 admin 账号 BUILTIN\xupzhou 登入虚拟机。
+1. 使用新节点所在虚拟机的 admin 账号 *BUILTIN\xupzhou* 登入虚拟机。
 
 2. 启动 SQL Server Management Studio，单击“连接( connect )”，将 CORP\Install 作为 sysadmin 角色添加到新节点的 SQL Server 实例。在“对象资源管理器”中，右键单击“登录名”，然后单击“新建登录名”。
 
@@ -35,7 +35,7 @@ wacn.date: 01/09/2019
 
     在 SQL Server 实例上为 [NT AUTHORITY\SYSTEM] 创建一个帐户。 以下脚本将创建此帐户：
 
-    ```bash
+    ```sql
     USE [master]
     GO
     CREATE LOGIN [NT AUTHORITY\SYSTEM] FROM WINDOWS WITH DEFAULT_DATABASE=[master]
@@ -46,7 +46,7 @@ wacn.date: 01/09/2019
 
     以下脚本将授予这些权限：
 
-    ```bash
+    ```sql
     GRANT ALTER ANY AVAILABILITY GROUP TO [NT AUTHORITY\SYSTEM]
     GO
     GRANT CONNECT SQL TO [NT AUTHORITY\SYSTEM]
@@ -102,9 +102,7 @@ wacn.date: 01/09/2019
 4. 在“协议和端口( Protocol and Ports )”页上，选择 TCP，并键入端口 1433, 5022 和 59999。然后，单击“下一步”。
 
     * 1433 为 SQL 数据库使用的端口
-
     * 5022 为可用性组将使用的数据库镜像终结点指定的端口
-
     * 59999 为侦听端口
 
 5. 在“操作( Action )”页面中，保持选中“允许连接( Allow the connection )”，然后单击“下一步”。
