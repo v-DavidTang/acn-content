@@ -33,7 +33,7 @@ wacn.date: 01/11/2019
 
     在进程服务器上下载 [PsExec](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec)，并以管理员权限打开命令行窗口运行如下命令：
 
-    ```cmd
+    ```bash
     psexec -i -s "c:\Program Files\Internet Explorer\iexplore.exe"
     ```
 

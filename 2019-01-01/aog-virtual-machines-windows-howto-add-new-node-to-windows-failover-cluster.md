@@ -1,6 +1,6 @@
 ---
-title: "将一个新的节点添加到 Azure 虚拟机的 Windows 故障转移群集"
-description: "将一个新的节点添加到 Azure 虚拟机的 Windows 故障转移群集"
+title: "如何将新的节点添加到 Azure 虚拟机的 Windows 故障转移群集"
+description: "如何将新的节点添加到 Azure 虚拟机的 Windows 故障转移群集"
 author: XupingZhou
 resourceTags: 'Virtual Machines, Windows, Failover Cluster'
 ms.service: virtual-machines
@@ -11,9 +11,9 @@ ms.date: 01/09/2019
 wacn.date: 01/09/2019
 ---
 
-# 将一个新的节点添加到 Azure 虚拟机的 Windows 故障转移群集
+# 如何将新的节点添加到 Azure 虚拟机的 Windows 故障转移群集
 
-本文详述了如何把一个新的节点添加到 Azure 虚拟机的 Windows 故障转移群集下。具体步骤操作如下所示。
+本文详述了如何把一个新的节点添加到 Azure 虚拟机的 Windows 故障转移群集下。
 
 ## Azure 门户上创建一个新的节点
 
