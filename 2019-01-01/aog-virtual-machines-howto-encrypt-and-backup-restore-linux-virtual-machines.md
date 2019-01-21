@@ -2,11 +2,13 @@
 title: "有关 Linux 虚拟机的加密和备份还原操作的实施参考"
 description: "有关 Linux 虚拟机的加密和备份还原操作的实施参考"
 author: Wei Sun
+author: Waynenus
 resourceTags: 'Virtual Machines, Linux, Encryption, Backup, Restore'
 ms.service: virtual-machines
 wacn.topic: aog
 ms.topic: article
 ms.author: Wei Sun
+ms.author: wei.sun
 ms.date: 01/03/2019
 wacn.date: 01/03/2019
 ---
