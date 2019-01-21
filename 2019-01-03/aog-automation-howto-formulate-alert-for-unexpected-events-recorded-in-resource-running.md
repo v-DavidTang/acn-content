@@ -28,7 +28,7 @@ wacn.date: 01/21/2019
 以下为示例代码：
 
 ```powershell
-# 获取调用REST API的token
+# 获取调用 REST API 的 token
 $spCred = Get-AutomationPSCredential -Name 'cred'
 $clientId = $spCred.UserName
 $clientSecret = $spCred.GetNetworkCredential().Password
@@ -55,16 +55,16 @@ $authheader = @{
     "Authorization"="Bearer " + $token
 }
 
-# 使用Run As Account
+# 使用 Run As Account
 $Conn = Get-AutomationConnection -Name AzureRunAsConnection
 Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint -EnvironmentName "AzureChinaCloud"
 
-# 为虚拟机添加标签(Tag)实现对虚拟机进行分组，然后根据Tag读取分组中所有VM的资源信息。以下示例中Tag为“G1”
+# 为虚拟机添加标签 (Tag) 实现对虚拟机进行分组，然后根据 Tag 读取分组中所有虚拟机的资源信息。以下示例中 Tag 为 “G1”
 $tagName = "G1"
 $VMresources = Get-AzureRmResource -TagName $tagName
 
 
-# 定义关键词句或者事件类型以便对调取的resource health信息进行筛选。以下示例针对的是计划外事件导致虚拟机状态变为unavailable
+# 定义关键词句或者事件类型以便对调取的 resource health 信息进行筛选。以下示例针对的是计划外事件导致虚拟机状态变为 unavailable
 $keyword = "unavailable"
 $reasonType = “Unplanned”
 
@@ -83,11 +83,11 @@ foreach ($resource in $VMresources){
 
             $vmInfo = $status.id.Split("/",[StringSplitOptions]::RemoveEmptyEntries)
 
-# 将事件summary和发生的日期转化为字符串
+# 将事件 summary 和发生的日期转化为字符串
             $summary = $status.properties.summary.ToString()
             $occurredDate = (get-date $status.properties.occuredTime).ToString("yyyy-M-dd")
 
-# 在if语句中添加筛选条件。以下示例的筛选条件是：事件summary中包含的关键字，事件类型，以及事件发生的日期
+# 在 if 语句中添加筛选条件。以下示例的筛选条件是：事件 summary 中包含的关键字，事件类型，以及事件发生的日期
             if (($status.properties.reasonType -eq $reasontype -or $summary.IndexOf($keyword) -gt -1) -and $occurredDate -ge $currentDate)
 
                 $exportCSV.Add("Occurred Time: " + $status.properties.occuredtime) | Out-Null;
