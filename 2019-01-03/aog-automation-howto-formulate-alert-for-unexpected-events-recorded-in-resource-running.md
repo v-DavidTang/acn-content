@@ -21,7 +21,7 @@ wacn.date: 01/21/2019
 
 2. 创建独立的 Azure 自动化帐户。具体步骤请参考：[创建独立的 Azure 自动化帐户](https://docs.azure.cn/zh-cn/automation/automation-create-standalone-account)。
 
-3. 创建一个PowerShell Runbook。具体步骤请参考：[我的第一个 PowerShell Runbook](https://docs.azure.cn/zh-cn/automation/automation-first-runbook-textual-powershell)。
+3. 创建一个 PowerShell Runbook。具体步骤请参考：[我的第一个 PowerShell Runbook](https://docs.azure.cn/zh-cn/automation/automation-first-runbook-textual-powershell)。
 
 4. 在 Azure 自动化中计划 Runbook。具体步骤请参考：[在 Azure 自动化中计划 Runbook](https://docs.azure.cn/zh-cn/automation/automation-schedules)。
 
@@ -32,7 +32,7 @@ wacn.date: 01/21/2019
 $spCred = Get-AutomationPSCredential -Name 'cred'
 $clientId = $spCred.UserName
 $clientSecret = $spCred.GetNetworkCredential().Password
-$tenantId = ""
+$tenantId = <"tenantId">
 
 $tokenBody = @{
     grant_type = "client_credentials"
@@ -59,14 +59,14 @@ $authheader = @{
 $Conn = Get-AutomationConnection -Name AzureRunAsConnection
 Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint -EnvironmentName "AzureChinaCloud"
 
-# 为虚拟机添加标签 (Tag) 实现对虚拟机进行分组，然后根据 Tag 读取分组中所有虚拟机的资源信息。以下示例中 Tag 为 “G1”
+# 为虚拟机添加标签 (Tag) 实现对虚拟机进行分组，然后根据 Tag 读取分组中所有虚拟机的资源信息。以下示例中 Tag 为 "G1"
 $tagName = "G1"
 $VMresources = Get-AzureRmResource -TagName $tagName
 
 
 # 定义关键词句或者事件类型以便对调取的 resource health 信息进行筛选。以下示例针对的是计划外事件导致虚拟机状态变为 unavailable
 $keyword = "unavailable"
-$reasonType = “Unplanned”
+$reasonType = "Unplanned"
 
 # 定义当前日期，只筛选提取最新的事件
 $currentDate = (get-date).ToString("yyyy-M-dd")
