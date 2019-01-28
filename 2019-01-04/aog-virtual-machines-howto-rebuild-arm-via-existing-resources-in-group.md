@@ -1,6 +1,6 @@
 ---
-title: "如何使用资源组中现有虚拟机资源重建Azure 资源管理器（ARM）虚拟机"
-description: "如何使用资源组中现有虚拟机资源重建Azure 资源管理器（ARM）虚拟机"
+title: "如何使用资源组中现有虚拟机资源重建 Azure 资源管理器（ARM）虚拟机"
+description: "如何使用资源组中现有虚拟机资源重建 Azure 资源管理器（ARM）虚拟机"
 author: Jiabao Sun
 resourceTags: 'Virtual Machines, Rebuild'
 ms.service: virtual-machines
@@ -11,7 +11,7 @@ ms.date: 01/28/2019
 wacn.date: 01/28/2019
 ---
 
-# 如何使用资源组中现有虚拟机资源重建Azure 资源管理器（ARM）虚拟机
+# 如何使用资源组中现有虚拟机资源重建 Azure 资源管理器（ARM）虚拟机
 
 在虚拟机的系统盘出现故障导致虚拟机无法启动时，我们通常会借助一个 Helper 虚拟机，将故障虚拟机的系统盘作为数据磁盘挂载到 Helper 虚拟机，再进行排查修复。挂载故障系统盘到 Helper 虚拟机，有两种操作方式。
 
