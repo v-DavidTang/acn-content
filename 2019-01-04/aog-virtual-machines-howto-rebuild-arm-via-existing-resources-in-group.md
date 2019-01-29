@@ -80,7 +80,7 @@ wacn.date: 01/28/2019
 
     ```powershell
     #登录 Azure
-    Connect-AzureRmAccount -Environment AzureChinaCloud -Subscription "订阅ID"
+    Connect-AzureRmAccount -Environment AzureChinaCloud -Subscription "订阅 ID"
 
     $subscriptionID = "订阅 ID"
     $rgname = "资源组名称"
@@ -130,7 +130,7 @@ wacn.date: 01/28/2019
 
     ```powershell
     #登录 Azure
-    Connect-AzureRmAccount -Environment AzureChinaCloud -Subscription "订阅ID"
+    Connect-AzureRmAccount -Environment AzureChinaCloud -Subscription "订阅 ID"
 
     $rgname = "资源组名称"
     $loc = "区域名称"
@@ -165,7 +165,7 @@ wacn.date: 01/28/2019
 
     ```powershell
     #登录 Azure
-    Connect-AzureRmAccount -Environment AzureChinaCloud -Subscription "订阅ID"
+    Connect-AzureRmAccount -Environment AzureChinaCloud -Subscription "订阅 ID"
 
     $subscriptionID = "订阅 ID"
     $rgname = "资源组名称"
@@ -224,7 +224,7 @@ wacn.date: 01/28/2019
 
 ```powershell
 #登录 Azure
-Connect-AzureRmAccount -Environment AzureChinaCloud -Subscription "订阅ID"
+Connect-AzureRmAccount -Environment AzureChinaCloud -Subscription "订阅 ID"
 
 $subscriptionID = "订阅 ID"
 $name = "虚拟机名称"
@@ -243,7 +243,7 @@ Set-AzureRmVMOSDisk -VM $vm -Name $diskname  -ManagedDiskId $diskResourceInstanc
 
 ```powershell
 #登录 Azure
-Connect-AzureRmAccount -Environment AzureChinaCloud -Subscription "订阅ID"
+Connect-AzureRmAccount -Environment AzureChinaCloud -Subscription "订阅 ID"
 
 #定义变量
 $rgname = "资源组名称"
