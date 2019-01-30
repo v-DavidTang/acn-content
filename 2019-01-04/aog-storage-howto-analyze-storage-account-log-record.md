@@ -29,17 +29,17 @@ wacn.date: 01/28/2019
 
 2. 由于默认的日志是 .log 格式，我们需要进行格式调整，以便于分析。
 
-    * 首先使用记事本打开日志，在开头加入以下表头信息并保存：
+    1. 首先使用记事本打开日志，在开头加入以下表头信息并保存：
 
         ```shell
         <version-number>;<request-start-time>;<operation-type>;<request-status>;<http-status-code>;<end-to-end-latency-in-ms>;<server-latency-in-ms>;<authentication-type>;<requester-account-name>;<owner-account-name>;<service-type>;<request-url>;<requested-object-key>;<request-id-header>;<operation-count>;<requester-ip-address>;<request-version-header>;<request-header-size>;<request-packet-size>;<response-header-size>;<response-packet-size>;<request-content-length>;<request-md5>;<server-md5>;<etag-identifier>;<last-modified-time>;<conditions-used>;<user-agent-header>;<referrer-header>;<client-request-id>
         ```
 
-    * 然后新建 Excel，使用 Data-From Text/CSV 导入上述日志即可查看详细信息：
+    2. 然后新建 Excel，使用 Data-From Text/CSV 导入上述日志即可查看详细信息：
 
         ![02](media/aog-storage-howto-analyze-storage-account-log-record/02.jpg "02")
 
-3. 我们可以使用 Excel 筛选功能，来获取特定类型的操作记录，有关表头的详细说明请移步[参考文档](#参考文档)：
+3. 我们可以使用 Excel 筛选功能，来获取特定类型的操作记录，有关表头的详细说明请参考文档[存储分析日志格式](https://docs.microsoft.com/zh-cn/rest/api/storageservices/storage-analytics-log-format)。
 
     ![03](media/aog-storage-howto-analyze-storage-account-log-record/03.png "03")
 
