@@ -19,7 +19,7 @@ wacn.date: 01/28/2019
 
 但即使在执行了上述操作之后，仍然有些终端会遇到类似 Error 800 的错误：
 
-![01](media/aog-vpn-gateway-howto-fix-error-800-after-p2s-vpn-upgrading-to-tls-1.2/01.png "01")
+![01](media/aog-vpn-gateway-howto-fix-error-800-after-p2s-vpn-upgrading-to-tls-1-dot-2/01.png "01")
 
 通过检查诊断日志，发现详细的 Err Code 是 0x80092013：
 
@@ -35,6 +35,6 @@ The revocation function was unable to check revocation because the revocation se
 
 2. 添加一个 DWORD 项命名为 DisableCertReqPayload 并赋值为 1。
 
-    ![02](media/aog-vpn-gateway-howto-fix-error-800-after-p2s-vpn-upgrading-to-tls-1.2/02.png "02")
+    ![02](media/aog-vpn-gateway-howto-fix-error-800-after-p2s-vpn-upgrading-to-tls-1-dot-2/02.png "02")
 
 3. 重启系统。
