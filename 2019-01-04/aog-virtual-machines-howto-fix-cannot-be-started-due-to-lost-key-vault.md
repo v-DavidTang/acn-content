@@ -28,19 +28,19 @@ wacn.date: 01/28/2019
 使用 PowerShell 或者 Azure CLI 命令移除虚拟机上的密钥/证书：
 
 ```pweorshell
-$vm = Get-AzureRmVM -ResourceGroupName "MyRG" -Name "MyVM"
+$vm = Get-AzureRmVM -ResourceGroupName "<MyRG>" -Name "<MyVM>"
 Remove-AzureRmVMSecret -VM $vm
-Update-AzureRmVM -ResourceGroupName "MyRG" -VM $vm
+Update-AzureRmVM -ResourceGroupName "<MyRG>" -VM $vm
 ```
 
 或者：
 
 ```cli
-az vm update -g "myrg" -n "myvm" --set osProfile.Secrets=[]
+az vm update -g "<myrg>" -n "<myvm>" --set osProfile.Secrets=[]
 ```
 
 命令执行成功后，使用如下命令确认虚拟机 OS Profile 中 Secrets 已经被移除：
 
 ```cli
-az vm get-instance-view --name "MyVM" --resource-group "MyRG"
+az vm get-instance-view --name "<MyVM>" --resource-group "<MyRG>"
 ```

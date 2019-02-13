@@ -6,7 +6,7 @@ resourceTags: 'App Service Web, GitLab'
 ms.service: app-service-web
 wacn.topic: aog
 ms.topic: article
-ms.author: Guan Jun
+ms.author: v-ciwu
 ms.date: 01/25/2019
 wacn.date: 01/25/2019
 ---
@@ -29,7 +29,7 @@ wacn.date: 01/25/2019
 
     ![03](media/aog-app-service-web-howto-deploy-continuously-via-gitlab/03.png "03")
 
-5. 执行 curl 命令：`curl https://<username>:<password>@<网站名称>.scm.chinacloudsites.cn/api/sshkey?ensurePublicKey=1`，执行完后会得到如下的 ssh-rsa key，记下此 key：
+5. 执行 curl 命令：`curl https://<username>:<password>@<网站名称>.scm.chinacloudsites.cn/api/sshkey?ensurePublicKey=1`，执行完后会得到如下的 *ssh-rsa key*，记下此 key：
 
     ![04](media/aog-app-service-web-howto-deploy-continuously-via-gitlab/04.png "04")
 
@@ -47,7 +47,7 @@ wacn.date: 01/25/2019
     HostkeyAlgorithms +ssh-dss
     ```
 
-7. 登陆您的 GitLab，点击 **settings**，选择 **intergrations**，加入 webhook，url 为 `https://<username>:<password>@<网站名称>.scm.chinacloudsites.cn/deploy`
+7. 登录您的 GitLab，点击 **settings**，选择 **intergrations**，加入 webhook，url 为 `https://<username>:<password>@<网站名称>.scm.chinacloudsites.cn/deploy`
 
     Secret token 为第 5 步中记下的 key，点击保存，之后点击 test 看是否可以部署。
 

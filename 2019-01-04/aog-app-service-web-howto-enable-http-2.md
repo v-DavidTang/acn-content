@@ -6,18 +6,18 @@ resourceTags: 'App Service Web, HTTP/2'
 ms.service: app-service-web
 wacn.topic: aog
 ms.topic: article
-ms.author: Zhang Yannan
+ms.author: v-ciwu
 ms.date: 01/28/2019
 wacn.date: 01/28/2019
 ---
 
 # Web 应用如何使 HTTP/2 可用
 
-首先 China Azure Web 应用目前还不能直接在门户进行 *http version*，不过可以通过 Azure CLI 命令进行 *enable http/2*。
+世纪互联运营的 Azure Web 应用目前还不能直接在门户进行 *http version*，不过可以通过 Azure CLI 命令进行 *enable http/2*。
 
 1. 首先参考官方链接安装Azure CLI： [安装 Azure CLI](https://docs.azure.cn/zh-cn/cli/install-azure-cli?view=azure-cli-latest)。
 
-2. 安装好 Azure CLI 之后，进入到 CLI，使用下面的命令连接到 China Azure：
+2. 安装好 Azure CLI 之后，进入到 CLI，使用下面的命令连接到 Azure：
 
     ```cli
     az login -u xxxx@microsoftinternal.partner.onmschina.cn -p xxx
@@ -25,7 +25,7 @@ wacn.date: 01/28/2019
 
     ![01](media/aog-app-service-web-howto-enable-http-2/01.png "01")
 
-    连接到 China Azure，使用下面的命令 enable http/2：
+    连接到 Azure 后，使用下面的命令 enable http/2：
 
     ```cli
     az webapp config set --name xxx --resource-group xxx --http20-enabled true
@@ -34,7 +34,8 @@ wacn.date: 01/28/2019
     ![02](media/aog-app-service-web-howto-enable-http-2/02.png "02")
 
     > [!NOTE]
-    > -name 是指网站名称；--resource-group 指网站所在的资源组。
+    > -name 是指网站名称；<br>
+    > --resource-group 指网站所在的资源组。
 
 3. 测试结果
 
