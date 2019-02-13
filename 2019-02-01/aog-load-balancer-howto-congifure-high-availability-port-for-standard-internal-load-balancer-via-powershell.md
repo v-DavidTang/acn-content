@@ -2,7 +2,7 @@
 title: "使用 Poweshell 为标准内部负载均衡器配置高可用性端口"
 description: "使用 Poweshell 为标准内部负载均衡器配置高可用性端口"
 author: blackhu269
-resourceTags: 'load balancer, high availability'
+resourceTags: 'Load Balancer, High Availability'
 ms.service: load-balancer
 wacn.topic: aog
 ms.topic: article
