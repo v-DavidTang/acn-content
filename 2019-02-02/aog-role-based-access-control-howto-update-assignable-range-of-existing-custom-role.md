@@ -14,7 +14,7 @@ wacn.date: 02/22/2019
 
 # RBAC 如何更新已有自定义角色的可分配范围
 
-基于角色的访问控制（RBAC）是在 Azure 资源管理器基础上构建的授权系统，针对 Azure 中的资源提供精细的访问权限管理。RBAC 提供了内置角色和可以满足特定需求的自定义角色。在创建自定义角色时，需要为该角色指定一个可分配范围，包括特定的订阅或资源组。当您添加了新的订阅或资源组后，可能希望将该自定义角色的可分配范围扩展至新的订阅或资源组内。如果您尝试在新的订阅下创建配置完全相同的自定义角色，会收到如下报错：
+基于角色的访问控制（RBAC）是在 Azure 资源管理器基础上构建的授权系统，针对 Azure 中的资源提供精细的访问权限管理。RBAC 提供了[内置角色](https://docs.azure.cn/zh-cn/role-based-access-control/built-in-roles)和可以满足特定需求的[自定义角色](https://docs.azure.cn/zh-cn/role-based-access-control/custom-roles)。在[创建自定义角色](https://docs.azure.cn/zh-cn/role-based-access-control/tutorial-custom-role-powershell)时，需要为该角色指定一个可分配范围，包括特定的订阅或资源组。当您添加了新的订阅或资源组后，可能希望将该自定义角色的可分配范围扩展至新的订阅或资源组内。如果您尝试在新的订阅下创建配置完全相同的自定义角色，会收到如下报错：
 
 "New-AzureRmRoleDefinition : A role definition cannot be updated with a name that already exists."
 
