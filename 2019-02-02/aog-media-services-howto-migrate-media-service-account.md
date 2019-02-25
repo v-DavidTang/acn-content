@@ -6,7 +6,7 @@ resourceTags: 'Media Services, Migrate Account'
 ms.service: media-services
 wacn.topic: aog
 ms.topic: article
-ms.author: Yang Wenting
+ms.author: v-ciwu
 wacn.authorDisplayName: 'Yang Wenting'
 ms.date: 02/22/2019
 wacn.date: 02/22/2019
@@ -15,6 +15,9 @@ wacn.date: 02/22/2019
 # 如何迁移媒体服务账户
 
 目前无法直接通过 Azure 管理门户进行迁移，如果您的迁移媒体服务账户在同一个订阅下，可以通过 Azure Media Services Explorer 进行迁移，这个工具是 GitHub 上的开源项目，下载地址是：[Azure Media Services Explorer](https://github.com/Azure/Azure-Media-Services-Explorer/releases/)。
+
+> [!Note]
+> 新版本 Azure Media Services Explorer 无法通过 AAD Settings 手动指定 Endpoint，用户可选择本文中示例版本 Version 4.3.2.1 for Media Services v2。
 
 1. 登录到 China Azure 的媒体服务帐号，需要在 AAD Settings 手动指定 Endpoint：
 
