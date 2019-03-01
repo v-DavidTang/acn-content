@@ -21,11 +21,11 @@ Ubuntu 在 2019 年 2 月 6 日发布的一个升级包 2.3.4-4+deb8u1build0.16.
 
 1. 确认虚拟机规模集下的 node 已经正常创建完成，并处于运行状态：
 
-    ![01](media/aog-service-fabric-howto-repair-ubuntu-fabric-creation-failed-due-to-rssh-version-upgrade-manually/01.png "01")
+    ![01](media/aog-service-fabric-howto-manually-repair-ubuntu-fabric-creation-failed-due-to-rssh-version-upgrade/01.png "01")
 
 2. 从 LB 处获取每一台 node 的网络信息：
 
-    ![02](media/aog-service-fabric-howto-repair-ubuntu-fabric-creation-failed-due-to-rssh-version-upgrade-manually/02.png "02")
+    ![02](media/aog-service-fabric-howto-manually-repair-ubuntu-fabric-creation-failed-due-to-rssh-version-upgrade/02.png "02")
 
 3. 使用 ssh 客户端登录进入每一台 node 并执行如下检查：
 
@@ -33,7 +33,7 @@ Ubuntu 在 2019 年 2 月 6 日发布的一个升级包 2.3.4-4+deb8u1build0.16.
     dpkg -l |grep "rssh"
     ```
 
-    ![03](media/aog-service-fabric-howto-repair-ubuntu-fabric-creation-failed-due-to-rssh-version-upgrade-manually/03.png "03")
+    ![03](media/aog-service-fabric-howto-manually-repair-ubuntu-fabric-creation-failed-due-to-rssh-version-upgrade/03.png "03")
 
 4. 确认环境信息后(rssh 版本如上或显示没安装)，手动执行如下指令：
 
@@ -50,12 +50,12 @@ Ubuntu 在 2019 年 2 月 6 日发布的一个升级包 2.3.4-4+deb8u1build0.16.
     dpkg -l | grep "rssh"
     ```
 
-    ![04](media/aog-service-fabric-howto-repair-ubuntu-fabric-creation-failed-due-to-rssh-version-upgrade-manually/04.png "04")
+    ![04](media/aog-service-fabric-howto-manually-repair-ubuntu-fabric-creation-failed-due-to-rssh-version-upgrade/04.png "04")
 
     ```ssh
     head -n 20 /etc/apt/apt.conf.d/50unattended-upgrades
     ```
 
-    ![05](media/aog-service-fabric-howto-repair-ubuntu-fabric-creation-failed-due-to-rssh-version-upgrade-manually/05.png "05")
+    ![05](media/aog-service-fabric-howto-manually-repair-ubuntu-fabric-creation-failed-due-to-rssh-version-upgrade/05.png "05")
 
 6. 确认每一台 node 都手动更新完成后，建议 ssh 进 node0，然后 reboot 这台 node，激活 reconfig，等一段时间后在门户上查看是否已经不再是 *wait for nodes* 状态。
