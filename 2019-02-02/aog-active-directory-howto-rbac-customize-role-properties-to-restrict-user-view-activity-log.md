@@ -2,8 +2,8 @@
 title: "如何自定义角色属性以限制用户访问活动日志"
 description: "如何自定义角色属性以限制用户访问活动日志"
 author: EmiliaHuang
-resourceTags: 'Role Based Access Control, Role Properties'
-ms.service: role-based-access-control
+resourceTags: 'Active Directory, Role Based Access Control, Role Properties'
+ms.service: active-directory
 wacn.topic: aog
 ms.topic: article
 ms.author: Xuzhou.Huang
@@ -44,7 +44,7 @@ wacn.date: 02/26/2019
 
 由于该用户对活动日志的访问权限限制，因此没有权限运行针对该资源活动日志的筛选查询，而得到如下返回结果：
 
-![01](media/aog-role-based-access-control-howto-customize-role-properties-to-restrict-user-view-activity-log/01.png "01")
+![01](media/aog-active-directory-howto-rbac-customize-role-properties-to-restrict-user-view-activity-log/01.png "01")
 
 ## 参考文档
 
