@@ -3,7 +3,7 @@ title: "如何在有 SQL Server Always on 的机器上进行条带化虚拟机�
 description: "如何在有 SQL Server Always on 的机器上进行条带化虚拟机磁盘"
 author: XupingZhou
 resourceTags: 'SQL Server Always on, Stripe disks'
-ms.service: virtual-machine
+ms.service: virtual-machine-windows-sql
 wacn.topic: aog
 ms.topic: article
 ms.author: xuping.zhou
@@ -24,14 +24,14 @@ wacn.date: 03/06/2019
 
 1. 在添加节点时，“验证警告”页上，单击“否”（在生产方案中，应执行验证测试）。然后单击“下一步”。
 
-    ![01](media/aog-virtual-machine-howto-stripe-disks-on-machine-with-sql-server-always-on/01.jpg "01")
+    ![01](media/aog-virtual-machine-windows-sql-howto-stripe-disks-on-machine-with-sql-server-always-on/01.jpg "01")
 
 2. 在“确认”页上不勾选为 “Add all eligible storage to the cluster” 的复选框。
 
-    ![02](media/aog-virtual-machine-howto-stripe-disks-on-machine-with-sql-server-always-on/02.jpg "02")
+    ![02](media/aog-virtual-machine-windows-sql-howto-stripe-disks-on-machine-with-sql-server-always-on/02.jpg "02")
 
 3. 这样最终可以成功的先添加虚拟磁盘，然后再把虚拟机加入到 Availability Group 中。
 
-    ![03](media/aog-virtual-machine-howto-stripe-disks-on-machine-with-sql-server-always-on/03.jpg "03")
+    ![03](media/aog-virtual-machine-windows-sql-howto-stripe-disks-on-machine-with-sql-server-always-on/03.jpg "03")
 
-    ![04](media/aog-virtual-machine-howto-stripe-disks-on-machine-with-sql-server-always-on/04.jpg "04")
+    ![04](media/aog-virtual-machine-windows-sql-howto-stripe-disks-on-machine-with-sql-server-always-on/04.jpg "04")

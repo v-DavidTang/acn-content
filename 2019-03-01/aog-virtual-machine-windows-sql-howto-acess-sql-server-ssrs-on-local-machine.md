@@ -3,7 +3,7 @@ title: "如何使用本机公网访问 Azure SQL SERVER 虚拟机中的 SSRS"
 description: "如何使用本机公网访问 Azure SQL SERVER 虚拟机中的 SSRS"
 author: XupingZhou
 resourceTags: 'SQL Server Virtual Machine, SSRS'
-ms.service: virtual-machine
+ms.service: virtual-machine-windows-sql
 wacn.topic: aog
 ms.topic: article
 ms.author: xuping.zhou
@@ -20,23 +20,23 @@ wacn.date: 03/06/2019
 
 在 Azure 虚拟机中选中需要配置 SSRS 的机器，选择左侧的 SQL Server 配置，然后在 SQL Server 连接中选择公共 Internet。
 
-![01](media/aog-virtual-machine-howto-acess-sql-server-ssrs-on-local-machine/01.jpg "01")
+![01](media/aog-virtual-machine-windows-sql-howto-acess-sql-server-ssrs-on-local-machine/01.jpg "01")
 
-![02](media/aog-virtual-machine-howto-acess-sql-server-ssrs-on-local-machine/02.jpg "02")
+![02](media/aog-virtual-machine-windows-sql-howto-acess-sql-server-ssrs-on-local-machine/02.jpg "02")
 
 ## 配置 Azure 虚拟机的 DNS 名字
 
 在虚拟机左侧栏中点击“概述”，然后可以对 DNS 进行配置，如下所示。
 
-![03](media/aog-virtual-machine-howto-acess-sql-server-ssrs-on-local-machine/03.jpg "03")
+![03](media/aog-virtual-machine-windows-sql-howto-acess-sql-server-ssrs-on-local-machine/03.jpg "03")
 
-![04](media/aog-virtual-machine-howto-acess-sql-server-ssrs-on-local-machine/04.jpg "04")
+![04](media/aog-virtual-machine-windows-sql-howto-acess-sql-server-ssrs-on-local-machine/04.jpg "04")
 
 ## 配置 Azure 虚拟机网络入站规则开通端口 80 和 1433
 
 选中虚拟机的网络，单击添加入站规则，可以添加端口 80 和 1433 到网络安全组中。
 
-![05](media/aog-virtual-machine-howto-acess-sql-server-ssrs-on-local-machine/05.jpg "05")
+![05](media/aog-virtual-machine-windows-sql-howto-acess-sql-server-ssrs-on-local-machine/05.jpg "05")
 
 ## 在 Windows 防火墙开通 80 和 1433 端口
 
@@ -44,7 +44,7 @@ wacn.date: 03/06/2019
 
 2. 在左窗格中，选择“入站规则 (Inbound Rules)”。在右窗格上，单击“新建规则 (New Rule...)”：
 
-    ![06](media/aog-virtual-machine-howto-acess-sql-server-ssrs-on-local-machine/06.png "06")
+    ![06](media/aog-virtual-machine-windows-sql-howto-acess-sql-server-ssrs-on-local-machine/06.png "06")
 
 3. 在“规则类型 (Rule Type)”页上，选择“端口 (Port)”，然后单击“下一步”。
 
@@ -62,12 +62,12 @@ wacn.date: 03/06/2019
 
 在 SSRS 所在的虚拟机中把 Azure 虚拟机的 DNS name 添加到 Web Service URL 的操作如下：
 
-![07](media/aog-virtual-machine-howto-acess-sql-server-ssrs-on-local-machine/07.jpg "07")
+![07](media/aog-virtual-machine-windows-sql-howto-acess-sql-server-ssrs-on-local-machine/07.jpg "07")
 
 在 SSRS 所在的虚拟机中把 Azure 虚拟机的 DNS name 添加到 Web Portal URL 的操作如下：
 
-![08](media/aog-virtual-machine-howto-acess-sql-server-ssrs-on-local-machine/08.jpg "08")
+![08](media/aog-virtual-machine-windows-sql-howto-acess-sql-server-ssrs-on-local-machine/08.jpg "08")
 
 这样设置以后，就可以在本地机器上使用公网登录 Azure 虚拟机 SSRS 的 Web Portal URL。
 
-![09](media/aog-virtual-machine-howto-acess-sql-server-ssrs-on-local-machine/09.jpg "09")
+![09](media/aog-virtual-machine-windows-sql-howto-acess-sql-server-ssrs-on-local-machine/09.jpg "09")
