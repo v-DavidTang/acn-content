@@ -2,8 +2,8 @@
 title: "RBAC 如何更新已有自定义角色的可分配范围"
 description: "RBAC 如何更新已有自定义角色的可分配范围"
 author: jessie-pang
-resourceTags: 'Role Based Access Control, Assignable Range'
-ms.service: role-based-access-control
+resourceTags: 'Active Directory, Role Based Access Control, Assignable Range'
+ms.service: active-directory
 wacn.topic: aog
 ms.topic: article
 ms.author: heyang.pang
