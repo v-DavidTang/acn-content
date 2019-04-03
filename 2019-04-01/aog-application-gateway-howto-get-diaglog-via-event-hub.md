@@ -43,7 +43,7 @@ wacn.date: 04/02/2019
 
     解压压缩包，通过 Visual Studio 打开 *ServiceBusExplorer.sln*，运行 *Program.cs*。
 
-    ![01](media/aog-application-gateway-howto-get-diaglog-log-via-event-hub/01.png "01")
+    ![01](media/aog-application-gateway-howto-get-diaglog-via-event-hub/01.png "01")
 
 ## 配置
 
@@ -51,20 +51,20 @@ wacn.date: 04/02/2019
 
 2. 在应用程序网关下开启诊断日志，配置其推送到 Eventhub：
 
-    ![02](media/aog-application-gateway-howto-get-diaglog-log-via-event-hub/02.png "02")
+    ![02](media/aog-application-gateway-howto-get-diaglog-via-event-hub/02.png "02")
 
 3. 可以使用 Service bus explorer，通过 Eventhub 的 SAS connection string 在 Service bus explorer 中连接到此目标 Eventhub，再在其中的 Consumer Group 中右击创建 Listener：
 
-    ![03](media/aog-application-gateway-howto-get-diaglog-log-via-event-hub/03.jpg "03")
+    ![03](media/aog-application-gateway-howto-get-diaglog-via-event-hub/03.jpg "03")
 
     在此 Listener 中就可以看到日志内容了：
 
-    ![04](media/aog-application-gateway-howto-get-diaglog-log-via-event-hub/04.jpg "04")
+    ![04](media/aog-application-gateway-howto-get-diaglog-via-event-hub/04.jpg "04")
 
     诊断日志：
 
-    ![05](media/aog-application-gateway-howto-get-diaglog-log-via-event-hub/05.jpg "05")
+    ![05](media/aog-application-gateway-howto-get-diaglog-via-event-hub/05.jpg "05")
 
-也可以使用 SDK 方式从 Eventhub 中获取 message,例如通过 [Python](https://docs.azure.cn/zh-cn/event-hubs/event-hubs-python-get-started-receive#install-python-package)。
+也可以使用 SDK 方式从 Eventhub 中获取 message，例如通过 [Python](https://docs.azure.cn/zh-cn/event-hubs/event-hubs-python-get-started-receive#install-python-package)。
 
 微软提供了多种 SDK 方式，具体可参考[事件中心示例](https://docs.azure.cn/zh-cn/event-hubs/event-hubs-samples)。
