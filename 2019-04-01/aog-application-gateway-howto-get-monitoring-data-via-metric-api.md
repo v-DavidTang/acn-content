@@ -65,12 +65,8 @@ wacn.date: 04/02/2019
 2. 如果您使用 PowerShell，请将：
 
     ```powershell
-    #Azure Authtentication Token
-
-    #requires -Version 3
-    #SPN ClientId and Secret
-    $ClientID       = "<clientid>"   #ApplicationID
-    $ClientSecret   = "<ClientSecret>"  #key from Application
+    $ClientID       = "<clientid>"   #应用程序 ID
+    $ClientSecret   = "<ClientSecret>"  #应用程序密钥
     $tennantid      = "<TennantID>"
 
 
