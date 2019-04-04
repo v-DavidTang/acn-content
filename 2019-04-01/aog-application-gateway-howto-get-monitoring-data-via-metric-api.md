@@ -27,7 +27,6 @@ wacn.date: 04/02/2019
 1. 配置中国区 Azure 订阅：
 
     ```powershell
-    #Login to Azure
     Add-AzureRmAccount
     ```
 
