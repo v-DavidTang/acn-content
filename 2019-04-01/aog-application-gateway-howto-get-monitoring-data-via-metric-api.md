@@ -57,7 +57,6 @@ wacn.date: 04/02/2019
 
     ```bash
     curl --request POST "https://login.windows.net/<tennantid>/oauth2/token" --data-urlencode "resource=https://management.core.windows.net" --data-urlencode "client_id=<clientid>" --data-urlencode "grant_type=client_credentials" --data-urlencode "client_secret=[clientsecret]"
-    [/sourcecode]
     ```
 
     * login URL 改为：<https://login.chinacloudapi.cn/tennantid/oauth2/token>。
@@ -108,11 +107,11 @@ wacn.date: 04/02/2019
 通过如下函数：
 
 ```shell
-## get-token 函数会获取应用的安全口令
+# get-token 函数会获取应用的安全口令
 function get-token {
     $username = "<xxxx@mcpod.partner.onmschina.cn>";     ## 订阅账号
     $password = "<xxxxx>";                               ## 订阅密码
-    $client_id = "1950a258-227b-4e31-a9cf-717495945fc2"
+    $client_id = "<clientid>"
     $resource = "https://management.chinacloudapi.cn/"
     $creds = @{
         grant_type = "password"
@@ -180,7 +179,7 @@ $header = @{
 $uri = "https://management.chinacloudapi.cn/subscriptions/test-fbfe-4f11-9af2-b81f0ee26453/resourceGroups/testresourcegroup-E/providers/Microsoft.Network/applicationGateways/TESTAPPGW/providers/microsoft.insights/metrics?api-version=2018-01-01&metricnames=TotalRequests"
 ```
 
-末端的 *TotalRequests* 可以替换为其他 METRIC:
+末端的 *TotalRequests* 可以替换为其他 METRIC：
 
 ![02](media/aog-application-gateway-howto-get-monitoring-data-via-metric-api/02.png "02")
 
