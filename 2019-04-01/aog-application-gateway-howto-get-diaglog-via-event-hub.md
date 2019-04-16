@@ -16,7 +16,7 @@ wacn.date: 04/02/2019
 
 ## 应用场景
 
-用户在使用应用程序网关时往往需要访问日志，防火墙过滤日志，以及性能日志，作为进本指标判断，无论是生产环境监控还是测试环境的压力测试，都需要诊断日志作为分析基础。获取诊断日志的方式有很多。本文着重介绍如何提供 Eventhub 方式获取诊断日志，此种方式实时性更好，因为 Eventhub 可以实时获取诊断日志，但是会产生相应 Eventhub 的相关费用，详情需要参考 [Eventhub 的收费标准](https://www.azure.cn/en-us/pricing/details/event-hubs/)。
+用户在使用应用程序网关时往往需要访问日志，防火墙过滤日志，以及性能日志，作为进本指标判断，无论是生产环境监控还是测试环境的压力测试，都需要诊断日志作为分析基础。获取诊断日志的方式有很多。本文着重介绍如何提供 Eventhub 方式获取诊断日志，此种方式实时性更好，因为 Eventhub 可以实时获取诊断日志，但是会产生相应 Eventhub 的相关费用，详情需要参考 [Eventhub 的收费标准](https://www.azure.cn/zh-cn/pricing/details/event-hubs/)。
 
 我们可以使用客户端工具：Service bus explorer 来获取。
 

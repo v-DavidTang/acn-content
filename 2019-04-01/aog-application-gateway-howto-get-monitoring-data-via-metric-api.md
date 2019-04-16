@@ -26,11 +26,19 @@ wacn.date: 04/02/2019
 
 1. 配置中国区 Azure 订阅：
 
+    将：
+
     ```powershell
     Add-AzureRmAccount
     ```
 
-    改为 `Add-AzureRmAccount -Environment AzureChinaCloud` 以登录中国 Azure。
+    改为:
+
+    ```powershell
+    Add-AzureRmAccount -Environment AzureChinaCloud
+    ```
+
+    以登录中国区 Azure。
 
 2. 找到 TenantID：
 
