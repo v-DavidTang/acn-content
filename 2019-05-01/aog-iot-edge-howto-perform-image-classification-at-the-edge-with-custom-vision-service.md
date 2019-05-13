@@ -1,6 +1,6 @@
 ---
-title: "在边缘设备使用自定义视觉服务进行图像分类"
-description: "在边缘设备使用自定义视觉服务进行图像分类"
+title: "在 IoT Edge 设备使用自定义视觉服务进行图像分类"
+description: "在 IoT Edge 设备使用自定义视觉服务进行图像分类"
 author: chenzheng1988
 resourceTags: 'Iot Edge, Custom Vision Service'
 ms.service: iot-edge
@@ -12,9 +12,9 @@ ms.date: 05/13/2019
 wacn.date: 05/13/2019
 ---
 
-# 在边缘设备使用自定义视觉服务进行图像分类
+# 在 IoT Edge 设备使用自定义视觉服务进行图像分类
 
-目前中国区 Azure 暂时还无法创建自定义视觉服务，不过在 Global Azure 是可以的，可以在 Global Azure 创建自定义视觉服务，然后通过训练导出自定义视觉服务项目来安装到边缘设备中，以下对该操作过程注意事项进行描述。
+目前中国区 Azure 暂时还无法创建自定义视觉服务，不过在 Global Azure 是可以的，可以在 Global Azure 创建自定义视觉服务，然后通过训练导出自定义视觉服务项目来安装到 IoT Edge 设备中，以下对该操作过程注意事项进行描述。
 
 ## 解决方案
 
@@ -22,7 +22,7 @@ wacn.date: 05/13/2019
 
     ![01](media/aog-iot-edge-howto-perform-image-classification-at-the-edge-with-custom-vision-service/01.png "01")
 
-2. 创建 IotHub 和边缘设备，并且按照以下文档在 linux 上安装 IoT Edge 运行时 。参考：[在 Linux 上安装 Azure IoT Edge 运行时 (x64)](https://docs.azure.cn/zh-cn/iot-edge/how-to-install-iot-edge-linux)。
+2. 创建 IotHub 和 IoT Edge 设备，并且按照以下文档在 linux 上安装 IoT Edge 运行时 。参考：[在 Linux 上安装 Azure IoT Edge 运行时 (x64)](https://docs.azure.cn/zh-cn/iot-edge/how-to-install-iot-edge-linux)。
 
 3. 按照以下文档使用自定义视觉生成图像分类器，完成自定义视觉项目的创建和训练，将在下一部分使用导出的文件。参考：[使用自定义视觉生成图像分类器](https://docs.microsoft.com/zh-cn/azure/iot-edge/tutorial-deploy-custom-vision#create-a-new-project)。
 
@@ -72,7 +72,7 @@ wacn.date: 05/13/2019
 
 12. 在解决方案文件夹中打开 .env 文件，输入 Azure 容器注册表的用户名、密码。
 
-13. 生成容器映像并推送到 Azure 容器注册表。在 VS Code 资源管理器中右键单击 **deployment.template.json** 文件，然后选择**生成并推送 IoT Edge 解决方案**，会为解决方案添加 config 文件夹，并生成 deployment.amd64.json，用于后续部署到边缘设备。并且会自动执行如下命令：
+13. 生成容器映像并推送到 Azure 容器注册表。在 VS Code 资源管理器中右键单击 **deployment.template.json** 文件，然后选择**生成并推送 IoT Edge 解决方案**，会为解决方案添加 config 文件夹，并生成 deployment.amd64.json，用于后续部署到 IoT Edge 设备。并且会自动执行如下命令：
 
     ```shell
     docker build  --rm -f "e:\Work\IotEdgeCustomVision\IotedgeVisionCustomerSolution\CustomVisionSolution\modules\classifier\Dockerfile" -t czcontainertest.azurecr.cn/classifier:0.0.1-amd64 "e:\Work\IotEdgeCustomVision\IotedgeVisionCustomerSolution\CustomVisionSolution\modules\classifier"
@@ -93,7 +93,7 @@ wacn.date: 05/13/2019
 
 15. 使用 Visual Studio Code 连接 IotHub。在 Visual Studio Code 中选择 【View】 -> 【Command Palette】 输入 Azure IoT Hub: Select IoT Hub，然后选择订阅下的 IotHub。
 
-16. 选择设备并部署解决方案。右键单击要将其作为部署目标的设备，然后选择**为单个设备创建部署**，在文件资源管理器中导航到该解决方案中的 config 文件夹，然后选择 deployment.amd64.json，单击**选择 Edge 部署清单**。部署成功后可能需要一些时间模块才全部运行起来，可以在边缘设备上执行 `sudo iotedge list` 查看：
+16. 选择设备并部署解决方案。右键单击要将其作为部署目标的设备，然后选择**为单个设备创建部署**，在文件资源管理器中导航到该解决方案中的 config 文件夹，然后选择 deployment.amd64.json，单击**选择 Edge 部署清单**。部署成功后可能需要一些时间模块才全部运行起来，可以在 IoT Edge 设备上执行 `sudo iotedge list` 查看：
 
     ![08](media/aog-iot-edge-howto-perform-image-classification-at-the-edge-with-custom-vision-service/08.png "08")
 
