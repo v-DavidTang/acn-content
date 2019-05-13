@@ -52,4 +52,4 @@ wacn.date: 05/13/2019
 
 ## 参考文档
 
-* [开始为云服务创建内部负载均衡器（经典）](https://docs.microsoft.com/zh-cn/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud)。
+* [开始为云服务创建内部负载均衡器（经典）](https://docs.microsoft.com/zh-cn/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud)
