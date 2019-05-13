@@ -16,6 +16,8 @@ wacn.date: 05/13/2019
 
 云服务支持内部负载均衡器，配置了内部负载均衡器后只能在该虚拟网络内访问云服务，以确保云服务的安全性。
 
+## 解决方案
+
 1. 创建经典虚拟网络。云服务只支持经典虚拟网络，在门户中创建经典虚拟网络请参考：[使用 Azure 门户创建虚拟网络（经典）](https://docs.azure.cn/zh-cn/virtual-network/virtual-networks-create-vnet-classic-pportal)。
 
 2. 在云服务的配置文件 *.cscfg* 中添加虚拟网络和内部负载均衡。云服务（经典）需要在配置文件 *.cscfg* 中添加 *NetworkConfiguration*，并且需要重新做完全部署才能生效。需要注意检查添加相关配置之后的 *xml* 文件是否为有效文件，可以通过在线工具 [XML Beautifier](http://xmlbeautifier.com/) 生成有效 *xml* 文件。参考示例如下：
@@ -48,4 +50,6 @@ wacn.date: 05/13/2019
 
 配置了内部负载均衡器后是无法使用 Swap 功能的，由于 Swap 需要 VIP，如果部署了内部负载均衡器，则无法 Swap VIP。
 
-详细步骤请参考：[开始为云服务创建内部负载均衡器（经典）](https://docs.microsoft.com/zh-cn/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud)。
+## 参考文档
+
+* [开始为云服务创建内部负载均衡器（经典）](https://docs.microsoft.com/zh-cn/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud)。
