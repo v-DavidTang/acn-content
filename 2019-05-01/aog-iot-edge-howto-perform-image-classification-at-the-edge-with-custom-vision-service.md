@@ -26,7 +26,7 @@ wacn.date: 05/13/2019
 
 3. 按照以下文档使用自定义视觉生成图像分类器，完成自定义视觉项目的创建和训练，将在下一部分使用导出的文件。参考：[使用自定义视觉生成图像分类器](https://docs.microsoft.com/zh-cn/azure/iot-edge/tutorial-deploy-custom-vision#create-a-new-project)。
 
-4. 使用 Visual Studio Code 创建 iotedge 解决方案，在 【View】-> 【Command Palette】 选择 Azure IoT Edge:New IoT Edge Solution ，创建一个 python 模块，并且使用 Azure 容器注册表：
+4. 使用 Visual Studio Code 创建 iotedge 解决方案，在 【View】-> 【Command Palette】 选择 **Azure IoT Edge:New IoT Edge Solution**，创建一个 python 模块，并且使用 Azure 容器注册表：
 
     ![02](media/aog-iot-edge-howto-perform-image-classification-at-the-edge-with-custom-vision-service/02.png "02")
 
@@ -34,7 +34,7 @@ wacn.date: 05/13/2019
 
    ![03](media/aog-iot-edge-howto-perform-image-classification-at-the-edge-with-custom-vision-service/03.png "03") 
 
-6. 在该解决方案下创建 cameraCapture 模块，在 Visual Studio Code 中 【View】-> 【Command Palette】 选择 Azure IoT Edge:Add IoT Edge Module，选择该解决方案下的 deployment.template.json 文件，创建一个 cameraCapture 的 python 模块，并且使用 Azure 容器注册表。
+6. 在该解决方案下创建 cameraCapture 模块，在 Visual Studio Code 中 【View】-> 【Command Palette】 选择 **Azure IoT Edge:Add IoT Edge Module**，选择该解决方案下的 deployment.template.json 文件，创建一个 cameraCapture 的 python 模块，并且使用 Azure 容器注册表。
 
 7. 把 *modules/cameraCapture* 文件夹中的 main.py 文件替换为文档中的代码，该代码会把 POST 请求发送到在 classifier 模块中运行的图像处理服务，并把响应发送到 IotHub。替换代码参考：[添加并配置新模块](https://docs.microsoft.com/zh-cn/azure/iot-edge/tutorial-deploy-custom-vision#add-and-configure-a-new-module)。
 
@@ -91,7 +91,7 @@ wacn.date: 05/13/2019
 
     ![07](media/aog-iot-edge-howto-perform-image-classification-at-the-edge-with-custom-vision-service/07.png "07")
 
-15. 使用 Visual Studio Code 连接 IotHub。在 Visual Studio Code 中选择 【View】 -> 【Command Palette】 输入 Azure IoT Hub: Select IoT Hub，然后选择订阅下的 IotHub。
+15. 使用 Visual Studio Code 连接 IotHub。在 Visual Studio Code 中选择 【View】 -> 【Command Palette】 输入 **Azure IoT Hub: Select IoT Hub**，然后选择订阅下的 IotHub。
 
 16. 选择设备并部署解决方案。右键单击要将其作为部署目标的设备，然后选择**为单个设备创建部署**，在文件资源管理器中导航到该解决方案中的 config 文件夹，然后选择 deployment.amd64.json，单击**选择 Edge 部署清单**。部署成功后可能需要一些时间模块才全部运行起来，可以在 IoT Edge 设备上执行 `sudo iotedge list` 查看：
 
