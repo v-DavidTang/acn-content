@@ -40,7 +40,7 @@ wacn.date: 05/13/2019
 
 8. 打开 requrements.txt 为将要包括在容器中的库添加新的一行：
 
-    requests
+    ```requests```
 
 9. 向 cameraCapture 模块添加测试图片。找到之前下载的图像 *Cognitive-CustomVision-Windows/Samples/Images/Test* 中的测试图像，复制 test_image.jpg，粘贴到 *modules/cameraCapture* 文件夹中，在 Visual Studio Code 中打开适用于 cameraCapture 模块的 Dockerfile.amd64 文件，在建立工作目录 *WORKDIR/app* 的行后面，添加以下代码行：ADD ./test_image.jpg .
 
@@ -212,6 +212,7 @@ wacn.date: 05/13/2019
          }
         }
         ```
+
 推送到容器注册表后，也可以通过门户来进行部署模块，可以参考[通过 Azure 门户部署 Azure IoT Edge 模块](https://docs.azure.cn/zh-cn/iot-edge/how-to-deploy-modules-portal)。
 
 ## 注意事项

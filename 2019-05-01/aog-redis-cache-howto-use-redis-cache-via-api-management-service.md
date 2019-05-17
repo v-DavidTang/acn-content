@@ -21,11 +21,11 @@ wacn.date: 05/14/2019
 1. 创建 Azure Redis 缓存服务，复制 Redis 缓存的链接字符串：
 
     ![01](media/aog-redis-cache-howto-use-redis-cache-via-api-management-service/01.jpg "01")
- 
+
 2. 在 API 管理端添加外部缓存，填入必要的属性以后点击**添加**：
 
     ![02](media/aog-redis-cache-howto-use-redis-cache-via-api-management-service/02.jpg "02")
- 
+
 3. 添加完毕后在 API 里去配置缓存策略，具体的缓存策略说明可以参考 [API 管理缓存策略](https://docs.azure.cn/zh-cn/api-management/api-management-caching-policies)：
 
     ![03](media/aog-redis-cache-howto-use-redis-cache-via-api-management-service/03.jpg "03")
@@ -41,16 +41,15 @@ wacn.date: 05/14/2019
     这边为了测试方便值填入为 public，点击发送进行测试：
 
     ![05](media/aog-redis-cache-howto-use-redis-cache-via-api-management-service/05.jpg "05")
- 
 
-2.	发送完毕以后，可以查看 Response 的 Trace 页去验证 cache 是否生效。
+2. 发送完毕以后，可以查看 Response 的 Trace 页去验证 cache 是否生效。
 
     从 Inbound 的部分，看到执行了 cache-lookup-value：
 
     ![06](media/aog-redis-cache-howto-use-redis-cache-via-api-management-service/06.png "06")
 
     从 Outbound 部分，看到执行了 cache-store-value：
-    
+
     ![07](media/aog-redis-cache-howto-use-redis-cache-via-api-management-service/07.png "07")
 
 3. 为了更进一步验证，我们可以继续查询 Redis，从 Redis 的控制台我们也看到了存储的结果。
