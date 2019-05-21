@@ -7,6 +7,7 @@ ms.service: storage
 wacn.topic: aog
 ms.topic: article
 ms.author: v-ciwu
+wacn.org: 21V
 wacn.authorDisplayName: 'Guan Jun'
 ms.date: 05/14/2019
 wacn.date: 05/14/2019

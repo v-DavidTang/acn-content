@@ -7,6 +7,7 @@ ms.service: redis-cache
 wacn.topic: aog
 ms.topic: article
 ms.author: v-amazha
+wacn.org: 21V
 wacn.authorDisplayName: 'Zhang Hongmei'
 ms.date: 05/14/2019
 wacn.date: 05/14/2019
