@@ -102,7 +102,7 @@ Azure Database for MySQL 对于驱动的版本及管理工具的兼容性有要�
 
 6. 复现 *register Microsoft.PowerBIDedicated* 错误，让 Fiddler 抓取网络包.
 
-7. 当确认 Fiddler 已抓到所需的信息后, 点击 **File** > **取消选中 Capture Traffic** 来取消 Fiddler 抓包。
+7. 当确认 Fiddler 已抓到所需的信息后, 点击 **File**，取消选中 **Capture Traffic** 来取消 Fiddler 抓包。
 
 8.  点击 **File** > **Save** > **All Sessions** 保存文件，对抓包文件中有异常报错的地方进行分析，也可以将网络包发给微软技术支持团队进行分析。
 
