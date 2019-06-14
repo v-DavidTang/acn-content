@@ -22,8 +22,8 @@ wacn.date: 06/14/2019
     select trx_state, trx_started, trx_mysql_thread_id, trx_query from information_schema.innodb_trx
     ```
 
-    >[!Note]
-    >trx_started：事务是执行的起始时间，若时间较长，则要分析该事务是否合理。
+    > [!NOTE]
+    > trx_started：事务是执行的起始时间，若时间较长，则要分析该事务是否合理。
 
 2. 可以用如下语句查看各个锁之间的等待关系：
 
