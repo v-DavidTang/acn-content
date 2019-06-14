@@ -30,7 +30,7 @@ wacn.date: 06/14/2019
     查看当前出现的锁：
 
     ```sql
-    select * from information_schema.INNODB_LOCK
+    select * from information_schema.INNODB_LOCKS
     ```
 
     查看事务之间的锁等待关系：
