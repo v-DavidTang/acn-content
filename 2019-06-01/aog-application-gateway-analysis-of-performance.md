@@ -7,6 +7,7 @@ ms.service: application-gateway
 wacn.topic: aog
 ms.topic: article
 ms.author: biyu
+wacn.org: CSS
 wacn.authorDisplayName: 'Bing Yu'
 ms.date: 06/13/2019
 wacn.date: 06/13/2019
