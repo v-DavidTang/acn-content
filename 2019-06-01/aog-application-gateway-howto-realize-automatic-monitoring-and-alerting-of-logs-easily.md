@@ -25,11 +25,11 @@ wacn.date: 06/13/2019
 
 如果您已经对以上三种的适用场景和查询方法非常熟悉，可以直接看文章第二部分“如何配置诊断日志自动分析及监控告警”。
 
-1.	后端运行状况：应用程序网关提供通过 Azure 门户和 PowerShell 监视后端池中的服务器运行状况的功能。也可通过性能诊断日志找到后端池的运行状况。
+1. 后端运行状况：应用程序网关提供通过 Azure 门户和 PowerShell 监视后端池中的服务器运行状况的功能。也可通过性能诊断日志找到后端池的运行状况。
 
-2.	日志：通过日志记录，可出于监视目的从资源保存或使用性能、访问及其他数据。本文第二部分会介绍如何使用 LA 分析日志并设置告警。
+2. 日志：通过日志记录，可出于监视目的从资源保存或使用性能、访问及其他数据。本文第二部分会介绍如何使用 LA 分析日志并设置告警。
 
-3.	指标：应用程序网关当前有七个指标可用来查看性能计数器。
+3. 指标：应用程序网关当前有七个指标可用来查看性能计数器。
 应用程序网关的指标您需要在监视器（Monitor）服务界面的 Metrics 中看到，如下图：
 
     ![01](media/aog-application-gateway-howto-realize-automatic-monitoring-and-alerting-of-logs-easily/01.png "01")
@@ -57,7 +57,7 @@ wacn.date: 06/13/2019
     勾选 **Send to Log Analytics**（需要您创建了至少一个 LA Workspace），目前 LA Workspace 只能创建在 China East 2，但任何区域的应用程序网关都可以选择位于 China East 2 的 LA Workspace 来分析日志：
 
     ![05](media/aog-application-gateway-howto-realize-automatic-monitoring-and-alerting-of-logs-easily/05.png "05")
-    
+
     如果您没有创建过 LA workspace，可以在 **All Service** 中找到 **Log Analytics workspaces** 服务，创建一个 workspace：
 
     ![06](media/aog-application-gateway-howto-realize-automatic-monitoring-and-alerting-of-logs-easily/06.png "06")
@@ -67,7 +67,7 @@ wacn.date: 06/13/2019
 3. 在 LA workspace 中分析日志结果：
 
     在应用程序网关侧勾选配置后，日志会自动发布到 LA workspace 中，用户不需要在 LA 侧做更多配置。
-    
+
     > [!NOTE]
     > 如果您的应用程序网关配置了 NSG，可能导致日志无法同步到 LA。更多解释及办法您可以参考：[Network firewall requirements](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)。
 
@@ -80,7 +80,7 @@ wacn.date: 06/13/2019
 
     **Avg timeTaken per minute by API**：
 
-    ```xml
+    ```sql
     AzureDiagnostics
     | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayAccessLog"
     | where TimeGenerated >= ago(2h)
@@ -102,7 +102,7 @@ wacn.date: 06/13/2019
 
     1. Avg throughput per second (Mb)：
 
-        ```xml
+        ```sql
         AzureDiagnostics
         | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
         | summarize avg(throughput_d) by Resource, bin(TimeGenerated, 1m)
@@ -113,7 +113,7 @@ wacn.date: 06/13/2019
 
     2. Avg Requests per min：
 
-        ```xml
+        ```sql
         AzureDiagnostics
         | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
         | summarize avg(requestCount_d) by Resource, bin(TimeGenerated, 1m)
@@ -122,7 +122,7 @@ wacn.date: 06/13/2019
 
     3. Unhealthy backend VM count：
 
-        ```xml
+        ```sql
         AzureDiagnostics
         | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
         | summarize max(unHealthyHostCount_d) by Resource, bin(TimeGenerated, 1m)
@@ -130,7 +130,7 @@ wacn.date: 06/13/2019
 
     4. Avg Latency (ms) by AppGW：
 
-        ```xml
+        ```sql
         AzureDiagnostics
         | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
         | summarize avg(latency_d) by Resource, bin(TimeGenerated, 1m)
@@ -139,7 +139,7 @@ wacn.date: 06/13/2019
 
     5. Error count past hour by AppGW：
 
-        ```xml
+        ```sql
         AzureDiagnostics
         | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayAccessLog"
         | where httpStatus_d >= 400
@@ -149,7 +149,7 @@ wacn.date: 06/13/2019
 
     6. HTTP Error count per hour by API：
 
-        ```xml
+        ```sql
         AzureDiagnostics
         | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayAccessLog"
         | where httpStatus_d >= 400
@@ -160,7 +160,7 @@ wacn.date: 06/13/2019
 
     7. Failed requests by backend VM：
 
-        ```xml
+        ```sql
         AzureDiagnostics
         | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayAccessLog"
         | where httpStatus_d >= 400
@@ -214,7 +214,7 @@ wacn.date: 06/13/2019
 
         一个成功创建的 Condition 如下图所示，这里选择了“结果数”作为日志查询规则，查询返回 timeTaken 大于一定阈值（100）的请求数:
 
-        ```xml
+        ```sql
         AzureDiagnostics
         | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayAccessLog"
         | summarize avg(timeTaken_d) by Resource,requestUri_s, bin(TimeGenerated, 1m)
@@ -244,7 +244,7 @@ wacn.date: 06/13/2019
         创建之后您可以在 **Monitor-Alerts** 界面查看历史警报，如下图：
 
         ![13](media/aog-application-gateway-howto-realize-automatic-monitoring-and-alerting-of-logs-easily/13.png "13")
- 
+
         您也可以在这个界面管理前面两步创建的警报规则（Manage Alert Rules）和操作组/操作（Manage actions）。
 
 至此我们已经配置完毕日志分析（Log analytics Workspace）和自动监控告警（Monitor）。示例中配置了对应用程序网关的访问耗时的日志分析，当大于 100 秒时告警发送邮件。这里具体阈值建议根据实际业务配置，以避免收到大量误报警对被通知的人造成影响。

@@ -47,7 +47,7 @@ wacn.date: 06/13/2019
 
 2. Cookie 中出现敏感字段，同样频繁触发并匹配安全规则，例如：
 
-    ```xml
+    ```json
     {
       "instanceId": "ApplicationGatewayRole_IN_0",
       "clientIp": "219.1xx.xxx.xxx",
@@ -99,7 +99,7 @@ WAF 规则匹配与平时相比正常，requestCount 异常大，此时仅前端
 
 此场景中，建议同时参考多个参数分析：failedRequestCount 也有明显增加；timeTaken 变大，与此同时，latency_d 并无明显增加：
 
-```xml
+```sql
 AzureDiagnostics
 | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayAccessLog"
 | summarize avg(timeTaken_d) by Resource, bin(TimeGenerated, 1m)
@@ -108,7 +108,7 @@ AzureDiagnostics
 
 unHealthyHostCount 始终是 0 或与平时一致：
 
-```xml
+```sql
 AzureDiagnostics
 | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
 | summarize max(unHealthyHostCount_d) by Resource, bin(TimeGenerated, 1m)
@@ -123,7 +123,7 @@ AzureDiagnostics
 
 WAF 规则匹配以及 requestCount 与平时相比正常，但是 failedRequestCount 异常大，此时，建议先检查 throughput 是否远超出平时大小，以此观察是否存在频繁的超大尺寸的上传或下载导致系统异常。Analytics 常用查询语句：Avg throughput per min (Mb)。
 
-```xml
+```sql
 AzureDiagnostics
 | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
 | summarize avg(throughput_d) by Resource, bin(TimeGenerated, 1m)
@@ -138,7 +138,7 @@ AzureDiagnostics
 
 WAF 规则匹配以及 requestCount 与平时相比有一定增加，但是 failedRequestCount 还未出现明显增加，而 timeTaken 已经有了明显增加：
 
-```xml
+```sql
 AzureDiagnostics
 | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayAccessLog"
 | summarize avg(timeTaken_d) by Resource, bin(TimeGenerated, 1m)
@@ -149,7 +149,7 @@ AzureDiagnostics
 
 再看 latency 是否也有同样的增加：
 
-```xml
+```sql
 AzureDiagnostics
 | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayAccessLog"
 | summarize avg(latency_d) by Resource, bin(TimeGenerated, 1m)

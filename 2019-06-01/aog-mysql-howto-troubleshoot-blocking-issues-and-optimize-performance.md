@@ -35,13 +35,13 @@ wacn.date: 06/14/2019
     ```
 
     查看事务之间的锁等待关系：
-    
+
     ```sql
     select * from information_schema.innodb_lock_waits
     ```
 
     查看当前正在运行的事务：
-    
+
     ```sql
     select * from information_schema.innodb_trx
     ```
@@ -59,16 +59,16 @@ wacn.date: 06/14/2019
     将以下语句中的 `porcesslistid` 替换成上图中的 id 可以查看更详细的信息：
 
     ```sql
-    SELECT a.sql_text, 
-       c.id, 
-       d.trx_started 
-    FROM   performance_schema.events_statements_current a 
-       join performance_schema.threads b 
-         ON a.thread_id = b.thread_id 
-       join information_schema.processlist c 
-         ON b.processlist_id = c.id 
-       join information_schema.innodb_trx d 
-         ON c.id = d.trx_mysql_thread_id 
+    SELECT a.sql_text,
+       c.id,
+       d.trx_started
+    FROM   performance_schema.events_statements_current a
+       join performance_schema.threads b
+         ON a.thread_id = b.thread_id
+       join information_schema.processlist c
+         ON b.processlist_id = c.id
+       join information_schema.innodb_trx d
+         ON c.id = d.trx_mysql_thread_id
     where c.id=<porcesslistid>
     ORDER  BY d.trx_started;
     ```
@@ -77,10 +77,10 @@ wacn.date: 06/14/2019
 
     ```sql
     select request.trx_mysql_thread_id rprocessid,
-       request.trx_id request_trxid, 
-       relock.lock_type , 
-       blocks.trx_id blockstrx_id ,
-       blocks.trx_rows_locked ,
+       request.trx_id request_trxid,
+       relock.lock_type,
+       blocks.trx_id blockstrx_id,
+       blocks.trx_rows_locked,
        blocks.trx_mysql_thread_id bprocessid,
        threads.THREAD_ID bTHREAD_ID,
        threads.PROCESSLIST_USER bPROCESSLIST_USER,
@@ -99,16 +99,15 @@ wacn.date: 06/14/2019
 5. 在问题存在的时段运行如下语句，可帮助找到阻塞的源头 thread-ID（表中的这一列 blocked_thread_id）：
 
     ```sql
-    SELECT b.trx_mysql_thread_id             AS 'blocked_thread_id' 
-      ,b.trx_query                      AS 'blocked_sql_text' 
-      ,c.trx_mysql_thread_id             AS 'blocker_thread_id'
-      ,c.trx_query                       AS 'blocker_sql_text'
-      ,( Unix_timestamp() - Unix_timestamp(c.trx_started) ) 
-                              AS 'blocked_time' 
-    FROM   information_schema.innodb_lock_waits a 
-    INNER JOIN information_schema.innodb_trx b 
-         ON a.requesting_trx_id = b.trx_id 
-    INNER JOIN information_schema.innodb_trx c 
-         ON a.blocking_trx_id = c.trx_id 
+    SELECT b.trx_mysql_thread_id AS 'blocked_thread_id'
+      ,b.trx_query AS 'blocked_sql_text'
+      ,c.trx_mysql_thread_id AS 'blocker_thread_id'
+      ,c.trx_query AS 'blocker_sql_text'
+      ,( Unix_timestamp() - Unix_timestamp(c.trx_started)) AS 'blocked_time'
+    FROM   information_schema.innodb_lock_waits a
+    INNER JOIN information_schema.innodb_trx b
+         ON a.requesting_trx_id = b.trx_id
+    INNER JOIN information_schema.innodb_trx c
+         ON a.blocking_trx_id = c.trx_id
     WHERE  ( Unix_timestamp() - Unix_timestamp(c.trx_started) ) > 4;
     ```

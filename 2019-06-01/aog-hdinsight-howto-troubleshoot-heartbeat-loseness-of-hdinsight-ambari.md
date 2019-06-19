@@ -63,8 +63,8 @@ Azure 的工程师们正在针对 Java 的这个安全补丁进行修复工作�
 * 然后通过以下命令重启 Ambari 代理和服务器：
 
     ```shell
-    sudo service ambari-agent restart 
-    sudo service ambari-server restart 
+    sudo service ambari-agent restart
+    sudo service ambari-server restart
     ```
 
 ## 运行脚本解决 Linux 内核软锁导致的心跳丢失
@@ -82,7 +82,7 @@ Azure 的工程师们正在针对 Java 的这个安全补丁进行修复工作�
 重启节点，可以先执行 `sudo su`，切换到 root 权限。然后再执行 `reboot` 进行重启。
 
 ![04](media/aog-hdinsight-howto-troubleshoot-heartbeat-loseness-of-hdinsight-ambari/04.png "04")
- 
+
 ## 减少内存使用解决心跳丢失
 
 可以参考这篇文章解决由于某个节点内存太高导致的心跳丢失问题：[如何解决头节点一直处于心跳丢失的状态](https://docs.azure.cn/zh-cn/articles/azure-operations-guide/hdinsight/aog-hdinsight-howto-solve-head-knot-heartbeat-loseness)。

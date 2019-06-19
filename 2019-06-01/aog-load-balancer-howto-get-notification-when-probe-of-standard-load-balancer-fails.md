@@ -1,7 +1,7 @@
 ---
 title: "在标准负载均衡器探测失败时获得邮件或者短信警告的方法"
 description: "在标准负载均衡器探测失败时获得邮件或者短信警告的方法"
-author: lvwenshi@gmail.com
+author: VincentLyu
 resourceTags: 'Standard Load Balancer, Probe, Notification'
 ms.service: load-balancer
 wacn.topic: aog
@@ -27,7 +27,7 @@ wacn.date: 06/14/2019
 
     ```cli
     azure@server:~$ az monitor action-group show -g <Resource Group Name> -n <Action Group Name> --query id
-    
+
     "/subscriptions/<Sub-id>/resourceGroups/<Resource Group Name>/providers/microsoft.insights/actionGroups/<Action Group Name>"
     ```
 
@@ -56,5 +56,3 @@ wacn.date: 06/14/2019
 ![02](media/aog-load-balancer-howto-get-notification-when-probe-of-standard-load-balancer-fails/02.gif "02")
 
 另外，Metric 和 Alert 的具体价格可参考：[Azure 监控器](https://www.azure.cn/zh-cn/pricing/details/monitor/)。
-
-

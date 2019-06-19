@@ -34,4 +34,3 @@ wacn.date: 06/13/2019
 2. 前端压力测试工具具有参数监控功能，监控项至少包括：HTTP response code, request per second (rps), time taken for each request, throughput, failed request counts, num of connection。
 
 3. 启用诊断日志，并针对需求配置合理的[日志存储方式](https://docs.azure.cn/zh-cn/articles/azure-operations-guide/application-gateway/aog-application-gateway-diagnostic-log-details-and-compliance-requirements)，从而可以统计应用程序网关各方面的性能指标。
-

@@ -17,13 +17,15 @@ wacn.date: 06/13/2019
 
 ## Azure 应用程序网关性能指标分析
 
-为了让管理员能及时获知应用程序网关的运行状态，并针对此种情况制定通知策略，实现对应用程序网关诊断日志的自动分析、监控和告警等。本文主要介绍基于 Log Analytics 对应用程序网关运行状态的监控及预警的部署方法。目前 Global Azure 的应用程序网关已经具备针对 Metrics 的监控参数做告警：
+为了让管理员能及时获知应用程序网关的运行状态，并针对此种情况制定通知策略，实现对应用程序网关诊断日志的自动分析、监控和告警等。
 
-1. Metric：
+本文主要介绍基于 Log Analytics 对应用程序网关运行状态的监控及预警的部署方法。目前 Global Azure 的应用程序网关已经具备针对 Metrics 的监控参数做告警：
+
+1. Metrics：
 
     ![01](media/aog-application-gateway-analysis-of-performance/01.png "01")
 
-2. Alert：
+2. Alerts：
 
     ![02](media/aog-application-gateway-analysis-of-performance/02.png "02")
 
@@ -41,7 +43,7 @@ Log analytics workspaces 中可以为日常运维保存常用查询语句，更�
 
 1. Avg Latency (ms) by AppGW：
 
-    ```xml
+    ```sql
     AzureDiagnostics
     | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
     | summarize avg(latency_d) by Resource, bin(TimeGenerated, 1m)
@@ -50,7 +52,7 @@ Log analytics workspaces 中可以为日常运维保存常用查询语句，更�
 
 2. Failed requests by API：
 
-    ```xml
+    ```sql
     AzureDiagnostics
     | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayAccessLog"
     | where httpStatus_d >= 400
@@ -60,7 +62,7 @@ Log analytics workspaces 中可以为日常运维保存常用查询语句，更�
 
 3. Avg Requests per min：
 
-    ```xml
+    ```sql
     AzureDiagnostics
     | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
     | summarize avg(requestCount_d) by Resource, bin(TimeGenerated, 1m)
@@ -69,7 +71,7 @@ Log analytics workspaces 中可以为日常运维保存常用查询语句，更�
 
 4. Avg Failed Requests per min：
 
-    ```xml
+    ```sql
     AzureDiagnostics
     | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
     | summarize avg(failedRequestCount_d) by Resource, bin(TimeGenerated, 1m)
@@ -78,7 +80,7 @@ Log analytics workspaces 中可以为日常运维保存常用查询语句，更�
   
 5. Avg throughput per min (Mb)：
 
-    ```xml
+    ```sql
     AzureDiagnostics
     | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
     | summarize avg(throughput_d) by Resource, bin(TimeGenerated, 1m)
@@ -89,7 +91,7 @@ Log analytics workspaces 中可以为日常运维保存常用查询语句，更�
 
 6. Unhealthy backend VM count：
 
-    ```xml
+    ```sql
     AzureDiagnostics
     | where ResourceProvider == "MICROSOFT.NETWORK" and Category == "ApplicationGatewayPerformanceLog"
     | summarize max(unHealthyHostCount_d) by Resource, bin(TimeGenerated, 1m)

@@ -34,7 +34,7 @@ Azure SQL Database 连接问题是使用 SQL Database 的常见问题，本文�
 3. 配置虚拟网络服务终结点：
 
     如果需要从 Azure 虚拟机中访问 Azure SQL DataBase，但是又关闭允许访问 Azure 服务，则需要将 Azure 虚拟机配置到 Azure SQL DataBase 中。
-    
+
     添加现有虚拟网络，然后选择虚拟机所在的虚拟网络进行启用服务终结点，并且添加虚拟网络，具体如下所示：
 
     ![02](media/aog-mysql-howto-troubleshoot-connection-issues-of-azure-sql-database/02.png "02")
@@ -101,7 +101,7 @@ Azure SQL Database 连接问题是使用 SQL Database 的常见问题，本文�
 
 7. 当确认 Fiddler 已抓到所需的信息后, 点击 **File**，取消选中 **Capture Traffic** 来取消 Fiddler 抓包。
 
-8.  点击 **File** > **Save** > **All Sessions** 保存文件，对抓包文件中有异常报错的地方进行分析，也可以将网络包发给微软技术支持团队进行分析。
+8. 点击 **File** > **Save** > **All Sessions** 保存文件，对抓包文件中有异常报错的地方进行分析，也可以将网络包发给微软技术支持团队进行分析。
 
 ## 其他排查方法
 

@@ -43,10 +43,10 @@ Azure Database for MySQL 对于驱动的版本及管理工具的兼容性有要�
 
     ![01](media/aog-mysql-howto-troubleshoot-connection-issues-of-azure-database-for-mysql/01.png "01")
 
-3.	配置虚拟网络服务终结点
+3. 配置虚拟网络服务终结点
 
     如果需要从 Azure 虚拟机中访问 Azure Database for MySQL，但是又关闭允许访问 Azure 服务，则需要将 Azure 虚拟机配置到 Azure Database for MySQL 中。
-    
+
     添加现有虚拟网络，然后选择虚拟机所在的虚拟网络进行启用服务终结点，并且添加虚拟网络，具体如下所示：
 
     ![02](media/aog-mysql-howto-troubleshoot-connection-issues-of-azure-database-for-mysql/02.png "02")
@@ -79,7 +79,7 @@ Azure Database for MySQL 对于驱动的版本及管理工具的兼容性有要�
 
 1. 下载 WireShark (下载地址：[Download WireShark](https://www.wireshark.org/download.html))。
 
-2.	开始抓包：
+2. 开始抓包：
 
     ![05](media/aog-mysql-howto-troubleshoot-connection-issues-of-azure-database-for-mysql/05.png "05")
 
@@ -105,7 +105,7 @@ Azure Database for MySQL 对于驱动的版本及管理工具的兼容性有要�
 
 7. 当确认 Fiddler 已抓到所需的信息后, 点击 **File**，取消选中 **Capture Traffic** 来取消 Fiddler 抓包。
 
-8.  点击 **File** > **Save** > **All Sessions** 保存文件，对抓包文件中有异常报错的地方进行分析，也可以将网络包发给微软技术支持团队进行分析。
+8. 点击 **File** > **Save** > **All Sessions** 保存文件，对抓包文件中有异常报错的地方进行分析，也可以将网络包发给微软技术支持团队进行分析。
 
 ## 其他排查方法
 
